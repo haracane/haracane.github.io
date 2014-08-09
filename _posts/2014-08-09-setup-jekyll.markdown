@@ -118,5 +118,4 @@ gem 'jekyll'
 
     $ bundle exec jekyll build
 
-ビルドに成功したら[http://blog.enogineer.com](http://blog.enogineer.com)に
-ブログが作られているので確認しましょう.
+ビルドに成功したら[http://blog.enogineer.com](http://blog.enogineer.com)にブログが作られています.
