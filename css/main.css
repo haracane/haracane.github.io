@@ -169,7 +169,7 @@ a:visited { color: #205caa; }
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-  font-size: 42px;
+  font-size: 32px;
   letter-spacing: -1.75px;
   line-height: 1;
   font-weight: 300;
@@ -198,12 +198,12 @@ a:visited { color: #205caa; }
 }
 
 .post-content h2 {
-  font-size: 32px;
+  font-size: 28px;
   letter-spacing: -1.25px;
 }
 
 .post-content h3 {
-  font-size: 26px;
+  font-size: 24px;
   letter-spacing: -1px;
 }
 
@@ -220,6 +220,18 @@ a:visited { color: #205caa; }
   letter-spacing: -1px;
   font-style: italic;
   margin: 30px 0;
+}
+
+.post-tags a {
+  color: #fff;
+  background-color: #bbb;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 2px;
+}
+
+.post-tags a:hover {
+  background-color: #888;
 }
 
 .post-content ul,
@@ -348,7 +360,18 @@ a:visited { color: #205caa; }
     clear: both;
   }
 
+  .post-content img {
+    width: 600px;
+  }
 }
+
+.post-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thumbnail { width: 600px; }
 
 @media screen and (max-width: 600px) {
 
@@ -407,4 +430,23 @@ a:visited { color: #205caa; }
     width: auto;
     margin: 0 0 15px; }
 
+  .post-content img { width: 480px; }
+  .thumbnail { width: 480px; }
 }
+
+@media screen and (max-width: 480px) {
+  .post-content img { width: 400px; }
+  .thumbnail { width: 400px; }
+}
+
+@media screen and (max-width: 400px) {
+  .post-content img { width: 340px; }
+  .thumbnail { width: 340px; }
+}
+
+@media screen and (max-width: 340px) {
+  .post-content img { width: 280px; }
+  .thumbnail { width: 280px; }
+}
+
+.sns-buttons { padding: 2px; }
