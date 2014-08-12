@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Jekyll2.2.0でレスポンシブにしてスマホ対応"
+title:  "Jekyll2.2.0でレスポンシブにしてスマホ対応してみた"
 date:   2014-08-12 20:35:17J
-categories: jekyll HTML5 CSS スマホ
+tags: jekyll HTML5 CSS スマホ
 ---
 
 Jekyllの初期設定だと小さい画面でも画像が大きいままで, 
