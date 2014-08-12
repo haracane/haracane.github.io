@@ -430,6 +430,10 @@ a:visited { color: #205caa; }
     width: auto;
     margin: 0 0 15px; }
 
+  .thumbnail { width: 480px; }
+}
+
+@media screen and (max-width: 600px) {
   .post-content img { width: 480px; }
   .thumbnail { width: 480px; }
 }
