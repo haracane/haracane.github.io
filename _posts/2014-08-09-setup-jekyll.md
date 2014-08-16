@@ -19,8 +19,8 @@ tags: Jekyll Nginx
 
 初期プロジェクトがあった方が楽なので```jekyll new```で作成します.
 
-    $ jekyll new blog.enogineer.com
-    $ cd blog.enogineer.com
+    $ jekyll new sample-blog.enogineer.com
+    $ cd sample-blog.enogineer.com
 
 jekyll serverでhttp://localhost:4000から動作確認できます. 終了するにはCtrl-C.
 
@@ -29,12 +29,12 @@ jekyll serverでhttp://localhost:4000から動作確認できます. 終了す�
 
 ### Githubにpush
 
-Githubでリポジトリ管理をするのでharacane/blog.enogineer.comリポジトリを作ってから
+Githubでリポジトリ管理をするのでharacane/sample-blog.enogineer.comリポジトリを作ってから
 
     $ git init
     $ git add .
     $ git ci -m "jekyll new blog.enonineer.com"
-    $ git remote add git@github.com:haracane/blog.enogineer.com
+    $ git remote add origin git@github.com:haracane/sample-blog.enogineer.com
     $ git push -u origin master
 
 でGithubにpushします.
@@ -46,7 +46,7 @@ Githubでリポジトリ管理をするのでharacane/blog.enogineer.comリポ�
 **Gemfile**
 {% highlight ruby %}
 source 'https://rubygems.org'
-gem 'jekyll'
+gem 'jekyll', '2.2.0'
 {% endhighlight %}
 
 ```bundle install```も実行します.
@@ -63,11 +63,11 @@ gem 'jekyll'
 **_includes/footer.html**
 {% raw %}
 <pre>
-&lt;li&gt;&lt;a href="mailto:{{ site.email }}"&gt;{{ site.email }}&lt;/a&gt;&lt;/li&gt;
+{% if site.email %}&lt;li&gt;&lt;a href="mailto:{{ site.email }}"&gt;{{ site.email }}&lt;/a&gt;&lt;/li&gt;{% endif %}
 </pre>
 {% endraw %}
 
-**_config.yml**
+**_config.yml**(下記を削除)
 
     email: your-email@domain.com
 
@@ -92,7 +92,7 @@ gem 'jekyll'
     title: "江の島エンジニアBlog"
     description: "湘南在住、渋谷で働くエンジニアのブログです"
     baseurl: ""
-    url: "http://blog.enogineer.com"
+    url: "http://sample-blog.enogineer.com"
     twitter_username: haracane
     github_username:  haracane
     ...
@@ -101,14 +101,14 @@ gem 'jekyll'
 
 ブログ用のVirtual Host設定を追加します.
 
-今回はblog.enogineer.comドメインを利用した場合の例になります.
+今回はsample-blog.enogineer.comドメインを利用した場合の例になります.
 
-**/etc/nginx/conf.d/blog.enogineer.com.conf**
+**/etc/nginx/conf.d/sample-blog.enogineer.com.conf**
 
     server {
       listen       80;
-      server_name  blog.enogineer.com;
-      root /path/to/blog.enogineer.com/_site;
+      server_name  sample-blog.enogineer.com;
+      root /path/to/sample-blog.enogineer.com/_site;
       index index.html;
     }
 
@@ -118,4 +118,4 @@ gem 'jekyll'
 
     $ bundle exec jekyll build
 
-ビルドに成功したら[http://blog.enogineer.com](http://blog.enogineer.com)にブログが作られています.
+ビルドに成功したら[http://sample-blog.enogineer.com](http://sample-blog.enogineer.com)にブログが作られています.
