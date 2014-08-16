@@ -2,7 +2,7 @@
 layout: post
 title:  "Ruby2.1.2+Jekyll2.2.0+独自ドメインでブログを作ってみた"
 date:   2014-08-09 11:00:00
-categories: jekyll nginx
+tags: Jekyll Nginx
 ---
 
 前から興味があったJekyllでブログを作ってみました.

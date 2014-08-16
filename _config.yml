@@ -16,15 +16,24 @@ tag_types:
 -
   - "/genre/hadoop/"
   - "Hadoop"
+-
+  - "/genre/misc/"
+  - "その他"
 
 ruby_tags:
-- ruby
+- Ruby
 
 jekyll_tags:
-- jekyll
+- Jekyll
 
 hadoop_tags:
-- hadoop
+- Hadoop
+
+misc_tags:
+- HTML5
+- CSS
+- スマホ
+- Nginx
 
 # Build settings
 markdown: kramdown
