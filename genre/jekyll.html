@@ -1,0 +1,11 @@
+---
+layout: tags
+---
+
+{% for sub_tag in site.jekyll_tags %}
+{% for tag in site.tags %}
+{% if sub_tag == tag[0] %}
+{% include tag-posts.html %}
+{% endif %}
+{% endfor %}
+{% endfor %}

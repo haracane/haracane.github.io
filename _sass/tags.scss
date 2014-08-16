@@ -1,0 +1,16 @@
+.post-tags a {
+  color: #fff;
+  background-color: #bbb;
+  border-radius: 4px;
+  line-height: 32px;
+  margin: 2px;
+  padding: 2px;
+}
+
+.post-tags a:hover {
+  background-color: #888;
+}
+
+.tags-title { font-size: 20px; padding: 0px; }
+.tags-content { padding: 0px 0px 10px 10px; }
+.tags-thumbnail { width: 120px; }

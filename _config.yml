@@ -6,6 +6,26 @@ url: "http://blog.enogineer.com"
 twitter_username: haracane
 github_username:  haracane
 
+tag_types:
+-
+  - "/genre/ruby/"
+  - "Ruby"
+-
+  - "/genre/jekyll/"
+  - "Jekyll"
+-
+  - "/genre/hadoop/"
+  - "Hadoop"
+
+ruby_tags:
+- ruby
+
+jekyll_tags:
+- jekyll
+
+hadoop_tags:
+- hadoop
+
 # Build settings
 markdown: kramdown
 permalink: pretty

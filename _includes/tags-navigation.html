@@ -1,0 +1,39 @@
+<div class="wrap">
+
+<div class="top-navigation">
+<ul class="nav nav-tabs" role="tablist">
+  <li><a href="/">最近の記事</a></li>
+  <li class="active"><a href="#">ジャンル</a></li>
+</ul>
+</div>
+
+<div class="tags-navigation">
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">目次</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+  {% for tag_type in site.tag_types %}{% if tag_type[0] == page.url %}
+  <li class="active"><a href="{{ tag_type[0] }}">{{ tag_type[1] }}</a></li>
+  {% else %}
+  <li><a href="{{ tag_type[0] }}">{{ tag_type[1] }}</a></li>
+  {% endif %}{% endfor %}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+
+</div>

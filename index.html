@@ -4,17 +4,21 @@ layout: default
 
 <div class="home">
 
-  <h1>最近の記事</h1>
+{% include sns-buttons.html %}
 
   <ul class="posts">
     {% for post in site.posts %}
-      <li>
+      <li>{% assign post_url = post.url | prepend: site.baseurl %}
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <h2><a href="{{ post_url }}">{{ post.title }}</a></h2>
+        {% if post.thumbnail %}
+        <a href="{{ post_url }}"><img class="index-image" alt="{{ post.title }}" src="{{ post.main_image }}"></a>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
 
+{% include sns-buttons.html %}
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

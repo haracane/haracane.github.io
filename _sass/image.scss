@@ -1,0 +1,23 @@
+.post-content img { width: 600px; }
+.index-image { width: 400px; }
+.thumbnail { width: 120px; }
+
+@media screen and (max-width: 750px) {
+  .post-content img { width: 600px; }
+}
+
+@media screen and (max-width: 600px) {
+  .post-content img { width: 480px; }
+}
+
+@media screen and (max-width: 480px) {
+  .post-content img { width: 400px; }
+}
+
+@media screen and (max-width: 400px) {
+  .post-content img { width: 340px; }
+}
+
+@media screen and (max-width: 340px) {
+  .post-content img { width: 280px; }
+}

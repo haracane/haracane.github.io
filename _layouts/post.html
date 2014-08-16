@@ -4,14 +4,31 @@ layout: default
 <div class="post">
 
   <header class="post-header">
-    <div class="post-tags">{% for tag in page.tags %}<a href="">{{ tag }}</a>{% endfor %}</div>
+    <div class="post-tags">
+    {% for site_tag in site.ruby_tags %}{% for tag in page.tags %}{% if site_tag == tag %}
+    <a href="/genre/ruby/#{{tag}}">{{ tag }}</a>
+    {% endif %}{% endfor %}{% endfor %}
+
+    {% for site_tag in site.jekyll_tags %}{% for tag in page.tags %}{% if site_tag == tag %}
+    <a href="/genre/jekyll/#{{tag}}">{{ tag }}</a>
+    {% endif %}{% endfor %}{% endfor %}
+
+    {% for site_tag in site.hadoop_tags %}{% for tag in page.tags %}{% if site_tag == tag %}
+    <a href="/genre/hadoop/#{{tag}}">{{ tag }}</a>
+    {% endif %}{% endfor %}{% endfor %}
+
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    {% include sns-buttons.html %}
+    <p class="meta">
+    {{ page.date | date: "%b %-d, %Y" }}
+    {% if page.author %} • {{ page.author }}{% endif %}
+    {% if page.meta %} • {{ page.meta }}{% endif %}
+    </p>
   </header>
 
   <article class="post-content">
   {{ content }}
   </article>
 
-{% include page-sns-buttons.html %}
+{% include sns-buttons.html %}
 </div>
