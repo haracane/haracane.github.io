@@ -8,11 +8,11 @@ github_username:  haracane
 
 tag_types:
 -
-  - "/genre/ruby/"
-  - "Ruby"
--
   - "/genre/jekyll/"
   - "Jekyll"
+-
+  - "/genre/ruby/"
+  - "Ruby"
 -
   - "/genre/hadoop/"
   - "Hadoop"
@@ -30,6 +30,7 @@ hadoop_tags:
 - Hadoop
 
 misc_tags:
+- Git
 - HTML5
 - CSS
 - スマホ
