@@ -3,3 +3,8 @@ body {
 }
 
 .post-header h1 { font-size: 32px; }
+
+.post pre,
+.post code {
+  overflow: auto;
+}
