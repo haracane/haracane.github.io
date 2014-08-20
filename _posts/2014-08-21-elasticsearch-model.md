@@ -163,6 +163,6 @@ DBのレシピデータをElasticsearchにインポートします
       Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (1, 3)
     => ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"]
 
-結果が全く同じなので区別がつきにくいですが, うまくできました.
+うまくできました.
 
 次回はRecipeモデルのElasticsearch検索機能のテストをしようと思います.
