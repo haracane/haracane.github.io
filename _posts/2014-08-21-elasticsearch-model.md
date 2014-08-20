@@ -25,9 +25,9 @@ Recipeデータもいくつか追加しておきましょう.
 
     $ bundle exec rails console
     > Recipe.create(title: "ミックス赤玉で豚玉を作ってみた", description: "業務スーパーで買ったのは卵(ミックス赤玉)だけですが、豚玉炒めを作りました。", url: "http://gsrecipe.com/2014/08/09/butatama/")
-    > Recipe.create(title: "パルメザンチーズで濃厚カルボナーラ", description: "業務スーパーのパルメザンチーズ(200g入り！)と卵でカルボナーラを作りました。", url: "http://gsrecipe.com/2014/08/10/carbonara/")
-    > Recipe.create(title: "ミックス赤玉で卵焼き", description: "またまた卵ですが業務スーパーのミックス赤玉で卵焼きを作りました。", url: "http://gsrecipe.com/2014/08/13/tamagoyaki/")
-    > Recipe.create(title: "パプリカを使った野菜たっぷりスープ", description: "業務スーパーの冷凍パプリカを使って野菜スープを作りました。我が家の恒例朝食メニューです。", url: "http://gsrecipe.com/2014/08/14/vegesoup/")
+    Recipe.create(title: "パルメザンチーズで濃厚カルボナーラ", description: "業務スーパーのパルメザンチーズ(200g入り！)と卵でカルボナーラを作りました。", url: "http://gsrecipe.com/2014/08/10/carbonara/")
+    Recipe.create(title: "ミックス赤玉で卵焼き", description: "またまた卵ですが業務スーパーのミックス赤玉で卵焼きを作りました。", url: "http://gsrecipe.com/2014/08/13/tamagoyaki/")
+    Recipe.create(title: "パプリカを使った野菜たっぷりスープ", description: "業務スーパーの冷凍パプリカを使って野菜スープを作りました。我が家の恒例朝食メニューです。", url: "http://gsrecipe.com/2014/08/14/vegesoup/")
 
 ## elasticsearch-railsをインストールする
 
@@ -41,7 +41,7 @@ gem "elasticsearch-model"
 
 ## Elasticsearch::Modelをincludeする
 
-[elasticsearch-modelの公式ドキュメント]の例のようにSearchableモジュールをRecipeクラスでincludeします
+Elasticsearch::ModelモジュールをRecipeクラスでincludeします
 
 **app/models/recipe.rb**
 {% highlight ruby %}
@@ -57,10 +57,12 @@ end
     $ bundle exec rails console
     > Rails.import
     > Recipe.search("卵").records.map(&:title)
-      Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (3, 2, 1)
-    => ["ミックス赤玉で卵焼き", "パルメザンチーズで濃厚カルボナーラ", "ミックス赤玉で豚玉を作ってみた"]
+      Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (11, 9, 10)
+    => ["ミックス赤玉で卵焼き", "ミックス赤玉で豚玉を作ってみた", "パルメザンチーズで濃厚カルボナーラ"]
 
 ## N-gramアナライザを設定する
+
+上記の例はデフォルトのアナライザを利用した例ですが, 続いて自分でN-gramアナライザを設定してみます.
 
 まずN-gramアナライザをセッティングに追加します.
 
@@ -96,7 +98,7 @@ end
     > Recipe.__elasticsearch__.create_index! force: true
     > Recipe.__elasticsearch__.refresh_index!
 
-セッティングが反映されたか確認します.
+設定されたセッティングを確認します.
 
     > Recipe.__elasticsearch__.client.indices.get_settings["recipes"]
     => {"settings"=>
@@ -138,6 +140,19 @@ end
     > Recipe.__elasticsearch__.create_index! force: true
     > Recipe.__elasticsearch__.refresh_index!
 
+設定されたマッピングを確認します
+
+    > Recipe.__elasticsearch__.client.indices.get_mapping["recipes"]
+    => {"mappings"=>
+      {"recipe"=>
+        {"properties"=>
+          {"created_at"=>{"type"=>"date", "format"=>"dateOptionalTime"},
+           "description"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"},
+           "id"=>{"type"=>"long"},
+           "title"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"},
+           "updated_at"=>{"type"=>"date", "format"=>"dateOptionalTime"},
+           "url"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"}}}}}
+
 DBのレシピデータをElasticsearchにインポートします
 
     > Recipe.import
@@ -148,111 +163,6 @@ DBのレシピデータをElasticsearchにインポートします
   Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (1, 3)
 => ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"]
 
-うまくできました.
+結果が全く同じなので区別がつきにくいですが, うまくできました.
 
-## テストを作成する
-
-せっかくなのでテストも作っておきましょう.
-
-**spec/models/recipe_spec.rb**
-{% highlight ruby %}
-require 'rails_helper'
-
-describe Recipe do
-  before :all do
-    Recipe.__elasticsearch__.create_index! force: true
-    Recipe.__elasticsearch__.refresh_index!
-  end
-
-  describe ".settings" do
-    let(:settings) { Recipe.__elasticsearch__.client.indices.get_settings[Recipe.index_name] }
-    let(:analysis) { settings["settings"]["index"]["analysis"] }
-
-    context "with analyzer" do
-      subject { analysis["analyzer"]}
-      it { should eq({"ngram_analyzer" => {"tokenizer" => "ngram_tokenizer"}}) }
-    end
-
-    context "with tokenizer" do
-      subject { analysis["tokenizer"]}
-      it do
-        should eq({"ngram_tokenizer" => {"max_gram" => "3",
-                                         "type" => "nGram",
-                                         "min_gram" => "2",
-                                         "token_chars" => ["letter", "digit"]}})
-      end
-    end
-  end
-
-  context "with mappings" do
-    subject { Recipe.__elasticsearch__.client.indices.get_mapping index: Recipe.index_name }
-
-    it do
-      should eq({
-        "recipes" => {
-          "mappings" => {
-            "recipe" => {
-              "properties" => {
-                "id" => {"type" => "long"},
-                "title" => {"type" => "string",
-                            "analyzer" => "ngram_analyzer"},
-                "description" => {"type" => "string",
-                                  "analyzer" => "ngram_analyzer"},
-                "url" => {"type" => "string",
-                          "analyzer" => "ngram_analyzer"}
-              }
-            }
-          }
-        }
-      })
-    end
-  end
-
-  describe ".search" do
-    before :all do
-      Recipe.delete_all
-      Recipe.create(title: "ミックス赤玉で豚玉を作ってみた", description: "業務スーパーで買ったのは卵(ミックス赤玉)だけですが、豚玉炒めを作りました。", url: "http://gsrecipe.com/2014/08/09/butatama/")
-      Recipe.create(title: "パルメザンチーズで濃厚カルボナーラ", description: "業務スーパーのパルメザンチーズ(200g入り！)と卵でカルボナーラを作りました。", url: "http://gsrecipe.com/2014/08/10/carbonara/")
-      Recipe.create(title: "ミックス赤玉で卵焼き", description: "またまた卵ですが業務スーパーのミックス赤玉で卵焼きを作りました。", url: "http://gsrecipe.com/2014/08/13/tamagoyaki/")
-      Recipe.create(title: "パプリカを使った野菜たっぷりスープ", description: "業務スーパーの冷凍パプリカを使って野菜スープを作りました。我が家の恒例朝食メニューです。", url: "http://gsrecipe.com/2014/08/14/vegesoup/")
-
-      Recipe.__elasticsearch__.import
-      sleep(2) # wait for analyzing data
-    end
-
-    context "when query is 'ミックス赤玉'" do
-      let(:query) { "ミックス赤玉" }
-      let(:records) { Recipe.search(query).records }
-      subject { records }
-      it { should have(2).items }
-
-      context "with titles" do
-        subject { records.map(&:title) }
-        it { should match_array ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"] }
-      end
-    end
-  end
-end
-{% endhighlight %}
-
-実行してみると
-
-    $ bundle exec rspec spec/models/recipe_spec.rb -f d
-    Recipe
-      .settings
-        with analyzer
-          should eq {"ngram_analyzer"=>{"tokenizer"=>"ngram_tokenizer"}}
-        with tokenizer
-          should eq {"ngram_tokenizer"=>{"max_gram"=>"3", "type"=>"nGram", "min_gram"=>"2", "token_chars"=>["letter", "digit"]}}
-      with mappings
-        should eq {"recipes"=>{"mappings"=>{"recipe"=>{"properties"=>{"id"=>{"type"=>"long"}, "title"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"}, "description"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"}, "url"=>{"type"=>"string", "analyzer"=>"ngram_analyzer"}}}}}}
-      .search
-        when query is 'ミックス赤玉'
-          should have 2 items
-          with titles
-            should contain exactly "ミックス赤玉で豚玉を作ってみた" and "ミックス赤玉で卵焼き"
-
-    Finished in 2.12 seconds (files took 1.14 seconds to load)
-    5 examples, 0 failures
-
-ということでテストも無事成功しました.
+次回はRecipeモデルのElasticsearch検索機能のテストをしようと思います.
