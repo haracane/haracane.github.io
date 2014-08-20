@@ -160,8 +160,8 @@ DBのレシピデータをElasticsearchにインポートします
 レシピデータを検索します
 
     > Recipe.search("ミックス赤玉").records.map(&:title)
-  Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (1, 3)
-=> ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"]
+      Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (1, 3)
+    => ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"]
 
 結果が全く同じなので区別がつきにくいですが, うまくできました.
 
