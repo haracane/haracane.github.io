@@ -6,28 +6,32 @@ url: "http://blog.enogineer.com"
 twitter_username: haracane
 github_username:  haracane
 google_analysis_id: UA-53664731-1
+paginate: 2
 
+default_genre: hadoop
 tag_types:
 -
-  - "/genre/jekyll/"
-  - "Jekyll"
+  - "/genre/hadoop/"
+  - "Hadoop/Elasticsearch"
 -
   - "/genre/ruby/"
   - "Ruby"
 -
-  - "/genre/hadoop/"
-  - "Hadoop"
+  - "/genre/jekyll/"
+  - "Jekyll"
 -
   - "/genre/misc/"
   - "その他"
 
 ruby_tags:
 - Ruby
+- Rails
 
 jekyll_tags:
 - Jekyll
 
 hadoop_tags:
+- Elasticsearch
 - Hadoop
 
 misc_tags:
