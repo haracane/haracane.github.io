@@ -1,0 +1,7 @@
+<li>{% assign post_url = page.url | prepend: site.baseurl %}
+<span class="post-date">{{ page.date | date: "%b %-d, %Y" }}</span>
+<h2><a href="{{ post_url }}">{{ page.title }}</a></h2>
+{% if page.thumbnail %}
+<a href="{{ post_url }}"><img class="index-image" alt="{{ page.title }}" src="{{ page.main_image }}"></a>
+{% endif %}
+</li>

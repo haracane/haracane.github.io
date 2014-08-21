@@ -8,3 +8,18 @@ body {
 .post code {
   overflow: auto;
 }
+
+.recent-posts {
+  margin-bottom: 20px;
+}
+
+.page-content .wrap,
+.recent-posts .wrap {
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+}
+.post {
+	border-bottom: solid 1px #e8e8e8;
+}
+
+.recent-posts-title { line-height: 36px; }
