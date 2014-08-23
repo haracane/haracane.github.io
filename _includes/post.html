@@ -25,7 +25,18 @@
 
   <article class="post-content">
     {% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
+    {% include sns-buttons.html %}
+  <div class="pagination">
+    {% if paginator.next_page %}
+      <a href="/page{{ paginator.next_page }}" class="next">次のページ</a>
+    {% endif %}
+  </div>
+
   </article>
 
-{% include sns-buttons.html %}
+  <div class="post-sidebar">
+    {% include recent-posts.html %}
+  </div>
+
+
 </div>

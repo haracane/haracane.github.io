@@ -13,13 +13,20 @@ body {
   margin-bottom: 20px;
 }
 
-.page-content .wrap,
-.recent-posts .wrap {
+.site-footer {
+  border: none;
+}
+
+.footer-col-1.column,
+.footer-col-2.column,
+.footer-col-3.column {
+  margin-top: 10px;
+}
+
+.recent-posts {
   border: solid 1px #e8e8e8;
   border-radius: 4px;
-}
-.post {
-	border-bottom: solid 1px #e8e8e8;
+  padding: 0px 10px;
 }
 
 .recent-posts-title { line-height: 36px; }

@@ -11,17 +11,13 @@
 
 <nav class="navbar navbar-default">
   <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav">
   {% for tag_type in site.tag_types %}{% if tag_type[0] == page.url %}
   <li class="active"><a href="{{ tag_type[0] }}">{{ tag_type[1] }}</a></li>
   {% else %}
   <li><a href="{{ tag_type[0] }}">{{ tag_type[1] }}</a></li>
   {% endif %}{% endfor %}
-      </ul>
-    </div><!-- /.navbar-collapse -->
+    </ul>
   </div><!-- /.container-fluid -->
 </nav>
 </div>

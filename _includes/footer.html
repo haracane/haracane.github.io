@@ -2,15 +2,9 @@
 
   <div class="wrap">
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-1 column">
-      <ul>
-        <li>{{ site.title }}</li>
-        {% if site.twitter_username %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
-      </ul>
+      <h3 class="footer-heading">{{ site.title }}</h3>
+      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
     </div>
 
     <div class="footer-col-2 column">

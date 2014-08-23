@@ -1,0 +1,29 @@
+.post-header,
+.wrap {
+  margin: 0px 2%;
+  padding: 0px 30px;
+}
+
+.post-content {
+   border: solid 1px #e8e8e8;
+   border-radius: 4px;
+   max-width: 56%;
+   margin: 10px 1% 10px 2%;
+   padding: 0px 30px 10px 30px;
+   float: left;
+ }
+
+.post-sidebar {
+  max-width: 28%;
+  margin: 10px 2% 10px 1%;
+  padding: 0px;
+  float: left;
+}
+
+@media screen and (max-width: 600px) {
+  .post-content, .post-sidebar {
+    max-width: 600px;
+    margin: 10px 2%;
+    float: none;
+  }
+}
