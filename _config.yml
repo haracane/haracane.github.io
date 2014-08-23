@@ -6,7 +6,7 @@ url: "http://blog.enogineer.com"
 twitter_username: haracane
 github_username:  haracane
 google_analysis_id: UA-53664731-1
-paginate: 2
+paginate: 1
 
 default_genre: hadoop
 tag_types:
