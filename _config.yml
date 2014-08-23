@@ -9,37 +9,33 @@ google_analysis_id: UA-53664731-1
 paginate: 1
 
 default_genre: hadoop
-tag_types:
+tag_categories:
 -
   - "/genre/hadoop/"
   - "Hadoop/Elasticsearch"
+  -
+    - Elasticsearch
+    - Hadoop
 -
   - "/genre/ruby/"
   - "Ruby"
+  -
+    - Ruby
+    - Rails
 -
   - "/genre/jekyll/"
   - "Jekyll"
+  -
+    - Jekyll
 -
   - "/genre/misc/"
   - "その他"
-
-ruby_tags:
-- Ruby
-- Rails
-
-jekyll_tags:
-- Jekyll
-
-hadoop_tags:
-- Elasticsearch
-- Hadoop
-
-misc_tags:
-- Git
-- HTML5
-- CSS
-- スマホ
-- Nginx
+  -
+    - Git
+    - HTML5
+    - CSS
+    - スマホ
+    - Nginx
 
 # Build settings
 markdown: kramdown

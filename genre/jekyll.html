@@ -2,10 +2,8 @@
 layout: tags
 ---
 
-{% for sub_tag in site.jekyll_tags %}
-{% for tag in site.tags %}
-{% if sub_tag == tag[0] %}
+{% for tag_category in site.tag_categories %}{% if tag_category[0] == page.url %}
+{% for tag_name in tag_category[2] %}{% for tag in site.tags %}{% if tag[0] == tag_name %}
 {% include tag-posts.html %}
-{% endif %}
-{% endfor %}
-{% endfor %}
+{% endif %}{% endfor %}{% endfor %}
+{% endif %}{% endfor %}
