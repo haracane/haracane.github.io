@@ -1,0 +1,9 @@
+.site-header {
+  height: 56px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+  .site-header { height: auto; }
+  .title-image { display: none; }
+}
