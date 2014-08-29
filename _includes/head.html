@@ -7,7 +7,7 @@
     <meta name="keywords" content="{{ page.keywords }}{% if page.keywords %}{{ page.keywords }},{% endif %}{{ site.keywords }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ page.description }}">
     <meta property="og:site_name" content="{{ site.title }}">
 
     <!-- Custom CSS -->
