@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rubyでオブジェクトの初期化にハッシュを使う時の手抜きコード"
+title:  "Rubyでオブジェクトの初期化にハッシュを使う時に手を抜く"
 description: "Rubyでハッシュを使ってオブジェクトの初期化をする時によくこんなことしてます"
 date:   2014-08-30 01:31:58J
 keywords: Ruby,手抜き
