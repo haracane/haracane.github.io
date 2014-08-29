@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Rubyで手抜きクラス作成"
-description: "Rubyでとりあえずオブジェクトにデータを持たせる時によくこんなことしてます"
+title:  "Rubyでデータオブジェクト用クラスを手抜き作成"
+description: "Rubyでとりあえずデータオブジェクト用のクラスが欲しい時によくこんなことしてます"
 date:   2014-08-30 01:31:58J
 keywords: Ruby,手抜き
 tags: Ruby
