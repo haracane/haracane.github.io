@@ -1,4 +1,5 @@
 {% if page.description %}{% assign description = page.description %}{% else %}{% assign description = site.description %}{% endif %}
+{% assign canonical_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,8 +7,10 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{{ page.keywords }}{% if page.keywords %}{{ page.keywords }},{% endif %}{{ site.keywords }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:type" content="blog">
+    <meta property="og:url" content="{{ canonical_url }}">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:site_name" content="{{ site.title }}">
 
