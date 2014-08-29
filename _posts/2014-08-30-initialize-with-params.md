@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Rubyでオブジェクトの初期化にハッシュを使う時に手を抜く"
-description: "Rubyでハッシュを使ってオブジェクトの初期化をする時によくこんなことしてます"
+title:  "Rubyで手抜きクラス作成"
+description: "Rubyでとりあえずオブジェクトにデータを持たせる時によくこんなことしてます"
 date:   2014-08-30 01:31:58J
 keywords: Ruby,手抜き
 tags: Ruby
@@ -10,13 +10,33 @@ tags: Ruby
 {{ page.description }}
 
 {% highlight ruby %}
-class User
+require "json"
+
+class Person
+  def self.parse_json(json)
+    new(JSON.parse(json))
+  end
+
   attr_accessor :name
-  def initialize(params = {})
+
+  def initialize(params)
     params.each_pair do |key, value|
       setter_method = "#{key}="
       send(setter_method, value) if respond_to?(setter_method)
     end
+  end
+
+  def to_hash
+    keys = instance_variables.map { |v| v.to_s.gsub(/@/, "").to_sym }
+    keys.reject! do |key|
+      !respond_to?(key) ||
+      send(key).tap { |v| break v.nil? || (v.respond_to?(:empty?) && v.empty?) }
+    end
+    Hash[keys.map { |k| [k, send(k)] }]
+  end
+
+  def to_json
+    to_hash.to_json
   end
 end
 {% endhighlight %}
