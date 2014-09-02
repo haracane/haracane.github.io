@@ -8,7 +8,9 @@ github_username:  haracane
 google_analysis_id: UA-53664731-1
 paginate: 1
 
-default_genre: hadoop
+keywords: "江の島"
+
+default_genre: /genre/hadoop/
 tag_categories:
 -
   - "/genre/hadoop/"

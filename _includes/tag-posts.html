@@ -1,10 +1,14 @@
-<h1 class="tags-title" id="{{ tag[0] }}">「{{ tag[0] }}」の記事</h1>
-<div class="tags-content">
-{% for post in tag[1] %}
-{% if post.thumbnail %}
-  <a class="tags-link" href="{{ post.url }}"><img alt="{{post.title}}" class="tags-thumbnail" src="{{ post.thumbnail }}"></a>
-{% else %}
-  <h1><a href="{{ post.url }}">{{post.title}}</a></h1>
-{% endif %}
-{% endfor %}
-</div>
+<dt class="tags-title" id="{{ tag[0] }}">「{{ tag[0] }}」の記事</dt>
+<dd class="tags-content">
+  <ul class="tags-posts">
+    {% for post in tag[1] %}
+      <li>
+        {% if post.thumbnail %}
+          <a class="tags-link" href="{{ post.url }}"><img alt="{{post.title}}" class="tags-thumbnail" src="{{ post.thumbnail }}"></a>
+        {% else %}
+          <a href="{{ post.url }}">{{post.title}}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</dd>

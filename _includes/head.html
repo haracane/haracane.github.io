@@ -6,7 +6,7 @@
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="{{ page.keywords }}{% if page.keywords %}{{ page.keywords }},{% endif %}{{ site.keywords }}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }},{% endif %}{{ site.keywords }}">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="blog">

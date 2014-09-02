@@ -9,7 +9,7 @@ body {
   overflow: auto;
 }
 
-.recent-posts {
+.side-box {
   margin-bottom: 20px;
 }
 
@@ -23,14 +23,29 @@ body {
   margin-top: 10px;
 }
 
-.recent-posts {
+.side-box {
   border: solid 1px #e8e8e8;
   border-radius: 4px;
-  padding: 0px 10px;
+  padding: 4px 10px;
 }
 
-.recent-posts-title { line-height: 36px; }
+.side-box-title { margin:4px; line-height: 36px; }
+.side-box ul { list-style-type: none; }
+.side-box li { margin:8px; padding: 0px; }
+.side-box p { margin:8px; }
+
 
 .site-footer {
   color: #828282;
+}
+
+dl dt {
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+table th,
+table td {
+  white-space: nowrap;
 }

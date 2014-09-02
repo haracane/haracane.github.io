@@ -1,7 +1,7 @@
-<li>{% assign post_url = page.url | prepend: site.baseurl %}
-<h3><a href="{{ post_url }}">{{ page.title }}</a></h3>
-{% if page.thumbnail %}{% assign thumbnail = page.thumbnail %}{% else %}{% assign thumbnail = page.main_image %}{% endif %}
+<li>{% assign post_url = post.url | prepend: site.baseurl %}
+<h3><a href="{{ post_url }}">{{ post.title }}</a></h3>
+{% if post.thumbnail %}{% assign thumbnail = post.thumbnail %}{% else %}{% assign thumbnail = post.main_image %}{% endif %}
 {% if thumbnail %}
-<a href="{{ post_url }}"><img class="thumbnail" alt="{{ page.title }}" src="{{ thumbnail }}"></a>
+<a href="{{ post_url }}"><img class="thumbnail" alt="{{ post.title }}" src="{{ thumbnail }}"></a>
 {% endif %}
 </li>

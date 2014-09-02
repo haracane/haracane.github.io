@@ -1,8 +1,10 @@
-<div class="recent-posts">
-    <div class="recent-posts-title">最近の記事</div>
-    <ul class="posts">
-      {% for page in site.posts limit:5 %}
+<dl class="side-box">
+  <dt class="side-box-title">最近の記事</dt>
+  <dd>
+    <ul>
+      {% for post in site.posts limit:5 %}
         {% include post-title.html %}
       {% endfor %}
     </ul>
-</div>
+  </dd>
+</dl>
