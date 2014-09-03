@@ -4,26 +4,31 @@
   padding: 0px 30px;
 }
 
-.post-content {
+.post-center {
    border: solid 1px #e8e8e8;
    border-radius: 4px;
-   max-width: 56%;
-   margin: 10px 1% 10px 2%;
-   padding: 0px 30px 10px 30px;
+   width: 64%;
+   margin: 10px 0px 10px 2%;
+   padding: 0px;
    float: left;
  }
 
+.post-content {
+  padding: 0px 30px;
+}
+
 .post-sidebar {
-  max-width: 28%;
-  margin: 10px 2% 10px 1%;
+  width: 28%;
+  margin: 10px 2% 10px 2%;
   padding: 0px;
   float: left;
 }
 
-@media screen and (max-width: 640px) {
-  .post-content, .post-sidebar {
-    max-width: 600px;
+@media screen and (max-width: 620px) {
+  .post-center, .post-sidebar {
+    width: 96%;
     margin: 10px 2%;
+    padding: 0px;
     float: none;
   }
 }

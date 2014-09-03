@@ -15,6 +15,7 @@
     </p>
   </header>
 
+  <div class="post-center">
   <article class="post-content">
     {% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
     {% include sns-buttons.html %}
@@ -25,15 +26,13 @@
   </div>
 
   </article>
+  </div>
 
   <div class="post-sidebar">
     {% include recent-posts.html %}
 
     {% include related-posts.html %}
 
-    <div class="side-box"><p class="text">{{ site.description }}</p></div>
-
-    {% include site-info.html %}
   </div>
 
 
