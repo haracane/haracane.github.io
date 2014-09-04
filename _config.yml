@@ -1,13 +1,14 @@
 # Site settings
 title: "江の島エンジニアBlog"
 description: "湘南在住, 渋谷で働くエンジニアのブログです"
+index_h1: "Ruby(Rails), Elasticsearch, Hadoop, Jekyllなどの技術メモ"
 baseurl: ""
 url: "http://blog.enogineer.com"
 author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=56
 twitter_username: haracane
 github_username:  haracane
 google_analysis_id: UA-53664731-1
-paginate: 1
+paginate: 5
 
 keywords: "江の島"
 

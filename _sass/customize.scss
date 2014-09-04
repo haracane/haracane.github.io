@@ -2,6 +2,14 @@ body {
   font-family: "メイリオ", Helvetica, Arial, sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6,
+.page-content, .post-header {
+  margin: 0px;
+  padding: 0px;
+}
+
+.site-header { padding: 0px 2%; }
+
 .post-header h1 { font-size: 32px; }
 
 .post pre,

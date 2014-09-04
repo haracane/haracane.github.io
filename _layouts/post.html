@@ -1,4 +1,16 @@
 ---
 layout: default
 ---
-{% include post.html %}
+
+<div class="layout-header">
+  {% include post-header.html %}
+</div>
+
+<div class="layout-center post">
+  {% include post-content.html %}
+</div>
+
+<div class="layout-sidebar">
+  {% include recent-posts.html %}
+  {% include related-posts.html %}
+</div>

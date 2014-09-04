@@ -1,25 +1,20 @@
-<div class="wrap">
-
 <div class="top-navigation">
-<ul class="nav nav-tabs" role="tablist">
-  <li><a href="/">トップ</a></li>
-  <li class="active"><a href="#">ジャンル</a></li>
-</ul>
+  <ul class="nav nav-tabs" role="tablist">
+    <li><a href="/">トップ</a></li>
+    <li class="active"><a href="#">ジャンル</a></li>
+  </ul>
 </div>
 
 <div class="tags-navigation">
-
-<nav class="navbar navbar-default">
-  <div class="container">
-    <ul class="nav navbar-nav">
-  {% for tag_category in site.tag_categories %}{% if tag_category[0] == page.url %}
-  <li class="active"><a href="{{ tag_category[0] }}">{{ tag_category[1] }}</a></li>
-  {% else %}
-  <li><a href="{{ tag_category[0] }}">{{ tag_category[1] }}</a></li>
-  {% endif %}{% endfor %}
-    </ul>
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
-
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        {% for tag_category in site.tag_categories %}{% if tag_category[0] == page.url %}
+          <li class="active"><a href="{{ tag_category[0] }}">{{ tag_category[1] }}</a></li>
+        {% else %}
+          <li><a href="{{ tag_category[0] }}">{{ tag_category[1] }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </div><!-- /.container -->
+  </nav>
 </div>

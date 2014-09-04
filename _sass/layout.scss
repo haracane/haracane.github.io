@@ -1,12 +1,8 @@
-.post-header,
-.wrap {
+.layout-header {
   margin: 0px 2%;
-  padding: 0px 30px;
 }
 
-.post-center {
-   border: solid 1px #e8e8e8;
-   border-radius: 4px;
+.layout-center {
    width: 64%;
    margin: 10px 0px 10px 2%;
    padding: 0px;
@@ -14,10 +10,17 @@
  }
 
 .post-content {
+  padding: 10px 30px;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+}
+
+.pagination {
+  margin-bottom: 12px;
   padding: 0px 30px;
 }
 
-.post-sidebar {
+.layout-sidebar {
   width: 28%;
   margin: 10px 2% 10px 2%;
   padding: 0px;
@@ -25,7 +28,7 @@
 }
 
 @media screen and (max-width: 620px) {
-  .post-center, .post-sidebar {
+  .layout-center, .layout-sidebar {
     width: 96%;
     margin: 10px 2%;
     padding: 0px;

@@ -1,0 +1,14 @@
+<header class="post-header">
+  <div class="post-tags">
+    {% for tag in page.tags %}{% for tag_category in site.tag_categories %}{% for site_tag in tag_category[2] %}{% if site_tag == tag %}
+      <a href="{{ tag_category[0] }}#{{ tag }}">{{ tag }}</a>
+    {% endif %}{% endfor %}{% endfor %}{% endfor %}
+  </div>
+
+  <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+  <p class="meta">
+    {{ page.date | date: "%b %-d, %Y" }}
+    {% if page.author %} • {{ page.author }}{% endif %}
+    {% if page.meta %} • {{ page.meta }}{% endif %}
+  </p>
+</header>
