@@ -93,7 +93,7 @@ YARDと同じで、メンバーにはSphinxでのドキュメントの書き方�
 
 ALMiniumをインストール済みのCentOS6なら
 
-{% raw %}<pre><code>|git clone https://github.com/haracane/chef.git
+{% raw %}<pre><code>git clone https://github.com/haracane/chef.git
 sudo chef/bin/chef-solo-role agile
 </code></pre>{% endraw %}
 
