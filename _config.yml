@@ -44,6 +44,14 @@ tag_categories:
     - CSS
     - スマホ
     - Nginx
+    - Redmine
+    - Scrum
+    - アジャイル
+    - Jenkins
+    - YARD
+    - Sphinx
+    - Chef
+    - Subversion
 
 # Build settings
 markdown: kramdown
