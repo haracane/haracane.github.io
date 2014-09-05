@@ -20,6 +20,9 @@ tag_categories:
   -
     - Elasticsearch
     - Hadoop
+    - HBase
+    - RabbitMQ
+
 -
   - "/genre/ruby/"
   - "Ruby"
