@@ -19,7 +19,7 @@ $ vagrant init centos
 
 してから
 
-[http://docs-v1.vagrantup.com/v1/docs/bridged_networking.html:title=Vagrantのドキュメント]の通りにVagrantFileに
+[Vagrantのドキュメント](http://docs-v1.vagrantup.com/v1/docs/bridged_networking.html)の通りにVagrantFileに
 
 >|
 Vagrant::Config.run do |config|
