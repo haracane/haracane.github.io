@@ -95,7 +95,7 @@ ALMiniumをインストール済みのCentOS6なら
 
 {% raw %}<pre><code>|git clone https://github.com/haracane/chef.git
 sudo chef/bin/chef-solo-role agile
-||<
+</code></pre>{% endraw %}
 
 で上記の構成を構築できる、かもしれません。。
 
