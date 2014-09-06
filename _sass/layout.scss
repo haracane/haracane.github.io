@@ -1,19 +1,15 @@
+$side_margin: 2%;
+
 .layout-header {
-  margin: 0px 2%;
+  margin: 0px $side_margin;
 }
 
 .layout-center {
    width: 64%;
-   margin: 10px 0px 10px 2%;
+   margin: 10px 0px 10px $side_margin;
    padding: 0px;
    float: left;
  }
-
-.post-content {
-  padding: 10px 30px;
-  border: solid 1px #e8e8e8;
-  border-radius: 4px;
-}
 
 .pagination {
   margin-bottom: 12px;
@@ -22,15 +18,27 @@
 
 .layout-sidebar {
   width: 28%;
-  margin: 10px 2% 10px 2%;
+  margin: 10px $side_margin;
   padding: 0px;
   float: left;
 }
 
+.side-box {
+  margin-bottom: 20px;
+  padding: 4px 10px;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+}
+
+.side-box-title { margin:4px; line-height: 36px; }
+.side-box ul { list-style-type: none; }
+.side-box li { margin:8px; padding: 0px; }
+.side-box p { margin:8px; }
+
 @media screen and (max-width: 620px) {
   .layout-center, .layout-sidebar {
     width: 96%;
-    margin: 10px 2%;
+    margin: 10px $side_margin;
     padding: 0px;
     float: none;
   }

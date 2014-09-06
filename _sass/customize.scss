@@ -3,48 +3,22 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6,
-.page-content, .post-header {
+.page-content {
   margin: 0px;
   padding: 0px;
 }
 
 .site-header { padding: 0px 2%; }
 
-.post-header h1 { font-size: 32px; }
-
-.post pre,
-.post code {
-  overflow: auto;
-}
-
-.side-box {
-  margin-bottom: 20px;
-}
-
 .site-footer {
   border: none;
+  color: #828282;
 }
 
 .footer-col-1.column,
 .footer-col-2.column,
 .footer-col-3.column {
   margin-top: 10px;
-}
-
-.side-box {
-  border: solid 1px #e8e8e8;
-  border-radius: 4px;
-  padding: 4px 10px;
-}
-
-.side-box-title { margin:4px; line-height: 36px; }
-.side-box ul { list-style-type: none; }
-.side-box li { margin:8px; padding: 0px; }
-.side-box p { margin:8px; }
-
-
-.site-footer {
-  color: #828282;
 }
 
 dl dt {
