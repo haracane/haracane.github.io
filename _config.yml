@@ -121,7 +121,6 @@ link_boxes:
         description: OAuth認証用トークン取得コマンド
         url: http://hatacomp.hateblo.jp/entry/2013/11/07/222716
 
-default_genre: /genre/hadoop/
 tag_categories:
 -
   - "/genre/hadoop/"
