@@ -1,6 +1,2 @@
-<div class="top-navigation">
-<ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#">トップ</a></li>
-  <li><a href="{{ site.default_genre }}">ジャンル</a></li>
-</ul>
-</div>
+{% assign active_navigation_index = 0 %}
+{% include category-navigation.html %}

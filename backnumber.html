@@ -1,0 +1,22 @@
+---
+layout: default
+page_category: backnumber
+---
+<div class="layout-header">
+  <header class="index-header">
+    <h1>{{ site.h1["backnumber"] }} (全{{ site.posts.size}}記事)</h1>
+  </header>
+</div>
+
+<div class="layout-center">
+  <ul class="tags-posts  border-box padding-content">
+  {% for post in site.posts %}
+    {% include post-title.html %}
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
+</div>
+

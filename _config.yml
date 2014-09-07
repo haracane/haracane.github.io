@@ -1,7 +1,7 @@
 # Site settings
 title: "江の島エンジニアBlog"
 description: "湘南在住, 渋谷で働くエンジニアのブログです"
-index_h1: "Ruby(Rails), Elasticsearch, Hadoop, Jekyllなどの技術メモ"
+profile: "湘南から渋谷に通うRailsエンジニアです。以前はTwitter全量リアルタイム解析サービスの設計・開発をしていました。技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。"
 baseurl: ""
 url: "http://blog.enogineer.com"
 author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=56
@@ -11,6 +11,115 @@ google_analysis_id: UA-53664731-1
 paginate: 5
 
 keywords: "江の島"
+
+h1:
+  index: Ruby(Rails)やHadoopなどの技術メモを書いています
+  genre: "各タグに関連する記事の一覧です:"
+  backnumber: 過去に投稿した記事の一覧です
+
+category_navigations:
+  -
+    name: トップ
+    url: /
+  -
+    name: ジャンル
+    url: /genre/hadoop
+  -
+    name: バックナンバー
+    url: /backnumber
+
+link_boxes:
+  -
+    title: 関連コンテンツ
+    type: dl
+    links:
+      -
+        title: Qiita:haracane
+        description: 技術メモの更新のサマリをお知らせしています
+        url: http://qiita.com/haracane
+      -
+        title: 業務スーパーかんたんレシピ
+        description: おすすめ料理レシピを投稿しています
+        url: http://gsrecipe.com
+      -
+        title: 始発駅.com
+        description: 始発駅の時刻表をまとめています
+        url: http://shihatsueki.com
+      -
+        title: haracaneのはてなブログ
+        description: ブログの更新をまとめてお知らせしています
+        url: http://haracane.hateblo.jp
+
+  -
+    title: リンク
+    links:
+      -
+        title: Github:haracane
+        url: https://github.com/haracane
+      -
+        title: Rubygems:haracane
+        url: https://rubygems.org/profiles/58011
+      -
+        title: SlideShare:haracane
+        url: http://www.slideshare.net/haracane
+      -
+        title: LinkedIn:haracane
+        url: https://www.linkedin.com/profile/view?id=205504421
+      -
+        title: キャッシュバック賃貸
+        url: http://cbchintai.com
+      -
+        title: 賃貸情報株式会社
+        url: http://chintaijyoho.co.jp
+      -
+        title: BuzzFinder
+        url: https://www.nttcoms.com/service/buzzfinder/
+
+  -
+    title: 過去の発表
+    type: dl
+    links:
+      -
+        title: "\"見える\"Twitter全量リアルタイム解析 ～Hadoop/RabbitMQ処理の仕組みと可視化～"
+        description:  Hadoop Conference Japan 2013 Winter＠東京ビッグサイト by 日本Hadoopユーザー会 [<a target="_blank" href="http://www.ustream.tv/recorded/28694028">Video</a>]
+        url: https://speakerdeck.com/haracane/rabbitmqchu-li-falseshi-zu-mitoke-shi-hua
+      -
+        title: Hadoop＆RabbitMQを利用したTwitter全量リアルタイム解析
+        description: Hadoopエンタープライズソリューションセミナー2012＠東京カンファレンスセンター品川 by NTTデータ
+        url: https://speakerdeck.com/haracane/hadoopentapuraizusoriyusiyonsemina2012-hadoop-rabbitmqwoli-yong-sitatwitterquan-liang-riarutaimujie-xi
+      -
+        title: Large Scale Log Analysis for Marketing in NTT Communications
+        description: Hadoop World 2011＠Sheraton NY by Cloudera
+        url: http://www.slideshare.net/haracane/hadoop-world-2011-large-scale-log-data-analysis-for-marketing-in-ntt-communications-15528625
+      -
+        title: マーケティング向け大規模ログ解析事例紹介
+        description: Hadoop Conference Japan 2011 Fall＠ベルサール汐留 by 日本Hadoopユーザー会 [<a target="_blank" href="http://www.ustream.tv/recorded/17518176">Video</a>]
+        url: http://www.slideshare.net/haracane/hcj2011-fall0926
+
+  -
+    title: gem
+    type: dl
+    links:
+      -
+        title: bunnish
+        description: お手軽RabbitMQ操作コマンド
+        url: http://hatacomp.hateblo.jp/entry/release-bunnish-gem
+      -
+        title: priam
+        description: Cassandra操作コマンド
+        url: http://hatacomp.hateblo.jp/entry/release-priam-gem
+      -
+        title: apjson
+        description: coolなjson表示コマンド
+        url: http://hatacomp.hateblo.jp/entry/release-apjson-gem
+      -
+        title: okuyama
+        description: OkuyamaのRubyクライアント
+        url: https://github.com/haracane/okuyama
+      -
+        title: oauthtoken
+        description: OAuth認証用トークン取得コマンド
+        url: http://hatacomp.hateblo.jp/entry/2013/11/07/222716
 
 default_genre: /genre/hadoop/
 tag_categories:

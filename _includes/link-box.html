@@ -1,0 +1,21 @@
+{% for link_box in site.link_boxes %}
+<dl class="side-box border-box">
+  <dt class="side-box-title">{{ link_box["title"] }}</dt>
+  <dd class="side-box-content">
+    {% if link_box["type"] == "dl" %}
+      <dl>
+        {% for link in link_box["links"] %}
+        <dt><a href="{{ link["url"] }}">{{ link["title"] }}</a></dt>
+        <dd><p>{{ link["description"] }}</p></dd>
+        {% endfor %}
+      </dl>
+    {% else %}
+      <ul>
+        {% for link in link_box["links"] %}
+        <li><a href="{{ link["url"] }}">{{ link["title"] }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </dd>
+</dl>
+{% endfor %}

@@ -1,8 +1,8 @@
 {% for page_tag in page.tags %}{% for tag in site.tags %}{% if tag[0] == page_tag %}
 {% if tag[1].size > 1 %}
-<dl class="side-box">
+<dl class="side-box border-box">
   <dt class="side-box-title">「{{ tag[0] }}」の関連記事</dt>
-  <dd>
+  <dd class="side-box-content">
     <ul>
       {% for post in tag[1] limit:10 %}{% if post.url != page.url %}
         {% include post-title.html %}

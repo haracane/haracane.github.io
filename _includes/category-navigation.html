@@ -1,0 +1,18 @@
+<div class="top-navigation">
+  <ul class="nav nav-tabs" role="tablist">
+    {% if page.page_category == "backnumber" %}
+      {% assign active_nav = site.category_navigations[2] %}
+    {% elsif page.page_category == "genre" %}
+      {% assign active_nav = site.category_navigations[1] %}
+    {% else %}
+      {% assign active_nav = site.category_navigations[0] %}
+    {% endif %}
+    {% for nav in site.category_navigations %}
+    {% if nav == active_nav %}
+      <li class="active"><a href="#">{{ nav["name"] }}</a></li>
+    {% else %}
+      <li><a href="{{ nav["url"] }}">{{ nav["name"] }}</a></li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>

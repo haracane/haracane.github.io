@@ -26,14 +26,15 @@ $side_margin: 2%;
 .side-box {
   margin-bottom: 20px;
   padding: 4px 10px;
-  border: solid 1px #e8e8e8;
-  border-radius: 4px;
 }
 
 .side-box-title { margin:4px; line-height: 36px; }
-.side-box ul { list-style-type: none; }
-.side-box li { margin:8px; padding: 0px; }
-.side-box p { margin:8px; }
+.side-box-content ul { list-style-type: none; }
+.side-box-content li { margin:8px; padding: 0px; }
+.side-box-content p { margin:8px; }
+.side-box-content li,
+.side-box-content dt,
+.side-box-content dd { font-size: 16px; }
 
 @media screen and (max-width: 620px) {
   .layout-center, .layout-sidebar {

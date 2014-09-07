@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign active_navigation_index = 0 %}
+{% assign post = page %}
 
 <div class="layout-header">
   {% include post-header.html %}
@@ -11,6 +13,5 @@ layout: default
 </div>
 
 <div class="layout-sidebar">
-  {% include recent-posts.html %}
-  {% include related-posts.html %}
+  {% include sidebar-contents.html %}
 </div>

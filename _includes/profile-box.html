@@ -1,0 +1,9 @@
+<dl class="side-box border-box">
+  <dt class="side-box-title">プロフィール</dt>
+  <dd class="side-box-content">
+    <ul>
+      {% if site.twitter_username %}<li>{% include twitter-link.html %}</li>{% endif %}
+    </ul>
+    <p>{{ site.profile }}</p>
+  </dd>
+</dl>
