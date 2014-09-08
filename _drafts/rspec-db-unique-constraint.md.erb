@@ -1,0 +1,72 @@
+---
+layout: post
+title:  RSpecでデータベースのUNIQUE制約をテストするカスタムマッチャを書いた
+date: <%=post_time%>
+tags: RSpec,Ruby,Rails
+keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
+description: Railsでモデルを作る時にUNIQUE制約テストを簡単に書きたかったのでカスタムマッチャを作りました。
+---
+
+{{ page.description }}
+
+[前回のNOT NULL制約カスタムマッチャの記事](/2014/09/08/rspec-db-not-null-constraint/)に引き続き、今度はUNIQUE制約です。
+
+UNIQUE制約をテストする場合はモデルオブジェクトを2つ作成する必要があるので、カスタムマッチャもNOT NULL制約の場合より少しコードが増えます。
+
+UNIQUE制約テストのカスタムマッチャのコードこんな感じです。
+
+{% highlight ruby %}
+RSpec::Matchers.define :have_unique_constraint_on do |*fields|
+  match do |model|
+    name = model.class.table_name.singularize
+    record = FactoryGirl.create(name)
+    other_record = FactoryGirl.build(name)
+
+    fields.each do |field|
+      other_record.send("#{field}=", record.send(field))
+    end
+
+    begin
+      other_record.save!(validate: false)
+      false
+    rescue ActiveRecord::RecordNotUnique
+      true
+    end
+  end
+
+  description { "have UNIQUE constraint on #{fields.join(", ")}" }
+  failure_message { "expected to have UNIQUE constraint on #{fields.join(", ")}, but not" }
+end
+{% endhighlight %}
+
+たとえばmigrationファイルで
+
+{% highlight ruby %}
+create_table :persons do |t|
+  t.string :name
+end
+
+add_index :persons, :name, unique: true
+{% endhighlight %}
+
+とテーブル定義していたとします。
+
+この場合、spec/models/person_spec.rbで
+
+{% highlight ruby %}
+describe Person do
+  it { should have_not_null_constraint_on(:title) }
+end
+{% endhighlight %}
+
+と書いてあげればテストできます。
+
+テストを実行すると結果は
+
+    $ bundle exec rspec spec/models/person_spec.rb
+    Person
+      should have UNIQUE constraint on name
+
+となります。
+
+DBのNOT NULL制約はよく使うので重宝しそうです。
