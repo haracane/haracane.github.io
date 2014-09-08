@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  RSpecのカスタムマッチャでデータベースのNOT NULL制約テストを簡単にする
-date: 2014-09-08 21:57:13J
+date: 2014-09-08 22:26:26J
 tags: RSpec,Ruby,Rails
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時にNOT NULL制約テストを簡単に書きたかったのでカスタムマッチャを作りました。
@@ -42,7 +42,7 @@ end
 
     $ bundle exec rspec spec/models/person_spec.rb
     Person
-      should have UNIQUE constraint on name
+      should have NOT NULL constraint on name
 
 となります。
 
