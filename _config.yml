@@ -137,6 +137,7 @@ tag_categories:
   -
     - Ruby
     - Rails
+    - RSpec
 -
   - "/genre/jekyll/"
   - "Jekyll"
