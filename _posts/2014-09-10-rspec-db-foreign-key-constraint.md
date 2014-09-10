@@ -2,7 +2,7 @@
 layout: post
 title:  RSpecカスタムマッチャでデータベースの外部キー制約を簡単にテストする
 date: 2014-09-10 07:59:50J
-tags: RSpec,Ruby,Rails
+tags: RSpec Ruby Rails
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時に外部キー制約テストも簡単に書きたかったのでカスタムマッチャを作りました。
 ---
