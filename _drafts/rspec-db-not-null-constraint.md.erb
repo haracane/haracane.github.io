@@ -2,7 +2,7 @@
 layout: post
 title:  RSpecカスタムマッチャでデータベースのNOT NULL制約を簡単にテストする
 date: 2014-09-08 07:53:09J
-tags: RSpec,Ruby,Rails
+tags: RSpec Ruby Rails
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時にNOT NULL制約テストを簡単に書きたかったのでカスタムマッチャを作りました。
 ---
