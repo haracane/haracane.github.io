@@ -45,3 +45,7 @@ end
 {% endhighlight %}
 
 DBのNOT NULL制約はよく使うので重宝しそうです。
+
+#### 関連記事
+* [RSpecカスタムマッチャでデータベースのUNIQUE制約を簡単にテストする](/2014/09/09/rspec-db-unique-constraint/)
+* [RSpecカスタムマッチャでデータベースの外部キー制約を簡単にテストする](/2014/09/10/rspec-db-foreign-key-constraint/)

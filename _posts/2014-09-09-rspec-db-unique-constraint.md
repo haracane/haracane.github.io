@@ -52,3 +52,7 @@ end
 {% endhighlight %}
 
 ということで、[NOT NULL制約カスタムマッチャ](/2014/09/08/rspec-db-not-null-constraint/)と一緒に活躍してくれるであろうUNIQUE制約カスタムマッチャでした。
+
+#### 関連記事
+* [RSpecカスタムマッチャでデータベースのNOT NULL制約を簡単にテストする](/2014/09/08/rspec-db-not-null-constraint/)
+* [RSpecカスタムマッチャでデータベースの外部キー制約を簡単にテストする](/2014/09/10/rspec-db-foreign-key-constraint/)
