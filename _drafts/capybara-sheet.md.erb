@@ -4,7 +4,7 @@ title:  Capybaraでよく使うメソッドの利用例
 date: 2014-09-11 07:09:07J
 tags: Capybara RSpec Ruby Rails Capybara
 keywords: Capybara,RSpec,Ruby,Rails
-description: Capybaraを使う時に検索して調べることが多いのでマッチャ等をまとめておきました。
+description: Capybaraを使う時に検索して調べることが多いのでマッチャ等を利用例にまとめておきました。
 ---
 
 {{ page.description }}
@@ -27,20 +27,18 @@ feature "post an article", type: :feature do
 
     feature "edit a post" do
       before { visit "/" }
-      scenario { expect(page).to have_title "title" }
-      scenario { expect(page).to have_content "content" }
-      scenario { expect(page).to have_link("top", href: "/") }
-      scenario { expect(page).to have_css(".header", text: "header") }
+      subject { page }
 
-      scenario { expect(page).to have_button("search") }
-      scenario { expect(page).to have_field("title") }
-      scenario { expect(page).to have_checked_field("japanese") }
-      scenario { expect(page).to have_unchecked_field("english") }
-      scenario { expect(page).to have_select("select") }
+      it { should have_title "title" }
+      it { should have_content "content" }
+      it { should have_link("top", href: "/") }
+      it { should have_css("h1", text: "title") }
 
-      scenario { expect(page.find("#title").value).to match /title/ }
-      scenario { expect(page.all("#select option")[0]).to be_selected }
-      scenario { expect(page.find("#checkbox")).to be_checked }
+      it { should have_button("search") }
+      it { should have_field("title", with: "title") }
+      it { should have_checked_field("language", with: "japanese") }
+      it { should have_unchecked_field("language", with: "english") }
+      it { should have_select("select", selected: "option") }
 
       feature "fill in form" do
         before do
@@ -50,28 +48,48 @@ feature "post an article", type: :feature do
         end
 
         feature "submit" do
-          before { click_on "submit" }
-          scenario { ... }
+          scenario do
+            click_on "submit"
+            ...
+          end
         end
       end
     end
 
     feature "sign out" do
-      before { logout }
-      scenario { ... }
+      scenario do
+        logout
+        ...
+      end
     end
   end
 end
 {% endhighlight %}
 
 
-その他のscenario例
+その他の利用例はこんな感じ。
+
 {% highlight ruby %}
-scenario { expect(page.current_url).to eq "http://example.com/" }
-scenario { expect(page.current_host).to eq "example.com" }
-scenario { expect(page.current_path).to eq "/" }
-scenario { expect(page.find_button("検索").native["class"]).to match /btn/ }
-scenario { expect(page.find_field("title").native["class"]).to eq /title/ }
-scenario { expect(page.find_by_id("content").native["class"]).to match /content/ }
-scenario { expect(page.find_link("top").native["class"]).to match /link/ }
+its(:current_url) { should eq "http://example.com/" }
+its(:current_host) { should eq "example.com" }
+its(:current_path) { should eq "/" }
+it { expect(page.find_button("検索").native["class"]).to match /btn/ }
+it { expect(page.find_field("title").native["class"]).to eq /title/ }
+it { expect(page.find_by_id("content").native["class"]).to match /content/ }
+it { expect(page.find_link("top").native["class"]).to match /link/ }
 {% endhighlight %}
+
+ドキュメントを読むならこのあたりでしょうか。
+
+[Capybara::Node::Actions](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Actions)
+: click_buttonやfill_in等の操作メソッド
+
+[Capybara::Node::DocumentMatchers](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/DocumentMatchers)
+: has_title?等のタイトル用のマッチャ
+
+[Capybara::Node::Matchers](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Matchers)
+: has_link?等の本文用のマッチャ
+
+[Capybara::Node::Finders](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Finders)
+: all、find等のファインダ
+
