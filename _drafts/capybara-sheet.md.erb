@@ -29,7 +29,7 @@ feature "post an article", type: :feature do
     let(:user) { create :user }
     before { login_as user }
 
-    feature "edit a post" do
+    feature "edit an article" do
       before { visit "/" }
       subject { page }
 
