@@ -1,0 +1,74 @@
+[
+  {
+  	"value": "jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る",
+  	"url": "/2014/09/10/jquery-autocomplete/"
+  }, 
+  {
+  	"value": "RSpecカスタムマッチャでデータベースの外部キー制約を簡単にテストする",
+  	"url": "/2014/09/10/rspec-db-foreign-key-constraint/"
+  },
+  {
+  	"value": "RSpecカスタムマッチャでデータベースのUNIQUE制約を簡単にテストする",
+  	"url": "/2014/09/09/rspec-db-unique-constraint/"
+  },
+  {
+  	"value": "RSpecカスタムマッチャでデータベースのNOT NULL制約を簡単にテストする",
+  	"url": "/2014/09/08/rspec-db-not-null-constraint/"
+  },
+  {
+  	"value": "git commitをフックしてコミットメッセージに自動的にチケット番号を追加する",
+  	"url": "/2014/09/06/git-hook-commit-ticket/"
+  },
+  {
+  	"value": "Rubyでデータオブジェクト用クラスを手抜き作成",
+  	"url": "/2014/08/30/initialize-with-params/"
+  },
+  {
+  	"value": "elasticsearch-rails0.1.4の検索機能をRSpecでテストする",
+  	"url": "/2014/08/22/elasticsearch-test/"
+  },
+  {
+  	"value": "elasticsearch-rails0.1.4を使ってRails4.1.5でN-gram検索する",
+  	"url": "/2014/08/21/elasticsearch-model/"
+  },
+  {
+  	"value": "JekyllでGitリポジトリのmasterブランチが更新されたら自動ビルドする",
+  	"url": "/2014/08/17/auto-jekyll-build/"
+  },
+  {
+  	"value": "Jekyll2.2.0でレスポンシブにしてスマホ対応してみた",
+  	"url": "/2014/08/12/responsive/"
+  },
+  {
+  	"value": "Ruby2.1.2+Jekyll2.2.0+Nginx+独自ドメインでブログを作ってみた",
+  	"url": "/2014/08/09/setup-jekyll/"
+  },
+  {
+  	"value": "Vagrantで固定IPのVMを作ってみたら超簡単だった",
+  	"url": "/2013/07/25/vagrant-network-bridge/"
+  },
+  {
+  	"value": "HBaseを止めるな！ ～OKWaveの挑戦～",
+  	"url": "/2013/02/16/dont-stop-hbase/"
+  },
+  {
+  	"value": "NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー",
+  	"url": "/2013/02/16/agilers-in-ntt-communications/"
+  },
+  {
+  	"value": "つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (後編)",
+  	"url": "/2012/12/31/fight-against-socialmedia-3/"
+  },
+  {
+  	"value": "つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)",
+  	"url": "/2012/12/23/fight-against-socialmedia-2/"
+  },
+  {
+  	"value": "つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (前編)",
+  	"url": "/2012/12/22/fight-against-socialmedia-1/"
+  },
+  {
+  	"value":"江の島エンジニアブログ",
+  	"url":"http://blog.enogineer.com"
+  }
+]

@@ -1,0 +1,58 @@
+---
+layout: post
+title:  jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る
+date: 2014-09-10 19:30:42J
+tags: JavaScript jQuery CoffeeScript
+keywords: JavaScript,jQuery,CoffeeScript
+description: jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。
+---
+
+{{ page.description }}
+
+例えば/data/suggest/words.jsonがサジェスト候補を返すAPIだったとすると、CoffeeScriptで
+
+{% highlight coffee %}
+$ ->
+  $('body').each ->
+    $.widget( "custom.collegeAutocomplete", $.ui.autocomplete, {
+      _renderItem: (ul, item) ->
+        li = $("<li>").addClass("list").text(item.value)
+        if item.ruby
+          li.append($("<span>", class: "f11").text("（#{item.ruby}）"))
+        li.appendTo(ul)
+      _renderMenu: (ul, items) ->
+        $.each( items, (index, item) =>
+          @_renderItemData( ul, item )
+        )
+        $(ul).addClass("suggest")
+    })
+
+    $('#suggest').collegeAutocomplete
+      source: (request, response) ->
+        $.ajax
+          url: '/data/suggest/words.json',
+          data: { term: request.term },
+          success: (data)->
+            response( data.map (item) ->
+              return { value: item.value, url: item.url }
+            )
+      appendTo: '.search-box',
+      select: (event, ui) ->
+        $(".search-input").val(ui.item.value)
+        window.open(ui.item.url, "_self")
+{% endhighlight %}
+
+{% raw %}
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+<script src="/js/suggest.js"></script>
+<div class=".search-box">
+  <input id="suggest">
+</div>
+{% endraw %}
+
+という感じで書けます。
+
+簡単に説明すると
+jQueryのwidget関数を使ってsampleAutocomplete関数を定義して、sampleAutocomplete関数をテキストフィールド要素から実行する
+というようになっています。
