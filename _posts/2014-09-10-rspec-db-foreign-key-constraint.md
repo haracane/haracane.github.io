@@ -15,6 +15,7 @@ description: Railsでモデルを作る時に外部キー制約テストも簡�
 
 {% highlight ruby %}
 describe Person do
+  subject { FactoryGirl.create(:person) }
   it { should have_foreign_key_constraint_on(:school_id) }
 end
 {% endhighlight %}

@@ -13,6 +13,7 @@ description: Railsでモデルを作る時にNOT NULL制約テストを簡単に
 
 {% highlight ruby %}
 describe Person do
+  subject { FactoryGirl.create(:person) }
   it { should have_not_null_constraint_on(:title) }
 end
 {% endhighlight %}
