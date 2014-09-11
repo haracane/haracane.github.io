@@ -45,25 +45,13 @@ feature "post an article", type: :feature do
       it { should have_select("select", selected: "option") }
 
       feature "fill in form" do
-        before do
+        scenario do
           fill_in "title", with: "title"
           select  "option", from: "select"
           choose "checkbox-label"
+          click_on "submit"
+          ...
         end
-
-        feature "submit" do
-          scenario do
-            click_on "submit"
-            ...
-          end
-        end
-      end
-    end
-
-    feature "sign out" do
-      scenario do
-        logout
-        ...
       end
     end
   end
