@@ -13,7 +13,7 @@ description: Railsでモデルを作る時にUNIQUE制約テストも簡単に�
 
 {% highlight ruby %}
 describe Person do
-  it { should have_not_null_constraint_on(:title) }
+  it { should have_not_null_constraint_on(:name) }
 end
 {% endhighlight %}
 
