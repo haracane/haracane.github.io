@@ -7,7 +7,9 @@ keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時にNOT NULL制約テストを簡単に書きたかったのでカスタムマッチャを作りました。
 ---
 
-{{ page.description }}
+Railsを使っているとDBのフィールドにNOT NULL制約をつけることがよくありますが、テストしようとするとデータを保存してエラーが起きることを確認したりして相当面倒です。
+
+なのでRSpecカスタムマッチャを作りました。
 
 たとえばPersonモデルのnameフィールドのNOT NULL制約をテストする場合は
 
