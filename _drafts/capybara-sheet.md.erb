@@ -9,6 +9,10 @@ description: Capybaraを使う時に検索して調べることが多いので�
 
 {{ page.description }}
 
+Capybaraの使い方を知りたい場合は[Ruby on Railsチュートリアルのテスト例](http://railstutorial.jp/chapters/static-pages?version=4.0#sec-first_tests)が参考になると思います。
+
+以下はCapybaraで色々なマッチャを使ってみた例です。これくらいのマッチャを使えばだいたいのことはできると思います。
+
 {% highlight ruby %}
 require "rails_helper"
 
@@ -92,4 +96,3 @@ it { expect(page.find_link("top").native["class"]).to match /link/ }
 
 [Capybara::Node::Finders](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Finders)
 : all、find等のファインダ
-
