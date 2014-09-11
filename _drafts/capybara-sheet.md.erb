@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Capybaraでよく使うメソッドの利用例
+title:  Capybara使う時に検索するのがめんどくさい
 date: 2014-09-11 07:09:07J
 tags: Capybara RSpec Ruby Rails Capybara
 keywords: Capybara,RSpec,Ruby,Rails
-description: Capybaraを使う時に検索して調べることが多いのでマッチャ等を利用例にまとめておきました。
+description: Capybaraを使う時に検索して調べることが多いのでマッチャ等を利用例にまとめました。
 ---
 
 {{ page.description }}
