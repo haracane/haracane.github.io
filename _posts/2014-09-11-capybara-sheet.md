@@ -96,3 +96,5 @@ it { expect(page.find_link("top").native["class"]).to match /link/ }
 
 [Capybara::Node::Finders](http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Finders)
 : all、find等のファインダ
+
+以上、Capybaraを使う時になるべく検索しないで済むようにする記事でした。
