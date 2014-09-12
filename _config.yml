@@ -1,11 +1,12 @@
 # Site settings
 title: "江の島エンジニアBlog"
 description: "湘南在住, 渋谷で働くエンジニアのブログです"
-profile: "湘南から渋谷に通うのRailsエンジニアです。お祝い金がもらえる賃貸情報サイト <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発をしています。<br/>以前はTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。"
+profile: "湘南から渋谷に通うエンジニアです。お祝い金がもらえる賃貸情報サイト <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発をしています。<br/>以前はTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。"
 baseurl: ""
 url: "http://blog.enogineer.com"
-author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=56
+author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=72
 twitter_username: haracane
+twitter_username_ruby: はらけん
 github_username:  haracane
 google_analysis_id: UA-53664731-1
 paginate: 5

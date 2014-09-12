@@ -1,8 +1,12 @@
 <dl class="side-box border-box">
   <dt class="side-box-title">プロフィール</dt>
-  <dd class="side-box-content">
-    <ul>
+  <dd style="clear:left" class="side-box-content">
+    {% if site.author_image %}
+      <a href="http://twitter.com/{{ site.twitter_username }}"><img class="profile-image" class="title-image" alt="プロフィール画像" src="{{ site.author_image }}"></a>
+    {% endif %}
+    <ul class="profile-list">
       {% if site.twitter_username %}<li>{% include twitter-link.html %}</li>{% endif %}
+      {% if site.github_username %}<li>{% include github-link.html %}</li>{% endif %}
     </ul>
     <p>{{ site.profile }}</p>
   </dd>

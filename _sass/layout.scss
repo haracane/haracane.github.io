@@ -29,12 +29,26 @@ $side_margin: 2%;
 }
 
 .side-box-title { margin:4px; line-height: 36px; }
-.side-box-content ul { list-style-type: none; }
-.side-box-content li { margin:8px; padding: 0px; }
-.side-box-content p { margin:8px; }
-.side-box-content li,
-.side-box-content dt,
-.side-box-content dd { font-size: 16px; }
+.side-box ul { list-style-type: none; }
+.side-box li { margin:8px; padding: 0px; }
+.side-box p { clear:left; margin:8px; }
+.side-box li,
+.side-box dt,
+.side-box dd { font-size: 16px; }
+
+.profile-image {
+  float: left;
+  margin-bottom: 8px;
+}
+.profile-list {
+  float: left;
+}
+.profile-list li {
+  margin: 0px 0px 8px;
+  padding: 0px;
+  line-height: 16px;
+  font-size: 16px;
+}
 
 @media screen and (max-width: 620px) {
   .layout-center, .layout-sidebar {

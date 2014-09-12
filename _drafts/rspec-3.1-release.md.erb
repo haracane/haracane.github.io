@@ -39,9 +39,9 @@ end
 
 Rakefileに書くとこうなります。
 
+{% highlight ruby %}
 require 'rspec/core/rake_task'
 
-{% highlight ruby %}
 desc "Run all but the acceptance specs"
 RSpec::Core::RakeTask.new(:all_but_acceptance) do |t|
   t.exclude_pattern = "spec/acceptance/**/*_spec.rb"
