@@ -2,7 +2,7 @@
 ---
 $ ->
   $('body').each ->
-    $.widget( "custom.collegeAutocomplete", $.ui.autocomplete, {
+    $.widget( "custom.sampleAutocomplete", $.ui.autocomplete, {
       _renderItem: (ul, item) ->
         li = $("<li>").addClass("list").text(item.value)
         if item.ruby
@@ -15,7 +15,7 @@ $ ->
         $(ul).addClass("suggest")
     })
 
-    $('#suggest').collegeAutocomplete
+    $('#suggest').sampleAutocomplete
       source: (request, response) ->
         $.ajax
           url: '/data/suggest/words.json',
