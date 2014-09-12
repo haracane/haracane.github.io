@@ -1,4 +1,18 @@
 <article class="post-content border-box padding-content">
   {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
   {% include sns-buttons.html %}
+  {% for tag in site.tags %}{% if tag[0] == page.tags[0] %}
+{% if tag[1].size > 1 %}
+  <dt>他の{{ tag[0] }}の記事</dt>
+  <dd>
+    <ul>
+      {% for post in tag[1] %}{% if post.url != page.url %}
+        {% include post-title.html %}
+      {% endif %}{% endfor %}
+    </ul>
+  </dd>
+</dl>
+{% endif %}
+{% endif %}{% endfor %}
+
 </article>

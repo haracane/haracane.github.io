@@ -13,7 +13,7 @@ paginate: 5
 keywords: "江の島"
 
 h1:
-  index: Ruby(Rails)やHadoopなどの技術メモを書いています
+  index: "Ruby(Rails, RSpec)やHadoop, Elasticsearchでのデータ処理などについてよく書いています"
   genre: "各タグに関連する記事の一覧です:"
   backnumber: 過去に投稿した記事の一覧です
 
