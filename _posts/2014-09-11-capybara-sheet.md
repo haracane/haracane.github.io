@@ -37,6 +37,7 @@ feature "post an article", type: :feature do
       it { should have_content "content" }
       it { should have_link("top", href: "/") }
       it { should have_css("h1", text: "title") }
+      it { should have_css(".user[data-url='http://twitter.com/jack/']") }
 
       it { should have_button("search") }
       it { should have_field("title", with: "title") }
@@ -66,8 +67,8 @@ its(:current_url) { should eq "http://example.com/" }
 its(:current_host) { should eq "example.com" }
 its(:current_path) { should eq "/" }
 it { expect(page.find_button("検索").native["class"]).to match /btn/ }
-it { expect(page.find_field("title").native["class"]).to eq /title/ }
-it { expect(page.find_by_id("content").native["class"]).to match /content/ }
+it { expect(page.find_field("title").native["class"]).to match /title/ }
+it { expect(page.find_by_id("content").native.children).to have(5).items }
 it { expect(page.find_link("top").native["class"]).to match /link/ }
 {% endhighlight %}
 
