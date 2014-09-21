@@ -27,14 +27,11 @@ $side_margin: 2%;
   margin-bottom: 20px;
   padding: 4px 10px;
 }
+.side-box ul { list-style-type: none; }
+.side-box > dt { margin: 8px 0px 8px; font-size: 20px; border-bottom: dotted 1px #ddd;}
 
 .side-box-title { margin:4px; line-height: 36px; }
-.side-box ul { list-style-type: none; }
-.side-box li { margin:8px; padding: 0px; }
 .side-box p { clear:left; margin:8px; }
-.side-box li,
-.side-box dt,
-.side-box dd { font-size: 16px; }
 
 .profile-image {
   float: left;

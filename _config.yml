@@ -122,47 +122,6 @@ link_boxes:
         description: OAuth認証用トークン取得コマンド
         url: http://hatacomp.hateblo.jp/entry/2013/11/07/222716
 
-tag_categories:
--
-  - "/genre/hadoop/"
-  - "Hadoop/Elasticsearch"
-  -
-    - Elasticsearch
-    - Hadoop
-    - HBase
-    - RabbitMQ
-
--
-  - "/genre/ruby/"
-  - "Ruby"
-  -
-    - Ruby
-    - Rails
-    - RSpec
--
-  - "/genre/jekyll/"
-  - "Jekyll"
-  -
-    - Jekyll
--
-  - "/genre/misc/"
-  - "その他"
-  -
-    - Git
-    - Vagrant
-    - HTML5
-    - CSS
-    - スマホ
-    - Nginx
-    - Redmine
-    - Scrum
-    - アジャイル
-    - Jenkins
-    - YARD
-    - Sphinx
-    - Chef
-    - Subversion
-
 # Build settings
 markdown: kramdown
 permalink: pretty

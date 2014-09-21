@@ -1,0 +1,39 @@
+-
+  url: "/genre/hadoop/"
+  name: "Hadoop/Elasticsearch"
+  tags:
+    - Elasticsearch
+    - Hadoop
+    - HBase
+    - RabbitMQ
+
+-
+  url: "/genre/ruby/"
+  name: "Ruby"
+  tags:
+    - Ruby
+    - Rails
+    - RSpec
+-
+  url: "/genre/jekyll/"
+  name: "Jekyll"
+  tags:
+    - Jekyll
+-
+  url: "/genre/misc/"
+  name: "その他"
+  tags:
+    - Git
+    - Vagrant
+    - HTML5
+    - CSS
+    - スマホ
+    - Nginx
+    - Redmine
+    - Scrum
+    - アジャイル
+    - Jenkins
+    - YARD
+    - Sphinx
+    - Chef
+    - Subversion

@@ -11,7 +11,6 @@
 
 .post h3 {
   font-size: 22px;
-  //border-left: solid 6px #aaf;
   border-bottom: dotted 1px #aaf;
   padding: 0px 0px 8px;
   margin: 32px 0px 16px;
@@ -22,11 +21,17 @@
   color: #818181;
 }
 
-.post dl dt,
-.post dl dd
+.post > dl > dt,
+.post > dl > dd
 {
   font-size: 16px;
 }
-.post dl dd {
+.post > dl > dd {
   margin-left: 16px;
+}
+
+.post ul,
+.post li {
+  margin: 0px;
+  padding: 0px;
 }

@@ -1,6 +1,6 @@
-<dt class="tags-title" id="{{ tag[0] }}">「{{ tag[0] }}」の記事</dt>
-<dd class="tags-content">
-  <ul class="tags-posts">
+<dt id="{{ tag[0] }}">「{{ tag[0] }}」の記事</dt>
+<dd>
+  <ul>
     {% for post in tag[1] %}
     {% include post-title.html %}
     {% endfor %}

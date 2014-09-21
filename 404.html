@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="layout-header">
+  <header class="index-header">
+    <h1>お探しのページは見つかりませんでした。</h1>
+  </header>
+</div>
+
+<div class="layout-center">
+  <p>
+    お手数ですが<a href="/backnumber.html">バックナンバー</a>や<a href="{{ site.data.tag_categories[0]["url"] }}">ジャンル</a>({% for tag_category in site.data.tag_categories %}{% if tag_category != site.data.tag_categories["url"] %}、{% endif %}<a href="{{ tag_category["url"]}}">{{ tag_category["name"] }}</a>{% endfor %})からご確認ください。
+  </p>
+</div>
+
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
+</div>
