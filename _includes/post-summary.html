@@ -2,7 +2,7 @@
   <header class="post-header">
   <div class="post-tags">
     {% for tag in page.tags %}{% for tag_category in site.data.tag_categories %}{% for site_tag in tag_category["tags"] %}{% if site_tag == tag %}
-      <a href="{{ tag_category[0] }}#{{ tag }}">{{ tag }}</a>
+      <a href="{{ site.data.tag_urls[tag] }}">{{ tag }}</a>
     {% endif %}{% endfor %}{% endfor %}{% endfor %}
   </div>
 
