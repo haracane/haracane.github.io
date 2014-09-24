@@ -44,12 +44,15 @@ feature "post an article", type: :feature do
       it { should have_checked_field("language", with: "japanese") }
       it { should have_unchecked_field("language", with: "english") }
       it { should have_select("select", selected: "option") }
+      it { should have_select("no_select", selected: []) }
 
       feature "fill in form" do
         scenario do
-          fill_in "title", with: "title"
-          select  "option", from: "select"
-          choose "checkbox-label"
+          fill_in "title_id", with: "title"
+          select  "option_name", from: "select_id"
+          choose "radio_button_label"
+          check "checkbox_id"
+          uncheck "checkbox_id"
           click_on "submit"
           ...
         end
@@ -66,10 +69,11 @@ end
 its(:current_url) { should eq "http://example.com/" }
 its(:current_host) { should eq "example.com" }
 its(:current_path) { should eq "/" }
-it { expect(page.find_button("検索").native["class"]).to match /btn/ }
-it { expect(page.find_field("title").native["class"]).to match /title/ }
-it { expect(page.find_by_id("content").native.children).to have(5).items }
-it { expect(page.find_link("top").native["class"]).to match /link/ }
+it { expect(find_button("検索").native["class"]).to match /btn/ }
+it { expect(find_field("title").native["class"]).to match /title/ }
+it { expect(find_field("title").text).to be_empry) }
+it { expect(find_by_id("content").native.children).to have(5).items }
+it { expect(find_link("top").native["class"]).to match /link/ }
 {% endhighlight %}
 
 ドキュメントを読むならこのあたりでしょうか。

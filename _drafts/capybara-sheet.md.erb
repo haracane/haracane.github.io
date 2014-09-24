@@ -48,9 +48,11 @@ feature "post an article", type: :feature do
 
       feature "fill in form" do
         scenario do
-          fill_in "title", with: "title"
-          select  "option", from: "select"
-          choose "checkbox-label"
+          fill_in "title_id", with: "title"
+          select  "option_name", from: "select_id"
+          choose "radio_button_label"
+          check "checkbox_id"
+          uncheck "checkbox_id"
           click_on "submit"
           ...
         end
