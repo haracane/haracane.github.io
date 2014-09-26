@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Capybara使う時に検索するのがめんどくさい
+title:  Capybaraでよく使うマッチャ＆メソッド
 date: 2014-09-11 07:09:07J
 tags: Capybara RSpec Ruby Rails Capybara
 keywords: Capybara,RSpec,Ruby,Rails
