@@ -1,12 +1,12 @@
 {% for link_box in site.link_boxes %}
-<dl class="side-box border-box">
+<dl class="side-box border-box nav-box">
   <dt class="side-box-title">{{ link_box["title"] }}</dt>
   <dd class="side-box-content">
     {% if link_box["type"] == "dl" %}
       <dl>
         {% for link in link_box["links"] %}
         <dt><a href="{{ link["url"] }}">{{ link["title"] }}</a></dt>
-        <dd><p>{{ link["description"] }}</p></dd>
+        <dd class="fs14"><p>{{ link["description"] }}</p></dd>
         {% endfor %}
       </dl>
     {% else %}

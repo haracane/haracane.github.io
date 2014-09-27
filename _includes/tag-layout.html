@@ -1,0 +1,23 @@
+<div class="layout-header">
+  <header class="index-header">
+    <h1>
+    </h1>
+  </header>
+</div>
+
+<div class="layout-center">
+  <dl class="border-box padding-content nav-box">
+    <dt>「{{ page.tag }}」の記事（{{ page.posts.size }}件）</dt>
+    <dd>
+      <ul>
+        {% for post in page.posts %}
+        {% include post-title.html %}
+        {% endfor %}
+      </ul>
+    </dd>
+  </dl>
+</div>
+
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
+</div>

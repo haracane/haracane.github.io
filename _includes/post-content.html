@@ -1,17 +1,16 @@
-<article class="post-content border-box padding-content">
-  {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
-  {% include sns-buttons.html %}
-  <dl class="postlinks">
-    {% for tag_name in page.tags %}{% for tag in site.tags %}{% if tag[0] == tag_name %}{% if tag[1].size > 1 %}
-      <dt>「<a href="{{ site.data.tag_urls[tag_name] }}">{{ tag_name }}</a>」の関連記事</dt>
-      <dd>
-        <ul>
-          {% for post in tag[1] limit:5 %}{% if post.url != page.url %}
-            {% include post-title.html %}
-          {% endif %}{% endfor %}
-        </ul>
-      </dd>
-    {% endif %}{% endif %}{% endfor %}{% endfor %}
+<div class="border-box padding-content">
+  <article class="post-content">
+    {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+  </article>
+ {% include sns-buttons.html %}
+  <dl class="nav-box">
+    <dt>この記事を読んでる人はこんな記事も読んでいます</dt>
+    <dd>
+      <ul>
+        {% for post in site.related_posts limit:10 %}
+          {% include post-title.html %}
+        {% endfor %}
+      </ul>
+    </dd>
   </dl>
-
-</article>
+</div>

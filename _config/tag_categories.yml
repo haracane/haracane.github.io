@@ -1,0 +1,40 @@
+-
+  url: /genre/hadoop/
+  name: "Hadoop/Elasticsearch"
+  prefix: dist
+  tags:
+    Elasticsearch: elasticsearch
+    Hadoop: hadoop
+    HBase: hbase
+    RabbitMQ: rabbitmq
+
+-
+  url: /genre/ruby/
+  name: Ruby
+  prefix: ruby
+  tags:
+    Ruby: ruby
+    Rails: rails
+    RSpec: rspec
+-
+  url: "/genre/jekyll/"
+  name: "Jekyll"
+  prefix: jekyll
+  tags:
+    Jekyll: jekyll
+-
+  url: "/genre/misc/"
+  name: "その他"
+  prefix: misc
+  tags:
+    Git: git
+    Vagrant: vagrant
+    HTML5: html5
+    CSS: css
+    スマホ: smartphone
+    Nginx: nginx
+    Redmine: redmine
+    Scrum: scrum
+    アジャイル: agile
+    Jenkins: jenkins
+    Chef: chef

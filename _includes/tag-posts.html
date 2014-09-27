@@ -1,8 +1,11 @@
-<dt id="{{ tag[0] }}">「{{ tag[0] }}」の記事</dt>
+<dt id="{{ tag_name }}">「{{ tag_name }}」に関する記事（<a href="{{ tag_url }}">{{ tag[1].size }}件</a>）</li>
 <dd>
   <ul>
-    {% for post in tag[1] %}
-    {% include post-title.html %}
+    {% for post in tag[1] limit:2 %}
+      {% include post-title.html %}
     {% endfor %}
+    {% if tag[1].size > 1 %}
+      <li><a href="{{ tag_url }}">「{{ tag_name }}」に関する全{{ tag[1].size }}記事の一覧へ</a></li>
+    {% endif %}
   </ul>
 </dd>

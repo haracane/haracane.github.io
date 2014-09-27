@@ -1,40 +1,46 @@
-.post-content img { max-width: 600px; }
-.index-image { max-width: 400px; }
 .thumbnail { max-width: 120px; }
 
+.post-content img:not([class]) { max-width: 600px; }
+.w600 { max-width: 600px; }
+.w400 { max-width: 400px; }
 .w320 { max-width: 320px; }
 .w240 { max-width: 240px; }
 .w160 { max-width: 160px; }
 .w120 { max-width: 120px; }
 
 @media screen and (max-width: 1080px) {
-  .post-content img { max-width: 480px; }
-  .post-content .w320 { max-width: 320px; }
-  .post-content .w240 { max-width: 240px; }
-  .post-content .w160 { max-width: 160px; }
-  .post-content .w120 { max-width: 120px; }
+  .post-content img:not([class]) { max-width: 480px; }
+  .w600 { max-width: 480px; }
+  .w400 { max-width: 400px; }
+  .w320 { max-width: 320px; }
 }
 
 @media screen and (max-width: 850px) {
-  .post-content img { max-width: 400px; }
-  .post-content .w320 { max-width: 320px; }
-  .post-content .w240 { max-width: 240px; }
-  .post-content .w160 { max-width: 160px; }
-  .post-content .w120 { max-width: 120px; }
+  .post-content img:not([class]) { max-width: 400px; }
+  .w600 { max-width: 400px; }
+  .w400 { max-width: 400px; }
+  .w320 { max-width: 320px; }
 }
 
 @media screen and (max-width: 700px) {
-  .post-content img { max-width: 320px; }
-  .post-content .w320 { max-width: 320px; }
-  .post-content .w240 { max-width: 240px; }
-  .post-content .w160 { max-width: 160px; }
-  .post-content .w120 { max-width: 120px; }
+  .post-content img:not([class]) { max-width: 320px; }
+  .w600 { max-width: 320px; }
+  .w400 { max-width: 320px; }
+  .w320 { max-width: 320px; }
 }
 
 @media screen and (max-width: 340px) {
-  .post-content img { max-width: 100%; }
-  .post-content .w320 { max-width: 100%; }
-  .post-content .w240 { max-width: 240px; }
-  .post-content .w160 { max-width: 160px; }
-  .post-content .w120 { max-width: 120px; }
+  .post-content img:not([class]) { max-width: 100%; }
+  .w600 { max-width: 100%; }
+  .w400 { max-width: 100%; }
+  .w320 { max-width: 100%; }
+}
+
+.image-quote {
+  display: block;
+  font-size: 12px;
+}
+.image-quote,
+.image-quote a {
+  color: #818181;
 }

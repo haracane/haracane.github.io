@@ -8,10 +8,10 @@
 </div>
 
 <div class="layout-center">
-  <dl class="border-box padding-content postlinks">
-    {% for tag_category in site.data.tag_categories %}{% if tag_category["url"] == page.url %}{% for tag_name in tag_category["tags"] %}{% for tag in site.tags %}{% if tag[0] == tag_name %}
-      {% include tag-posts.html %}
-    {% endif %}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+  <dl class="border-box padding-content nav-box">
+    {% for tag_category in site.data.tag_categories %}{% if tag_category["url"] == page.url %}{% for tag_name in tag_category["tag_names"] %}{% assign tag_url = site.data.tag_urls[tag_name] %}{% if tag_url %}{% for tag in site.tags %}{% if tag[0] == tag_name %}
+    {% include tag-posts.html %}
+    {% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
   </dl>
 </div>
 

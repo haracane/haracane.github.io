@@ -25,26 +25,12 @@ $side_margin: 2%;
 
 .side-box {
   margin-bottom: 20px;
-  padding: 4px 10px;
+  padding: 0px 10px;
 }
-.side-box ul { list-style-type: none; }
-.side-box > dt { margin: 8px 0px 8px; font-size: 20px; border-bottom: dotted 1px #ddd;}
-
-.side-box-title { margin:4px; line-height: 36px; }
-.side-box p { clear:left; margin:8px; }
 
 .profile-image {
   float: left;
   margin-bottom: 8px;
-}
-.profile-list {
-  float: left;
-}
-.profile-list li {
-  margin: 0px 0px 8px;
-  padding: 0px;
-  line-height: 16px;
-  font-size: 16px;
 }
 
 @media screen and (max-width: 620px) {

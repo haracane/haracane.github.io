@@ -1,15 +1,10 @@
-{% for page_tag in page.tags %}{% for tag in site.tags %}{% if tag[0] == page_tag %}
-{% if tag[1].size > 1 %}
-<dl class="side-box border-box postlinks">
-  <dt>「{{ tag[0] }}」の関連記事</dt>
+<dl class="side-box border-box nav-box">
+  <dt>関連記事</dt>
   <dd>
     <ul>
-      {% for post in tag[1] limit:10 %}{% if post.url != page.url %}
+      {% for post in site.related_posts limit:10 %}
         {% include post-title.html %}
-      {% endif %}{% endfor %}
+      {% endfor %}
     </ul>
   </dd>
 </dl>
-{% endif %}
-{% endif %}{% endfor %}{% endfor %}
-
