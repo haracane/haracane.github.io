@@ -1,6 +1,8 @@
 .thumbnail { max-width: 120px; }
 
-.post-content img:not([class]) { max-width: 600px; }
+.post-content img:not([class]) { display: block; }
+
+.post-content img:not([class]) { max-width: 320px; }
 .w600 { max-width: 600px; }
 .w400 { max-width: 400px; }
 .w320 { max-width: 320px; }
@@ -9,14 +11,14 @@
 .w120 { max-width: 120px; }
 
 @media screen and (max-width: 1080px) {
-  .post-content img:not([class]) { max-width: 480px; }
+  .post-content img:not([class]) { max-width: 320px; }
   .w600 { max-width: 480px; }
   .w400 { max-width: 400px; }
   .w320 { max-width: 320px; }
 }
 
 @media screen and (max-width: 850px) {
-  .post-content img:not([class]) { max-width: 400px; }
+  .post-content img:not([class]) { max-width: 320px; }
   .w600 { max-width: 400px; }
   .w400 { max-width: 400px; }
   .w320 { max-width: 320px; }

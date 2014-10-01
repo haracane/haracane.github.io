@@ -13,6 +13,11 @@
     <meta property="og:url" content="{{ canonical_url }}">
     <meta property="og:description" content="{{ site.params[page.url]["h1"] }}{{ description }}">
     <meta property="og:site_name" content="{{ site.title }}">
+    {% if page.main_image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.main_image }}">
+    {% elsif page.thumbnail %}
+    <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}">
+    {% endif %}
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
