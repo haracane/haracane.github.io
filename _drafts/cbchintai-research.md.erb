@@ -19,9 +19,9 @@ description: 10/1にキャッシュバック賃貸から、住まいに関する
 
 第一弾の記事では「[あなたが絶対に譲れない賃貸住宅の条件は？](http://cbchintai.com/research/reports/2/)」がテーマとなっていて、「通勤・通学にかかる時間」が1位となっています。
 
-### Redisの活用：ソート済みリスト
+### Redisの活用：ソート済みセット
 
-「住まいの調査隊」では右サイドバーに人気記事を表示しているのですが、ここでRedisのソート済みリストを利用しています。
+「住まいの調査隊」では右サイドバーに人気記事を表示しているのですが、ここでRedisのソート済みセットを利用しています。
 
 Redisにはkeyに対して複数のmemberとscoreを登録できるソート済みリストという機能があり、こちらを利用するとランキングを簡単に取得できます。
 
@@ -29,11 +29,11 @@ Redisにはkeyに対して複数のmemberとscoreを登録できるソート済�
 
 #### PV数のカウント
 
-redis-rbを使って記事のPVをカウントするには`zincr`メソッドを使います。
+redis-rbを使って記事のPVをカウントするには`zincrby`メソッドを使います。
 
 {% highlight ruby %}
 redis = Redis.new(host: "localhost", port: 6379)
-redis.zincr("article_pv_counts", 1, article.id)
+redis.zincrby("article_pv_counts", 1, article.id)
 {% endhighlight %}
 
 #### PVランキングの取得
