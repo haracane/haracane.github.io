@@ -1,5 +1,6 @@
 <li>{% assign post_url = post.url | prepend: site.baseurl %}
-  <span class="post-title-name"><a href="{{ post_url }}">{{ post.title }}</a></span>
+  <span class="post-title-name"><a href="{{ post_url }}">{% if post.category_title %}{{ post.category_title }}{% endif %}{{ post.title }}</a></span>
+  
   <span class="post-title-meta">({{ post.date | date: "%Y/%m/%d" }})</span>
   {% if post.thumbnail %}{% assign thumbnail = post.thumbnail %}{% else %}{% assign thumbnail = post.main_image %}{% endif %}
   {% if thumbnail %}<br/><a class="block" href="{{ post_url }}"><img class="thumbnail block" alt="{{ post.title }}" src="{{ thumbnail }}"></a>{% endif %}

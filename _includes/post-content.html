@@ -1,8 +1,12 @@
 <div class="border-box padding-content">
   <article class="post-content">
     {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+
+    {% include category-posts.html %}
   </article>
+
  {% include sns-buttons.html %}
+
   <dl class="nav-box">
     <dt>この記事を読んでる人はこんな記事も読んでいます</dt>
     <dd>

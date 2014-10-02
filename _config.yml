@@ -24,10 +24,10 @@ category_navigations:
     url: /
   -
     name: ジャンル
-    url: /genre/hadoop
+    url: /genre/hadoop.html
   -
     name: バックナンバー
-    url: /backnumber
+    url: /backnumber.html
 
 link_boxes:
   -
@@ -124,4 +124,4 @@ link_boxes:
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: date

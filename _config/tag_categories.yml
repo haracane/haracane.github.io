@@ -1,5 +1,5 @@
 -
-  url: /genre/hadoop/
+  url: /genre/hadoop.html
   name: "Hadoop/Elasticsearch"
   prefix: dist
   tags:
@@ -10,7 +10,7 @@
     Redis: redis
 
 -
-  url: /genre/ruby/
+  url: /genre/ruby.html
   name: Ruby
   prefix: ruby
   tags:
@@ -18,13 +18,13 @@
     Rails: rails
     RSpec: rspec
 -
-  url: "/genre/jekyll/"
+  url: /genre/jekyll.html
   name: "Jekyll"
   prefix: jekyll
   tags:
     Jekyll: jekyll
 -
-  url: "/genre/misc/"
+  url: /genre/misc.html
   name: "その他"
   prefix: misc
   tags:
