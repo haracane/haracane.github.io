@@ -1,6 +1,6 @@
 ---
 layout: post
-title: editアクションで記事を編集する
+title: editアクションで記事編集フォームを作る
 date: 2014-10-03 07:05:37J
 tags: Rails Ruby
 keywords: RESTful edit Rails Ruby
