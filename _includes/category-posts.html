@@ -1,14 +1,12 @@
-{% assign post_category = page.categories | join '' %}
-{% if post_category %}
+{% if post.category_name %}
+  {% assign posts = site.categories[post.primary_category] %}
   <dl class="nav-box">
-    <dt>この連載のバックナンバー</dt>
+    <dt>「<a href="{{ post.category_url }}">{{post.category_name}}（全{{posts.size}}回）</a>」のバックナンバー</dt>
     <dd>
       <ul>
-        {% for category in site.categories %}{% if category[0] == post_category %}
-          {% for post in category[1] %}
+        {% for post in posts %}
           {% include post-link.html %}
-          {% endfor %}
-        {% endif %}{% endfor %}
+        {% endfor %}
       </ul>
     </dd>
   </dl>

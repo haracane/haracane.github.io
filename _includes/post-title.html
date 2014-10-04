@@ -1,2 +1,2 @@
-{% if post.category_title %}<span class="category-title">{{ post.category_title }}</span>{% endif %}
-<a href="{{ post.url }}">{{ post.title }}</a>
+{% include post-title-category.html %}
+<span class="post-title-name"><a href="{{ post.url }}">{{ post.title }}</a></span>

@@ -1,18 +1,7 @@
 <div class="border-box padding-content">
   <article class="post-content">
-    {% include sns-buttons.html %}
     {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
   </article>
   {% include category-posts.html %}
-
-  <dl class="nav-box">
-    <dt>この記事を読んでる人はこんな記事も読んでいます</dt>
-    <dd>
-      <ul>
-        {% for post in site.related_posts limit:10 %}
-          {% include post-link.html %}
-        {% endfor %}
-      </ul>
-    </dd>
-  </dl>
+  {% include post-related-posts.html %}
 </div>

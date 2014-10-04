@@ -2,16 +2,26 @@
   h1: "<a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>でのRailsやElasticsearchなどを利用した開発事例を紹介をすることが多いです。"
 
 "/genre/dp.html":
-  h1: "DB、NoSQLなどデータ処理ソフトウェアに関連する記事の一覧です:"
+  title: DB/NoSQLなどデータ処理に関する記事
+  description: "Hadoop、Elasticsearch、Redisなどデータ処理に関する記事の一覧です"
+  h1: "DB、NoSQLなどデータ処理に関する記事の一覧です"
 
 "/genre/ruby.html":
-  h1: "Rubyに関連する記事の一覧です:"
+  title: "Ruby、Rails、RSpecなどの記事"
+  description: "Ruby、Rails、RSpecなどの記事の一覧です"
+  h1: "Ruby、Rails、RSpecなどの記事の一覧です"
 
 "/genre/jekyll.html":
-  h1: "Jekyllに関連する記事の一覧です:"
+  title: "Jekyllに関する記事"
+  description: "Jekyllでのブログ構築に関する記事の一覧です"
+  h1: "Jekyllに関する記事の一覧です"
 
 "/genre/misc.html":
-  h1: "未分類の記事の一覧です:"
+  title: "Javascript,HTML5などに関する記事"
+  description: "未分類のテーマの一覧です"
+  h1: "未分類のテーマの一覧です"
 
 "/backnumber.html":
+  title: "バックナンバー"
+  description: 過去に投稿した記事の一覧です
   h1: 過去に投稿した記事の一覧です

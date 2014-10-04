@@ -11,5 +11,6 @@
     </p>
   </header>
 
-  {% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
+  <p>{{ post.description }}</p>
+  <p> <a href="{{post.url}}" class="btn btn-primary">続きを読む</a></p>
 </article>

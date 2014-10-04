@@ -1,17 +1,18 @@
 <div class="layout-header">
   <header class="index-header">
     <h1>
+      「{{site.data["category_names"][page.category]}}」の連載記事です
     </h1>
   </header>
 </div>
 
 <div class="layout-center">
   <dl class="border-box padding-content nav-box">
-    <dt>「{{ page.tag }}」の記事（{{ page.posts.size }}件）</dt>
+    <dt>{{ site.data["category_names"][page.category] }}（全{{ page.posts.size }}回）</dt>
     <dd>
       <ul class="post-detail-link">
         {% for post in page.posts %}
-        {% include post-detail-link.html %}
+        {% include category-post-link.html %}
         {% endfor %}
       </ul>
     </dd>

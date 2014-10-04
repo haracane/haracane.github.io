@@ -1,25 +1,35 @@
 require 'jekyll/post'
 
 class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :full_title, :full_title_before_site_title
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_category, :category_name, :category_title, :category_url, :order_in_category
 
-  def binding_pry
-    #require "pry"; binding.pry
+  def primary_category
+    data["primary_category"] ||= categories.join
   end
 
-  def full_title
-    full_title = title
-    if data["category_title"]
-      full_title = "#{data["category_title"]}：#{full_title}"
-    end
-    data["full_title"] = full_title
+  def category_name
+    data["category_name"] ||= site.data["category_names"][primary_category]
   end
 
-  def full_title_before_site_title
-    data["full_title_with_site_title"] = "#{full_title} | "
+  def category_title
+    category_title = category_name
+    return nil if category_title.nil?
+    data["category_title"] = "#{category_title}（第#{order_in_category}回）"
+  end
+
+  def order_in_category
+    return data["order_in_category"] if data["order_in_category"]
+    urls = site.categories[primary_category].map(&:url)
+    index = urls.index(url)
+    return nil if index.nil?
+    data["order_in_category"] = urls.size - index
+  end
+
+  def category_url
+    return nil if category_name.nil?
+    data["category_url"] ||= "/categories/#{primary_category}/index.html"
   end
 end
-
 
 class Jekyll::Post
   EXCERPT_ATTRIBUTES_FOR_LIQUID.push :tag_urls
@@ -35,5 +45,14 @@ class Jekyll::Post
       end
     end
     data["tag_urls"] = tag_urls
+  end
+end
+
+class Jekyll::Post
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :available_thumbnail
+
+  def available_thumbnail
+    data["available_thumbnail"] ||= data["thumbnail"]
+    data["available_thumbnail"] ||= data["main_image"]
   end
 end

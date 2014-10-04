@@ -1,15 +1,27 @@
-{% if page.description %}{% assign description = page.description %}{% else %}{% assign description = site.description %}{% endif %}
+{% assign page_params = site.data["params"][page.url] %}
+
+{% if page_params %}
+  {% assign page_title = page_params["title"] %}
+  {% assign page_description = page_params["description"] %}
+{% else %}
+  {% assign page_title = page.title %}
+  {% assign page_description = page.description %}
+{% endif %}
+
+{% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+
+{% capture title %}{{ page.category_title }}{% if page.category_title %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ title_delimiter }}{{ site.title }}{% endcapture %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.full_title_before_site_title }}{{ site.title }}</title>
+    <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{ site.params[page.url]["h1"] }}{{ description }}">
+    <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | replace: ' ', ','}},{% endif %}{{ site.keywords }}">
-    <link rel="canonical" href="{{ canonical_url }}">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+    <link rel="canonical" href="{{ site.url }}{{page.url}}">
+    <meta property="og:title" content="{{ title }}">
     <meta property="og:type" content="blog">
-    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:url" content="{{ site.url }}{{page.url}}">
     <meta property="og:description" content="{{ site.params[page.url]["h1"] }}{{ description }}">
     <meta property="og:site_name" content="{{ site.title }}">
     {% if page.main_image %}

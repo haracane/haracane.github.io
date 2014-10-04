@@ -8,10 +8,10 @@ page_category: backnumber
   </header>
 </div>
 
-<div class="layout-center  nav-box">
-  <ul class="border-box padding-content">
+<div class="layout-center nav-box">
+  <ul class="border-box padding-content post-detail-link">
   {% for post in site.posts %}
-    {% include post-link.html %}
+    {% include post-detail-link.html %}
   {% endfor %}
   </ul>
 </div>
