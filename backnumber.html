@@ -4,14 +4,14 @@ page_category: backnumber
 ---
 <div class="layout-header">
   <header class="index-header">
-    <h1>{{ site.params[page.url]["h1"] }} (全{{ site.posts.size}}記事)</h1>
+    <h1>{{ site.data["params"][page.url]["h1"] }} (全{{ site.posts.size}}記事)</h1>
   </header>
 </div>
 
 <div class="layout-center  nav-box">
   <ul class="border-box padding-content">
   {% for post in site.posts %}
-    {% include post-title.html %}
+    {% include post-link.html %}
   {% endfor %}
   </ul>
 </div>

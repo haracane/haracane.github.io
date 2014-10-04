@@ -1,15 +1,16 @@
----
----
-
 @import "bootstrap/variables";
-@import "bootstrap/mixins/_table-row";
+@import "bootstrap/mixins";
 @import "bootstrap/tables";
 @import "bootstrap.container";
 @import "bootstrap.nav";
 @import "bootstrap.nav-tabs";
 @import "bootstrap.navbar";
+
 @import "default.main";
+
 @import "style";
+@import "buttons";
+
 @import "customize";
 @import "layout";
 @import "index";

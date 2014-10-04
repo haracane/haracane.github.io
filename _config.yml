@@ -24,7 +24,7 @@ category_navigations:
     url: /
   -
     name: ジャンル
-    url: /genre/hadoop.html
+    url: /genre/dp.html
   -
     name: バックナンバー
     url: /backnumber.html
@@ -125,3 +125,6 @@ link_boxes:
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title
+
+gems:
+  - jekyll-compass

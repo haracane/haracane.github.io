@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="layout-header">
   <header class="index-header">
-    <h1>{{ site.params[page.url]["h1"] }}</h1>
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
   </header>
 </div>
 
@@ -14,7 +14,7 @@ layout: default
 
   <div class="pagination">
     {% if paginator.next_page %}
-      <a href="/page{{ paginator.next_page }}" class="next">次のページ</a>
+      <a href="/page{{ paginator.next_page }}" class="next btn btn-primary">次のページ</a>
     {% endif %}
   </div>
 </div>

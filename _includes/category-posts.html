@@ -1,12 +1,12 @@
 {% assign post_category = page.categories | join '' %}
 {% if post_category %}
   <dl class="nav-box">
-    <dt>バックナンバー</dt>
+    <dt>この連載のバックナンバー</dt>
     <dd>
       <ul>
         {% for category in site.categories %}{% if category[0] == post_category %}
           {% for post in category[1] %}
-          {% include post-title.html %}
+          {% include post-link.html %}
           {% endfor %}
         {% endif %}{% endfor %}
       </ul>

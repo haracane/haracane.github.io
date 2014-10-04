@@ -20,9 +20,14 @@ module TagPages
     def generate(site)
       return unless site.layouts.key? "tag"
       tag_urls = site.data["tag_urls"]
-      # require "pry"; binding.pry
+
       site.tags.each_pair do |tag, posts|
-        tag_url = tag_urls[tag]
+        if tag =~ /^[a-zA-Z0-9_-]+$/
+          tag_url = "/tags/#{tag.downcase.gsub(/ /, "-")}/"
+        else
+          tag_url = tag_urls[tag]
+        end
+
         next unless tag_url
         site.pages << TagPage.new(site, site.source, tag_url, tag, posts)
       end

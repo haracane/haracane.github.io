@@ -1,19 +1,15 @@
+{% assign post = page %}
 <article class="post post-content border-box padding-content">
   <header class="post-header">
-  <div class="post-tags">
-    {% for tag in page.tags %}{% assign tag_url = site.data.tag_urls[tag] %}{% if tag_url %}
-      <a href="{{ tag_url }}">{{ tag }}</a>
-    {% endif %}{% endfor %}
-  </div>
+    {% include post-tags.html %}
 
-  <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-  <p class="meta">
-    {{ page.date | date: "%Y/%m/%d" }}
-    {% if post.author %} • {{ post.author }}{% endif %}
-    {% if post.meta %} • {{ post.meta }}{% endif %}
-  </p>
+    <h2>{% include post-title.html %}</a></h2>
+    <p class="meta">
+      {{ page.date | date: "%Y/%m/%d" }}
+      {% if post.author %} • {{ post.author }}{% endif %}
+      {% if post.meta %} • {{ post.meta }}{% endif %}
+    </p>
   </header>
 
   {% if content %}{{ content }}{% else %}{{ page.content }}{% endif %}
-  {% include sns-buttons.html %}
 </article>

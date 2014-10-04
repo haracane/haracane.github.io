@@ -2,7 +2,7 @@
 <dd>
   <ul>
     {% for post in tag[1] limit:2 %}
-      {% include post-title.html %}
+      {% include post-link.html %}
     {% endfor %}
     {% if tag[1].size > 1 %}
       <li><a href="{{ tag_url }}">「{{ tag_name }}」に関する全{{ tag[1].size }}記事の一覧へ</a></li>

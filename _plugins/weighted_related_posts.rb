@@ -15,13 +15,12 @@ module WeightedRelatedPosts
 
     posts.each do |post|
       post.tags.each do |tag|
-        if self.tags.include?(tag) && post != self
+        if self.tags.include?(tag) && post != self && post.categories != categories
           cat_freq = tag_freq(posts)[tag]
           related_scores[post] += (1 + highest_freq - cat_freq) * tag_weights[tag]
         end
       end
     end
-
     sort_related_posts(related_scores)
   end
 

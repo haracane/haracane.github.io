@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  git commitをフックしてコミットメッセージに自動的にチケット番号を追加する
-date: <%=post_time%>
+date: 2014-09-06 17:39:08J
 tags: Git
 keywords: Git
 description: いちいちコミットメッセージにチケット番号を追加するのは面倒なので、自動的にチケット番号を追加してくれるgit commitのhookを作りました。

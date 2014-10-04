@@ -1,7 +1,6 @@
 -
-  url: /genre/hadoop.html
-  name: "Hadoop/Elasticsearch"
-  prefix: dist
+  url: /genre/dp.html
+  name: "データ処理"
   tags:
     Elasticsearch: elasticsearch
     Hadoop: hadoop
@@ -12,7 +11,6 @@
 -
   url: /genre/ruby.html
   name: Ruby
-  prefix: ruby
   tags:
     Ruby: ruby
     Rails: rails
@@ -20,13 +18,11 @@
 -
   url: /genre/jekyll.html
   name: "Jekyll"
-  prefix: jekyll
   tags:
     Jekyll: jekyll
 -
   url: /genre/misc.html
   name: "その他"
-  prefix: misc
   tags:
     Git: git
     Vagrant: vagrant
