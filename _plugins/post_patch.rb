@@ -8,7 +8,7 @@ class Jekyll::Post
   end
 
   def category_name
-    data["category_name"] ||= site.data["category_names"][primary_category]
+    data["category_name"] ||= (site.data["category_names"]||{})[primary_category]
   end
 
   def category_title

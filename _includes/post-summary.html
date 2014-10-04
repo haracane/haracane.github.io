@@ -11,6 +11,7 @@
     </p>
   </header>
 
+  {% if post.main_image %}<img src="{{ post.main_image }}" alt="{{ post.title }}">{% endif %}
   <p>{{ post.description }}</p>
   <p> <a href="{{post.url}}" class="btn btn-primary">続きを読む</a></p>
 </article>
