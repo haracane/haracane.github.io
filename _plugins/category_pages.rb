@@ -1,8 +1,5 @@
 class CategoryPage < Jekyll::Page
-  def initialize(site, base, dir, category, posts)
-    category_params = site.data["category_params"][category]
-    return nil if category_params.nil?
-
+  def initialize(site, base, dir, category, category_params, posts)
     @site = site
     @base = base
     @dir = dir
@@ -34,9 +31,11 @@ module CategoryPages
       site.categories.each_pair do |category, posts|
         category_url = "/categories/#{category}/"
 
-        page = CategoryPage.new(site, site.source, category_url, category, posts)
-        next if page.nil?
-        site.pages << page
+        next if site.data["category_params"].nil?
+        category_params = site.data["category_params"][category]
+        next if category_params.nil?
+
+        site.pages << CategoryPage.new(site, site.source, category_url, category, category_params, posts)
       end
     end
   end
