@@ -1,0 +1,29 @@
+---
+layout: default
+page_category: categories
+---
+<div class="layout-header">
+  <header class="index-header">
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+  </header>
+</div>
+
+<div class="layout-center nav-box">
+  <dl class="border-box padding-content nav-box">
+  	{% for category in site.data.category_params %}
+  	{% capture category_name %}{{category[0]}}{% endcapture %}
+  	{% assign posts = site.categories[category_name] %}
+  	<dt><a href="/categories/{{category_name}}/">{{ category[1]["title"] }}</a>（計{{ posts.size }}回）</dt>
+  	<dd>
+  	  <ul class="post-detail-link">
+        {% for post in posts %}{% include category-post-link.html %}{% endfor %}
+      </ul>
+    <dd>
+    {% endfor %}
+  </dl>
+</div>
+
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
+</div>
+

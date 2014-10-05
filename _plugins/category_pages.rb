@@ -1,5 +1,8 @@
 class CategoryPage < Jekyll::Page
   def initialize(site, base, dir, category, posts)
+    category_params = site.data["category_params"][category]
+    return nil if category_params.nil?
+
     @site = site
     @base = base
     @dir = dir
@@ -7,9 +10,15 @@ class CategoryPage < Jekyll::Page
 
     self.process(@name)
     self.read_yaml(File.join(base, '_layouts'), 'category.html')
-    category_name = site.data["category_names"][category]
-    self.data['title'] = "「#{category_name}（全#{posts.size}回）」のバックナンバー"
-    self.data['description'] = "「#{category_name}（全#{posts.size}回）」のバックナンバー記事の一覧です"
+
+    category_title = category_params["title"]
+    if category_params["finished"]
+      article_type = "バックナンバー記事（全#{posts.size}回）"
+    else
+      article_type = "連載記事（計#{posts.size}回）"
+    end
+    self.data['title'] = "「#{category_title}」の#{article_type}"
+    self.data['description'] = category_params["description"]
     self.data['category'] = category
     self.data['posts'] = posts
   end
@@ -24,7 +33,10 @@ module CategoryPages
 
       site.categories.each_pair do |category, posts|
         category_url = "/categories/#{category}/"
-        site.pages << CategoryPage.new(site, site.source, category_url, category, posts)
+
+        page = CategoryPage.new(site, site.source, category_url, category, posts)
+        next if page.nil?
+        site.pages << page
       end
     end
   end

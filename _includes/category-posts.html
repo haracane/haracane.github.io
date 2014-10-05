@@ -1,7 +1,7 @@
-{% if post.category_name %}
+{% if post.category_title %}
   {% assign posts = site.categories[post.primary_category] %}
   <dl class="nav-box">
-    <dt>「<a href="{{ post.category_url }}">{{post.category_name}}（全{{posts.size}}回）</a>」のバックナンバー</dt>
+    <dt>「<a href="{{ post.category_url }}">{{post.category_title}}（計{{posts.size}}回）</a>」のバックナンバー</dt>
     <dd>
       <ul>
         {% for post in posts %}

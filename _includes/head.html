@@ -10,7 +10,7 @@
 
 {% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
-{% capture title %}{{ page.category_title }}{% if page.category_title %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ title_delimiter }}{{ site.title }}{% endcapture %}
+{% capture title %}{{ page.category_title }}{% if page.category_title %}（第{{ page.order_in_category }}回）：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ title_delimiter }}{{ site.title }}{% endcapture %}
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

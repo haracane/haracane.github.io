@@ -1,14 +1,17 @@
 <div class="layout-header">
-  <header class="index-header">
-    <h1>
-      「{{site.data["category_names"][page.category]}}」の連載記事です
-    </h1>
+  <header class="post-header mb8">
+    <h1><a href="{{page.url}}">{{site.data["category_params"][page.category]["h1"]}}</a></h1>
   </header>
+  {% include sns-buttons.html %}
 </div>
 
 <div class="layout-center">
+  <div class="border-box padding-content mb20">
+    <p>{{page.description}}</p>
+  </div>
+
   <dl class="border-box padding-content nav-box">
-    <dt>{{ site.data["category_names"][page.category] }}（全{{ page.posts.size }}回）</dt>
+    <dt>{{ page.title }}</dt>
     <dd>
       <ul class="post-detail-link">
         {% for post in page.posts %}

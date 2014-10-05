@@ -1,20 +1,15 @@
 require 'jekyll/post'
 
 class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_category, :category_name, :category_title, :category_url, :order_in_category
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_category, :category_title, :category_url, :order_in_category
 
   def primary_category
     data["primary_category"] ||= categories.join
   end
 
-  def category_name
-    data["category_name"] ||= (site.data["category_names"]||{})[primary_category]
-  end
-
   def category_title
-    category_title = category_name
-    return nil if category_title.nil?
-    data["category_title"] = "#{category_title}（第#{order_in_category}回）"
+    return unless site.data["category_params"]
+    data["category_title"] ||= (site.data["category_params"][primary_category]||{})["title"]
   end
 
   def order_in_category
@@ -26,7 +21,7 @@ class Jekyll::Post
   end
 
   def category_url
-    return nil if category_name.nil?
+    return nil if category_title.nil?
     data["category_url"] ||= "/categories/#{primary_category}/index.html"
   end
 end
