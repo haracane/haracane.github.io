@@ -10,7 +10,7 @@ description: 前回は投稿済みの記事の編集フォームを表示でき�
 
 {{ page.description }}
 
-### 記事表示機能のルーティング設定
+### 記事更新機能のルーティング設定
 
 まずはroutes.rbでupdateアクションのルーティング設定を行います。
 
@@ -36,7 +36,7 @@ resources :articles, only: [:update]
 
 ということがわかります。
 
-### 記事表示機能のコントローラ
+### 記事更新機能のコントローラ
 
 コントローラではupdateアクションを実装します。
 
@@ -56,6 +56,10 @@ def update
 end
 
 private
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
   def article_params
     params.require(:article).permit(:title, :content)
   end
@@ -63,10 +67,8 @@ private
 
 [editアクション]({% post_url 2014-10-03-rails-restful-edit %})と[createアクション]({% post_url 2014-10-03-rails-restful-create %})を組み合わせたようになっていますね。
 
-### 記事表示機能のビュー
+### 記事更新機能のビュー
 
 updateアクションでも[createアクション]({% post_url 2014-10-03-rails-restful-create %})と同様にビューは用意しておらず、更新に成功したら記事一覧に、失敗したら再度記事編集フォームを表示するようにしています。
 
-今回でRails4でのRESTfulな記事管理機能の実装はおしまいです。
-
-ひとつひとつはそれほど難しいことではないので、よく理解してRESTfulなシステムを作っていきましょう。
+次回は[destroyアクションで記事を削除]({% post_url 2014-10-03-rails-restful-destroy %})します。
