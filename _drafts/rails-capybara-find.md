@@ -1,14 +1,14 @@
 ---
 layout: post
 title: findメソッドでオブジェクトを取得する
-date: 2014-10-07 08:46:44J
+date: 2014-10-11 08:46:45J
 tags: Capybara RSpec Rails Ruby
 keywords: find Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
-description: 今回はfindメソッドで指定したオブジェクトを取得します。
+description: オブジェクトを取得するfindメソッドの使い方を説明します。
 ---
 
-「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の{{ page.description }}
+「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `find`メソッドではCSSセレクタで要素を指定して
 
@@ -27,4 +27,4 @@ it { should have_link 'Rails＋RSpecでCapybara入門', href: '/categories/rails
 
 のように要素を指定してマッチャを使うことができます。
 
-次回は[find_buttonメソッドを使ったボタン要素の取得]({% post_url 2014-10-07-rails-capybara-find-button %})を行います。
+次回は[find_buttonメソッドを使ったボタン要素の取得]({% post_url 2014-10-11-rails-capybara-find-button %})を行います。

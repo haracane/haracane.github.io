@@ -1,14 +1,14 @@
 ---
 layout: post
 title: have_contentマッチャでコンテンツ内容を確認する
-date: 2014-10-07 08:35:44J
+date: 2014-10-11 08:33:44J
 tags: Capybara RSpec Rails Ruby
 keywords: have_content Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
-description: 今回はhave_contentマッチャでのコンテンツ内容確認テストを行います。
+description: ページ内容をhave_contentマッチャで確認します。
 ---
 
-「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の{{ page.description }}
+「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 ちなみにここでいうコンテンツはページ内のテキストとなります。
 
@@ -103,4 +103,4 @@ it { should have_content 'Rails4でCapybara入門' }
 
 となりちゃんと両方ともテストに成功しました。
 
-次回は[have_linkマッチャを使ったリンクの確認]({% post_url 2014-10-07-rails-capybara-have-link %})を行います。
+次回は[have_linkマッチャを使ったリンクの確認]({% post_url 2014-10-11-rails-capybara-have-link %})を行います。

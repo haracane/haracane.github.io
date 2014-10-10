@@ -1,14 +1,14 @@
 ---
 layout: post
 title: find＆nativeメソッドでmeta要素をテストする
-date: 2014-10-07 08:53:44J
+date: 2014-10-11 08:53:44J
 tags: Capybara RSpec Rails Ruby
 keywords: find native Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
-description: 今回はfind＆nativeメソッドで指定したmeta要素をテストします。
+description: keywordsやdescriptionなどのmeta要素をテストする方法を紹介します。
 ---
 
-「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の{{ page.description }}
+「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 Capybaraを使ってmeta要素のテストをするには、まず`find`メソッドでmeta要素を取得します
 
@@ -34,4 +34,4 @@ it { should match /Capybara入門/ }
 
 のように内容を確認すればOKです。
 
-次回は[Basic認証を設定しているページのテスト]({% post_url 2014-10-07-rails-capybara-basic-auth %})を行います。
+次回は[Basic認証を設定しているページのテスト]({% post_url 2014-10-11-rails-capybara-basic-auth %})を行います。

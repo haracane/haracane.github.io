@@ -1,14 +1,14 @@
 ---
 layout: post
 title: ログインが必要なページをテストする
-date: 2014-10-07 08:55:44J
+date: 2014-10-11 08:55:44J
 tags: Capybara RSpec Rails Ruby
 keywords: ログイン Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
-description: 今回はログインが必要なページをテストします。
+description: Capybaraのテストでログイン処理を行う方法を紹介します。
 ---
 
-「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の{{ page.description }}
+「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 Capybaraでテストする場合、`fill_in`や`click_on`を使ってログイン処理を行います。
 

@@ -1,16 +1,16 @@
 ---
 layout: post
 title: have_titleマッチャでタイトル内容を確認する
-date: 2014-10-07 08:34:44J
+date: 2014-10-11 08:32:44J
 tags: Capybara RSpec Rails Ruby
 keywords: have_title Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
-description: 今回はCapybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
+description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
 ---
 
 この連載ではRails4でCapybaraを使ったテストのやり方を順番に紹介します。
 
-「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の{{ page.description }}
+「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 ### Capybaraとは
 
@@ -66,7 +66,7 @@ visit '/about.html'
 
 `visit`メソッドでページにアクセスすると`page`メソッドでページ内容を取得できるようになるので、次はページ内容の確認をします。
 
-今回は`have_title`マッチャでのタイトル内容確認を行うので
+`have_title`マッチャでのタイトル内容確認を行うので
 
 {% highlight ruby %}
 expect(page).to have_title '江の島エンジニアBlog'
@@ -109,6 +109,6 @@ end
 
 ### まとめ
 
-今回はCapybaraの導入とタイトル内容確認テストを行いました。
+Capybaraの導入とタイトル内容確認テストを行いました。
 
-次回は[have_contentマッチャでのコンテンツ内容の確認]({% post_url 2014-10-07-rails-capybara-have-content %})をします。
+次回は[have_contentマッチャでのコンテンツ内容の確認]({% post_url 2014-10-11-rails-capybara-have-content %})をします。
