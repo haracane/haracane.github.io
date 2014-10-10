@@ -1,11 +1,11 @@
-rails-restful:
-  title: "Rails4でRESTful"
-  h1: "Rails4でRESTfulアプリケーションを作る"
-  description: "Rails4でRESTfulアプリケーションを実際に作る連載記事です。"
-  finished: true
-
 rails-capybara:
   title: "Rails4＋RSpecでCapybara入門"
   h1: "Rails4＋RSpecでCapybaraを使ってテストする"
   description: "Rails4＋RSpec環境でCapybaraを使ったテスト方法を紹介する入門向け連載記事です。"
   finished: false
+
+rails-restful:
+  title: "Rails4でRESTful"
+  h1: "Rails4でRESTfulアプリケーションを作る"
+  description: "Rails4でRESTfulアプリケーションを実際に作る連載記事です。"
+  finished: true
