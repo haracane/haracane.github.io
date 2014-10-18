@@ -3,7 +3,7 @@
   <dl class="nav-box">
     <dt>「<a href="{{ post.category_url }}">{{post.category_title}}（計{{posts.size}}回）</a>」のバックナンバー</dt>
     <dd>
-      <ul>
+      <ul class="clearfix">
         {% for post in posts %}
           {% include post-link.html %}
         {% endfor %}

@@ -1,7 +1,9 @@
-<div class="border-box padding-content">
-  <article class="post-content">
-    {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
-  </article>
-  {% include category-posts.html %}
-  {% include post-related-posts.html %}
-</div>
+<article class="post-content post">
+{% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+
+<p class="meta">
+（{{ post.date | date: "%Y/%m/%d" }}作成）
+</p>
+</article>
+{% include category-posts.html %}
+{% include post-related-posts.html %}

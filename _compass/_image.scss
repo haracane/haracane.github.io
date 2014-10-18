@@ -1,41 +1,41 @@
-.thumbnail { max-width: 120px; }
+.thumbnail { width: 120px; }
 
 .post-content img:not([class]) { display: block; }
 
-.post-content img:not([class]) { max-width: 320px; }
-.w600 { max-width: 600px; }
-.w400 { max-width: 400px; }
-.w320 { max-width: 320px; }
-.w240 { max-width: 240px; }
-.w160 { max-width: 160px; }
-.w120 { max-width: 120px; }
+.post-content img:not([class]) { width: 320px; }
+.w600 { width: 600px; }
+.w400 { width: 400px; }
+.w320 { width: 320px; }
+.w240 { width: 240px; }
+.w160 { width: 160px; }
+.w120 { width: 120px; }
 
 @media screen and (max-width: 1080px) {
-  .post-content img:not([class]) { max-width: 320px; }
-  .w600 { max-width: 480px; }
-  .w400 { max-width: 400px; }
-  .w320 { max-width: 320px; }
+  .post-content img:not([class]) { width: 320px; }
+  .w600 { width: 480px; }
+  .w400 { width: 400px; }
+  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 850px) {
-  .post-content img:not([class]) { max-width: 320px; }
-  .w600 { max-width: 400px; }
-  .w400 { max-width: 400px; }
-  .w320 { max-width: 320px; }
+  .post-content img:not([class]) { width: 320px; }
+  .w600 { width: 400px; }
+  .w400 { width: 400px; }
+  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 700px) {
-  .post-content img:not([class]) { max-width: 320px; }
-  .w600 { max-width: 320px; }
-  .w400 { max-width: 320px; }
-  .w320 { max-width: 320px; }
+  .post-content img:not([class]) { width: 320px; }
+  .w600 { width: 320px; }
+  .w400 { width: 320px; }
+  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 340px) {
-  .post-content img:not([class]) { max-width: 100%; }
-  .w600 { max-width: 100%; }
-  .w400 { max-width: 100%; }
-  .w320 { max-width: 100%; }
+  .post-content img:not([class]) { width: 100%; }
+  .w600 { width: 100%; }
+  .w400 { width: 100%; }
+  .w320 { width: 100%; }
 }
 
 .image-quote {

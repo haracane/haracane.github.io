@@ -3,22 +3,18 @@
 
   {% include head.html %}
 
-  <body>
-    {% include sns-header.html %}
+  <body id="{{ page.body_id }}">
+    <div id="page">
+      {% include mmenu/header.html %}
+      <div class="page-content">
+        {{ content }}
 
-    {% include header.html %}
-
-    {% include category-navigation.html %}
-
-    {% if page.page_category == "genre" %}
-      {% include tags-navigation.html %}
-    {% endif %}
-
-    <div class="page-content">
-      {{ content }}
+        {% include footer.html %}
+      </div>
+      <nav id="menu">
+        {% include mmenu-category-navigation.html %}
+      </nav>
     </div>
-
-    {% include footer.html %}
 
     {% include foot.html %}
   </body>

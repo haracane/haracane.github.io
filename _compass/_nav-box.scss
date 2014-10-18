@@ -1,5 +1,4 @@
+.nav-box { padding-bottom: 4px; }
 .nav-box > dt { margin: 8px 0px 8px; font-size: 16px; border-bottom: dotted 1px #ddd;}
 .nav-box, .nav-box ul { list-style-type: none; }
-.nav-box li { margin:8px; padding: 0px; }
-.nav-box li,
-.nav-box dd {}
+.nav-box li:none { margin:8px; padding: 0px; }

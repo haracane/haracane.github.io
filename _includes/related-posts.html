@@ -3,7 +3,7 @@
 <dl class="side-box border-box nav-box">
   <dt>関連記事</dt>
   <dd>
-    <ul>
+    <ul class="clearfix">
       {% for post in posts limit: 10%}
         {% include post-link.html %}
       {% endfor %}

@@ -1,11 +1,11 @@
 {% assign post = page %}
-<article class="post post-content border-box padding-content">
+<article class="post post-content border-box padding-box">
   <header class="post-header">
     {% include post-tags.html %}
 
     <h2>{% include post-title.html %}</a></h2>
     <p class="meta">
-      {{ page.date | date: "%Y/%m/%d" }}
+      {{ post.date | date: "%Y/%m/%d" }}
       {% if post.author %} • {{ post.author }}{% endif %}
       {% if post.meta %} • {{ post.meta }}{% endif %}
     </p>

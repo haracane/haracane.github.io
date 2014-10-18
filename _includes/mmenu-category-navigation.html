@@ -1,0 +1,15 @@
+  <ul>
+    {% for nav in site.data.category_navigations %}
+      <li>
+        <a href="{{ nav["url"] }}">{{ nav["name"] }}</a>
+        {% if nav["name"] == "ジャンル" %}
+          <ul>
+            {% for tag_category in site.data.tag_categories %}
+              <li><a href="{{ tag_category["url"] }}">{{ tag_category["name"] }}</a></li>
+            {% endfor %}
+          </ul>
+        {% else %}
+        {% endif %}
+      </li>
+  {% endfor %}
+  </ul>

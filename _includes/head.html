@@ -8,13 +8,7 @@
   {% assign page_description = page.description %}
 {% endif %}
 
-{% assign category = page.categories | join:'' %}
-{% assign category_params = site.data["category_params"][category] %}
-{% if category_params %}
-{% assign category_description = category_params["description"] %}
-{% endif %}
-
-{% capture description %}{% if page_description %}{{ category_description }}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+{% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
 {% capture title %}{{ page.category_title }}{% if page.category_title %}（第{{ page.order_in_category }}回）：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ title_delimiter }}{{ site.title }}{% endcapture %}
 <head>

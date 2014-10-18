@@ -1,0 +1,32 @@
+---
+layout: default
+page_category: tags
+---
+<div class="layout-header">
+  <header class="index-header">
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+  </header>
+</div>
+
+<div class="layout-center nav-box">
+  <dl class="border-box padding-box nav-box">
+  	{% for genre_params in site.data.tag_categories %}
+  	<dt><a href="{{genre_params["url"]}}">「{{ genre_params["name"] }}」のタグ</a></dt>
+  	<dd>
+  	  <ul class="post-tags">
+        {% for tag in genre_params["tags"] %}
+          {% capture tag_name %}{{ tag[0] }}{% endcapture %}
+          {% if site.tags[tag_name].size > 0 %}
+            <a href="{{ site.data.tag_urls[tag_name] }}">{{ tag[0] }}</a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    <dd>
+    {% endfor %}
+  </dl>
+</div>
+
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
+</div>
+

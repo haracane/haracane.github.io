@@ -4,17 +4,17 @@
   {% include head.html %}
 
   <body>
-    {% include sns-header.html %}
+    <div id="page">
+      {% include mmenu/header.html %}
+      <div class="page-content">
+        {% include category-layout.html %}
 
-    {% include header.html %}
-
-    {% include category-navigation.html %}
-
-    <div class="page-content">
-      {% include category-layout.html %}
+        {% include footer.html %}
+      </div>
+      <nav id="menu">
+        {% include mmenu-category-navigation.html %}
+      </nav>
     </div>
-
-    {% include footer.html %}
 
     {% include foot.html %}
   </body>

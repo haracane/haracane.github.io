@@ -1,13 +1,12 @@
 $side_margin: 2%;
 
 .layout-header {
-  margin: 0px $side_margin;
+  margin: 4px $side_margin 0px;
 }
 
 .layout-center {
    width: 64%;
    margin: 10px 0px 10px $side_margin;
-   padding: 0px;
    float: left;
  }
 
@@ -25,7 +24,6 @@ $side_margin: 2%;
 
 .side-box {
   margin-bottom: 20px;
-  padding: 0px 10px;
 }
 
 .profile-image {
@@ -33,11 +31,25 @@ $side_margin: 2%;
   margin-bottom: 8px;
 }
 
-@media screen and (max-width: 620px) {
-  .layout-center, .layout-sidebar {
+#index-page {
+  .layout-center {
     width: 96%;
     margin: 10px $side_margin;
     padding: 0px;
+  }  
+}
+
+.side-box,
+.padding-box {
+  padding: 0px 10px;
+}
+
+@media screen and (max-width: 620px) {
+  .layout-center, .layout-sidebar {
+    width: 96%;
+    margin: 0px 2%;
     float: none;
   }
+  .border-box { border-style: none; }
+  .padding-box, .side-box { padding: 0px; }
 }

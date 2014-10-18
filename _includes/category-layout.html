@@ -1,19 +1,19 @@
 <div class="layout-header">
-  <header class="post-header mb8">
+  <header class="post-header mv8">
     <h1><a href="{{page.url}}">{{site.data["category_params"][page.category]["h1"]}}</a></h1>
   </header>
   {% include sns-buttons.html %}
 </div>
 
 <div class="layout-center">
-  <div class="border-box padding-content mb20">
+  <div class="border-box padding-box mb20">
     <p>{{page.description}}</p>
   </div>
 
-  <dl class="border-box padding-content nav-box">
+  <dl class="border-box padding-box nav-box">
     <dt>{{ page.title }}</dt>
     <dd>
-      <ul class="post-detail-link">
+      <ul class="post-detail-link clearfix">
         {% for post in page.posts %}
         {% include category-post-link.html %}
         {% endfor %}

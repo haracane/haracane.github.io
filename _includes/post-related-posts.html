@@ -3,7 +3,7 @@
   <dl class="nav-box">
     <dt>この記事を読んでる人はこんな記事も読んでいます</dt>
     <dd>
-      <ul>
+      <ul class="clearfix">
         {% for post in posts limit:10 %}
           {% include post-link.html %}
         {% endfor %}
