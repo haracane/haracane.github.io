@@ -1,12 +1,12 @@
 $side_margin: 2%;
 
 .layout-header {
-  margin: 4px $side_margin 0px;
+  margin: 4px $side_margin;
 }
 
 .layout-center {
    width: 64%;
-   margin: 10px 0px 10px $side_margin;
+   margin-left: $side_margin;
    float: left;
  }
 
@@ -35,6 +35,12 @@ $side_margin: 2%;
 .padding-box {
   padding: 0px 10px;
 }
+
+.layout-center-sp {
+  width: 96%;
+  margin: 0px $side_margin;
+  padding: 0px;
+}  
 
 @media screen and (max-width: 620px) {
   .layout-center, .layout-sidebar {
