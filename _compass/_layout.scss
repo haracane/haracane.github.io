@@ -17,7 +17,7 @@ $side_margin: 2%;
 
 .layout-sidebar {
   width: 28%;
-  margin: 10px $side_margin;
+  margin: 4px $side_margin;
   padding: 0px;
   float: left;
 }
@@ -29,14 +29,6 @@ $side_margin: 2%;
 .profile-image {
   float: left;
   margin-bottom: 8px;
-}
-
-#index-page {
-  .layout-center {
-    width: 96%;
-    margin: 10px $side_margin;
-    padding: 0px;
-  }  
 }
 
 .side-box,

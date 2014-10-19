@@ -1,23 +1,12 @@
+@import "variables";
+@import "mixins";
+
 @import "base";
 @import "clearfix";
-
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
-
-/*
-@import "bootstrap.min";
-
-@import "bootstrap/tables";
-@import "bootstrap.container";
-@import "bootstrap.nav";
-@import "bootstrap.nav-tabs";
-@import "bootstrap.navbar";
-*/
 
 @import "mmenu/jquery.mmenu";
 @import "mmenu/style";
 
-//@import "default.main";
 @import "wrap";
 @import "icons";
 @import "highlight";
@@ -40,3 +29,4 @@
 
 @import "sizes";
 @import "positions";
+@import "border";

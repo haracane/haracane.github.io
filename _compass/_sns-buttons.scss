@@ -1,23 +1,2 @@
-.fb_iframe_widget > span,
-.hatena-bookmark-button > img {
-  vertical-align: baseline !important;
-}
-
-.hatena-bookmark-button > img {
-  width: 20px;
-  height: 20px;
-}
-
-.sns-buttons {
-  margin: 0px;
-  overflow: hidden;
-  float: none;
-}
-
-.sns-buttons li {
-  float: left;
-  margin: 0px 4px 0px 0px;
-  padding: 0px;
-  list-style: none;
-}
-
+@import "sns-buttons/flat";
+@import "sns-buttons/count";

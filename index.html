@@ -1,26 +1,26 @@
 ---
 layout: default
-body_id: index-page
 ---
-<div class="wrap">
-  <div class="layout-header">
-    <header class="index-header">
-      <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
-    </header>
-  </div>
+<div class="layout-header">
+  <header class="index-header">
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+  </header>
+</div>
 
-  <div class="layout-center">
-    {% for post in paginator.posts %}
-      {% if post.main_image %}
-        {% include post-banner.html %}
-      {% else %}
-        {% include post-summary.html %}
-      {% endif %}
-    {% endfor %}
-    {% if paginator.next_page %}
-      <!--a href="/page{{ paginator.next_page }}" class="next btn btn-primary">もっと見る</a-->
-      <a href="/backnumber.html" class="next btn btn-primary w240 ph0">もっと見る</a>
+<div class="layout-center">
+  {% for post in paginator.posts %}
+    {% if post.main_image %}
+      {% include post-banner.html %}
+    {% else %}
+      {% include post-summary.html %}
     {% endif %}
-  </div>
+  {% endfor %}
+  {% if paginator.next_page %}
+    <!--a href="/page{{ paginator.next_page }}" class="next btn btn-primary">もっと見る</a-->
+    <a href="/backnumber.html" class="next btn btn-primary w240 ph0">もっと見る</a>
+  {% endif %}
+</div>
 
+<div class="layout-sidebar">
+  {% include sidebar-contents.html %}
 </div>

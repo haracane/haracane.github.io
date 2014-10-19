@@ -1,0 +1,6 @@
+@import 'bootstrap/mixins/tab-focus';
+@import 'bootstrap/mixins/opacity';
+@import 'bootstrap/mixins/buttons';
+@import 'bootstrap/mixins/vendor-prefixes';
+
+@mixin dotted-border-bottom { border-bottom: dotted 1px #ddd; }

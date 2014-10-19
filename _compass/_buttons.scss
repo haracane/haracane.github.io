@@ -104,3 +104,18 @@
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
+.btn-twitter {
+  @include button-variant($btn-twitter-color, $btn-twitter-bg, $btn-twitter-border);
+}
+.btn-facebook {
+  @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border);
+}
+.btn-google {
+  @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border);
+}
+.btn-hatena {
+  @include button-variant($btn-hatena-color, $btn-hatena-bg, $btn-hatena-border);
+}
+.btn-pocket {
+  @include button-variant($btn-pocket-color, $btn-pocket-bg, $btn-pocket-border);
+}

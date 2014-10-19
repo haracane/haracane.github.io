@@ -1,0 +1,24 @@
+.sns-buttons-flat {
+  margin-top: 4px;
+  overflow: none;
+  white-space: nowrap;
+
+  li {
+    display: inline;
+    overflow: none;
+    list-style: none;
+    font-weight: 600;
+    padding: 0px;
+  }
+
+  .btn {
+    font-weight: 500;
+    padding: 6px 2px;
+    width: 70px;
+    overflow: none;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .sns-buttons-flat .btn { width: 17%; }
+}

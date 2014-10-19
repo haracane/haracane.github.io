@@ -1,17 +1,11 @@
 {% assign post = page %}
-<article class="post post-content border-box padding-box">
-  <header class="post-header">
-    {% include post-tags.html %}
-
+<article class="post">
+  <header class="post-header" style="margin-top: 4px;">
+    <div class="post-summary-date mb4 dotted-border-bottom">{{ post.date  | date: "%Y年%m月%d日" }}</div>
     <h2>{% include post-title.html %}</a></h2>
-    <p class="meta">
-      {{ post.date | date: "%Y/%m/%d" }}
-      {% if post.author %} • {{ post.author }}{% endif %}
-      {% if post.meta %} • {{ post.meta }}{% endif %}
-    </p>
   </header>
 
-  {% if post.main_image %}<img src="{{ post.main_image }}" alt="{{ post.title }}">{% endif %}
+  {% if post.main_image %}<a href="{{ post.url }}"><img src="{{ post.main_image }}" alt="{{ post.title }}"></a>{% endif %}
   <p>{{ post.description }}</p>
-  <p> <a href="{{post.url}}" class="btn btn-primary">続きを読む</a></p>
+  <p> <a href="{{post.url}}">&gt; 続きを読む</a></p>
 </article>

@@ -5,3 +5,16 @@
   border: solid 1px #e8e8e8;
   border-radius: 4px;
 }
+
+.no-decorate {
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: none;
+  }
+}
+
+.inline { display: inline; }
+.block { display: block; }

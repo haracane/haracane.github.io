@@ -4,6 +4,7 @@
   {% include head.html %}
 
   <body id="{{ page.body_id }}">
+    {% include body-first.html %}
     <div id="page">
       {% include mmenu/header.html %}
       <div class="page-content">
@@ -16,6 +17,6 @@
       </nav>
     </div>
 
-    {% include foot.html %}
+    {% include body-last.html %}
   </body>
 </html>

@@ -1,9 +1,10 @@
-<article class="post-content post">
+<article class="post">
 {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
 
 <p class="meta">
 （{{ post.date | date: "%Y/%m/%d" }}作成）
 </p>
 </article>
+{% include sns-buttons/count.html %}
 {% include category-posts.html %}
 {% include post-related-posts.html %}
