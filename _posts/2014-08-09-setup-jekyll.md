@@ -6,7 +6,7 @@ date:   2014-08-09 11:00:00
 tags: Jekyll Nginx
 ---
 
-{{ page.description }}
+
 
 なお, リポジトリ管理にはGithubを使っていますが, ホスティングにはGithub Pagesは使わずにNginxを使いました.
 

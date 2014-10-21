@@ -7,7 +7,7 @@ keywords: Ruby,手抜き
 tags: Ruby
 ---
 
-{{ page.description }}
+
 
 {% highlight ruby %}
 require "json"

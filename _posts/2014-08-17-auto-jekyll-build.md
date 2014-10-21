@@ -6,7 +6,7 @@ date:   2014-08-17 14:55:06J
 tags: Jekyll Git
 ---
 
-{{ page.description }}
+
 
 Git hookは使わずにシンプルにシェルスクリプトで行っています.
 

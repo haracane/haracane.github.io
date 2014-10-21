@@ -6,7 +6,7 @@ date:   2014-08-12 20:35:17J
 tags: Jekyll HTML5 CSS スマホ
 ---
 
-{{ page.description }}
+
 
 変更したのはCSSだけで
 

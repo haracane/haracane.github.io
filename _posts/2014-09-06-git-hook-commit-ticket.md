@@ -7,7 +7,7 @@ keywords: Git
 description: いちいちコミットメッセージにチケット番号を追加するのは面倒なので、自動的にチケット番号を追加してくれるgit commitのhookを作りました。
 ---
 
-{{ page.description }}
+
 
 こんな感じでブランチ名末尾の数字をチケット番号として付与します。
 
