@@ -1,1 +1,2 @@
-  {% if post.available_thumbnail %}<br/><a class="block" href="{{ post.url }}"><img class="thumbnail block" alt="{{ post.title }}" src="{{ post.available_thumbnail }}"></a>{% endif %}
+{% include decorate-post.html %}
+{% if post.image %}<br/><a class="block" href="{{ post.url }}"><img class="thumbnail block" alt="{{ post.title }}" src="{{ post_thumbnail }}"></a>{% endif %}

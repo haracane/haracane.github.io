@@ -1,9 +1,14 @@
-<article class="post">
-{% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+{% include decorate-post.html %}
 
-<p class="meta">
-（{{ post.date | date: "%Y/%m/%d" }}作成）
-</p>
+<article class="post">
+  <div class="post-content-description mv10 mh0">
+    {{ post.description }}
+    <span style="font-size: 14px">({{ post.date | date: "%Y/%m/%d" }})</span>
+  </div>
+
+  {% if post.image %}<img src="{{post_main_image}}" alt="{{post.title}}">{% endif %}
+  {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+
 </article>
 {% include sns-buttons/count.html %}
 {% include category-posts.html %}

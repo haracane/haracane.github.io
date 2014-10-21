@@ -2,27 +2,12 @@
 
 .post > * { margin: 20px 0; }
 
-.post h1,
-.post h2,
-.post h3,
-.post h4,
-.post h5,
-.post h6 {
-  line-height: 1;
-  font-weight: 300;
-}
-
 .post h2 {
-  font-size: 32px;
-  letter-spacing: -1.25px;
-}
-
-.post h3 {
   font-size: 26px;
   letter-spacing: -1px;
 }
 
-.post h4 {
+.post h3 {
   font-size: 20px;
   letter-spacing: -1px;
 }
@@ -84,7 +69,6 @@
 }
 
 .post h3 {
-  font-size: 22px;
   border-bottom: dotted 1px #aaf;
   padding: 0px 0px 8px;
   margin: 32px 0px 16px;

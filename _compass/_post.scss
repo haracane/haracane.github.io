@@ -2,11 +2,11 @@
 /* ----------------------------------------------------------*/
 @import 'post/header';
 @import 'post/content';
+@import 'post/summary';
 
 .post-title-category {
   font-weight: 500;
   color: #444;
-  display: block;
 
   a {
     color: #888;
@@ -27,4 +27,12 @@
 
 .post-summary-date {
   font-weight: 500; color: #666;
+}
+
+.post-content-description {
+  color: #555;
+  background: #eee;
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin: 10px 0px;
 }

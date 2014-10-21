@@ -1,11 +1,12 @@
 {% assign post = page %}
-<article class="post">
-  <header class="post-header" style="margin-top: 4px;">
-    <div class="post-summary-date mb4 dotted-border-bottom">{{ post.date  | date: "%Y年%m月%d日" }}</div>
-    <h2>{% include post-title.html %}</a></h2>
-  </header>
+{% include decorate-post.html %}
+<article class="post-summary">
+  <div class="post-summary-date mb6 dotted-border-bottom">{{ post.date  | date: "%Y年%m月%d日" }}</div>
+  <h2>{% include post-title.html %}</h2>
 
-  {% if post.main_image %}<a href="{{ post.url }}"><img src="{{ post.main_image }}" alt="{{ post.title }}"></a>{% endif %}
-  <p>{{ post.description }}</p>
-  <p> <a href="{{post.url}}" class="btn btn-primary">続きを読む</a></p>
+  <div class="post-summary-content">
+    {% if post.image %}<a href="{{ post.url }}"><img src="{{ post_main_image }}" alt="{{ post.title }}"></a>{% endif %}
+    <p>{{ post.description }}</p>
+    <p><a href="{{post.url}}" class="btn btn-primary">続きを読む</a></p>
+  </div>
 </article>
