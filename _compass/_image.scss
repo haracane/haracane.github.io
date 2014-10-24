@@ -3,32 +3,27 @@
 .post img:not([class]) { display: block; }
 
 .post img:not([class]) { width: 320px; }
-.w600 { width: 600px; }
-.w400 { width: 400px; }
-.w320 { width: 320px; }
-.w240 { width: 240px; }
-.w160 { width: 160px; }
-.w120 { width: 120px; }
+.w0 { display: none; }
+@each $width in 120 160 180 240 320 400 600 {
+  .w#{$width} { width: #{$width}px; }
+}
 
 @media screen and (max-width: 1080px) {
   .post img:not([class]) { width: 320px; }
   .w600 { width: 480px; }
   .w400 { width: 400px; }
-  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 850px) {
   .post img:not([class]) { width: 320px; }
   .w600 { width: 400px; }
   .w400 { width: 400px; }
-  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 700px) {
   .post img:not([class]) { width: 320px; }
   .w600 { width: 320px; }
   .w400 { width: 320px; }
-  .w320 { width: 320px; }
 }
 
 @media screen and (max-width: 340px) {

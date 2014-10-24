@@ -20,6 +20,12 @@ h1:
   genre: "各タグに関連する記事の一覧です:"
   backnumber: 過去に投稿した記事の一覧です
 
+# 320, 240, 120
+image_sizes:
+  post: 0
+  index: 180
+  thumbnail: 120
+
 category_navigations:
   -
     name: トップ
