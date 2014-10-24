@@ -7,7 +7,7 @@ keywords: Ruby,手抜き
 tags: Ruby
 ---
 
-
+コードはこんな感じです。
 
 {% highlight ruby %}
 require "json"
