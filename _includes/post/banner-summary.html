@@ -1,5 +1,1 @@
-{% capture title %}
-{{ post_category_params["title"] }}{% if post_order_in_category %}（{{post_order_in_category}}）{% endif %}{{ post.title }}
-{% endcapture %}
-
-<li class="banner-box float-left" style="display:table-cell;"><h2 class="banner-box-title w{{site.image_sizes["summary"]}}"><div class="mv4 mh4"><a href="{{ post.url }}">{{ title }}</a></div></h2><a href="{{ post.url }}"><img src="{{ post_main_image }}" class="w{{site.image_sizes["summary"]}}" alt="{{ title }}" style="background-color: #eee;"></a></li>
+<li class="banner-box float-left" style="display:table-cell;"><h2 class="banner-box-title w{{site.styles.summary.image_size}}"><div class="mv4 mh4"><a href="{{ post.url }}">{{ post.title }}</a></div></h2><a href="{{ post.url }}"><img src="{{ post_main_image }}" class="w{{site.styles.summary.image_size}}" alt="{{ post.title }}" style="background-color: #eee;"></a></li>
