@@ -5,6 +5,7 @@ date: 2014-09-24 09:35:27J
 tags: Ruby Rails
 keywords: Ruby,Rails
 description: Railsのmigration例
+image: rails.png
 ---
 
 モデル作成コマンドは

@@ -5,6 +5,7 @@ date: 2014-09-22 10:14:59J
 tags: Nginx Ruby Rails
 keywords: Nginx,Ruby,Rails
 description: Nginx+RailsをProduction環境で動かす。
+image: rails.png
 ---
 
 Nginxでサーバ設定。

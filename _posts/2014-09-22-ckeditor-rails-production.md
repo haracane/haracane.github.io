@@ -5,6 +5,7 @@ date: 2014-09-22 10:08:34J
 tags: Ruby Rails
 keywords: Ruby,Rails
 description: RailsのProduction環境でCKEditorを動かす
+image: rails.png
 ---
 
 Production環境でCKEditorを動かしたら編集画面が表示されず。。

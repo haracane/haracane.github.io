@@ -5,6 +5,7 @@ date: 2014-09-09 07:53:09J
 tags: RSpec Ruby Rails
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時にUNIQUE制約テストも簡単に書きたかったのでカスタムマッチャを作りました
+image: rspec.png
 ---
 
 前回、[NOT NULL制約カスタムマッチャの記事](/2014/09/08/rspec-db-not-null-constraint/)を書きましたが、UNIQUE制約のテストもやっぱり面倒なのでUNIQUE制約のRSpecカスタムマッチャも作りました。

@@ -6,6 +6,7 @@ tags: Capybara RSpec Rails Ruby
 keywords: have_title Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
+image: rspec.png
 ---
 
 この連載ではRails4でCapybaraを使ったテストのやり方を順番に紹介します。

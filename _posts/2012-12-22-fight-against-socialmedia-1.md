@@ -4,6 +4,7 @@ title:  "つぶやきを追え ～『爆発するソーシャルメディア』�
 description: "前回の記事でOKWaveさんのHBase事例のご紹介をしましたが、このイベントでは最後のセッションで僕もTwitter分析の事例を発表させていただいたので今日はそちらをご紹介します。"
 tags: Hadoop RabbitMQ
 date:   2012-12-22 21:00:00J
+image: blank.gif
 ---
 
 [前回の記事](http://hatacomp.hateblo.jp/entry/dont-stop-hbase)でOKWaveさんのHBase事例のご紹介をしましたが、[このイベント](http://oss.nttdata.co.jp/hadoop/event/201212/)では最後のセッションで僕もTwitter分析の事例を発表させていただいたので今日はそちらをご紹介します。

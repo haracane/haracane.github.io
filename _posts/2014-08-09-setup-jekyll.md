@@ -4,6 +4,7 @@ title:  "Ruby2.1.2+Jekyll2.2.0+Nginx+独自ドメインでブログを作って�
 description: "前から興味があったJekyllでブログを作ってみました. "
 date:   2014-08-09 11:00:00
 tags: Jekyll Nginx
+image: blank.gif
 ---
 
 

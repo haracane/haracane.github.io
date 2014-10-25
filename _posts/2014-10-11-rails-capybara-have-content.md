@@ -6,6 +6,7 @@ tags: Capybara RSpec Rails Ruby
 keywords: have_content Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ページ内容をhave_contentマッチャで確認します。
+image: rspec.png
 ---
 
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}

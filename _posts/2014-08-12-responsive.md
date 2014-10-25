@@ -4,6 +4,7 @@ title:  "Jekyll2.2.0でレスポンシブにしてスマホ対応してみた"
 description: "Jekyllの初期設定だと小さい画面でも画像が大きいままで, スマホで読みにくかったのでレスポンシブ対応を行いました."
 date:   2014-08-12 20:35:17J
 tags: Jekyll HTML5 CSS スマホ
+image: blank.gif
 ---
 
 
