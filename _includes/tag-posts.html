@@ -4,7 +4,7 @@
 <dd>
   <ul class="post-detail-link clearfix">
     {% for post in posts limit:2 %}
-      {% include post-detail-link.html %}
+      {% include tag-post-link.html %}
     {% endfor %}
     {% if posts.size > 2 %}
       <li style="clear:both;"><a href="{{ tag_url }}" class="btn btn-primary w120 ph0">もっと見る</a></li>

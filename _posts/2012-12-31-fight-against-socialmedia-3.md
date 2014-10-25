@@ -5,7 +5,6 @@ description: "前編、中編に続いて『Hadoop&RabbitMQを利用したTwitte
 tags: Hadoop RabbitMQ
 meta_keywords: "Hadoop,RabbitMQ"
 date:   2012-12-31 21:00:00J
-image: blank.gif
 ---
 
 [前編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-1)、[中編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-2)に続いて『Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)レポートの最終回です。

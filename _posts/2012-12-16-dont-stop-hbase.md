@@ -4,7 +4,6 @@ title:  "HBaseを止めるな！ ～OKWaveの挑戦～"
 description: "いまだにHBaseには怖くて手が出せてないんですが、12/10のHadoopソリューションセミナー＠東京カンファレンスセンター品川でのOKWaveさんの事例紹介が素晴らしかったのでご紹介します。"
 tags: HBase Hadoop
 date:   2013-02-16 21:00:00J
-image: blank.gif
 ---
 
 いまだにHBaseには怖くて手が出せてないんですが、12/10の[Hadoopソリューションセミナー](http://oss.nttdata.co.jp/hadoop/event/201212/)＠東京カンファレンスセンター品川でのOKWaveさんの事例紹介が素晴らしかったのでご紹介します。

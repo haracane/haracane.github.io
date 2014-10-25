@@ -5,7 +5,6 @@ date: 2013-07-25 07:04:04J
 tags: Vagrant
 keywords: "Vagrant,固定IP,ブリッジ接続"
 description: VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。
-image: blank.gif
 ---
 
 {{ post.description }}

@@ -5,7 +5,6 @@ date: 2014-10-02 07:11:10J
 tags: Redis Rails Ruby
 keywords: Redis Rails Ruby
 description: 10/1にキャッシュバック賃貸から、住まいに関するアンケート調査結果を発信する「住まいの調査隊」をリリースしました。「住まいの調査隊」ではRails+Redisで人気記事ランキングを行っているので、その事例を簡単にご紹介します。
-image: blank.gif
 ---
 
 10/1に[キャッシュバック賃貸](http://cbchintai.com/)から、住まいに関するアンケート調査結果を発信する「[住まいの調査隊](http://cbchintai.com/research/)」をリリースしました。

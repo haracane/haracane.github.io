@@ -1,10 +1,3 @@
-{% assign category = post.categories | join %}
-{% assign category_params = site.data.category_params[category] %}
-
-{% for i_post in site.categories[category] %}{% if i_post.url == post.url %}
-{% assign order_in_category = forloop.rindex %}
-{% endif %}{% endfor %}
-
-{% if category_params %}
-  <div class="post-title-category lh1"><a href="/categories/{{ category }}/">{{ category_params["title"] }}</a>（第{{order_in_category}}回）</div>
+{% if post_category_params %}
+  <div class="post-title-category lh1"><a href="/categories/{{ post_category }}/">{{ post_category_params["title"] }}</a>（第{{post_order_in_category}}回）</div>
 {% endif %}

@@ -9,7 +9,7 @@ twitter_username: haracane
 twitter_username_ruby: はらけん
 github_username:  haracane
 google_analysis_id: UA-53664731-1
-paginate: 10
+paginate: 12
 
 post_summary_sidebar: true
 
@@ -21,10 +21,19 @@ h1:
   backnumber: 過去に投稿した記事の一覧です
 
 # 320, 240, 120
-image_sizes:
-  post: 0
-  index: 180
-  thumbnail: 120
+# for file in $(ls); do ruby -e 'readlines.each_with_index { |line, i| if i > 0 && line == "---\n" then print "image: blank.gif\n"; end;  print line }' -i $file; done
+styles:
+  post:
+    image_size: 0
+  summary:
+    image_size: 120
+  nav-post-link:
+    layout: post-link/text.html
+  tag-post-link:
+    layout: post-link/description.html
+  category-post-link:
+    layout: post-link/category-text.html
+
 
 category_navigations:
   -

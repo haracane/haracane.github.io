@@ -1,12 +1,13 @@
 {% include decorate-post.html %}
 
 <article class="post">
-  <div class="post-content-description mv10 mh0">
+  {% if post.image %}<img class="w{{site.styles.post.image_size}}" src="{{post_main_image}}" alt="{{post.title}}">{% endif %}
+
+  <p class="post-content-description mv10 mh0">
     {{ post.description }}
     <span style="font-size: 14px">({{ post.date | date: "%Y/%m/%d" }})</span>
-  </div>
+  </p>
 
-  {% if post.image %}<img class="w{{site.image_sizes["post"]}}" src="{{post_main_image}}" alt="{{post.title}}">{% endif %}
   {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
 
 </article>

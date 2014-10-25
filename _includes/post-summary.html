@@ -6,11 +6,13 @@
     <h2>{% include post-title.html %}</h2>
   </header>
 
-  <article class="post-summary-content">
-    {% if post.image %}<a href="{{ post.url }}"><img src="{{ post_main_image }}" alt="{{ post.title }}"></a>{% endif %}
-    <p>
-      {{ post.description }}
-      <a href="{{post.url}}" class="btn btn-primary" style="padding: 2px;">続きを読む</a>
-    </p>
+  <article class="post-summary-content table">
+    {% if post.image %}<div class="table-cell vm pr10"><a href="{{ post.url }}"><img class="w{{site.styles.summary.image_size}}" src="{{ post_main_image }}" alt="{{ post.title }}"></a></div>{% endif %}
+    <div class="table-cell vm">
+      <p>
+        {{ post.description }}
+        <a href="{{post.url}}" class="btn btn-primary" style="padding: 2px;">続きを読む</a>
+      </p>
+    </div>
   </article>
 </section>

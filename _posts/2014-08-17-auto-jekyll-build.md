@@ -4,7 +4,6 @@ title:  "JekyllでGitリポジトリのmasterブランチが更新されたら�
 description: "masterが更新されたときに自動的にリポジトリ更新 & jekyll buildをする設定です."
 date:   2014-08-17 14:55:06J
 tags: Jekyll Git
-image: blank.gif
 ---
 
 

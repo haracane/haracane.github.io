@@ -1,10 +1,2 @@
-{% if post.image %}
-  {% include post-link-banner.html %}
-{% else %}
-<li>
-  {% include category-post-title.html %}  
-  <span class="post-title-meta">({{ post.date | date: "%Y/%m/%d" }})</span>
-  {% include post-thumbnail.html %}
-  <p>{{ post.description }}</p>
-</li>
-{% endif %}
+{% assign layout = site.styles.category-post-link.layout %}
+{% include post-link.html %}

@@ -5,7 +5,6 @@ description: "@hamaknがDevSumiで『OSSで作る！クラウドサービス開�
 tags: Redmine Scrum アジャイル
 keywords: Redmine,Scrum,アジャイル,Jenkins
 date:   2013-02-16 21:00:00J
-image: blank.gif
 ---
 
 [@hamakn](https://twitter.com/hamakn)がDevSumiで『[OSSで作る！クラウドサービス開発戦記](https://speakerdeck.com/hamakn/ossdezuo-ru-kuraudosabisukai-fa-zhan-ji)』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。
