@@ -15,6 +15,7 @@
     Ruby: ruby
     Rails: rails
     RSpec: rspec
+    Capybara: capybara
 -
   url: /genre/jekyll.html
   name: "Jekyll"

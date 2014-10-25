@@ -1,25 +1,2 @@
-{% include decorate-post.html %}
-{% if layout %}
-{% else %}
-{% assign layout = 'post-link/default.html' %}
-{% endif %}
-
-{% if layout == 'post-link/banner.html' %}
-{% include post-link/banner.html %}
-
-{% elsif layout == 'post-link/text.html' %}
-{% include post-link/text.html %}
-
-{% elsif layout == 'post-link/default.html' %}
-{% include post-link/default.html %}
-
-{% elsif layout == 'post-link/description.html' %}
-{% include post-link/description.html %}
-
-{% elsif layout == 'post-link/category.html' %}
-{% include post-link/category.html %}
-
-{% elsif layout == 'post-link/category-text.html' %}
-{% include post-link/category-text.html %}
-
-{% endif %}
+{% unless layout %}{% assign layout = 'post/default-link.html' %}{% endunless %}
+{% include post.html %}

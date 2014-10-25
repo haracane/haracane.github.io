@@ -27,13 +27,24 @@ styles:
     image_size: 0
   summary:
     image_size: 120
+  index:
+    layout: post/default-summary.html
+    wrap_class: ""
+    layout_center_class: layout-center
+    box_class: ""
+    sidebar: true
+  backnumber:
+    layout: post/description-link.html
+    wrap_class: ""
+    layout_center_class: layout-center
+    box_class: "border-box padding-box"
+    sidebar: true
   nav-post-link:
-    layout: post-link/text.html
+    layout: post/text-link.html
   tag-post-link:
-    layout: post-link/description.html
+    layout: post/description-link.html
   category-post-link:
-    layout: post-link/category-text.html
-
+    layout: post/category-text-link.html
 
 category_navigations:
   -

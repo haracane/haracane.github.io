@@ -1,0 +1,36 @@
+{% include decorate-post.html %}
+
+{% if layout == 'post/default-link.html' %}
+{% include post/default-link.html %}
+
+{% elsif layout == 'post/banner-link.html' %}
+{% include post/banner-link.html %}
+
+{% elsif layout == 'post/text-link.html' %}
+{% include post/text-link.html %}
+
+{% elsif layout == 'post/default-link.html' %}
+{% include post/default-link.html %}
+
+{% elsif layout == 'post/description-link.html' %}
+{% include post/description-link.html %}
+
+{% elsif layout == 'post/category-link.html' %}
+{% include post/category-link.html %}
+
+{% elsif layout == 'post/category-text-link.html' %}
+{% include post/category-text-link.html %}
+
+{% elsif layout == 'post/default-summary.html' %}
+{% include post/default-summary.html %}
+
+{% elsif layout == 'post/banner-summary.html' %}
+{% include post/banner-summary.html %}
+
+{% elsif layout == 'post/title.html' %}
+{% include post/title.html %}
+
+{% elsif layout == 'post/category-title.html' %}
+{% include post/category-title.html %}
+
+{% endif %}

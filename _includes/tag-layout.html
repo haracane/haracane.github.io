@@ -9,7 +9,7 @@
   <dl class="nav-box">
     <dt>「{{ page.tag }}」の記事（{{ page.posts.size }}件）</dt>
     <dd>
-      <ul class="post-detail-link clearfix">
+      <ul class="clearfix">
         {% for post in page.posts %}
         {% include tag-post-link.html %}
         {% endfor %}

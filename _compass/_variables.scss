@@ -20,6 +20,8 @@ $brand-google:          #db4a39 !default;
 $brand-hatena:          #00A5DE !default;
 $brand-pocket:          #f03e51 !default;
 
+$brand-nav:          #eee !default;
+
 //== Buttons
 //
 //## For each of Bootstrap's buttons, define text, background and border color.
@@ -69,6 +71,10 @@ $btn-pocket-border:             darken($btn-pocket-bg, 5%) !default;
 $btn-hatena-color:              #fff !default;
 $btn-hatena-bg:                 $brand-hatena !default;
 $btn-hatena-border:             darken($btn-hatena-bg, 5%) !default;
+
+$btn-nav-color:              #444 !default;
+$btn-nav-bg:                 $brand-nav !default;
+$btn-nav-border:             darken($btn-nav-bg, 5%) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 

@@ -3,6 +3,9 @@
 @import 'post/header';
 @import 'post/content';
 @import 'post/summary';
+@import 'post/description-link';
+@import 'post/text-link';
+@import 'post/category-text-link';
 
 .post-title-category {
   font-weight: 500;
@@ -17,12 +20,6 @@
 .post-title-meta {
   font-size: 12px;
   color: #818181;
-}
-
-.post-detail-link p {
-  font-size: 13px;
-  color: #888;
-  margin-left: 1em;
 }
 
 .post-summary-date {

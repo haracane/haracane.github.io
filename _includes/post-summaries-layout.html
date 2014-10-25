@@ -1,38 +1,32 @@
-{% if site.post_summary_sidebar %}
-  {% assign wrap_class = '' %}
-  {% assign layout_center_class = 'layout-center' %}
-{% else %}
-  {% assign wrap_class = 'wrap' %}
-  {% assign layout_center_class = 'layout-center-sp' %}
-{% endif %}
-<div class="{{wrap_class}}">
-  <div class="layout-header">
+{% include decorate-page.html %}
+
+<div class="{{site.styles[page_primary_path].wrap_class}}">
+  <section class="layout-header">
     <header class="index-header">
       <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
     </header>
-  </div>
+  </section>
 
-  <div class="{{layout_center_class}} clearfix">
-    {% for post in posts %}
-      {% if false %}
-        {% include post-banner.html %}
-      {% else %}
-        {% include post-summary.html %}
+  <section class="{{site.styles[page_primary_path].layout_center_class}} ">
+    <div class="{{site.styles[page_primary_path].box_class}} clearfix nolist">
+      {% assign layout = site.styles[page_primary_path].layout %}
+      {% for post in posts %}
+        {% include post.html %}
+      {% endfor %}
+
+      {% if posts.size != site.posts.size %}
+        <div>
+          <!--a href="/page{{ paginator.next_page }}" class="next btn btn-primary">もっと見る</a-->
+          <a href="/backnumber.html" class="next btn btn-primary w240 ph0">もっと見る</a>
+        </div>
       {% endif %}
-    {% endfor %}
-
-    {% if posts.size != site.posts.size %}
-      <div>
-        <!--a href="/page{{ paginator.next_page }}" class="next btn btn-primary">もっと見る</a-->
-        <a href="/backnumber.html" class="next btn btn-primary w240 ph0">もっと見る</a>
-      </div>
-    {% endif %}
-  </div>
-
-  {% if site.post_summary_sidebar %}
-    <div class="layout-sidebar">
-      {% include sidebar-contents.html %}
     </div>
+  </section>
+
+  {% if site.styles[page_primary_path].sidebar %}
+    <section class="layout-sidebar clearfix">
+      {% include sidebar-contents.html %}
+    </section>
   {% endif %}
 </div>
 

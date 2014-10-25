@@ -22,3 +22,10 @@
 .vt { vertical-align: top; }
 .vm { vertical-align: middle; }
 .vb { vertical-align: bottom; }
+
+.nolist { list-style: none; }
+.hlist { list-style: none; }
+.hlist > li { display: inline-block; }
+
+.center { text-align: center; }
+.full-width { width: 100%; }

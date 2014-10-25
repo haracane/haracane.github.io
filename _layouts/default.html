@@ -1,3 +1,4 @@
+{% include decorate-page.html %}
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +9,8 @@
     <div id="page">
       {% include mmenu/header.html %}
       <div class="page-content">
+        {% include top-navigation.html %}
+
         {{ content }}
 
         {% include footer.html %}

@@ -1,12 +1,17 @@
 $side_margin: 2%;
 
+.page-content {
+  margin-right: $side_margin;
+  margin-left: $side_margin;
+}
+
 .layout-header {
-  margin: 4px $side_margin;
+  margin: 4px 0px;
 }
 
 .layout-center {
    width: 64%;
-   margin-left: $side_margin;
+   margin-left: 0px;
    float: left;
  }
 
@@ -16,8 +21,8 @@ $side_margin: 2%;
 }
 
 .layout-sidebar {
-  width: 28%;
-  margin: 4px $side_margin;
+  width: 34%;
+  margin: 0px 0px 4px $side_margin;
   padding: 0px;
   float: left;
 }
@@ -38,16 +43,20 @@ $side_margin: 2%;
 
 .layout-center-sp {
   width: 96%;
-  margin: 0px $side_margin;
+  margin: 0px;
   padding: 0px;
 }  
 
 @media screen and (max-width: 620px) {
   .layout-center, .layout-sidebar {
     width: 96%;
-    margin: 0px 2%;
+    margin: 0px;
     float: none;
   }
   .border-box { border-style: none; }
   .padding-box, .side-box { padding: 0px; }
+}
+
+@media screen and (max-width: 480px) {
+  .top-navigation { display: none; }
 }

@@ -29,8 +29,9 @@
     &:focus,
     &:active,
     &.active {
+      color: $color;
       background-color: $background;
-          border-color: $border;
+      border-color: $border;
     }
   }
 }
@@ -58,7 +59,7 @@
 
   &:hover,
   &:focus {
-    color: $btn-default-color;
+    //color: $btn-default-color;
     text-decoration: none;
   }
 
@@ -118,4 +119,8 @@
 }
 .btn-pocket {
   @include button-variant($btn-pocket-color, $btn-pocket-bg, $btn-pocket-border);
+}
+.btn-nav {
+  @include button-variant($btn-nav-color, $btn-nav-bg, $btn-nav-border);
+  border-radius: 0px;
 }

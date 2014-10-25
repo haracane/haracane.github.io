@@ -1,14 +1,16 @@
-{% assign split_path = page.url | split : "/" %}
-{% assign primary_path = split_path[1] | split : "." | first %}
-<div class="top-navigation">
+{% assign active_navigation_index = 0 %}
+
+<section class="top-navigation mt8 mb8">
   <ul class="nav nav-tabs" role="tablist">
-    {% if primary_path == "backnumber" %}
+    {% if page_primary_path == "backnumber" %}
       {% assign active_index = 3 %}
-    {% elsif primary_path == "genre" %}
+    {% elsif page_primary_path == "genres" %}
       {% assign active_index = 2 %}
-    {% elsif primary_path == "tags" %}
+    {% elsif page_primary_path == "genre" %}
       {% assign active_index = 2 %}
-    {% elsif primary_path == "categories" %}
+    {% elsif page_primary_path == "tags" %}
+      {% assign active_index = 2 %}
+    {% elsif page_primary_path == "categories" %}
       {% assign active_index = 1 %}
     {% else %}
       {% assign active_index = 0 %}
@@ -21,4 +23,4 @@
       {% endif %}
     {% endfor %}
   </ul>
-</div>
+</section>

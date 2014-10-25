@@ -1,6 +1,6 @@
 <li>
-  {% include category-post-title.html %}  
+  {% include post/category-title.html %}  
   <span class="post-title-meta">({{ post.date | date: "%Y/%m/%d" }})</span>
-  {% include post-thumbnail.html %}
+  {% include post/thumbnail.html %}
   <p>{{ post.description }}</p>
 </li>
