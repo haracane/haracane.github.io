@@ -2,7 +2,7 @@
 layout: post
 title: Rails4でエンタープライズなActiveRecordモデルを作るための6のステップ
 date: 2014-10-26 10:33:31J
-tags: Rails
+tags: Rails RSpec Ruby
 keywords: ActiveRecord Rails4 モデル 開発現場 商用 エンタープライズ
 description: Railsではモデルのひな形を自動生成してくれますが、そのままでは開発現場では使えません。この記事ではRails4のActiveRecordをエンタープライズ用途に使えるようにするために実行している6のステップを紹介します。
 categories: enterprise-active-record

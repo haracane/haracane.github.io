@@ -1,7 +1,8 @@
-<div class="post-tags">
-{% for tag_url in post.tag_urls %}
-{% if site.tags[tag_url[0]].size > 1 %}
-  <a href="{{ tag_url[1] }}">{{ tag_url[0] }}</a>
-{% endif %}
-{% endfor %}
-</div>
+  <div class="post-tags">
+    {% for tag_url in post.tag_urls %}
+      {% capture tag_name %}{{tag_url[0]}}{% endcapture %}
+      {% if site.tags[tag_name].size > 1 %}
+        <a href="{{ tag_url[1] }}">{{ tag_name }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
