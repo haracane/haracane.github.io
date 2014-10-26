@@ -8,3 +8,5 @@ description:
 ---
 
 * Goto CSS declaration
+
+{"tab_size": 2, "translate_tabs_to_spaces": true}
