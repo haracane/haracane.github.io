@@ -1,6 +1,12 @@
+model-spec-custom-matchers:
+  title: "Rails4のモデル用カスタムマッチャ"
+  h1: "Rails4のモデル用カスタムマッチャ"
+  description: "Rails4でRSpecカスタムマッチャを追加してモデルのテストを行います。ここで紹介するカスタムマッチャではNOT NULL制約、UNIQUE制約、外部キー制約といったDB制約のテストや、FactoryGirlで正しくモデルを作れることなどをテストします。"
+  finished: false
+
 rails-capybara:
   title: "Rails4＋RSpecでCapybara入門"
-  h1: "Rails4＋RSpecでCapybaraを使ってテストする"
+  h1: "Rails4＋RSpecでCapybara入門"
   description: "Rails4＋RSpec環境でCapybaraを使ったテスト方法を紹介する入門向け連載記事です。"
   finished: false
 

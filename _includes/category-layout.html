@@ -7,14 +7,14 @@
 
 <div class="layout-center mt8">
   <div class="mb20">
-    <p>{{page.description}}</p>
+    <p class="category-description">{{page.description}}</p>
   </div>
 
   <dl class="nav-box">
     <dt>{{ page.title }}</dt>
     <dd>
       <ul class="post-detail-link clearfix">
-        {% for post in page.posts %}
+        {% for post in page.posts reversed %}
         {% include category-post-link.html %}
         {% endfor %}
       </ul>
