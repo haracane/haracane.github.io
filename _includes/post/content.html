@@ -11,6 +11,7 @@
   {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
 
 </article>
+{% include post/next.html %}
 {% include sns-buttons/count.html %}
 {% include category-posts.html %}
 {% include post-related-posts.html %}

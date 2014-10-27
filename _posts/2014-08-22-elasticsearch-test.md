@@ -6,8 +6,6 @@ date:   2014-08-22 20:12:24J
 tags: Elasticsearch Ruby Rails RSpec
 ---
 
-前回[RailsからElasticsearchを使ってみました](/2014/08/21/elasticsearch-model/)が, 今回はRSpecでElasticsearchモデルの検索機能のテストを行います.
-
 ## セッティングをテストする
 
 まずは正しくセッティングされていることをテストします.

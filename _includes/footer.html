@@ -1,23 +1,17 @@
-<footer class="site-footer">
-
-  <div class="wrap">
-
-    <div class="footer-col-1 column">
-      <h3 class="footer-heading">{{ site.title }}</h3>
-      <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<footer class="site-footer mt14">
+  <div class="ft-content">
+    <dl class="ft-box">
+      <dt class="ft-title">話題ワード</dt>
+      <dd>
+        <ul class="hlist">
+      {% for tag_category in site.data.tag_categories %}{% for tag_name in tag_category["tag_names"] %}{% assign tag_url = site.data.tag_urls[tag_name] %}{% if tag_url %}
+        <li class="ft-link"><a href="{{tag_url}}">{{tag_name}}</a></li>
+      {% endif %}{% endfor %}{% endfor %}
+        </ul>
+      </dd>
+    </dl>
+    <div class="center mt14">
+      <a href="{{site.url}}">{{site.title}}</a> by <a href="http://twitter.com/{{site.twitter_username}}">@{{site.twitter_username}}</a>
     </div>
-
-    <div class="footer-col-2 column">
-      <ul>
-        {% if site.github_username %}<li>{% include github-link.html %}</li>{% endif %}
-        {% if site.twitter_username %}<li>{% include twitter-link.html %}</li>{% endif %}
-      </ul>
-    </div>
-
-    <div class="footer-col-3 column">
-      <p class="text">{{ site.description }}</p>
-    </div>
-
   </div>
-
 </footer>

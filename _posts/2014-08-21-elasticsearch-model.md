@@ -6,8 +6,6 @@ date:   2014-08-21 06:36:46J
 tags: Elasticsearch Ruby Rails
 ---
 
-RailsからElasticsearchを使う場合に推奨となっている[elasticsearch-rails gem](https://github.com/elasticsearch/elasticsearch-rails)を使ってN-gram検索機能を作ってみます.
-
 この記事ではレシピ検索をする場合を例に検索機能を追加します.
 
 ## 検索機能を追加するモデルを作る
@@ -164,5 +162,3 @@ DBのレシピデータをElasticsearchにインポートします
     => ["ミックス赤玉で豚玉を作ってみた", "ミックス赤玉で卵焼き"]
 
 うまくできました.
-
-次回はRecipeモデルのElasticsearch検索機能のテストをしようと思います.

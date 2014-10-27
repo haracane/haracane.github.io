@@ -13,7 +13,7 @@
   <dl class="nav-box">
     <dt>{{ page.title }}</dt>
     <dd>
-      <ul class="post-detail-link clearfix">
+      <ul class="clearfix">
         {% for post in page.posts reversed %}
         {% include category-post-link.html %}
         {% endfor %}

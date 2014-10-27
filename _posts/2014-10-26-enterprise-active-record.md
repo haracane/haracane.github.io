@@ -5,7 +5,6 @@ date: 2014-10-26 10:33:31J
 tags: Rails RSpec Ruby
 keywords: ActiveRecord Rails4 モデル 開発現場 商用 エンタープライズ
 description: Railsではモデルのひな形を自動生成してくれますが、そのままでは開発現場では使えません。この記事ではRails4のActiveRecordをエンタープライズ用途に使えるようにするために実行している6のステップを紹介します。
-categories: enterprise-active-record
 image: rails.png
 ---
 
@@ -65,7 +64,7 @@ end
 
 {% highlight ruby %}
 FactoryGirl.define do
-  factory :blog_post, class: 'Blog::Post' do
+  factory :blog_post, :class => 'Blog::Post' do
     user
     sequence(:permalink) { |n| "permalink_#{n}" }
     title "title"

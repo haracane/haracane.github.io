@@ -8,16 +8,16 @@ page_category: tags
   </header>
 </div>
 
-<div class="layout-center nav-box">
+<div class="layout-center">
   <dl class="border-box padding-box nav-box">
   	{% for genre_params in site.data.tag_categories %}
   	<dt><a href="{{genre_params["url"]}}">「{{ genre_params["name"] }}」のタグ</a></dt>
   	<dd>
-  	  <ul class="post-tags">
+  	  <ul class="post-tags hlist">
         {% for tag in genre_params["tags"] %}
           {% capture tag_name %}{{ tag[0] }}{% endcapture %}
           {% if site.tags[tag_name].size > 0 %}
-            <a href="{{ site.data.tag_urls[tag_name] }}">{{ tag[0] }}</a>
+            <li><a href="{{ site.data.tag_urls[tag_name] }}">{{ tag[0] }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
@@ -26,7 +26,7 @@ page_category: tags
   </dl>
 </div>
 
-<div class="layout-sidebar">
+<div class="layout-sidebar clearfix">
   {% include sidebar-contents.html %}
 </div>
 
