@@ -8,3 +8,6 @@ description:
 ---
 
 {{ page.description }}
+
+accepts_nested_attributes_for
+inverse_of
