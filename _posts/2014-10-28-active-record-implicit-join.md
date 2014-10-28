@@ -4,7 +4,7 @@ title: ActiveRecordでincludesとwhereを同時に使う時はJOINするテー�
 date: 2014-10-28 19:48:23J
 tags: Rails Ruby
 keywords: ActiveRecord includes where Rails Ruby
-description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATION WARNINGが出たので記事に残しておきます。最終的にはArelを使って対応しました。
+description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATION WARNINGが出たので記事に残しておきます。最終的にはちゃんとArelを使って対応しました。
 ---
 
 {% highlight ruby %}
