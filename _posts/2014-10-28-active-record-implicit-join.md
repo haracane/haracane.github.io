@@ -4,7 +4,7 @@ title: ActiveRecordでincludesとwhereを同時に使う時に気をつけるこ
 date: 2014-10-28 19:48:23J
 tags: Rails Ruby
 keywords: ActiveRecord includes where Rails Ruby
-description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATION WARNINGが出たので記事に残しておきます。結論としてはArelを使った方が良さそうです。
+description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATION WARNINGが出たので記事に残しておきます。最終的にはArelを使って対応しました。
 ---
 
 {% highlight ruby %}
@@ -25,7 +25,7 @@ Post.includes(:comments).where("comments.content like '%いいね%'")
 
 というDEPRECATION WARNINGが出ました。
 
-内容を読んでみると`comments.content`の`comment`は`references(:comments)`で指定しましょうということのようです。
+要約すると「文字列中のテーブル名を自動認識しなくする予定だから`comments.content`のテーブル名は`references(:comments)`で指定してね」ということのようです。
 
 ただ、そもそも文字列でSQLを書いてるから文句を言われているので今回は
 
@@ -33,4 +33,4 @@ Post.includes(:comments).where("comments.content like '%いいね%'")
 Post.includes(:comments).where(Comment.arel_table(:content).matches('%いいね%'))
 {% endhighlight %}
 
-とArealを使うことで対応しました。
+とArelを使うことで対応しました。
