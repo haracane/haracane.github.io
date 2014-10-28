@@ -11,7 +11,7 @@ description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATI
 Post.includes(:comments).where("comments.content like '%いいね%'")
 {% endhighlight %}
 
-のようにPostモデルのデータを取得しようとしたら
+という感じでJOINしたデータを取得しようとしたら
 
     DEPRECATION WARNING: It looks like you are eager loading table(s) (one of: admin_help_questions, admin_help_answers) that are referenced in a string SQL snippet. For example:
 
@@ -30,7 +30,7 @@ Post.includes(:comments).where("comments.content like '%いいね%'")
 ただ、そもそも文字列でSQLを書いてるから文句を言われているので今回は
 
 {% highlight ruby %}
-Post.includes(:comments).where(Comment.arel_table(:content).matches('%いいね%'))
+Post.includes(:comments).where(Comment.arel_table[:content].matches('%いいね%'))
 {% endhighlight %}
 
 とArelを使うことで対応しました。
