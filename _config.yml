@@ -6,8 +6,9 @@ baseurl: ""
 url: "http://blog.enogineer.com"
 author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=72
 twitter_username: haracane
-twitter_username_ruby: はらけん
+#twitter_username_ruby: はらけん
 github_username:  haracane
+#qiita_username:  haracane
 google_analysis_id: UA-53664731-1
 paginate: 12
 

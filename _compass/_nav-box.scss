@@ -2,3 +2,6 @@
 .nav-box > dt { margin: 8px 0px; font-size: 16px; @include dotted-border-bottom; }
 .nav-box, .nav-box ul { list-style-type: none; }
 .nav-box li:none { margin:8px; padding: 0px; }
+
+.nav-box .icon-svg { width: 16px; height: 16px; }
+.nav-box .btn { padding: 4px 8px; margin: 2px 0px; }

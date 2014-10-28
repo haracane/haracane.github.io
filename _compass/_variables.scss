@@ -19,6 +19,10 @@ $brand-facebook:        #3b5998 !default;
 $brand-google:          #db4a39 !default;
 $brand-hatena:          #00A5DE !default;
 $brand-pocket:          #f03e51 !default;
+$brand-rss:             #ff9900 !default;
+$brand-feedly:          #89be49 !default;
+$brand-github:          #c2c2c2 !default;
+$brand-qiita:           #59bb0c !default;
 
 $brand-nav:          #eee !default;
 
@@ -71,6 +75,18 @@ $btn-pocket-border:             darken($btn-pocket-bg, 5%) !default;
 $btn-hatena-color:              #fff !default;
 $btn-hatena-bg:                 $brand-hatena !default;
 $btn-hatena-border:             darken($btn-hatena-bg, 5%) !default;
+
+$btn-rss-color:              #fff !default;
+$btn-rss-bg:                 $brand-rss !default;
+$btn-rss-border:             darken($btn-rss-bg, 5%) !default;
+
+$btn-feedly-color:              #fff !default;
+$btn-feedly-bg:                 $brand-feedly !default;
+$btn-feedly-border:             darken($btn-feedly-bg, 5%) !default;
+
+$btn-github-color:              #fff !default;
+$btn-github-bg:                 $brand-github !default;
+$btn-github-border:             darken($btn-github-bg, 5%) !default;
 
 $btn-nav-color:              #444 !default;
 $btn-nav-bg:                 $brand-nav !default;

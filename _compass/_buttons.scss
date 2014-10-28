@@ -120,6 +120,15 @@
 .btn-pocket {
   @include button-variant($btn-pocket-color, $btn-pocket-bg, $btn-pocket-border);
 }
+.btn-rss {
+  @include button-variant($btn-rss-color, $btn-rss-bg, $btn-rss-border);
+}
+.btn-feedly {
+  @include button-variant($btn-feedly-color, $btn-feedly-bg, $btn-feedly-border);
+}
+.btn-github {
+  @include button-variant($btn-github-color, $btn-github-bg, $btn-github-border);
+}
 .btn-nav {
   @include button-variant($btn-nav-color, $btn-nav-bg, $btn-nav-border);
   border-radius: 0px;

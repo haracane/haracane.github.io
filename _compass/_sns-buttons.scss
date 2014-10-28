@@ -1,2 +1,8 @@
 @import "sns-buttons/flat";
 @import "sns-buttons/count";
+@import "sns-buttons/vertical";
+
+.sns-buttons .icon-svg {
+  width: 14px;
+  height: 14px;
+}

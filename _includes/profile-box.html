@@ -2,11 +2,14 @@
   <dt>プロフィール</dt>
   <dd>
     {% if site.author_image %}
-      <a href="http://twitter.com/{{ site.twitter_username }}"><img class="profile-image" class="title-image" alt="プロフィール画像" src="{{ site.author_image }}"></a>
+      <div class="mb8">
+        <a href="http://twitter.com/{{ site.twitter_username }}"><img class="profile-image" class="title-image" alt="プロフィール画像" src="{{ site.author_image }}"></a>
+      </div>
     {% endif %}
-    <ul>
+    <ul class="block hlist">
       {% if site.twitter_username %}<li>{% include twitter-link.html %}</li>{% endif %}
       {% if site.github_username %}<li>{% include github-link.html %}</li>{% endif %}
+      {% if site.qiita_username %}<li>{% include qiita-link.html %}</li>{% endif %}
     </ul>
     <p>{{ site.profile }}</p>
   </dd>

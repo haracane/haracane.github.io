@@ -11,9 +11,9 @@
 {% capture title %}{{ page.category_title }}{% if page.category_title %}（第{{ page.order_in_category }}回）：{% endif %}{{ page_title }}{% endcapture %}
 
 {% capture url %}{{ site.url }}{{ page.url }}{% endcapture %}
-<ul class="sns-buttons-flat">
+<ul class="sns-buttons sns-buttons-flat">
   <li>
-    <a class="btn btn-twitter" href="http://twitter.com/share?url={{url}}&text={{title}}">t</a>
+    <a class="btn btn-twitter" href="http://twitter.com/share?url={{url}}&text={{title}}" target="_blank">{% include twitter-icon.html %}</a>
   </li>
   <!--li>
     <a class="btn btn-facebook" href="http://www.facebook.com/plugins/like.php?href={{url}}" onclick="javascript:window.open('http://www.facebook.com/plugins/like.php?href={{url}}' ,null ,'width=650 ,height=450'); return false;" rel="nofollow">いいね！</a>
@@ -22,7 +22,7 @@
     <a class="btn btn-facebook" href="http://www.facebook.com/share.php?u={{url}}" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">シェア</a>
   </li>
   <li>
-    <a class="btn btn-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url={{url}}&title={{title}}">B!</a>
+    <a class="btn btn-hatena" href="http://b.hatena.ne.jp/add?mode=confirm&url={{url}}&title={{title}}" target="_blank">B!</a>
   </li>
   <li>
     <a class="btn btn-google" href="https://plus.google.com/share?url={{url}}" onclick="window.open(this.href, 'Gwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">g+</a>
