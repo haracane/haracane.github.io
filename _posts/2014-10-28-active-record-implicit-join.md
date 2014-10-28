@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ActiveRecordでincludesとwhereを同時に使う時に気をつけること
+title: ActiveRecordでincludesとwhereを同時に使う時はJOINするテーブル名の指定に気をつける
 date: 2014-10-28 19:48:23J
 tags: Rails Ruby
 keywords: ActiveRecord includes where Rails Ruby
