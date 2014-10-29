@@ -10,3 +10,5 @@ description:
 {{ page.description }}
 
 all?
+reduce
+flat_map
