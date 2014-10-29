@@ -3,7 +3,7 @@ class CategoryPage < Jekyll::Page
     @site = site
     @base = base
     @dir = dir
-    @name = "index.html"
+    @name = ""
 
     self.process(@name)
     self.read_yaml(File.join(base, '_layouts'), 'category.html')
