@@ -10,6 +10,7 @@
 
   {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
 
+  {% if post.sub_category %}{% include sub-category-posts.html %}{% endif %}
 </article>
 {% include post/next.html %}
 {% include sns-buttons/count.html %}

@@ -1,0 +1,7 @@
+<div class="nav-box">
+  <ul class="clearfix">
+    {% for post in site.categories[post.sub_category] reversed %}
+    {% include category-post-link.html %}
+    {% endfor %}
+  </ul>
+</div>

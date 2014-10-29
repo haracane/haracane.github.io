@@ -12,6 +12,8 @@
       {% assign active_index = 2 %}
     {% elsif page_primary_path == "categories" %}
       {% assign active_index = 1 %}
+    {% elsif page.sub_category %}
+      {% assign active_index = 1 %}
     {% else %}
       {% assign active_index = 0 %}
     {% endif %}
