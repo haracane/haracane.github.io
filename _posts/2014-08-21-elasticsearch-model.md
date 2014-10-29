@@ -53,7 +53,7 @@ end
 これで最低限の機能は利用できます.
 
     $ bundle exec rails console
-    > Rails.import
+    > Recipe.import
     > Recipe.search("卵").records.map(&:title)
       Recipe Load (0.2ms)  SELECT "recipes".* FROM "recipes"  WHERE "recipes"."id" IN (11, 9, 10)
     => ["ミックス赤玉で卵焼き", "ミックス赤玉で豚玉を作ってみた", "パルメザンチーズで濃厚カルボナーラ"]
