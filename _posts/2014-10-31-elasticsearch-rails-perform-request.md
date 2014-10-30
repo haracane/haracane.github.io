@@ -17,7 +17,7 @@ Blog::Post.__elasticsearch__.client.perform_request(:get, 'blog-posts/_count').b
 
 という感じで任意のHTTPリクエストを送れます。
 
-[Awesome Print](https://github.com/michaeldv/awesome_print)を使って結果を見やすく。
+[Awesome Print](https://github.com/michaeldv/awesome_print)を使えば結果も見やすくなります。
 
 {% highlight ruby %}
 ap Blog::Post.__elasticsearch__.client.perform_request(:get, 'blog-posts/_count').body
