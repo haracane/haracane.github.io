@@ -10,7 +10,7 @@ sub_category: rails-capybara
 image: rspec.png
 ---
 
-例えば①ログインする、②表示内容を確認する、③フォーム入力するならこんな感じになります。
+例えば①ログインする、②表示内容を確認する、③フォーム入力する、という流れをテストするならこんな感じになります。
 
 {% highlight ruby %}
 require 'rails_helper'
