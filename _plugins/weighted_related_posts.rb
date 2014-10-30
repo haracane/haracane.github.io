@@ -14,8 +14,11 @@ module WeightedRelatedPosts
     tags.each_with_index { |tag, i|  tag_weights[tag] = 2 ** (tags_size - 1 - i) }
 
     posts.each do |post|
+      next if post == self
+      next if post.categories == self.categories
+      next if post.categories.include?(self.data["sub_category"])
       post.tags.each do |tag|
-        if self.tags.include?(tag) && post != self && post.categories != categories
+        if self.tags.include?(tag)
           cat_freq = tag_freq(posts)[tag]
           related_scores[post] += (1 + highest_freq - cat_freq) * tag_weights[tag]
         end

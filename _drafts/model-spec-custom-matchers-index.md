@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Rails4のActiveRecordテストに使っているカスタムマッチャ5選
+title:  Rails4のActiveRecord向けRSpecカスタムマッチャ5選
 date: 2014-10-30 07:59:50J
 tags: RSpec Ruby Rails
 keywords: RSpec,FactoryGirl,ActiveRecord,Rails

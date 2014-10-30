@@ -45,7 +45,7 @@ styles:
   tag-post-link:
     layout: post/description-link.html
   category-post-link:
-    layout: post/category-description-link.html
+    layout: post/category-text-link.html
 
 category_navigations:
   -

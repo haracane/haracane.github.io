@@ -8,8 +8,6 @@ description: Capybaraを使う時に検索して調べることが多いので�
 image: rspec.png
 ---
 
-
-
 Capybaraの使い方を知りたい場合は[Ruby on Railsチュートリアルのテスト例](http://railstutorial.jp/chapters/static-pages?version=4.0#sec-first_tests)が参考になると思います。
 
 以下はCapybaraで色々なマッチャを使ってみた例です。これくらいのマッチャを使えばだいたいのことはできると思います。
