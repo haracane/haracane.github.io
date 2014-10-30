@@ -9,20 +9,12 @@ page_category: categories
 </div>
 
 <div class="layout-center">
-  <dl class="border-box padding-box nav-box">
-    {% for category in site.data.category_params %}
-    {% capture category_name %}{{category[0]}}{% endcapture %}
-    {% assign posts = site.categories[category_name] %}
-    {% if posts.size > 0 %}
-    <dt><a href="/categories/{{category_name}}/">{{ category[1]["title"] }}</a>（計{{ posts.size }}回）</dt>
-    <dd>
-      <ul class="clearfix">
-        {% for post in posts %}{% include category-post-link.html %}{% endfor %}
-      </ul>
-    <dd>
-    {% endif %}
+  <ul>
+    {% assign posts = site.categories["category-posts-index"] %}
+    {% for post in posts %}
+      {% include post-summary.html %}
     {% endfor %}
-  </dl>
+  </ul>
 </div>
 
 <div class="layout-sidebar">

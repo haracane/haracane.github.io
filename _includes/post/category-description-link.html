@@ -1,4 +1,5 @@
-<li class="category-text-link">
+<li class="category-description-link">
   <span class="post-title-name"><a href="{{ post.url }}">第{{post.order_in_category}}回：{{ post.title }}</a></span>
   <span class="post-title-meta">({{ post.date | date: "%Y/%m/%d" }})</span>
+  <p>{{ post.description }}</p>
 </li>
