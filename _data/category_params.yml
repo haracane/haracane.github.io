@@ -9,21 +9,3 @@ rails-active-record:
   h1: "Rails4でActiveRecord"
   description: "Rails4のActiveRecordを使う場合に知っておいた方が良い、データベース制約やテストの追加方法などを紹介します。"
   finished: false
-
-model-spec-custom-matchers:
-  title: "Rails4のモデル用カスタムマッチャ"
-  h1: "Rails4のモデル用カスタムマッチャ"
-  description: "Rails4でRSpecカスタムマッチャを追加してモデルのテストを行います。ここで紹介するカスタムマッチャではNOT NULL制約、UNIQUE制約、外部キー制約といったDB制約のテストや、FactoryGirlで正しくモデルを作れることなどをテストします。"
-  finished: false
-
-rails-capybara:
-  title: "Rails4＋RSpecでCapybara入門"
-  h1: "Rails4＋RSpecでCapybara入門"
-  description: "Rails4＋RSpec環境でCapybaraを使ったテスト方法を紹介する入門向け連載記事です。"
-  finished: false
-
-rails-restful:
-  title: "Rails4でRESTful"
-  h1: "Rails4でRESTfulアプリケーションを作る"
-  description: "Rails4でRESTfulアプリケーションを実際に作る連載記事です。"
-  finished: true
