@@ -23,7 +23,9 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ description }}">
     <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | replace: ' ', ','}},{% endif %}{{ site.keywords }}">
-    <link rel="canonical" href="{{ site.url }}{{page.url}}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ "/atom.xml" | prepend: site.baseurl }}"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="{{ "/feed.xml" | prepend: site.baseurl }}"/>
     <meta property="og:title" content="{{ title }}">
     <meta property="og:type" content="blog">
     <meta property="og:url" content="{{ site.url }}{{page.url}}">
