@@ -1,5 +1,5 @@
 
-@each $i in 0 1 2 4 8 10 12 14 28 {
+@each $i in 0 1 2 4 8 10 12 14 20 28 {
   .fs#{$i} { font-size: #{$i}px; }
   .m#{$i} { margin: #{$i}px; }
   .mt#{$i} { margin-top: #{$i}px; }
