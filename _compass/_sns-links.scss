@@ -1,0 +1,26 @@
+.sns-link {
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  padding: 0px 2px;
+  border-radius: 3px;
+  &:hover {
+  }
+}
+
+.hatena-link {
+  background-color: #ffcbcb;
+  border-color: #ff1515;
+  &, &:hover, &:visited {
+    color: #ff1515;
+  }
+}
+
+.twitter-link {
+  background-color: #c0deed;
+  color: #0084b4;
+  border-color: #0084b4;
+  &, &:hover, &:visited {
+    color: #0084b4;
+  }
+}

@@ -1,0 +1,10 @@
+<dl class="side-box border-box nav-box">
+  <dt>人気の記事</dt>
+  <dd>
+    <ul class="clearfix">
+      {% for post in site.data['popular_posts'] limit:6 %}
+        {% include nav-post-link.html %}
+      {% endfor %}
+    </ul>
+  </dd>
+</dl>
