@@ -15,7 +15,9 @@ image: rails.png
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:destroy]
+namespace :blog do
+  resources :posts, only: [:destroy]
+end
 {% endhighlight %}
 
 と設定します。
@@ -23,15 +25,15 @@ resources :articles, only: [:destroy]
 設定してからルーティング情報を出力すると
 
     $ rake routes
-    article DELETE /articles/:id(.:format) articles#destroy
+    blog_post DELETE /blog/posts/:id(.:format) blog/posts#destroy
 
 となります。
 
 確認すると
 
-1. Prefixは`article`で、`article_path(article.id)`といったヘルパーでパスを取得できる
-2. `/articles/:id(.:format)`への`DELETE`リクエストでアクセスできる
-3. `articles`コントローラの`destroy`アクションを実行する
+1. Prefixは`blog_post`で、`blog_post_path(blog_post.id)`といったヘルパーでパスを取得できる
+2. `/blog/posts/:id(.:format)`への`DELETE`リクエストでアクセスできる
+3. `blog_posts`コントローラの`destroy`アクションを実行する
 
 ということがわかります。
 
@@ -42,19 +44,19 @@ resources :articles, only: [:destroy]
 destroyアクションでは指定されたidの記事を削除します。
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
-before_action :set_article, only: [:destroy]
+# app/controllers/blog/posts_controller.rb
+before_action :set_blog_post, only: [:destroy]
 
 def destroy
-  if @article.delete
+  if @post.delete
     flash[:success] = "deleted"
   end
-  redirect_to articles_path
+  redirect_to blog_posts_path
 end
 
 private
-  def set_article
-    @article = Article.find(params[:id])
+  def set_blog_post
+    @post = Blog::Post.find(params[:id])
   end
 {% endhighlight %}
 

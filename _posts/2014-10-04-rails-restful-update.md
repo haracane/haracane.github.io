@@ -9,15 +9,15 @@ description: 前回は投稿済みの記事の編集フォームを表示でき�
 image: rails.png
 ---
 
-
-
 ### 記事更新機能のルーティング設定
 
 まずはroutes.rbでupdateアクションのルーティング設定を行います。
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:update]
+namespace :blog do
+  resources :posts, only: [:update]
+end
 {% endhighlight %}
 
 と設定します。
@@ -25,15 +25,15 @@ resources :articles, only: [:update]
 設定してからルーティング情報を出力すると
 
     $ rake routes
-    article PATCH /articles/:id(.:format) articles#update
+    blog_post PATCH /blog/posts/:id(.:format) blog/posts#update
 
 となります。
 
 確認すると
 
-1. Prefixは`article`で、`article_path(article.id)`といったヘルパーでパスを取得できる
-2. `/articles/:id(.:format)`への`PATCH`リクエストでアクセスできる
-3. `articles`コントローラの`update`アクションを実行する
+1. Prefixは`blog_post`で、`blog_post_path(blog_post.id)`といったヘルパーでパスを取得できる
+2. `/blog/posts/:id(.:format)`への`PATCH`リクエストでアクセスできる
+3. `blog_posts`コントローラの`update`アクションを実行する
 
 ということがわかります。
 
@@ -44,25 +44,25 @@ resources :articles, only: [:update]
 updateアクションでは更新用の記事データをロードして、受け取ったパラメタで更新・保存します。
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
-before_action :set_article, only: [:edit]
+# app/controllers/blog/posts_controller.rb
+before_action :set_blog_post, only: [:edit]
 
 def update
-  if @article.update(article_params)
+  if @post.update(blog_post_params)
     flash[:success] = "updated"
-    redirect_to articles_path
+    redirect_to blog_posts_path
   else
     render 'edit'
   end
 end
 
 private
-  def set_article
-    @article = Article.find(params[:id])
+  def set_blog_post
+    @post = Blog::Post.find(params[:id])
   end
 
-  def article_params
-    params.require(:article).permit(:title, :content)
+  def blog_post_params
+    params.require(:blog_post).permit(:title, :content)
   end
 {% endhighlight %}
 

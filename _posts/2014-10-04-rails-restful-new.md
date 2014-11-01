@@ -19,7 +19,9 @@ image: rails.png
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:new]
+namespace :blog do
+  resources :posts, only: [:new]
+end
 {% endhighlight %}
 
 と設定します。
@@ -27,13 +29,13 @@ resources :articles, only: [:new]
 設定してからルーティングを確認すると
 
     $ rake routes
-    new_article GET /articles/new(.:format) articles#new
+    new_blog_post GET /blog/posts/new(.:format) blog/posts#new
 
 という行が出力されます。
 
-1. Prefixは`new_article`で、`new_article_path`といったヘルパーでパスを取得できる
-2. `/articles/new(.:format)`への`GET`リクエストでアクセスできる
-3. `articles`コントローラの`new`アクションを実行する
+1. Prefixは`new_blog_post`で、`new_blog_post_path`といったヘルパーでパスを取得できる
+2. `/blog/posts/new(.:format)`への`GET`リクエストでアクセスできる
+3. `blog_posts`コントローラの`new`アクションを実行する
 
 ということがわかります。
 
@@ -44,21 +46,21 @@ resources :articles, only: [:new]
 newアクションでは表示用の記事データを取得する必要があるので
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
+# app/controllers/blog/posts_controller.rb
 def new
-  @article = Article.new
+  @post = Blog::Post.new
 end
 {% endhighlight %}
 
-というように投稿フォーム用のArticleオブジェクトを作成します。
+というように投稿フォーム用のBlog::Postオブジェクトを作成します。
 
 ### 記事投稿フォーム表示機能のビュー
 
 newアクションのビューでは記事投稿フォームを表示します。
 
 {% highlight slim %}
-/ app/views/articles/new.html.slim
-= form_for @article, url: articles_path do |f|
+/ app/views/blog/posts/new.html.slim
+= form_for @post, url: blog_posts_path do |f|
   = f.text_field :title
   = f.text_area :content
   = f.submit "投稿する"

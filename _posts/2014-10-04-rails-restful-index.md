@@ -23,7 +23,9 @@ RailsではresourcesメソッドでRESTfulなURIを生成できます。
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:index]
+namespace :blog do
+  resources :posts, only: [:index]
+end
 {% endhighlight %}
 
 と設定します。
@@ -31,15 +33,15 @@ resources :articles, only: [:index]
 設定してからルーティングを確認すると
 
     $ rake routes
-    articles GET  /articles(.:format) articles#index
+    blog_posts GET  /blog/posts(.:format) blog/posts#index
 
 という行が出力されます。
 
 ここからは
 
-1. Prefixは`articles`で、`articles_path`といったヘルパーでパスを取得できる
-2. `/articles(.:format)`への`GET`リクエストでアクセスできる
-3. `articles`コントローラの`index`アクションを実行する
+1. Prefixは`blog_posts`で、`blog_posts_path`といったヘルパーでパスを取得できる
+2. `/blog/posts(.:format)`への`GET`リクエストでアクセスできる
+3. `blog_posts`コントローラの`index`アクションを実行する
 
 ということがわかります。
 
@@ -51,13 +53,13 @@ resources :articles, only: [:index]
 indexアクションでは一覧用の記事データを取得する必要があるので
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
+# app/controllers/blog/posts_controller.rb
 def index
-  @articles = Article.all
+  @posts = Blog::Post.all
 end
 {% endhighlight %}
 
-というようにArticleモデルのリストを取得します。
+というようにBlog::Postモデルのリストを取得します。
 
 ### 記事一覧機能のビュー
 
@@ -66,10 +68,10 @@ indexアクションのビューでは取得済みの記事データを表示し
 各記事へのリンクを表示するのであれば
 
 {% highlight slim %}
-/ app/views/articles/index.html.slim
+/ app/views/blog/posts/index.html.slim
 ul
-  - @articles.each do |article|
-    li = link_to article.title, article_path(article.id)
+  - @posts.each do |blog_post|
+    li = link_to blog_post.title, blog_post_path(blog_post.id)
 {% endhighlight %}
 
 と書くことができます。

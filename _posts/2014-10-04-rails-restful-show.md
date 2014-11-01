@@ -19,7 +19,9 @@ image: rails.png
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:show]
+namespace :blog do
+  resources :posts, only: [:show]
+end
 {% endhighlight %}
 
 と設定します。
@@ -27,15 +29,15 @@ resources :articles, only: [:show]
 設定してからルーティングを確認すると
 
     $ rake routes
-    article GET /articles/:id(.:format) articles#show
+    blog_post GET /blog/posts/:id(.:format) blog/posts#show
 
 という行が出力されます。
 
 読み方は[indexアクションの時]({% post_url 2014-10-03-rails-restful-index %})と同じで
 
-1. Prefixは`article`で、`article_path(article.id)`といったヘルパーでパスを取得できる
-2. `/articles/:id(.:format)`への`GET`リクエストでアクセスできる
-3. `articles`コントローラの`show`アクションを実行する
+1. Prefixは`blog_post`で、`blog_post_path(blog_post.id)`といったヘルパーでパスを取得できる
+2. `/blog/posts/:id(.:format)`への`GET`リクエストでアクセスできる
+3. `blog_posts`コントローラの`show`アクションを実行する
 
 ということがわかります。
 
@@ -46,15 +48,15 @@ resources :articles, only: [:show]
 showアクションでは表示用の記事データを取得する必要があるので
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
-before_action :set_article, only: [:show]
+# app/controllers/blog/posts_controller.rb
+before_action :set_blog_post, only: [:show]
 
 def show
 end
 
 private
-  def set_article
-    @article = Article.find(params[:id])
+  def set_blog_post
+    @post = Blog::Post.find(params[:id])
   end
 {% endhighlight %}
 
@@ -69,9 +71,9 @@ showアクションのビューでは取得済みの記事データを表示し�
 記事の内容を表示するのであれば
 
 {% highlight slim %}
-/ app/views/articles/show.html.slim
-h1 = @article.title
-p = @article.content
+/ app/views/blog/posts/show.html.slim
+h1 = @post.title
+p = @post.content
 {% endhighlight %}
 
 と書くことができます。

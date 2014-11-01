@@ -17,7 +17,7 @@ image: rails.png
 
 {% highlight ruby %}
 # config/routes.rb
-resources :articles, only: [:create]
+resources :posts, only: [:create]
 {% endhighlight %}
 
 と設定します。
@@ -25,7 +25,7 @@ resources :articles, only: [:create]
 設定してからルーティングを確認すると
 
     $ rake routes
-    articles POST /articles(.:format) articles#create
+    blog_posts POST /blog/posts(.:format) blog/posts#create
 
 という行が出力されます。
 
@@ -35,9 +35,9 @@ resources :articles, only: [:create]
 
 ルーティング情報を確認すると
 
-1. Prefixは`articles`で、`articles_path`といったヘルパーでパスを取得できる
-2. `/articles(.:format)`への`POST`リクエストでアクセスできる
-3. `articles`コントローラの`create`アクションを実行する
+1. Prefixは`blog_posts`で、`blog_posts_path`といったヘルパーでパスを取得できる
+2. `/blog/posts(.:format)`への`POST`リクエストでアクセスできる
+3. `blog_posts`コントローラの`create`アクションを実行する
 
 ということがわかります。
 
@@ -45,27 +45,27 @@ resources :articles, only: [:create]
 
 コントローラではcreateアクションを実装します。
 
-createアクションでは受け取ったパラメタからArticleオブジェクトを作成してデータベースに保存します。
+createアクションでは受け取ったパラメタからBlog::Postオブジェクトを作成してデータベースに保存します。
 
 {% highlight ruby %}
-# app/controllers/articles_controller.rb
+# app/controllers/blog/posts_controller.rb
 def create
-  @article = Article.new(article_params)
-  if @article.save
+  @post = Blog::Post.new(blog_post_params)
+  if @post.save
     flash[:success] = 'created'
-    redirect_to articles_path
+    redirect_to blog_posts_path
   else
     render :new
   end
 end
 
 private
-  def article_params
-    params.require(:article).permit(:title, :content)
+  def blog_post_params
+    params.require(:blog_post).permit(:title, :content)
   end
 {% endhighlight %}
 
-article_paramsというメソッドはRails4の[Strong Parameters](https://github.com/rails/strong_parameters)という機能を使ってマスアサインメント脆弱性を回避しているのですが、詳しい説明はここでは省略します。
+blog_post_paramsというメソッドはRails4の[Strong Parameters](https://github.com/rails/strong_parameters)という機能を使ってマスアサインメント脆弱性を回避しているのですが、詳しい説明はここでは省略します。
 
 ### 記事作成機能のビュー
 
