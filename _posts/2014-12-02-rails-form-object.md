@@ -95,6 +95,28 @@ end
     ...
 {% endhighlight %}
 
+#### 追記(2014/12/3)
+
+[@joker1007](http://qiita.com/joker1007)さんから「[FormオブジェクトのURLの渡し方について](http://qiita.com/joker1007/items/ba2812eedb7062dcbf1e)」という記事で突っ込みをいただきました。
+
+今回のような場合は[polymorphic_path](http://apidock.com/rails/ActionController/PolymorphicRoutes/polymorphic_path)を使って
+
+{% highlight slim %}
+- form_for @site_form, url: polymorphic_path(@site_form.site) do
+{% endhighlight %}
+
+とした方が良さそうです。こうすれば`url`, `persisted?`メソッドは不要になります。
+
+合わせて
+
+{% highlight ruby %}
+extend ActiveModel::Naming
+include ActiveModel::Conversion
+include ActiveModel::Validations
+{% endhighlight %}
+
+は`include ActiveModel::Model`に置き換えられるという指摘もいただいたのですが、手元のコードだと`create`アクション実行時にエラーが出てしまったので、こちらはひとまずこのままにしておきます。原因特定したら別途追記します。
+
 ### validate_uniqueness_ofが使えない
 
 一意性制約を検証するにはデータベースのUNIQUE制約を利用する必要があります。
