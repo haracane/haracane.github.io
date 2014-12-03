@@ -115,7 +115,7 @@ include ActiveModel::Conversion
 include ActiveModel::Validations
 {% endhighlight %}
 
-は`include ActiveModel::Model`に置き換えられるという指摘もいただいたのですが、手元のコードだと`create`アクション実行時にエラーが出てしまったので、こちらはひとまずこのままにしておきます。原因特定したら別途追記します。
+は`include ActiveModel::Model`に置き換えられるという指摘もいただいたのですが、手元のコードだと`create`アクション実行時にエラーが出てしまったので、こちらはひとまずこのままにしておきます。原因特定したら別途追記します。← `Virtus.model`を使う場合は単純には`ActiveModel::Model`はincludeできないようです。
 
 ### validate_uniqueness_ofが使えない
 
