@@ -5,7 +5,7 @@ date: 2014-12-04 07:23:33J
 tags: Git
 keywords: Git 
 description: Gitコマンドはターミナルで最もよく使うコマンドなのでエイリアスやシェル関数にして実行しているのですが、実際に何をよく使っているか調べてみました。
-image: rails.png
+image: git.png
 ---
 
 この記事は[Git Advent Calendar 2014](http://qiita.com/advent-calendar/2014/git)の4日目です。
@@ -75,18 +75,19 @@ done
 
 {% highlight sh %}
 function github-push() {
+  local repository=origin
   while true; do
     if [ "$1" = -f ]; then
       local f_option=$1; shift
-    elif [[ "$1" =~ '^--repo=' ]]; then
-      local repo_option=$1; shift
+    elif [ "$1" = --repo ]; then
+      repository=$2; shift 2
     else break; fi
   done
 
   local branch=${1:-$(git rev-parse --abbrev-ref HEAD)}
   local parent_branch=${2:-master}
 
-  git push $f_option $repo_option $branch \
+  git push $f_option $repository $branch \
   && github-urls $branch $parent_branch
 }
 
