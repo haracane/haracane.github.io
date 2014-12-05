@@ -45,7 +45,7 @@ updateアクションでは更新用の記事データをロードして、受�
 
 {% highlight ruby %}
 # app/controllers/blog/posts_controller.rb
-before_action :set_blog_post, only: [:edit]
+before_action :set_blog_post, only: [:update]
 
 def update
   if @post.update(blog_post_params)
