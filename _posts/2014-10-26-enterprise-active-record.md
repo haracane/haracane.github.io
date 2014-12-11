@@ -55,6 +55,12 @@ class Blog::Post < ActiveRecord::Base
   validates :permalink, presence: true, uniqueness: true, length: {maximum: 64}
   validates :title, presence: true, length: {maximum: 128}
   validates :content, presence: true
+
+  # 他のよく使うバリデーション例
+  # validates :x, uniquness: {scope: :title}
+  # validates :x, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100}
+  # validates :x, inclusion: [:a, :b]
+  # validates :x, inclusion: {in: [:a, :b], allow_blank: true}
 end
 {% endhighlight %}
 
@@ -125,6 +131,12 @@ describe Blog::Post, type: :model do
     it { should ensure_length_of(:title).is_at_most(128) }
 
     it { should safely_validate_uniqueness_of(:permalink) }
+
+    # 他のよく使うvalidation matcher例
+    # it { should allow_value(:a, :b).for(:x) }
+    # it { should validate_numericality_of(:x).only_integer }
+    # it { should validate_numericality_of(:x).is_greater_than_or_equal_to(0) }
+    # it { should validate_numericality_of(:x).is_less_than_or_equal_to(100) }
   end
 
   context 'with DB' do
