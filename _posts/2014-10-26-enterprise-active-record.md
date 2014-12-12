@@ -134,6 +134,8 @@ describe Blog::Post, type: :model do
 
     # 他のよく使うvalidation matcher例
     # it { should allow_value(:a, :b).for(:x) }
+    # it { should ensure_length_of(:x).is_at_least(8) }
+    # it { should ensure_length_of(:x).is_equal_to(8) }
     # it { should validate_numericality_of(:x).only_integer }
     # it { should validate_numericality_of(:x).is_greater_than_or_equal_to(0) }
     # it { should validate_numericality_of(:x).is_less_than_or_equal_to(100) }
