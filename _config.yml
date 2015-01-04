@@ -11,9 +11,10 @@ twitter_username: haracane
 github_username:  haracane
 #qiita_username:  haracane
 google_analysis_id: UA-53664731-1
-paginate: 12
+paginate: 10
 
 post_summary_sidebar: true
+footer_tags: true
 
 keywords: "江の島"
 
