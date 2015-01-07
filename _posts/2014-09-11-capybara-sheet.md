@@ -52,6 +52,7 @@ feature "post an article", type: :feature do
           choose "radio_button_label"
           check "checkbox_id"
           uncheck "checkbox_id"
+          attach_file 'attach_file_id', '/path/to/image/file.jpg'
           click_on "submit"
           ...
         end
