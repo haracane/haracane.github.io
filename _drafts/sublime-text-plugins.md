@@ -7,6 +7,11 @@ keywords:
 description: 
 ---
 
-* Goto CSS declaration
+### Preferences.sublime-settings
+{
+  "ensure_newline_at_eof_on_save": true
+}
+
+### Goto CSS declaration
 
 {"tab_size": 2, "translate_tabs_to_spaces": true}
