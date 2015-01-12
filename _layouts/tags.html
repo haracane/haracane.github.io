@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+    <body>
+    {% include sns-header.html %}
+
+    {% include header.html %}
+    {% include tags-navigation.html %}
+
+    <div class="tags-content">
+      <div class="wrap">
+      {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include foot.html %}
+    </body>
+</html>

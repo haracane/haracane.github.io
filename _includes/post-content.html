@@ -1,0 +1,7 @@
+<div class="border-box padding-content">
+  <article class="post-content">
+    {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
+  </article>
+  {% include category-posts.html %}
+  {% include post-related-posts.html %}
+</div>
