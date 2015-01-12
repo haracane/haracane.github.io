@@ -4,8 +4,10 @@
 
 .post img:not([class]) { width: 320px; }
 .w0 { display: none; }
-@each $width in 120 160 180 240 320 400 600 {
+
+@each $width in 60 80 120 160 180 240 320 400 600 {
   .w#{$width} { width: #{$width}px; }
+  .w#{$width}.summary-image { width: #{$width}px; }
 }
 
 @media screen and (max-width: 1080px) {
@@ -20,10 +22,15 @@
   .w400 { width: 400px; }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 740px) {
   .post img:not([class]) { width: 320px; }
   .w600 { width: 320px; }
   .w400 { width: 320px; }
+  .w240.summary-image { width: 200px; }
+}
+
+@media screen and (max-width: 420px) {
+  .w240.summary-image { width: 160px; }
 }
 
 @media screen and (max-width: 340px) {
@@ -31,6 +38,7 @@
   .w600 { width: 100%; }
   .w400 { width: 100%; }
   .w320 { width: 100%; }
+  .w240.summary-image { width: 120px; }
 }
 
 .image-quote {

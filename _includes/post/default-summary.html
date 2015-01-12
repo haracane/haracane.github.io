@@ -5,7 +5,7 @@
   </header>
 
   <article class="post-summary-content table">
-    {% if post.image %}<div class="table-cell vm pr10"><a href="{{ post.url }}"><img class="w{{site.styles.summary.image_size}}" src="{{ post_main_image }}" alt="{{ post.title }}"></a></div>{% endif %}
+    {% if post.image %}<div class="table-cell vm pr10"><a href="{{ post.url }}"><img class="{{site.styles.summary.image_class}}" src="{{ post_main_image }}" alt="{{ post.title }}"></a></div>{% endif %}
     <div class="table-cell vm">
       <p>
         {{ post.description }}
