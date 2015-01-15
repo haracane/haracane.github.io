@@ -4,6 +4,8 @@
   </header>
 </div>
 
+{% include layout-left.html %}
+
 <div class="layout-center">
   <dl class="border-box padding-box nav-box">
     {% for tag_category in site.data.tag_categories %}{% if tag_category["url"] == page.url %}{% for tag_name in tag_category["tag_names"] %}{% assign tag_url = site.data.tag_urls[tag_name] %}{% if tag_url %}
@@ -12,6 +14,4 @@
   </dl>
 </div>
 
-<div class="layout-sidebar">
-  {% include sidebar-contents.html %}
-</div>
+{% include layout-right.html %}

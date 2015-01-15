@@ -1,10 +1,18 @@
+$sns_link_font_size: 13px;
 .sns-link {
-  font-size: 13px;
+  font-size: $sns_link_font_size;
   font-weight: 550;
   text-decoration: none;
   padding: 0px 2px;
+  margin: 0px 0px 0px 2px;
   border-radius: 3px;
+  white-space: nowrap;
   &:hover {
+  }
+
+  .icon-svg {
+    width: $sns_link_font_size;
+    height: $sns_link_font_size;
   }
 }
 
@@ -16,11 +24,24 @@
   }
 }
 
+// $twitter_bg_color: #c0deed;
+// $twitter_fg_color: #0084b4;
+$twitter_bg_color: #00acee;
+$twitter_fg_color: #ffffff;
 .twitter-link {
-  background-color: #c0deed;
-  color: #0084b4;
-  border-color: #0084b4;
+  background-color: $twitter_bg_color;
+  color: $twitter_fg_color;
+  border-color: $twitter_fg_color;
   &, &:hover, &:visited {
-    color: #0084b4;
+    color: $twitter_fg_color;
+  }
+}
+
+.facebook-link {
+  background-color: #3b5998;
+  color: #ffffff;
+  border-color: #ffffff;
+  &, &:hover, &:visited {
+    color: #ffffff;
   }
 }

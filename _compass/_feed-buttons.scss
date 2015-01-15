@@ -1,9 +1,10 @@
+$feed_button_font_size: 13px;
 .feed-buttons .btn {
-  font-size: 13px;
+  font-size: $feed_button_font_size;
   padding: 4px 8px;
 }
 
 .feed-buttons .icon-svg {
-  width: 13px;
-  height: 13px;
+  width: $feed_button_font_size;
+  height: $feed_button_font_size;
 }

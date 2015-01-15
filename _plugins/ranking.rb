@@ -54,9 +54,13 @@ module Jekyll
       @posts, posts_with_score = [], []
 
       begin
-        fail if site.config['show_drafts']
-
         site.posts.each do |post|
+          if site.config['show_drafts']
+            post.data['hatena_count'] = rand(100)
+            post.data['facebook_count'] = rand(100)
+            post.data['twitter_count'] = rand(100)
+          end
+
           score =
             WEIGHT_OF_HATENA * post.hatena_count +
             WEIGHT_OF_FACEBOOK * post.facebook_count +

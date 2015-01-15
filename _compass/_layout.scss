@@ -5,23 +5,27 @@ $side_margin: 2%;
   margin-left: $side_margin;
 }
 
-.layout-header {
-  margin: 4px 0px;
-}
-
-.layout-center {
-   width: 64%;
-   margin-left: 0px;
-   float: left;
- }
-
 .pagination {
   margin-bottom: 12px;
   padding: 0px 30px;
 }
 
+.layout-header {
+  margin: 4px 0px;
+}
+
+.layout-center, .layout-middle {
+   margin-left: 0px;
+   float: left
+ }
+
+.layout-left {
+  margin: 0px $side_margin 4px 0px;
+  padding: 0px;
+  float: left;
+}
+
 .layout-sidebar {
-  width: 34%;
   margin: 0px 0px 4px $side_margin;
   padding: 0px;
   float: left;
@@ -42,8 +46,25 @@ $side_margin: 2%;
   padding: 0px;
 }  
 
-@media screen and (max-width: 620px) {
-  .layout-center, .layout-sidebar {
+body { width: 100%; }
+.layout-left { width: 18%; }
+.layout-middle { width: 56%; }
+.layout-center { width: 76%; }
+.layout-sidebar { width: 22%; }
+
+$pc-width: 960px;
+@media screen and (max-width: $pc-width) {
+  body { width: ceil(($pc-width * 0.985)); }
+  .layout-left { width: ceil(($pc-width * 0.943 * 0.18)); }
+  .layout-middle { width: ceil(($pc-width * 0.943 * 0.56)); }
+  .layout-center { width: ceil(($pc-width * 0.943 * 0.76)); }
+  .layout-sidebar { width: ceil(($pc-width * 0.943 * 0.22)); }
+}
+
+@media screen and (max-width: 640px) {
+  body { width: 100%; }
+
+  .layout-left, .layout-middle, .layout-center, .layout-sidebar {
     width: 96%;
     margin: 0px;
     float: none;

@@ -1,0 +1,7 @@
+<div class="layout-sidebar">
+  {% if post.ad_count >= 3 %}
+  {% else %}
+  {% include google-adsence-responsive-ad.html %}
+  {% endif %}
+  {% include sidebar-contents.html %}
+</div>

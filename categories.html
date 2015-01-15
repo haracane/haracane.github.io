@@ -8,6 +8,8 @@ page_category: categories
   </header>
 </div>
 
+{% include layout-left.html %}
+
 <div class="layout-center">
   <ul>
     {% assign posts = site.categories["category-posts-index"] %}
@@ -17,7 +19,5 @@ page_category: categories
   </ul>
 </div>
 
-<div class="layout-sidebar">
-  {% include sidebar-contents.html %}
-</div>
+{% include layout-right.html %}
 

@@ -8,6 +8,8 @@ page_category: tags
   </header>
 </div>
 
+{% include layout-left.html %}
+
 <div class="layout-center">
   <dl class="border-box padding-box nav-box">
   	{% for genre_params in site.data.tag_categories %}
@@ -26,7 +28,5 @@ page_category: tags
   </dl>
 </div>
 
-<div class="layout-sidebar clearfix">
-  {% include sidebar-contents.html %}
-</div>
+{% include layout-right.html %}
 

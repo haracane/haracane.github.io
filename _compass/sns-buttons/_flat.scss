@@ -14,11 +14,11 @@
   .btn {
     font-weight: 500;
     padding: 6px 2px;
-    width: 70px;
+    width: 90px;
     overflow: none;
   }
 }
 
 @media screen and (max-width: 440px) {
-  .sns-buttons-flat .btn { width: 17%; }
+  .sns-buttons-flat .btn { width: 21%; }
 }

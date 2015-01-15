@@ -7,6 +7,8 @@
     </header>
   </section>
 
+  {% include layout-left.html %}
+
   <section class="{{site.styles[page_primary_path].layout_center_class}} ">
     <div class="{{site.styles[page_primary_path].box_class}} clearfix nolist">
       {% assign layout = site.styles[page_primary_path].layout %}
@@ -24,9 +26,7 @@
   </section>
 
   {% if site.styles[page_primary_path].sidebar %}
-    <section class="layout-sidebar clearfix">
-      {% include sidebar-contents.html %}
-    </section>
+    {% include layout-right.html %}
   {% endif %}
 </div>
 

@@ -7,13 +7,23 @@ layout: default
 
 <div class="layout-header">
   <!--img src="{{ post.main_image }}" class="w320" style="float:left;"-->
+</div>
+
+{% include layout-left.html %}
+
+{% if post.ad_count >= 3 %}
+{% assign main_class = 'layout-middle' %}
+{% else %}
+{% assign main_class = 'layout-center' %}
+{% endif %}
+
+<div class="{{ main_class }}">
+  {% if post.ad_count >= 3 %}
+  {% include google-adsence-responsive.html %}
+  {% endif %}
   {% include post/header.html %}
-</div>
-
-<div class="layout-center">
   {% include post/content.html %}
+  {% include google-adsence-responsive-ad.html %}
 </div>
 
-<div class="layout-sidebar">
-  {% include sidebar-contents.html %}
-</div>
+{% include layout-right.html %}

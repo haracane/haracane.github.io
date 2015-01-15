@@ -1,8 +1,9 @@
 <li class="post-text-link">
   {% include post/title.html %}
 
-  {% if post.hatena_count > 0 %}<a class="sns-link hatena-link" href="http://b.hatena.ne.jp/entry/{{site.domain}}{{post.url}}">{{ post.hatena_count }} users</a>{% endif %}
-  {% if post.twitter_count > 0 %}<a class="sns-link twitter-link" href="https://twitter.com/search?q={{post.title}}">{{ post.twitter_count }} tweets</a>{% endif %}
+  {% if post.hatena_count > 0 %}<a class="sns-link hatena-link" href="http://b.hatena.ne.jp/entry/{{site.domain}}{{post.url}}">{% include hatena-icon.html %}{{ post.hatena_count }}</a>{% endif %}
+  {% if post.twitter_count > 0 %}<a class="sns-link twitter-link" href="https://twitter.com/search?q={{post.title}}">{% include twitter-icon.html %}{{ post.twitter_count }}</a>{% endif %}
+  {% if post.facebook_count > 0 %}<span class="sns-link facebook-link">{% include facebook-icon.html %}{{ post.facebook_count }}</span>{% endif %}
 
   <span class="post-title-meta">({{ post.date | date: "%Y/%m/%d" }})</span>
 </li>

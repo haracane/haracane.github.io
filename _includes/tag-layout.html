@@ -5,6 +5,8 @@
   </header>
 </div>
 
+{% include layout-left.html %}
+
 <div class="layout-center mt8">
   <dl class="nav-box">
     <dt>「{{ page.tag }}」の記事（{{ page.posts.size }}件）</dt>
@@ -18,6 +20,4 @@
   </dl>
 </div>
 
-<div class="layout-sidebar">
-  {% include sidebar-contents.html %}
-</div>
+{% include layout-right.html %}

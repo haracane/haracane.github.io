@@ -2,7 +2,12 @@
 @import "sns-buttons/count";
 @import "sns-buttons/vertical";
 
-.sns-buttons .icon-svg {
-  width: 14px;
-  height: 14px;
+$sns_button_font_size: 14px;
+.sns-buttons {
+  font-size: $sns_button_font_size;
+  .icon-svg {
+    width: $sns_button_font_size;
+    height: $sns_button_font_size;
+  }
 }
+
