@@ -1,5 +1,7 @@
 _site
 .sass-cache
+_drafts
+img/draft
 
 .bundle
 bundle_bin
