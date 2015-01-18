@@ -71,8 +71,5 @@ $pc-width: 960px;
   }
   .border-box { border-style: none; }
   .padding-box, .side-box { padding: 0px; }
-}
-
-@media screen and (max-width: 480px) {
-  .top-navigation { display: none; }
+  .top-navigation, .feed-buttons { display: none; }
 }

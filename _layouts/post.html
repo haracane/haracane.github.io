@@ -11,16 +11,9 @@ layout: default
 
 {% include layout-left.html %}
 
-{% if post.ad_count >= 3 %}
-{% assign main_class = 'layout-middle' %}
-{% else %}
-{% assign main_class = 'layout-center' %}
-{% endif %}
-
-<div class="{{ main_class }}">
-  {% if post.ad_count >= 3 %}
+<div class="layout-center">
   {% include google-adsence-responsive.html %}
-  {% endif %}
+  {% include post/related-posts-head.html %}
   {% include post/header.html %}
   {% include post/content.html %}
   {% include google-adsence-responsive-ad.html %}
