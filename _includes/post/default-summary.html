@@ -4,13 +4,11 @@
     <h2>{% include post/title.html %}</h2>
   </header>
 
-  <article class="post-summary-content table">
-    {% if post.image %}<div class="table-cell vm pr10"><a href="{{ post.url }}"><img class="{{site.styles.summary.image_class}}" src="{{ post_main_image }}" alt="{{ post.title }}"></a></div>{% endif %}
-    <div class="table-cell vm">
-      <p>
-        {{ post.description }}
-        <a href="{{post.url}}" class="btn btn-primary" style="padding: 2px;">続きを読む</a>
-      </p>
+  <article class="post-summary-content clearfix">
+    {% if post.image %}<div class="pr10 mb2" style="float: left;"><a href="{{ post.url }}"><img class="{{site.styles.summary.image_class}}" src="{{ post_main_image }}" alt="{{ post.title }}"></a></div>{% endif %}
+    <div>
+      <p>{{ post.description }}
+        <a href="{{post.url}}" class="btn btn-primary" style="padding: 2px 4px;">続きを読む</a></p>
     </div>
   </article>
 </section>

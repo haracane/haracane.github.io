@@ -1,4 +1,4 @@
-@mixin button-variant($color, $background, $border) {
+@mixin button-variant($color, $background, $border, $hover) {
   color: $color;
   background-color: $background;
   border-color: $border;
@@ -12,7 +12,7 @@
   &:active,
   &.active,
   .open > &.dropdown-toggle {
-    color: #ffffff;
+    color: $hover;
     background-color: darken($background, 10%);
         border-color: darken($border, 12%);
   }
@@ -81,55 +81,55 @@
 }
 
 .btn-default {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border, $btn-default-color);
 }
 .btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border, #fff);
 }
 .btn-paginate {
-  @include button-variant(#ffffff, #428bca, darken(#428bca, 5%));
+  @include button-variant(#ffffff, #428bca, darken(#428bca, 5%), #fff);
 }
 // Success appears as green
 .btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border, #fff);
 }
 // Info appears as blue-green
 .btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border, #fff);
 }
 // Warning appears as orange
 .btn-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border, #fff);
 }
 // Danger and error appear as red
 .btn-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border, #fff);
 }
 .btn-twitter {
-  @include button-variant($btn-twitter-color, $btn-twitter-bg, $btn-twitter-border);
+  @include button-variant($btn-twitter-color, $btn-twitter-bg, $btn-twitter-border, #fff);
 }
 .btn-facebook {
-  @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border);
+  @include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border, #fff);
 }
 .btn-google {
-  @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border);
+  @include button-variant($btn-google-color, $btn-google-bg, $btn-google-border, #fff);
 }
 .btn-hatena {
-  @include button-variant($btn-hatena-color, $btn-hatena-bg, $btn-hatena-border);
+  @include button-variant($btn-hatena-color, $btn-hatena-bg, $btn-hatena-border, #fff);
 }
 .btn-pocket {
-  @include button-variant($btn-pocket-color, $btn-pocket-bg, $btn-pocket-border);
+  @include button-variant($btn-pocket-color, $btn-pocket-bg, $btn-pocket-border, #fff);
 }
 .btn-rss {
-  @include button-variant($btn-rss-color, $btn-rss-bg, $btn-rss-border);
+  @include button-variant($btn-rss-color, $btn-rss-bg, $btn-rss-border, #fff);
 }
 .btn-feedly {
-  @include button-variant($btn-feedly-color, $btn-feedly-bg, $btn-feedly-border);
+  @include button-variant($btn-feedly-color, $btn-feedly-bg, $btn-feedly-border, #fff);
 }
 .btn-github {
-  @include button-variant($btn-github-color, $btn-github-bg, $btn-github-border);
+  @include button-variant($btn-github-color, $btn-github-bg, $btn-github-border, #fff);
 }
 .btn-nav {
-  @include button-variant($btn-nav-color, $btn-nav-bg, $btn-nav-border);
+  @include button-variant($btn-nav-color, $btn-nav-bg, $btn-nav-border, #fff);
   border-radius: 0px;
 }

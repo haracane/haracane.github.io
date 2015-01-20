@@ -26,11 +26,11 @@
   .post img:not([class]) { width: 320px; }
   .w600 { width: 320px; }
   .w400 { width: 320px; }
-  .w240.summary-image { width: 200px; }
+  .w240.summary-image { width: 204px; }
 }
 
 @media screen and (max-width: 420px) {
-  .w240.summary-image { width: 160px; }
+  .w240.summary-image { width: 156px; }
 }
 
 @media screen and (max-width: 340px) {
