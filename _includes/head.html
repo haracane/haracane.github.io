@@ -11,6 +11,12 @@
   {% assign page_description = page.description %}
 {% endif %}
 
+{% if page.keywords %}
+  {% assign keywords = page.keywords %}
+{% else %}
+  {% assign keywords = site.keywords %}
+{% endif %}
+
 {% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
 {% capture title %}{{ parent_post.title }}{% if parent_post %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ site.title }}{% endcapture %}
@@ -22,7 +28,7 @@
     <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords | replace: ' ', ','}},{% endif %}{{ site.keywords }}">
+    <meta name="keywords" content="{{ keywords  | replace: ' ', ',' }}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ "/atom.xml" | prepend: site.baseurl }}"/>
     <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="{{ "/feed.xml" | prepend: site.baseurl }}"/>
