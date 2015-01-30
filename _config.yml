@@ -12,6 +12,7 @@ github_username:  haracane
 #qiita_username:  haracane
 google_analysis_id: UA-53664731-1
 amazon_associate_id: haracane-22
+google_adsense: false
 paginate: 10
 
 post_summary_sidebar: true
