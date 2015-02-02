@@ -69,11 +69,12 @@ before { first('submit').click }
 its(:current_url) { should eq 'http://example.com/' }
 its(:current_host) { should eq 'example.com' }
 its(:current_path) { should eq '/' }
-it { expect(find_button('検索').native['class']).to match /btn/ }
-it { expect(find_field('title').native['class']).to match /title/ }
+it { expect(find('input[type=hidden][name="p[code]"]').native[:value]).to eq '1' }
+it { expect(find_button('検索').native[:class]).to match /btn/ }
+it { expect(find_field('title').native[:class]).to match /title/ }
 it { expect(find_field('title').text).to be_empry) }
 it { expect(find_by_id('content').native.children).to have(5).items }
-it { expect(find_link('top').native['class']).to match /link/ }
+it { expect(find_link('top').native[:class]).to match /link/ }
 it { expect(all('li')).to have(5).items }
 {% endhighlight %}
 
