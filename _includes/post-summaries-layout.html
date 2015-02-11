@@ -1,16 +1,19 @@
 {% include decorate-page.html %}
 
-<div class="{{site.styles[page_primary_path].wrap_class}}">
+<div class="{{site.styles[page_primary_path].wrap_class}} clearfix">
   <section class="layout-header">
-    <header class="index-header">
-      <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
-    </header>
   </section>
 
   {% include layout-left.html %}
 
   <section class="{{site.styles[page_primary_path].layout_center_class}} ">
+    {% include google-adsense/responsive-head.html %}
+
     <div class="{{site.styles[page_primary_path].box_class}} clearfix nolist">
+      <header class="index-header">
+        <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+      </header>
+
       {% assign layout = site.styles[page_primary_path].layout %}
       {% if page_primary_path == 'backnumber' %}
         {% for post in posts %}
@@ -22,13 +25,16 @@
         {% endfor %}
 
         {% if paginator.next_page %}
-          <div>
+          <div class="mb10">
             <a href="{{ paginator.next_page_path }}" class="next btn btn-primary">もっと見る</a>
             <!--a href="/backnumber.html" class="next btn btn-primary w240 ph0">もっと見る</a-->
           </div>
         {% endif %}
       {% endif %}
+
     </div>
+
+    {% include google-adsense/responsive-foot.html %}
   </section>
 
   {% if site.styles[page_primary_path].sidebar %}

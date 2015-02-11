@@ -42,7 +42,7 @@ styles:
     layout: post/description-link.html
     wrap_class: ""
     layout_center_class: layout-center
-    box_class: "border-box padding-box"
+    box_class: "border-box padding-box pt10 mb10"
     sidebar: true
   nav-post-link:
     layout: post/text-link.html

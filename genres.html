@@ -3,15 +3,18 @@ layout: default
 page_category: tags
 ---
 <div class="layout-header">
-  <header class="index-header">
-    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
-  </header>
 </div>
 
 {% include layout-left.html %}
 
 <div class="layout-center">
-  <dl class="border-box padding-box nav-box">
+  {% include google-adsense/responsive-head.html %}
+
+  <header class="index-header">
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+  </header>
+
+  <dl class="border-box padding-box nav-box mb10">
   	{% for genre_params in site.data.tag_categories %}
   	<dt><a href="{{genre_params["url"]}}">「{{ genre_params["name"] }}」のタグ</a></dt>
   	<dd>
@@ -26,6 +29,8 @@ page_category: tags
     <dd>
     {% endfor %}
   </dl>
+
+  {% include google-adsense/responsive-foot.html %}
 </div>
 
 {% include layout-right.html %}

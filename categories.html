@@ -3,20 +3,25 @@ layout: default
 page_category: categories
 ---
 <div class="layout-header">
-  <header class="index-header">
-    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
-  </header>
 </div>
 
 {% include layout-left.html %}
 
 <div class="layout-center">
+  {% include google-adsense/responsive-head.html %}
+
+  <header class="index-header">
+    <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
+  </header>
+
   <ul>
     {% assign posts = site.categories["category-posts-index"] %}
     {% for post in posts %}
       {% include post-summary.html %}
     {% endfor %}
   </ul>
+
+  {% include google-adsense/responsive-foot.html %}
 </div>
 
 {% include layout-right.html %}
