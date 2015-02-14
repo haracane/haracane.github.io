@@ -13,13 +13,13 @@ image: rspec.png
 
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
-### Capybaraとは
+## Capybaraとは
 
 CapybaraはWebページのテストを簡単にしてくれるツールです。
 
 どう簡単になるかはなかなか説明が難しいのですが、この連載を読み進めてもらって簡単さを感じてもらえるといいなと思っています。がんばります。
 
-### Capybaraのインストール
+## Capybaraのインストール
 
 いつも通りGemfileに
 
@@ -27,7 +27,7 @@ CapybaraはWebページのテストを簡単にしてくれるツールです。
 
 を追加して`bundle install`を実行すればOKです。
 
-### Capybaraでのテストコードを作る
+## Capybaraでのテストコードを作る
 
 テストコードは`spec/features`以下に作るのがお決まりのようです。
 
@@ -41,7 +41,7 @@ describe 'view top page', type: :feature do
 end
 {% endhighlight %}
 
-### Capybaraでサイトにアクセスする
+## Capybaraでサイトにアクセスする
 
 Capybaraではサイトにアクセスして、その内容を確認するという形でテストを行います。
 
@@ -63,7 +63,7 @@ visit '/about.html'
 
 と書けばOKです。
 
-### have_titleマッチャでタイトル内容を確認する
+## have_titleマッチャでタイトル内容を確認する
 
 `visit`メソッドでページにアクセスすると`page`メソッドでページ内容を取得できるようになるので、次はページ内容の確認をします。
 
@@ -95,7 +95,7 @@ end
 
 なお、`scenario`は`it`のエイリアスなので`it`を使っても良いのですがCapybaraでのテストコードでは`scenario`を使うのが通例となっています。
 
-### テストを実行する
+## テストを実行する
 
 実際にテストを実行すると
 
@@ -108,7 +108,7 @@ end
 
 と無事タイトル確認のテストが成功しました。
 
-### まとめ
+## まとめ
 
 Capybaraの導入とタイトル内容確認テストを行いました。
 

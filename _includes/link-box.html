@@ -1,21 +1,40 @@
-{% for link_box in site.link_boxes %}
-<dl class="side-box border-box nav-box">
+{% capture full_url %}{{ site.url }}{{ page.url }}{% endcapture %}
+
+{% assign show_flag = false %}
+
+{% for link in link_box["links"] %}
+  {% if link["url"] != site.url %}{% if link["url"] != full_url %}
+    {% assign show_flag = true %}
+  {% endif %}{% endif %}
+{% endfor %}
+
+{% if show_flag %}
+<dl class="{{ link_box_class }}">
   <dt class="side-box-title">{{ link_box["title"] }}</dt>
   <dd class="side-box-content">
     {% if link_box["type"] == "dl" %}
       <dl>
         {% for link in link_box["links"] %}
-        <dt><a href="{{ link["url"] }}">{{ link["title"] }}</a></dt>
-        <dd class="fs14"><p>{{ link["description"] }}</p></dd>
+          {% if link["url"] != site.url %}{% if link["url"] != full_url %}
+          <dt><a href="{{ link["url"] }}">{{ link["title"] }}</a></dt>
+          <dd class="fs14"><p>{{ link["description"] }}</p></dd>
+          {% endif %}{% endif %}
         {% endfor %}
       </dl>
     {% else %}
       <ul>
         {% for link in link_box["links"] %}
-        <li><a href="{{ link["url"] }}">{{ link["title"] }}</a></li>
+          {% if link["url"] != site.url %}{% if link["url"] != full_url %}
+          <li>
+            <a href="{{ link["url"] }}">{{ link["title"] }}</a>
+            {% if link["date"] %}
+            <span class="post-title-meta">({{ link["date"] }})</span>
+            {% endif %}
+          </li>
+          {% endif %}{% endif %}
         {% endfor %}
       </ul>
     {% endif %}
   </dd>
 </dl>
-{% endfor %}
+{% endif %}

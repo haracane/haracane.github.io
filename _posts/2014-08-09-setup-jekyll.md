@@ -10,13 +10,13 @@ tags: Jekyll Nginx
 
 なお, リポジトリ管理にはGithubを使っていますが, ホスティングにはGithub Pagesは使わずにNginxを使いました.
 
-### Jekyll2.2.0インストール
+## Jekyll2.2.0インストール
 
 まずはJekyllをインストールします.
 
     $ gem install jeykyll -v 2.2.0
 
-### Jekyllプロジェクト作成
+## Jekyllプロジェクト作成
 
 初期プロジェクトがあった方が楽なので```jekyll new```で作成します.
 
@@ -28,7 +28,7 @@ jekyll serverでhttp://localhost:4000から動作確認できます. 終了す�
     $ jekyll server
     ^C
 
-### Githubにpush
+## Githubにpush
 
 Githubでリポジトリ管理をするのでharacane/sample-blog.enogineer.comリポジトリを作ってから
 
@@ -40,7 +40,7 @@ Githubでリポジトリ管理をするのでharacane/sample-blog.enogineer.com�
 
 でGithubにpushします.
 
-### Gemfileを追加
+## Gemfileを追加
 
 一応Gemfileも追加しておきます.
 
@@ -57,7 +57,7 @@ gem 'jekyll', '2.2.0'
     $ git ci -m "Add Gemfile"
     $ git push -u origin master
 
-### メールアドレスを表示しない
+## メールアドレスを表示しない
 
 デフォルトのテンプレートではメールアドレスを表示するようになっているので, 表示しないようにデザイン&設定を変更します.
 
@@ -72,7 +72,7 @@ gem 'jekyll', '2.2.0'
 
     email: your-email@domain.com
 
-### コード表示時にスクロールバーを強制しない
+## コード表示時にスクロールバーを強制しない
 
 デフォルトではコード表示時に常にスクロールバーが表示されるようになっているのでautoに変更します.
 
@@ -84,7 +84,7 @@ gem 'jekyll', '2.2.0'
       overflow: auto;
     }
 
-### 設定をカスタマイズする
+## 設定をカスタマイズする
 
 自分のブログ用にサイト設定をカスタマイズします.
 
@@ -98,7 +98,7 @@ gem 'jekyll', '2.2.0'
     github_username:  haracane
     ...
 
-### NginxでVirtual Host設定をする
+## NginxでVirtual Host設定をする
 
 ブログ用のVirtual Host設定を追加します.
 
@@ -113,7 +113,7 @@ gem 'jekyll', '2.2.0'
       index index.html;
     }
 
-### ブログをビルドする
+## ブログをビルドする
 
 ```jekyll build```でブログをビルドします.
 

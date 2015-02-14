@@ -37,19 +37,19 @@ Twitter解析クラスタは
 - 「データ網羅性」を重視したバッチ処理クラスタ
 の2つのクラスタで構成していて、どちらも解析したデータはPostgreSQLとCassandraに蓄積しています。
 
-### 6.1 Twitter解析バッチ処理クラスタ
+## 6.1 Twitter解析バッチ処理クラスタ
 
 バッチ処理クラスタのデータフローはこのようになっています。
 
 ![スライド](https://lh4.googleusercontent.com/-TFSPGMrK0AU/UNUuVZadcPI/AAAAAAAAARI/eXfbgLjI-Zs/slide-16.png) 
 
-### 6.2. Twitter解析リアルタイム処理クラスタ
+## 6.2. Twitter解析リアルタイム処理クラスタ
 
 一方、リアルタイム処理クラスタではMap処理にRabbitMQを利用。
 
 ![スライド](https://lh5.googleusercontent.com/-Hj3vfQU4qO0/UNUubRfGxyI/AAAAAAAAASs/A4yPljEwT_M/slide-19.png)
 
-#### 補足: RabbitMQとは
+### 補足: RabbitMQとは
 
 RabbitMQとはメッセージキューソフトウェアと呼ばれるミドルウェアで、受け取ったメッセージを順番に出力します。
 

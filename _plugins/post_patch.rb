@@ -1,7 +1,13 @@
 require 'jekyll/post'
 
 class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_category, :category_title, :category_url, :order_in_category
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push(
+    :primary_category,
+    :category_title,
+    :category_url,
+    :order_in_category,
+    :updated_at
+  )
 
   def primary_category
     data["primary_category"] ||= categories.join
@@ -49,5 +55,13 @@ class Jekyll::Post
   def available_thumbnail
     data["available_thumbnail"] ||= data["thumbnail"]
     data["available_thumbnail"] ||= data["main_image"]
+  end
+end
+
+class Jekyll::Post
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :updated_at
+
+  def updated_at
+    data['updated_at'] ||= data['updated_at_text'] && Time.parse(data['updated_at_text'])
   end
 end

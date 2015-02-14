@@ -8,7 +8,7 @@ description: ActiveRecordのUniquenessValidatorはネストしたパラメタ内
 image: rails.png
 ---
 
-### UniquenessValidatorの問題
+## UniquenessValidatorの問題
 
 ActiveRecordのUniquenessValidatorはDBに保存済みのレコードと重複した場合はvalidationしてくれますが、
 ネストしたパラメタで重複したオブジェクトを作ろうとしてもスルーしてしまいます。
@@ -28,7 +28,7 @@ ActiveRecordのUniquenessValidatorはDBに保存済みのレコードと重複�
 }
 {% endhighlight %}
 
-### カスタムバリデータでuniqueness validationを行う
+## カスタムバリデータでuniqueness validationを行う
 
 今回はこんな感じでvalidationできるようにします。
 
@@ -46,7 +46,7 @@ class Blog::Post < ActiveRecord::Base
 end
 {% endhighlight %}
 
-### NestedAttributesUniquenessValidatorの実装
+## NestedAttributesUniquenessValidatorの実装
 
 入力パラメタ内での重複をチェックするカスタムバリデータの実装はこんな感じです。
 
@@ -92,7 +92,7 @@ ja:
         post_tags: タグ
 {% endhighlight %}
 
-### NestedAttributesUniquenessValidatorのテスト
+## NestedAttributesUniquenessValidatorのテスト
 
 カスタムバリデータのテストはこんな感じ。
 
@@ -127,7 +127,7 @@ describe NestedAttributesUniquenessValidator do
 end
 {% endhighlight %}
 
-### まとめ
+## まとめ
 
 RailsのNested Attributesに欲しい機能が足りないようだったので今回はカスタムバリデータを作りました。
 

@@ -15,45 +15,45 @@ date:   2012-12-31 21:00:00J
 
 ## 8. Twitter分析結果
 
-### 8.1 「地震」のツイート数
+## 8.1 「地震」のツイート数
 
 今回の講演では「地震」を例に分析を行いました。
 グラフを見ると地震発生日などにつぶやきが増えています。
 
 ![スライド](https://lh4.googleusercontent.com/-zjP5IXAORkc/UNUuZol8HvI/AAAAAAAAASY/E1aPp161-yo/slide-26.png)
 
-### 8.2 関連語分析
+## 8.2 関連語分析
 
 こちらは関連語分析の結果です。
 身近で実際に地震が起きると感情表現が増えています。
 
 ![スライド](https://lh4.googleusercontent.com/-VO5xSz1AGE0/UNUuZ7M7NJI/AAAAAAAAASQ/N4-RK7-RCo0/slide-27.png)
 
-### 8.3 評判分析
+## 8.3 評判分析
 
 評判分析を行うと首都圏の地震発生時に最もネガティブとなっています。
 
 ![スライド](https://lh6.googleusercontent.com/-NIFeoP4EMWE/UNUuahHKgmI/AAAAAAAAASc/W_7JV8YnA9U/slide-28.png)
 
-### 8.4 地域分析
+## 8.4 地域分析
 
 地域分析では震源地のツイートが多いという(自然な)結果が出ています。
 
 ![スライド](https://lh5.googleusercontent.com/-NmEILflzHqo/UNUuaxko1JI/AAAAAAAAASg/yWZZzzVcL7M/slide-29.png)
 
-### 8.5 性別分析
+## 8.5 性別分析
 
 性別の分布を見てみると、実際の地震では女性率が上がるようです。
 
 ![スライド](https://lh3.googleusercontent.com/-BscOXOB3lw8/UNUubDdVBvI/AAAAAAAAASw/k991pbgM-Kw/slide-30.png)
 
-### 8.6 年齢分析
+## 8.6 年齢分析
 
 年齢面では実際の地震の場合に若年層の割合が増えています。
 
 ![スライド](https://lh6.googleusercontent.com/-2kcHGX0Pi14/UNUubr4uLEI/AAAAAAAAAS0/ariFq7Fze4U/slide-31.png)
 
-### 8.7 職業分析
+## 8.7 職業分析
 
 職業を見ると、実際の地震で学生が増えています。
 こちらはやはり若年層と同様の傾向となっています。

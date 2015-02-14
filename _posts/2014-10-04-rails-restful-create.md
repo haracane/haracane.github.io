@@ -11,7 +11,7 @@ image: rails.png
 
 
 
-### 記事作成機能のルーティング設定
+## 記事作成機能のルーティング設定
 
 まずはroutes.rbでcreateアクションのルーティング設定を行います。
 
@@ -41,7 +41,7 @@ resources :posts, only: [:create]
 
 ということがわかります。
 
-### 記事作成機能のコントローラ
+## 記事作成機能のコントローラ
 
 コントローラではcreateアクションを実装します。
 
@@ -67,7 +67,7 @@ private
 
 blog_post_paramsというメソッドはRails4の[Strong Parameters](https://github.com/rails/strong_parameters)という機能を使ってマスアサインメント脆弱性を回避しているのですが、詳しい説明はここでは省略します。
 
-### 記事作成機能のビュー
+## 記事作成機能のビュー
 
 記事作成機能にはビューは用意していません。
 

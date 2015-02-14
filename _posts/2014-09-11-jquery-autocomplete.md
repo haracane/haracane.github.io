@@ -65,7 +65,7 @@ $ ->
 
 のようになります。
 
-#### 関連リンク
+### 関連リンク
 
 * [jQuery UI Autocompleteの例](http://jqueryui.com/autocomplete/)
 * [jQuery UI Autocompleteのドキュメント](http://api.jqueryui.com/autocomplete/)

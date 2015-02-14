@@ -11,7 +11,7 @@ description: 10/1にキャッシュバック賃貸から、住まいに関する
 
 「住まいの調査隊」ではRails+Redisで人気記事ランキングを行っているので、その事例を簡単にご紹介します。
 
-### 住まいの調査隊とは
+## 住まいの調査隊とは
 
 テーマ毎にアンケート調査を実施し、その結果をまとめた記事を発信するサービスです。
 
@@ -19,7 +19,7 @@ description: 10/1にキャッシュバック賃貸から、住まいに関する
 
 第一弾の記事では「[あなたが絶対に譲れない賃貸住宅の条件は？](http://cbchintai.com/research/reports/2/)」がテーマとなっていて、「通勤・通学にかかる時間」が1位となっています。
 
-### Redisの活用：ソート済みセット
+## Redisの活用：ソート済みセット
 
 「住まいの調査隊」では右サイドバーに人気記事を表示しているのですが、ここでRedisのソート済みセットを利用しています。
 
@@ -27,7 +27,7 @@ Redisにはkeyに対して複数のmemberとscoreを登録できるソート済�
 
 まず、RubyからRedisを利用するには[redis-rb](https://github.com/redis/redis-rb)をインストールします。
 
-#### PV数のカウント
+### PV数のカウント
 
 redis-rbを使って記事のPVをカウントするには`zincrby`メソッドを使います。
 
@@ -36,7 +36,7 @@ redis = Redis.new(host: "localhost", port: 6379)
 redis.zincrby("article_pv_counts", 1, article.id)
 {% endhighlight %}
 
-#### PVランキングの取得
+### PVランキングの取得
 
 ランキングの取得には`zrevrange`メソッドを使います。
 
@@ -48,7 +48,7 @@ popular_article_ids = redis.zrevrange("article_pv_counts", 0, 9)
 
 あとはこのidを使ってデータベースから記事データを取得すればOKです。
 
-### まとめ
+## まとめ
 
 「[住まいの調査隊](http://cbchintai.com/research/)」ではこちらで紹介したRedisでの人気記事ランキング以外に、おすすめ記事やカテゴリからも記事を探せるようになっています。
 

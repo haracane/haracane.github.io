@@ -1,4 +1,4 @@
-{% assign page_params = site.data["params"][page.url] %}
+{% assign page_params = site.data.pages[page.url] %}
 
 {% if page_params %}
   {% assign page_title = page_params["title"] %}
@@ -11,7 +11,7 @@
 {% capture title %}{{ page.category_title }}{% if page.category_title %}（第{{ page.order_in_category }}回）：{% endif %}{{ page_title }}{% endcapture %}
 
 {% capture url %}{{ site.url }}{{ page.url }}{% endcapture %}
-<ul class="sns-buttons sns-buttons-flat">
+<ul class="sns-buttons sns-buttons-flat mb10">
   <li>
     <a class="btn btn-twitter" href="http://twitter.com/share?url={{url}}&text={{title}}" target="_blank">{% include twitter-icon.html %}</a>
   </li>

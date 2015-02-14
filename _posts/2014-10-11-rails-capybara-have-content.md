@@ -44,7 +44,7 @@ end
 
 となります。
 
-### テストを分ける
+## テストを分ける
 
 上記では`scenario`ブロックの中で`have_title`マッチャと`have_content`マッチャを使いましたが、これだと`have_title`が失敗した時に`have_content`が成功なのか失敗なのかがわかりません。
 
@@ -64,7 +64,7 @@ end
 
 とすると良いです。
 
-### beforeを使う
+## beforeを使う
 
 テストケースを分けた場合、`visit`を2回実行していてDRYではないので`before`ブロックを使って`visit`メソッドをまとめます。
 
@@ -82,7 +82,7 @@ end
 
 これでどちらの`scenario`も実行前に`before`ブロック内の`visit`メソッドが実行されます。
 
-### itを使う
+## itを使う
 
 各`scenario`ブロックの中が1行なので、こういう時は`it`と`subject`と`should`を使ってすっきり書けます。
 
@@ -94,7 +94,7 @@ it { should have_title '江の島エンジニアBlog' }
 it { should have_content 'Rails4でCapybara入門' }
 {% endhighlight %}
 
-### テストを実行する
+## テストを実行する
 
 今回作成したテストを実行すると
 

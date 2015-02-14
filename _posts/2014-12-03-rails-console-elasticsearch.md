@@ -14,7 +14,7 @@ image: rails.png
 
 ではさっそくはじめましょう。
 
-### elasticsearch-rails Gemを追加する
+## elasticsearch-rails Gemを追加する
 
 Rails Consoleを起動する前にまずGemfileに
 
@@ -29,7 +29,7 @@ gem 'elasticsearch-rails'
 
     % rails c
 
-### Elasticsearch::Modelを組み込む
+## Elasticsearch::Modelを組み込む
 
 最初に扱いたいデータのActiveRecordモデルクラスで`Elasticsearch::Model`を`include`します。
 
@@ -40,7 +40,7 @@ gem 'elasticsearch-rails'
 
 これで`Blog::Site`モデルに一通りメソッドが追加されます。
 
-### Elasticsearchにデータをインポートする
+## Elasticsearchにデータをインポートする
 
 Elasticsearchへのインポートには`import`メソッドを使います。
 
@@ -52,7 +52,7 @@ Elasticsearchへのインポートには`import`メソッドを使います。
 
 続いてElasticsearchに問い合わせてインポート結果を確認します。
 
-### マッピングを確認する
+## マッピングを確認する
 
 Elasticsearchに問い合わせるにはインデックス名とタイプ名が必要なので、まずはそちらを確認してみます。
 
@@ -89,7 +89,7 @@ Elasticsearchに問い合わせるにはインデックス名とタイプ名が�
 
 各プロパティが`long`, `string`, `date`型で登録されていますね。
 
-### 件数を取得する
+## 件数を取得する
 
 続いて件数も見てみましょう。
 
@@ -101,7 +101,7 @@ Elasticsearchに問い合わせるにはインデックス名とタイプ名が�
 => {"count"=>3, "_shards"=>{"total"=>5, "successful"=>5, "failed"=>0}}
 {% endhighlight %}
 
-### データを確認する
+## データを確認する
 
 id=1のデータの中身も見てみます。
 
@@ -127,7 +127,7 @@ id=1のデータの中身も見てみます。
 
 ちゃんとデータが取得できました。
 
-### フィルタで検索する
+## フィルタで検索する
 
 続いて検索をしてみましょう。検索には`search`メソッドを利用します。
 
@@ -144,7 +144,7 @@ id=1のデータの中身も見てみます。
 
 2件のデータがヒットしました。
 
-### クエリで検索する
+## クエリで検索する
 
 続いて[matchクエリ](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)で`title`にElasticsearchを含むデータを検索してみましょう
 
@@ -158,7 +158,7 @@ id=1のデータの中身も見てみます。
 
 ちゃんとElasticsearchのデータが検索できました。
 
-### アグリゲーションで集計する
+## アグリゲーションで集計する
 
 次は[termsアグリゲーション](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html)で`language`毎の件数を集計してみます。
 
@@ -172,7 +172,7 @@ id=1のデータの中身も見てみます。
 
 `language`がjaのデータが2件という集計結果でした。
 
-### インデックスを削除する
+## インデックスを削除する
 
 一通り動作を確認したので、最後にインデックスを削除します。
 
@@ -183,7 +183,7 @@ id=1のデータの中身も見てみます。
 
 削除したらこのままRails Consoleを抜けておしまいです。
 
-### まとめ
+## まとめ
 
 今回はElasticsearchをRailsから手軽に扱う方法をご紹介しました。
 
@@ -193,7 +193,7 @@ Elasticsearchに慣れた後でも、データベースのデータをサッとE
 
 4日目は[@tady](http://qiita.com/tady)さんです。よろしくお願いします。
 
-### 参考文献
+## 参考文献
 
 * [Elasticsearch Filters](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filters.html)
 * [Elasticsearch Queries](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-queries.html)

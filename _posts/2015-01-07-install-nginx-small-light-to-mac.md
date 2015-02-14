@@ -7,17 +7,17 @@ keywords: Nginx
 description: 画像のリサイズ等を動的に行ってくれるngx_small_lightをMacのNginxに組み込んでみたのでそのメモです。
 ---
 
-### ngx_small_lightでやりたいこと
+## ngx_small_lightでやりたいこと
 
 [ngx_small_light](https://github.com/cubicdaiya/ngx_small_light)を使うと<http://localhost:8000/images/100x100/sample.png>というURLからsample.pngを100x100にリサイズした画像を取得できるようになったりします。
 
-### ImageMagick, PCREをインストールする
+## ImageMagick, PCREをインストールする
 
 ngx_small_lightに必要なライブラリをインストールします。
 
     $ brew install imagemagick pcre
 
-### ngx_small_lightをセットアップする
+## ngx_small_lightをセットアップする
 
 Nginxのビルド前に`setup`を実行してngx_small_lightの`config`ファイルを作成します。
 
@@ -26,7 +26,7 @@ Nginxのビルド前に`setup`を実行してngx_small_lightの`config`ファイ
     $ cd ngx_small_light
     $ ./setup
 
-### Nginxをビルドする
+## Nginxをビルドする
 
 まずNginxをダウンロード＆解凍します。
 
@@ -64,7 +64,7 @@ Nginxのビルド前に`setup`を実行してngx_small_lightの`config`ファイ
     $ make
     $ sudo make install
 
-### Nginxの設定をする
+## Nginxの設定をする
 
 Nginxをインストールしたらngx_small_lightを使うための設定ファイルを作成します。
 
@@ -85,7 +85,7 @@ Nginxをインストールしたらngx_small_lightを使うための設定ファ
       }
     }
 
-### 動作確認をする
+## 動作確認をする
 
 設定が済んだらNginxを起動します。
 
@@ -93,7 +93,7 @@ Nginxをインストールしたらngx_small_lightを使うための設定ファ
 
 <http://localhost:8000/images/original/sample.png>に画像があれば、<http://localhost:8000/images/100x100/sample.png>にアクセスするとリサイズされた画像が表示されるはずです。
 
-### 参考リンク
+## 参考リンク
 
 もっと色々な設定をしたい場合は下記のドキュメントが参考になると思います。
 

@@ -10,7 +10,7 @@ image: rails.png
 
 この記事では`Blog::Post#tags`の数を5つまでに制限する場合のサンプルコードを紹介します。
 
-### モデルでのValidation設定
+## モデルでのValidation設定
 
 まずモデル側で`post_tags`に`LengthValidation`を設定します。
 
@@ -26,7 +26,7 @@ class Blog::Post < ActiveRecord::Base
 end
 {% endhighlight %}
 
-### ロケール辞書の設定
+## ロケール辞書の設定
 
 Validation対象のフィールド名やエラーメッセージを設定します。
 
@@ -48,7 +48,7 @@ ja:
         post_tags: タグ
 {% endhighlight %}
 
-### テストケースの追加
+## テストケースの追加
 
 正しくValidationできることをテストします。
 
@@ -65,7 +65,7 @@ describe Blog::Post, type: :model do
 end
 {% endhighlight %}
 
-### `validate_objects_length_of`カスタムマッチャの追加
+## `validate_objects_length_of`カスタムマッチャの追加
 
 テストでさらっと`validate_objects_length_of`マッチャを使いましたが、これはカスタムマッチャなので下記のコードを`spec/support/matchers.rb`に追加します。
 

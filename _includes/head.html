@@ -1,7 +1,7 @@
 {% assign post = page %}
 {% include decorate-post.html %}
 
-{% assign page_params = site.data["params"][page.url] %}
+{% assign page_params = site.data.pages[page.url] %}
 
 {% if page_params %}
   {% assign page_title = page_params["title"] %}
@@ -19,7 +19,7 @@
 
 {% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
-{% capture title %}{{ parent_post.title }}{% if parent_post %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ site.title }}{% endcapture %}
+{% capture title %}{{ parent_post.title }}{% if parent_post %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ site.title }}{% if site.sub_title %} 〜{{ site.sub_title }}〜{% endif %}{% endcapture %}
 
 {% include decorate-post.html %}
 <head>
@@ -33,12 +33,32 @@
     <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ "/atom.xml" | prepend: site.baseurl }}"/>
     <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="{{ "/feed.xml" | prepend: site.baseurl }}"/>
     <meta property="og:title" content="{{ title }}">
-    <meta property="og:type" content="blog">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:description" content="{{ site.params[page.url]["h1"] }}{{ description }}">
     <meta property="og:site_name" content="{{ site.title }}">
     <meta property="og:image" content="{{ site.url }}{{ page_main_image }}">
+    {% if page.youtube %}
+    <meta property="og:type" content="video">
+        <meta property="og:video:url" content="https://www.youtube.com/embed/{{ page.youtube }}">
+        <meta property="og:video:secure_url" content="https://www.youtube.com/embed/{{ page.youtube }}">
+        <meta property="og:video:type" content="text/html">
+        <meta property="og:video:width" content="1280">
+        <meta property="og:video:height" content="720">
+        <meta property="og:video:url" content="http://www.youtube.com/v/{{ page.youtube }}?version=3&amp;autohide=1">
+        <meta property="og:video:secure_url" content="https://www.youtube.com/v/{{ page.youtube }}?version=3&amp;autohide=1">
+        <meta property="og:video:type" content="application/x-shockwave-flash">
+        <meta property="og:video:width" content="1280">
+        <meta property="og:video:height" content="720">
+
+    <meta name="twitter:card" content="player">
+      <meta name="twitter:player" content="https://www.youtube.com/embed/TVc-ThM0Zho">
+      <meta name="twitter:player:width" content="1280">
+      <meta name="twitter:player:height" content="720">
+    {% else %}
+      <meta property="og:type" content="blog">
     <meta name="twitter:card" content="summary" />
+    {% endif %}
+
     <meta name="twitter:site" content="@{{site.twitter_username}}" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />

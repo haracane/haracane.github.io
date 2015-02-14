@@ -68,21 +68,17 @@ link_boxes:
     type: dl
     links:
       -
-        title: Qiita:haracane
-        description: 技術メモの更新のサマリをお知らせしています
-        url: http://qiita.com/haracane
+        title: 湘南・藤沢おすすめ情報ブログ＠湘南T-SITE
+        description: 湘南近辺のおすすめローカル情報です
+        url: http://local.enogineer.com
       -
         title: 業務スーパーかんたんレシピ
-        description: おすすめ料理レシピを投稿しています
-        url: http://gsrecipe.com
+        description: 業務スーパーを使ったおすすめ料理レシピです
+        url: http://recipe.enogineer.com
       -
-        title: 始発駅.com
-        description: 始発駅の時刻表をまとめています
-        url: http://shihatsueki.com
-      -
-        title: haracaneのはてなブログ
-        description: ブログの更新をまとめてお知らせしています
-        url: http://haracane.hateblo.jp
+        title: ポケットサックス演奏動画とかブログ
+        description: ポケットサックスを中心とした音楽情報です
+        url: http://music.enogineer.com
 
   -
     title: リンク

@@ -11,7 +11,7 @@ image: rspec.png
 
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
-### click_onメソッドで指定したボタンをクリックする
+## click_onメソッドで指定したボタンをクリックする
 
 `click_on`メソッドでname属性が"category"のボタンをクリックするには
 

@@ -10,7 +10,7 @@ image: rspec.png
 
 ※前回の記事: [has-many関連のuniqueness validationをするカスタムバリデータを作ってみた]({% post_url 2015-01-08-nested-attributes-uniqueness-validation %})
 
-### validate_objects_uniqueness_ofカスタムマッチャの使い方
+## validate_objects_uniqueness_ofカスタムマッチャの使い方
 
 validate_objects_uniqueness_ofマッチャはこんな感じで使います。
 
@@ -27,7 +27,7 @@ describe Blog::Post, type: :model do
 end
 {% endhighlight %}
 
-### validate_objects_uniqueness_ofカスタムマッチャの定義
+## validate_objects_uniqueness_ofカスタムマッチャの定義
 
 マッチャの定義はこんな感じです。
 
@@ -102,7 +102,7 @@ RSpec::Matchers.define :validate_objects_uniqueness_of do |field|
 end
 {% endhighlight %}
 
-### カスタムマッチャでincludeしているモジュールの定義
+## カスタムマッチャでincludeしているモジュールの定義
 
 validates_objects_uniqueness_ofマッチャでは3つの独自モジュールを`include`しています。
 
@@ -196,7 +196,7 @@ module ModelFactoryNameAcquirable
 end
 {% endhighlight %}
 
-### テストを実行
+## テストを実行
 
 テストを実行するとこんな感じになります。
 
@@ -209,7 +209,7 @@ end
 
 うまくテストできました。
 
-### まとめ
+## まとめ
 
 カスタムバリデータを作ると対応するマッチャも欲しくなるので作ってみました。
 コードは結構長くなってしまいましたが。。

@@ -36,7 +36,7 @@ date:   2013-02-16 21:00:00J
 
 このVMにはRedmine以外にも以下のようなツールもインストールしています。
 
-### Redmine Backlogs Pluginでスクラム開発
+## Redmine Backlogs Pluginでスクラム開発
 
 [Redmine Backlogs Plugin](http://www.redminebacklogs.net/en/introduction.html)は[@ITのありがたい記事](http://www.atmarkit.co.jp/fjava/index/index_scrum.html)でも説明されている便利プラグインです。ALMiniumを入れると自動的にこのプラグインもインストールされるのでそういう意味でも便利です^^
 
@@ -47,7 +47,7 @@ date:   2013-02-16 21:00:00J
 などの使い方を知るのがチーム参加時の第一歩となっています。
 ※いずれも上記の記事でわかりやすく説明されています
 
-### GitとSubversionで各種ファイルをバージョン管理
+## GitとSubversionで各種ファイルをバージョン管理
 
 説明不要のバージョン管理ツールですが、[Git](http://ja.wikipedia.org/wiki/Git)と[Subversion](http://ja.wikipedia.org/wiki/Apache_Subversion)はALMiniumをインストールすると一緒についてきます。
 
@@ -57,7 +57,7 @@ date:   2013-02-16 21:00:00J
 企画担当などコードを書かないメンバーにはSubversionの使い方だけ覚えてもらっています。
 
 
-### YARDでRubyコードをドキュメンテーション
+## YARDでRubyコードをドキュメンテーション
 
 BuzzFinderがRubyベースなのでRubyコードのドキュメンテーションには[YARD](http://yardoc.org/)を使っています。
 
@@ -67,7 +67,7 @@ BuzzFinderがRubyベースなのでRubyコードのドキュメンテーショ�
 
 ちなみにYARDでドキュメントを作ると[こんな感じ](http://rubydoc.info/gems/lapidary/0.2.3/frames)になります。
 
-### Sphinxでその他の内容をドキュメンテーション
+## Sphinxでその他の内容をドキュメンテーション
 
 RubyコードのドキュメンテーションにはYARDを使っているのですが、それ以外のインストール手順やシェルスクリプト等のドキュメンテーションには[Sphinx](http://sphinx-users.jp/)を使っています。
 
@@ -75,7 +75,7 @@ Sphinxでドキュメントを作るとHTMLだけでなくPDF版も生成でき�
 
 YARDと同じで、メンバーにはSphinxでのドキュメントの書き方も覚えてもらっています。
 
-### Jenkinsでドキュメントビルド
+## Jenkinsでドキュメントビルド
 
 このVMはテストマシンではないのですが[Jenkins](https://wiki.jenkins-ci.org/display/JA/Jenkins)もインストールしています。
 
@@ -83,7 +83,7 @@ YARDと同じで、メンバーにはSphinxでのドキュメントの書き方�
 
 ちなみにJenkinsについても[@ITの記事](http://www.atmarkit.co.jp/fjava/rensai4/devtool21/devtool21_1.html)がありがたそうな気がします。
 
-### Chef-Soloで構成管理
+## Chef-Soloで構成管理
 
 上記のような構成を[Chef-Solo](http://wiki.opscode.com/display/chef/Chef+Solo)で構築しています。
 

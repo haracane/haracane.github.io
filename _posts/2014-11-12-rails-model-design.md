@@ -35,7 +35,7 @@ end
 
 以下でそれぞれについて簡単に説明します。
 
-### カスタムValidatorクラス
+## カスタムValidatorクラス
 
 カスタムValidatorでは`description`の内容が「ひらがなを含んで10文字以上」か「ひらがなを含まずに3単語以上」となっていることを確認します。
 
@@ -56,7 +56,7 @@ class Blog::SiteDescriptionSignificanceValidator < ActiveModel::Validator
 end
 {% endhighlight %}
 
-### Callbackクラス
+## Callbackクラス
 
 Callbackでは`before_save`で`language`の設定をしています。
 
@@ -77,7 +77,7 @@ class Blog::SiteLanguageEstimator
 end
 {% endhighlight %}
 
-### Valueオブジェクト
+## Valueオブジェクト
 
 Valueオブジェクトでは`rating`の比較を行えるようにしています。
 
@@ -116,7 +116,7 @@ class Blog::SiteRating
 end
 {% endhighlight %}
 
-### 参考文献
+## 参考文献
 
 この記事を書くにあたって、CallbackクラスとValidatorについては
 

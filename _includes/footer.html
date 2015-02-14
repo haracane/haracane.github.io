@@ -1,5 +1,10 @@
 <footer class="site-footer mt14">
   <div class="ft-content">
+    <dl class="ft-box mb10">
+      <dt class="ft-title">{{ site.title }}{% if site.sub_title %} <small>〜{{ site.sub_title }}〜</small>{% endif %}</dt>
+      <dd>{{ site.description }}</dd>
+    </dl>
+
     {% if site.footer_tags %}
       <dl class="ft-box">
         <dt class="ft-title">話題ワード</dt>

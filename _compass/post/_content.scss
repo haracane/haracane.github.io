@@ -2,15 +2,15 @@
 
 .post > * { margin: 20px 0; }
 
-.post h2 {
-  font-size: 26px;
-  letter-spacing: -1px;
-}
-
+.post h2,
 .post h3 {
   font-size: 20px;
   letter-spacing: -1px;
+  border-bottom: dotted 1px #aaf;
+  padding: 0px 0px 8px;
+  margin: 32px 0px 16px;
 }
+
 
 .post blockquote {
   border-left: 4px solid #e8e8e8;
@@ -72,12 +72,6 @@
   overflow: auto;
 }
 
-.post h3 {
-  border-bottom: dotted 1px #aaf;
-  padding: 0px 0px 8px;
-  margin: 32px 0px 16px;
-}
-
 .post > dl > dt,
 .post > dl > dd
 {
@@ -85,4 +79,11 @@
 }
 .post > dl > dd {
   margin: 8px 0px 8px 16px;
+}
+
+.post table {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-bordered;
+  border-collapse:collapse;
 }

@@ -30,13 +30,13 @@ Hadoop等を使ってソーシャルメディア分析をしています。
 
 ## 3. Twitterデータの特徴
 
-### 3.1. ツイート量の傾向
+## 3.1. ツイート量の傾向
 
 1日の中のTwitterデータ量の変動パターン。結構変動が大きいです。
 
 ![スライド](https://lh5.googleusercontent.com/--lzREdJymqs/UNUuSNVH5qI/AAAAAAAAAPg/aVzCGIs5K98/slide-06.png)
 
-### 3.2. ツイートの増加量
+## 3.2. ツイートの増加量
 
 発表の中では紹介しませんでしたが、Twitter公式ブログでは[2010年2月までのツイート増加量のグラフ](http://blog.twitter.com/2010/02/measuring-tweets.html)が発表されています。
 
@@ -44,7 +44,7 @@ Hadoop等を使ってソーシャルメディア分析をしています。
 
 また、[2012年3月21日時点ではツイート量が3.4億ツイート/日に達している](http://blog.twitter.com/2012/03/twitter-turns-six.html)ようです。
 
-### 3.3. Twitterデータからわかる情報
+## 3.3. Twitterデータからわかる情報
 
 ツイート量の次は[Twitter Streaming API](https://dev.twitter.com/docs/streaming-apis)から取得できるデータ。
 Twitter APIから提供されるデータはJSON形式となっていて、ツイート本文以外にユーザの自己紹介文なども取得することができます。
@@ -60,13 +60,13 @@ Twitter APIから提供されるデータはJSON形式となっていて、ツ�
 
 リッチインデクシング技術については菊井玄一郎さん、松尾義博さんのNTT技術ジャーナル[「テキストからの知識抽出による新しいWeb情報アクセスに向けて」](http://www.ntt.co.jp/journal/0806/files/jn200806008.pdf)が参考になります。
 
-### 4.1. ツイート本文の日本語解析
+## 4.1. ツイート本文の日本語解析
 
 ツイート本文の日本語解析はキーワード/関連語/ポジティブ・ネガティブ抽出をしています。
 
 ![スライド](https://lh5.googleusercontent.com/-MycJxEOmrbA/UNUuTaeyDVI/AAAAAAAAAQY/R8JZLL2DICU/slide-10.png)
 
-### 4.2. 自己紹介文・場所の日本語解析
+## 4.2. 自己紹介文・場所の日本語解析
 
 自己紹介文と場所情報からは年齢/性別/職業/都道府県の抽出をしています。
 

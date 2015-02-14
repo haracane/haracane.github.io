@@ -16,7 +16,7 @@ image: js.png
 <a name="replace"></a>
 {% endraw %}
 
-### ページ遷移イベントの動作を確認する
+## ページ遷移イベントの動作を確認する
 
 今回のコードではJavaScriptコンソールと画面にload, pageShow, popStateの各イベントの発生を通知します。
 
@@ -33,7 +33,7 @@ pushStateやreplaceStateもボタンから実行できるので色々試して�
 <pre><code class="event-output"></code></pre>
 {% endraw %}
 
-### ページ遷移イベント動作確認コードのCoffeeScript
+## ページ遷移イベント動作確認コードのCoffeeScript
 
 ちなみにイベントハンドラの設定コードはこんな感じです。
 
@@ -78,7 +78,7 @@ $ ->
   notify('load, pageShow, popStateイベントハンドラをbindしました。')
 {% endhighlight %}
 
-### まとめ
+## まとめ
 
 以上、JavaScriptのページ遷移イベント確認コードの紹介でした。
 

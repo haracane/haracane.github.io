@@ -1,6 +1,0 @@
----
-Elasticsearch: elasticsearch
-Hadoop: hadoop
-HBase: hbase
-RabbitMQ: rabbitmq
-Redis: redis

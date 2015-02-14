@@ -12,7 +12,7 @@ image: rails.png
 
 1日目は[@miyukki](http://qiita.com/miyukki)さんの「[結局Ruby on RailsとPHPってどっちが優れてるの？](http://blog.applest.net/article/20141201-ruby-on-rails-vs-php/)」でした。おつかれさまでした。
 
-### Formオブジェクトとは
+## Formオブジェクトとは
 
 Formオブジェクトはその名の通り入力フォーム用のオブジェクトです。
 
@@ -80,7 +80,7 @@ end
 
 では、以下で気をつけるポイントを紹介します。
 
-### form_forにFormオブジェクトを渡してもURLが生成されない
+## form_forにFormオブジェクトを渡してもURLが生成されない
 
 `form_for`にActiveRecordオブジェクトを渡してもちゃんとURLが生成されません。
 
@@ -95,7 +95,7 @@ end
     ...
 {% endhighlight %}
 
-#### 追記(2014/12/3)
+### 追記(2014/12/3)
 
 [@joker1007](http://qiita.com/joker1007)さんから「[FormオブジェクトのURLの渡し方について](http://qiita.com/joker1007/items/ba2812eedb7062dcbf1e)」という記事で突っ込みをいただきました。
 
@@ -117,7 +117,7 @@ include ActiveModel::Validations
 
 は`include ActiveModel::Model`に置き換えられるという指摘もいただいたのですが、手元のコードだと`create`アクション実行時にエラーが出てしまったので、こちらはひとまずこのままにしておきます。原因特定したら別途追記します。← `Virtus.model`を使う場合は単純には`ActiveModel::Model`はincludeできないようです。
 
-### validate_uniqueness_ofが使えない
+## validate_uniqueness_ofが使えない
 
 一意性制約を検証するにはデータベースのUNIQUE制約を利用する必要があります。
 
@@ -127,7 +127,7 @@ include ActiveModel::Validations
 
 具体的にはサンプルコードのようにFormオブジェクトの`valid?`メソッドでActiveRecordオブジェクトの`valid?`を呼び出せば良いかと思います。
 
-### errorsは統合する必要がある
+## errorsは統合する必要がある
 
 2つ目のポイントで紹介したようにFormオブジェクト以外のモデルでvalidationを行った場合は気をつけることがもう1つあります。
 
@@ -151,13 +151,13 @@ def valid?
 end
 {% endhighlight %}
 
-### まとめ
+## まとめ
 
 Formオブジェクトは単なるクラスなので、自分でいろいろと面倒を見る必要がありますが
 うまく使うとコードがすっきりするのでチャンスがあれば是非活用してみてください。
 
 3日目は[@awakia](http://qiita.com/awakia)さんです。よろしくお願いします。
 
-### 参考文献
+## 参考文献
 
 * [肥大化したActiveRecordモデルをリファクタリングする7つの方法](http://techracho.bpsinc.jp/hachi8833/2013_11_19/14738) ([原文](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/))

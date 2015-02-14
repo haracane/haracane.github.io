@@ -9,7 +9,7 @@ description: 前回までにRailsで記事削除・作成・更新を行って�
 image: rails.png
 ---
 
-### 記事削除機能のルーティング設定
+## 記事削除機能のルーティング設定
 
 まずはroutes.rbでdestroyアクションのルーティング設定を行います。
 
@@ -37,7 +37,7 @@ end
 
 ということがわかります。
 
-### 記事削除機能のコントローラ
+## 記事削除機能のコントローラ
 
 コントローラではdestroyアクションを実装します。
 
@@ -60,7 +60,7 @@ private
   end
 {% endhighlight %}
 
-### 記事削除機能のビュー
+## 記事削除機能のビュー
 
 destroyアクションでも[createアクション]({% post_url 2014-10-03-rails-restful-create %})と[updateアクション]({% post_url 2014-10-03-rails-restful-update %})同様にビューは用意しておらず、削除に成功しても失敗しても記事一覧にリダイレクトするようにしています。
 

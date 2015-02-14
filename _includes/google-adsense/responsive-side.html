@@ -1,4 +1,6 @@
 {% if site.google_adsense %}
+{% if page.hide_google_adsense_side %}
+{% else %}
 <script>document.write('<dl class="announce-box"><dt><span class="announce-title">広告</span></dt><dd>');</script>
 <div class="mb10 clearfix">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -13,4 +15,5 @@
 </script>
 </div>
 <script>document.write('</dd></dl>');</script>
+{% endif %}
 {% endif %}

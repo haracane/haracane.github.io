@@ -3,7 +3,7 @@
 <article class="post">
   <p class="post-content-description mv10 mh0">
     {{ post.description }}
-    <span style="font-size: 14px">({{ post.date | date: "%Y/%m/%d" }})</span>
+    <span style="font-size: 14px">({% include post/date.html %})</span>
   </p>
 
   {% if post.image %}{% if post.hide_image %}{% else %}<img class="{{site.styles.post.image_class}}" src="{{post_main_image}}" alt="{{post.title}}">{% endif %}{% endif %}
@@ -12,8 +12,11 @@
 
   {% if post.sub_category %}{% include sub-category-posts.html %}{% endif %}
 </article>
+{% include post/amazon-associate.html %}
+{% include amazon-widget.html %}
+{% include google-adsense/responsive-foot.html %}
 {% include post/next.html %}
 {% include sns-buttons/vertical.html %}
-{% include post/amazon-associate.html %}
 {% include post/category-posts.html %}
 {% include post/related-posts-foot.html %}
+{% include tag-link-boxes.html %}
