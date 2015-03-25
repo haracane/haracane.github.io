@@ -1,0 +1,14 @@
+car:
+  - a8/ad/kakaku-car-banner-300x250.html
+  - smart-vehicle-banner-300x250.html
+travel:
+  - a8/ad/relo-banner-300x250.html
+  - a8/ad/muse-banner-300x250.html
+move:
+  - a8/ad/priority-banner-300x250.html
+  - a8/ad/hikari-banner-300x250.html
+# mobile:
+#   - a8/ad/goo-sim-banner-300x250.html
+credit:
+  - a8/ad/ikkatsu-home-loan-banner-300x250.html
+  - a8/ad/jmp-home-loan-banner-300x250.html

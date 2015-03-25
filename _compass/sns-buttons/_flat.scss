@@ -1,3 +1,5 @@
+$sns-flat-button-ratio: 0.23;
+
 .sns-buttons-flat {
   margin-top: 4px;
   overflow: none;
@@ -14,11 +16,11 @@
   .btn {
     font-weight: 500;
     padding: 6px 2px;
-    width: 90px;
+    width: $pc-width * $center-ratio * $sns-flat-button-ratio * 0.9695;
     overflow: none;
   }
 }
 
-@media screen and (max-width: 440px) {
-  .sns-buttons-flat .btn { width: 21%; }
+@media screen and (max-width: $pc-width) {
+  .sns-buttons-flat .btn { width: $sns-flat-button-ratio * 100%; }
 }

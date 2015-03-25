@@ -65,3 +65,42 @@ class Jekyll::Post
     data['updated_at'] ||= data['updated_at_text'] && Time.parse(data['updated_at_text'])
   end
 end
+
+class Jekyll::Post
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_ad_type, :ad_contents
+
+  def primary_ad_type
+    data['primary_ad_type'] ||=
+      ad_types.sample(1).first
+  end
+
+  def ad_types
+    (data['ad_type'] || site.config['ad_type'] || 'adsense').split(/,/)
+  end
+
+  def ad_contents
+    data['ad_contents'] ||= generate_ad_contents
+  end
+
+  private
+
+  def generate_ad_contents
+    contents = []
+    generate_ad_paths.shuffle.each do |path|
+      filepath = "_includes/#{path}"
+      next unless File.exists?(filepath)
+      contents << File.read(filepath)
+    end
+    contents
+  end
+
+  def generate_ad_paths
+    all_ad_paths = site.data['ad_paths']
+    paths = []
+    all_ad_paths.each do |key, i_paths|
+      next unless i_paths.is_a? Array
+      paths.concat(i_paths)
+    end
+    paths
+  end
+end

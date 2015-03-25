@@ -1,0 +1,7 @@
+{% if page.ad_contents[1] %}
+  <div class="mb6">
+    {{ page.ad_contents[1] }}
+  </div>
+{% else %}
+  {% include google-adsense/responsive-foot.html %}
+{% endif %}

@@ -7,7 +7,7 @@
   {% include layout-left.html %}
 
   <section class="{{site.styles[page_primary_path].layout_center_class}} ">
-    {% include google-adsense/responsive-head.html %}
+    {% include ad/head.html %}
 
     <div class="{{site.styles[page_primary_path].box_class}} clearfix nolist">
       <header class="index-header">
@@ -34,7 +34,7 @@
 
     </div>
 
-    {% include google-adsense/responsive-foot.html %}
+    {% include ad/foot.html %}
   </section>
 
   {% if site.styles[page_primary_path].sidebar %}

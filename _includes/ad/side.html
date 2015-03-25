@@ -1,0 +1,10 @@
+{% if page.ad_paths[2] %}
+  <div class="display-pc center">
+    {{ page.ad_paths[2] }}
+  </div>
+  <div class="display-mobile">
+    {{ page.ad_paths[2] }}
+  </div>
+{% else %}
+  {% include google-adsense/responsive-side.html %}
+{% endif %}

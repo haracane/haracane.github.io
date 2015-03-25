@@ -8,7 +8,7 @@ page_category: tags
 {% include layout-left.html %}
 
 <div class="layout-center">
-  {% include google-adsense/responsive-head.html %}
+  {% include ad/head.html %}
 
   <header class="index-header">
     <h1>{{ site.data["params"][page.url]["h1"] }}</h1>
@@ -30,7 +30,7 @@ page_category: tags
     {% endfor %}
   </dl>
 
-  {% include google-adsense/responsive-foot.html %}
+  {% include ad/foot.html %}
 </div>
 
 {% include layout-right.html %}

@@ -1,0 +1,5 @@
+{% if page.ad_contents[0] %}
+  <div class="display-mobile">{{ page.ad_contents[0] }}</div>
+{% else %}
+  {% include google-adsense/responsive-head.html %}
+{% endif %}

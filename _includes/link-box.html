@@ -14,7 +14,7 @@
   <dd class="side-box-content">
     {% if link_box["type"] == "dl" %}
       <dl>
-        {% for link in link_box["links"] %}
+        {% for link in link_box["links"] | limit: 10 %}
           {% if link["url"] != site.url %}{% if link["url"] != full_url %}
           <dt><a href="{{ link["url"] }}">{{ link["title"] }}</a></dt>
           <dd class="fs14"><p>{{ link["description"] }}</p></dd>
@@ -23,7 +23,7 @@
       </dl>
     {% else %}
       <ul>
-        {% for link in link_box["links"] %}
+        {% for link in link_box["links"] | limit: 10 %}
           {% if link["url"] != site.url %}{% if link["url"] != full_url %}
           <li>
             <a href="{{ link["url"] }}">{{ link["title"] }}</a>

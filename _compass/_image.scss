@@ -2,30 +2,30 @@
 
 .post img:not([class]) { display: block; }
 
-.post img:not([class]) { width: 320px; }
+.post img:not([class]) { width: 300px; }
 .w0 { display: none; }
 
-@each $width in 60 80 120 160 180 240 320 400 600 {
+@each $width in 60 80 120 160 180 240 300 320 400 600 {
   .w#{$width} { width: #{$width}px; }
   .w#{$width}.summary-image { width: #{$width}px; }
 }
 
 @media screen and (max-width: 1080px) {
-  .post img:not([class]) { width: 320px; }
+  .post img:not([class]) { width: 300px; }
   .w600 { width: 480px; }
   .w400 { width: 400px; }
 }
 
 @media screen and (max-width: 850px) {
-  .post img:not([class]) { width: 320px; }
+  .post img:not([class]) { width: 300px; }
   .w600 { width: 400px; }
   .w400 { width: 400px; }
 }
 
 @media screen and (max-width: 740px) {
-  .post img:not([class]) { width: 320px; }
-  .w600 { width: 320px; }
-  .w400 { width: 320px; }
+  .post img:not([class]) { width: 300px; }
+  .w600 { width: 300px; }
+  .w400 { width: 300px; }
   .w240.summary-image { width: 204px; }
 }
 
@@ -38,6 +38,15 @@
   .w600 { width: 100%; }
   .w400 { width: 100%; }
   .w320 { width: 100%; }
+  .w240.summary-image { width: 120px; }
+}
+
+@media screen and (max-width: 320px) {
+  .post img:not([class]) { width: 100%; }
+  .w600 { width: 100%; }
+  .w400 { width: 100%; }
+  .w320 { width: 100%; }
+  .w300 { width: 100%; }
   .w240.summary-image { width: 120px; }
 }
 

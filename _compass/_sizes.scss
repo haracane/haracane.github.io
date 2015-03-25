@@ -1,5 +1,5 @@
 
-@each $i in 0 1 2 4 8 10 12 14 20 28 {
+@each $i in 0 1 2 4 6 8 10 12 14 20 28 {
   .fs#{$i} { font-size: #{$i}px; }
   .m#{$i} { margin: #{$i}px; }
   .mt#{$i} { margin-top: #{$i}px; }
@@ -11,6 +11,15 @@
   .pt#{$i} { padding-top: #{$i}px; }
   .pr#{$i} { padding-right: #{$i}px; }
   .ph#{$i} { padding-left: #{$i}px; padding-right: #{$i}px; }
+}
+
+.mh-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.ph-auto {
+  padding-right: auto;
+  padding-left: auto;
 }
 
 .lh1 { line-height: 1; }

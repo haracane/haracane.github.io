@@ -6,6 +6,8 @@
     <span style="font-size: 14px">({% include post/date.html %})</span>
   </p>
 
+  {% include ad/head.html %}
+
   {% if post.image %}{% if post.hide_image %}{% else %}<img class="{{site.styles.post.image_class}}" src="{{post_main_image}}" alt="{{post.title}}">{% endif %}{% endif %}
 
   {% if content %}{{ content }}{% else %}{{ post.content }}{% endif %}
@@ -14,7 +16,7 @@
 </article>
 {% include post/amazon-associate.html %}
 {% include amazon-widget.html %}
-{% include google-adsense/responsive-foot.html %}
+{% include ad/foot.html %}
 {% include post/next.html %}
 {% include sns-buttons/vertical.html %}
 {% include post/category-posts.html %}
