@@ -99,6 +99,7 @@ class Jekyll::Post
     paths = []
     all_ad_paths.each do |key, i_paths|
       next unless i_paths.is_a? Array
+      next unless ad_types.include?(key)
       paths.concat(i_paths)
     end
     paths
