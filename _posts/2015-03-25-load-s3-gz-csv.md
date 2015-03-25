@@ -4,7 +4,7 @@ title: S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみ
 date: 2015-03-25 20:44:12J
 tags: AWS S3 Ruby
 keywords: AWS S3 Ruby
-description: Rubyのaws-sdkを使ってS3に置いたGzip圧縮したCSVファイル読み込む手順をご紹介します。
+description: Rubyでaws-sdkを使ってS3に置いたGzip圧縮したCSVファイル読み込む手順をご紹介します。
 ---
 
 ## S3のキーを設定する
@@ -54,6 +54,8 @@ end
 {% endhighlight %}
 
 S3ファイルはチャンク毎に読み込まれるので、ここでは全部連結しています。
+
+ちゃんとやるならストリームに書き込みましょう。
 
 ## Gzip圧縮データを解凍する
 
