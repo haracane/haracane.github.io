@@ -1,0 +1,78 @@
+---
+layout: post
+title: S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみた
+date: 2015-03-25 20:44:12J
+tags: AWS S3 Ruby
+keywords: AWS S3 Ruby
+description: Rubyのaws-sdkを使ってS3に置いたGzip圧縮したCSVファイル読み込む手順をご紹介します。
+---
+
+## S3のキーを設定する
+
+S3にアクセスするためにまずキーの設定を行います。
+
+{% highlight ruby %}
+AWS.config(
+  access_key_id: 'アクセスキーID',
+  secret_access_key: 'シークレットアクセスキー'
+)
+{% endhighlight %}
+
+## AWS::S3オブジェクトを作る
+
+キーを設定したら`AWS::S3`を使ってS3からデータを読み込むクライアントを作ります。
+
+{% highlight ruby %}
+s3 = AWS::S3.new
+{% endhighlight %}
+
+## バケットを取得する
+
+続いてバケット名前を指定してバケットオブジェクトを取得します
+
+{% highlight ruby %}
+bucket = s3.buckets['my-bucket']
+{% endhighlight %}
+
+## ファイルを取得する
+
+次はバケット内のファイルを取得します。
+
+{% highlight ruby %}
+file = bucket.objects['books.csv.gz']
+{% endhighlight %}
+
+## ファイルを読み込む
+
+取得したファイルを読み込みます。
+
+{% highlight ruby %}
+data = ''
+file.read do |chunk|
+  data << chunk
+end
+{% endhighlight %}
+
+S3ファイルはチャンク毎に読み込まれるので、ここでは全部連結しています。
+
+## Gzip圧縮データを解凍する
+
+読み込んだデータはGzip圧縮してあるので`GzipReader`を使って解凍します。
+
+{% highlight ruby %}
+text = GzipReader.new(StringIO.new(data)).read
+{% endhighlight %}
+
+## 解凍したCSVデータを読み込む
+
+解凍したデータはCSV形式になっているので`CSV.parse`で読み込みます。
+
+{% highlight ruby %}
+CSV.parse(text).each do |row|
+  puts row.inspect
+end
+{% endhighlight %}
+
+これで無事読み込めました。
+
+今回はこれでおしまいです。
