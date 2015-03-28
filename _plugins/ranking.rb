@@ -13,7 +13,7 @@ class Jekyll::Post
   end
 
   def get_response_body(uri)
-    # return nil if site.config['show_drafts']
+    return nil if site.config['show_drafts']
     begin
       Net::HTTP.get_response(URI.parse(uri)).body
     rescue StandardError
