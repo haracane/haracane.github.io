@@ -90,41 +90,36 @@ class Jekyll::Post
 end
 
 class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :primary_ad_type, :ad_contents
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :ads
 
-  def primary_ad_type
-    data['primary_ad_type'] ||=
-      ad_types.sample(1).first
-  end
-
-  def ad_types
-    (data['ad_type'] || site.config['ad_type'] || 'adsense').split(/,/)
-  end
-
-  def ad_contents
-    data['ad_contents'] ||= generate_ad_contents
+  def ads
+    data['ads'] ||= generate_ads
   end
 
   private
 
-  def generate_ad_contents
-    contents = []
-    generate_ad_paths.shuffle.each do |path|
-      filepath = "_includes/#{path}"
-      next unless File.exists?(filepath)
-      contents << File.read(filepath)
-    end
-    contents
+  def valid_ad_freqs
+    return @valid_ad_freqs if @valid_ad_freqs
+    freqs = data['ad_freqs'] || site.config['ad_freqs'] || {'adsense' => 1}
+    @valid_ad_freqs = freqs.select { |_category, freq| freq > 0 }
   end
 
-  def generate_ad_paths
-    all_ad_paths = site.data['ad_paths']
-    paths = []
-    all_ad_paths.each do |key, i_paths|
-      next unless i_paths.is_a? Array
-      next unless ad_types.include?(key)
-      paths.concat(i_paths)
+  def generate_ads
+    ad_records = []
+    ad_categories = valid_ad_freqs.keys
+    site.data['ads'].select do |ad|
+      next if ad['show'] == false
+      next unless ad_categories.include?(ad['category'])
+      if ad['path']
+        filepath = "_includes/#{ad['path']}"
+        next unless File.exists?(filepath)
+        ad['content'] = File.read(filepath)
+        if site.config['show_drafts']
+          ad['content'] = ad['content']
+        end
+      end
+      valid_ad_freqs[ad['category']].times { ad_records << ad }
     end
-    paths
+    ad_records.shuffle.uniq { |ad| [ad['category'], ad['path']] }
   end
 end

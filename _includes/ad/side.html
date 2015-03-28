@@ -1,10 +1,12 @@
-{% if page.ad_paths[2] %}
+{% assign ad = page.ads[2] %}
+
+{% if ad['category'] == 'adsense' %}
+  {% include google-adsense/responsive-side.html %}
+{% else %}
   <div class="display-pc center">
-    {{ page.ad_paths[2] }}
+    {{ ad['content'] }}
   </div>
   <div class="display-mobile">
-    {{ page.ad_paths[2] }}
+    {{ ad['content'] }}
   </div>
-{% else %}
-  {% include google-adsense/responsive-side.html %}
 {% endif %}

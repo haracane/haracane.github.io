@@ -1,3 +1,7 @@
-{% if page.ad_contents[3] %}
-  {{ page.ad_contents[3] }}
+{% assign ad = page.ads[3] %}
+
+{% if ad['category'] == 'adsense' %}
+  {% include google-adsense/responsive-inside.html %}
+{% else %}
+  {{ ad['content'] }}
 {% endif %}

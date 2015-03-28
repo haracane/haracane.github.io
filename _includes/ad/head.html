@@ -1,5 +1,11 @@
-{% if page.ad_contents[0] %}
-  <div class="display-mobile">{{ page.ad_contents[0] }}</div>
-{% else %}
+{% assign ad = page.ads[0] %}
+
+{% if ad['category'] == 'adsense' %}
   {% include google-adsense/responsive-head.html %}
+{% else %}
+  {% if ad['type'] == 'text' %}
+    {{ ad['content'] }}
+  {% else %}
+    <div class="display-mobile">{{ ad['content'] }}</div>
+  {% endif %}
 {% endif %}

@@ -18,6 +18,9 @@ paginate: 10
 post_summary_sidebar: true
 footer_tags: true
 
+ad_freqs:
+  adsense: 1
+
 keywords: "江の島"
 
 h1:

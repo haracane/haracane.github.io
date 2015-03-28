@@ -1,0 +1,34 @@
+-
+  path: a8/ad/kakaku-car-banner-300x250.html
+  category: car
+-
+  path: smart-vehicle-banner-300x250.html
+  category: car
+  show: false
+-
+  path: a8/ad/relo-banner-300x250.html
+  category: travel
+-
+  path: a8/ad/muse-banner-300x250.html
+  category: travel
+-
+  path: a8/ad/priority-banner-300x250.html
+  category: isp
+-
+  path: a8/ad/hikari-banner-300x250.html
+  category: isp
+-
+  path: a8/ad/goo-sim-banner-300x250.html
+  category: mobile
+-
+  path: a8/ad/ocn-mobile-050-plus-text.html
+  category: mobile
+  type: text
+-
+  path: a8/ad/ikkatsu-home-loan-banner-300x250.html
+  category: homeloan
+-
+  path: a8/ad/jmp-home-loan-banner-300x250.html
+  category: homeloan
+-
+  category: adsense

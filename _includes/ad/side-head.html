@@ -1,3 +1,9 @@
-{% if page.ad_contents[0] %}
-  <div class="display-pc center mb4">{{ page.ad_contents[0] }}</div>
+{% assign ad = page.ads[0] %}
+
+{% if ad['category'] == 'adsense' %}
+{% else %}
+  {% if ad['type'] == 'text' %}
+  {% else %}
+    <div class="display-pc center mb4">{{ ad['content'] }}</div>
+  {% endif %}
 {% endif %}
