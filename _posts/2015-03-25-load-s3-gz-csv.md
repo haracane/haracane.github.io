@@ -44,25 +44,38 @@ file = bucket.objects['books.csv.gz']
 
 ## ファイルを読み込む
 
-取得したファイルを読み込みます。
+取得したファイルをパイプストリームに書き込みます。
 
 {% highlight ruby %}
-data = ''
-file.read do |chunk|
-  data << chunk
-end
+reader, writer = IO.pipe
+
+file.read { |chunk| writer.write chunk }
+
+writer.close
 {% endhighlight %}
-
-S3ファイルはチャンク毎に読み込まれるので、ここでは全部連結しています。
-
-ちゃんとやるならストリームに書き込みましょう。
 
 ## Gzip圧縮データを解凍する
 
 読み込んだデータはGzip圧縮してあるので`GzipReader`を使って解凍します。
 
 {% highlight ruby %}
-text = GzipReader.new(StringIO.new(data)).read
+require 'zlib'
+
+text = Zlib::GzipReader.new(reader).read
+reader.close
+
+{% endhighlight %}
+
+## おまけ: Gzip圧縮した文字列を解凍する
+
+上の例のように圧縮データはストリームに書き込むのが基本ですが、サイズが小さければ連結して`StringIO`経由で解凍してもOKです。
+
+{% highlight ruby %}
+data = ''
+
+file.read { |chunk| data << chunk }
+
+text = Zlib::GzipReader.new(StringIO.new(data)).read
 {% endhighlight %}
 
 ## 解凍したCSVデータを読み込む
