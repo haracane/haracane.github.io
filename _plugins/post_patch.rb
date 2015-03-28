@@ -1,4 +1,5 @@
 require 'jekyll/post'
+require 'digest/md5'
 
 class Jekyll::Post
   EXCERPT_ATTRIBUTES_FOR_LIQUID.push(
@@ -33,19 +34,41 @@ class Jekyll::Post
 end
 
 class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :tag_urls
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :tag_urls, :tag_colors
 
   def tag_urls
+    data["tag_urls"] ||= generate_tag_urls
+  end
+
+  def tag_colors
+    data["tag_colors"] ||= generate_tag_colors
+  end
+
+  private
+
+  def generate_tag_urls
     site_tag_urls = site.data["tag_urls"]
-    tag_urls = {}
+    urls = {}
     tags.each do |tag|
       if tag =~ /^[a-zA-Z0-9_-]+$/
-        tag_urls[tag] = "/tags/#{tag.downcase}/"
+        urls[tag] = "/tags/#{tag.downcase}/"
       else
-        tag_urls[tag] = site_tag_urls[tag]
+        urls[tag] = site_tag_urls[tag]
       end
     end
-    data["tag_urls"] = tag_urls
+    urls
+  end
+
+  def generate_tag_colors
+    colors = {}
+
+    tags.each do |tag|
+      mark_colors = site.data['tag_colors'][tag] || site.data['tag_colors']['default']
+      seed = Digest::MD5.hexdigest(tag).to_i(16)
+      colors[tag] = mark_colors[seed % mark_colors.size]
+    end
+
+    colors
   end
 end
 

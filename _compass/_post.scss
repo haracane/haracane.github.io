@@ -23,6 +23,19 @@
   color: #818181;
 }
 
+.post-title-name {
+  .title-mark {
+    color: #555;
+    vertical-align: center;
+    font-weight: 600;
+    font-size: 60%;
+//    background: #ff7f50;
+    border-radius: 6px;
+    padding: 3px 4px;
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+}
 .post-summary-date {
   font-weight: 500; color: #666;
 }

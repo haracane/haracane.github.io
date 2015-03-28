@@ -2,7 +2,7 @@
 layout: post
 title: MySQLでインデックスや外部キー制約をリネームする
 date: 2015-03-26 08:49:49J
-tags: MySQL
+tags: tips MySQL
 keywords: MySQL
 description: テーブルを置き換える場合などにはテーブル名だけでなく、インデックスや外部キー制約も名前変更する必要があります。MySQL5.7系だとRENAME INDEXができるのですが、5.6系だと残念ながら削除＆追加するしかないので、その方法をまとめておきます。
 mark: Tips
