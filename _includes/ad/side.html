@@ -1,6 +1,9 @@
-{% assign ad = page.ads[2] %}
+{% assign ad = page.proper_ads[2] %}
+
+{{ ad['category'] }}
 
 {% if ad['category'] == 'adsense' %}
+
   {% include google-adsense/responsive-side.html %}
 {% else %}
   <div class="display-pc center">

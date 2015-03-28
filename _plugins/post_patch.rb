@@ -89,11 +89,9 @@ class Jekyll::Post
   end
 end
 
-class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :ads
-
-  def ads
-    data['ads'] ||= generate_ads
+module ProperAdsGeneratable
+  def proper_ads
+    data['proper_ads'] ||= generate_proper_ads
   end
 
   private
@@ -104,7 +102,7 @@ class Jekyll::Post
     @valid_ad_freqs = freqs.select { |_category, freq| freq > 0 }
   end
 
-  def generate_ads
+  def generate_proper_ads
     ad_records = []
     ad_categories = valid_ad_freqs.keys
     site.data['ads'].select do |ad|
@@ -120,6 +118,19 @@ class Jekyll::Post
       end
       valid_ad_freqs[ad['category']].times { ad_records << ad }
     end
-    ad_records.shuffle.uniq { |ad| [ad['category'], ad['path']] }
+    ad_records = ad_records.shuffle.uniq { |ad| [ad['category'], ad['path']] }
+    adsense_count = ad_records.select { |ad| ad['category'] == 'adsense' }.size
+    (3 - adsense_count).times { ad_records << {'category' => 'adsense'} }
+    ad_records
   end
+end
+
+class Jekyll::Post
+  include ProperAdsGeneratable
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :proper_ads
+end
+
+class Jekyll::Page
+  include ProperAdsGeneratable
+  ATTRIBUTES_FOR_LIQUID.push :proper_ads
 end
