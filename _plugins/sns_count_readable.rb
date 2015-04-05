@@ -43,7 +43,7 @@ module SnsCountReadable
   private
 
   def fetch_cached_count(cache_key, url)
-    cache = JSON.parse(File.read('_data/cache.json'))
+    site.data['cache'] ||= {}
     site.data['cache'][cache_key] ||= {}
     cached_count = site.data['cache'][cache_key][full_url] || {}
     cached_count[:expired] =
@@ -81,7 +81,8 @@ module SnsCountReadable
 
   def save_cache_on_update(cache_key, url, cached_count)
     site.data['cache'][cache_key][url] = cached_count
-    File.write('../template.enogineer.com/_data/cache.json', site.data['cache'].to_json)
+    return if site.config['watch']
+    File.write('_data/cache.json', site.data['cache'].to_json)
   end
 end
 
