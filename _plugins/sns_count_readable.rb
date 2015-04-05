@@ -17,47 +17,27 @@ module SnsCountReadable
 
   def hatena_count
     return data['hatena_count'] if data['hatena_count']
-    uri = "http://api.b.st-hatena.com/entry.count?url=#{full_url}"
 
     cache_key = 'hatena_counts'
     cached_count = fetch_cached_count(cache_key, full_url)
 
-    body = get_response_body(uri)
-    latest_count = body ? body.to_i : cached_count
-
-    save_cache_on_update(cache_key, full_url, latest_count, cached_count)
-
-    data['hatena_count'] = latest_count || cached_count || 0
+    data['hatena_count'] = cached_count[:value]
   end
 
   def facebook_count
     return data['facebook_count'] if data['facebook_count']
-    uri = "http://graph.facebook.com/#{full_url}"
 
     cache_key = 'facebook_counts'
     cached_count = fetch_cached_count(cache_key, full_url)
-
-    body = get_response_body(uri)
-    latest_count = body ? JSON.parse(body)['shares'] : cached_count
-
-    save_cache_on_update(cache_key, full_url, latest_count, cached_count)
-
-    data['facebook_count'] = latest_count || cached_count || 0
+    data['facebook_count'] = cached_count[:value]
   end
 
   def twitter_count
     return data['twitter_count'] if data['twitter_count']
-    uri = "http://urls.api.twitter.com/1/urls/count.json?url=#{full_url}"
 
     cache_key = 'twitter_counts'
     cached_count = fetch_cached_count(cache_key, full_url)
-
-    body = get_response_body(uri)
-    latest_count = body ? JSON.parse(body)['count'] : cached_count
-
-    save_cache_on_update(cache_key, full_url, latest_count, cached_count)
-
-    data['twitter_count'] = latest_count || cached_count || 0
+    data['twitter_count'] = cached_count[:value]
   end
 
   private
@@ -65,14 +45,43 @@ module SnsCountReadable
   def fetch_cached_count(cache_key, url)
     cache = JSON.parse(File.read('_data/cache.json'))
     site.data['cache'][cache_key] ||= {}
-    cached_count = site.data['cache'][cache_key][full_url]
+    cached_count = site.data['cache'][cache_key][full_url] || {}
+    cached_count[:expired] =
+      cached_count[:expires_at].nil? || Time.parse(cached_count[:expires_at]) < Time.now
+    cached_count[:value] ||= 0
+
+    if cached_count[:expired]
+      latest_value = nil
+
+      case cache_key
+      when 'hatena_counts'
+        uri = "http://api.b.st-hatena.com/entry.count?url=#{full_url}"
+        body = get_response_body(uri)
+        latest_value = body && body.to_i
+        cached_count[:expires_at] = Time.now + 60 * 10
+      when 'facebook_counts'
+        uri = "http://graph.facebook.com/#{full_url}"
+        body = get_response_body(uri)
+        latest_value = body && JSON.parse(body)['shares']
+        cached_count[:expires_at] = Time.now + 60 * 60 * 24
+      when 'twitter_counts'
+        uri = "http://urls.api.twitter.com/1/urls/count.json?url=#{full_url}"
+        body = get_response_body(uri)
+        latest_value = body && JSON.parse(body)['count']
+        cached_count[:expires_at] = Time.now + 60 * 10
+      end
+
+      cached_count[:value] = latest_value || cached_count[:value]
+
+      save_cache_on_update(cache_key, url, cached_count)
+    end
+
+    cached_count
   end
 
-  def save_cache_on_update(cache_key, url, latest_count, cached_count)
-    if latest_count && latest_count != cached_count
-      site.data['cache'][cache_key][url] = latest_count
-      File.write('../template.enogineer.com/_data/cache.json', site.data['cache'].to_json)
-    end
+  def save_cache_on_update(cache_key, url, cached_count)
+    site.data['cache'][cache_key][url] = cached_count
+    File.write('../template.enogineer.com/_data/cache.json', site.data['cache'].to_json)
   end
 end
 
