@@ -1,13 +1,7 @@
 require 'net/http'
 require 'json'
 
-WEIGHT_OF_HATENA = 2
-WEIGHT_OF_FACEBOOK = 1
-WEIGHT_OF_TWITTER = 1
-
-class Jekyll::Post
-  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :hatena_count, :facebook_count, :twitter_count
-
+module SnsCountReadable
   def full_url
     site.config['url'] + url
   end
@@ -82,35 +76,7 @@ class Jekyll::Post
   end
 end
 
-module Jekyll
-  class RankingGenerator < Generator
-    safe true
-    priority :high
-
-    def generate(site)
-      @posts, posts_with_score = [], []
-
-      begin
-        site.posts.each do |post|
-          score =
-            WEIGHT_OF_HATENA * post.hatena_count +
-            WEIGHT_OF_FACEBOOK * post.facebook_count +
-            WEIGHT_OF_TWITTER * post.twitter_count
-
-          posts_with_score << {"post" => post, "score" => score}
-          puts "finished loading #{post.title} ..#{score}: #{post.hatena_count} hatena bookmarks, #{post.facebook_count} facebook likes & shares, #{post.twitter_count} tweets"
-        end
-
-        posts_with_score.sort_by{|val| val['score']}.reverse_each do |entry|
-          @posts << entry['post']
-        end
-
-      rescue StandardError
-        @posts = site.posts.reverse
-      end
-
-      site.data['popular_posts'] = @posts
-    end
-
-  end
+class Jekyll::Post
+  EXCERPT_ATTRIBUTES_FOR_LIQUID.push :hatena_count, :facebook_count, :twitter_count
+  include SnsCountReadable
 end

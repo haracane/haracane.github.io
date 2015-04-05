@@ -4,19 +4,13 @@
 -
   path: smart-vehicle-banner-300x250.html
   category: car
-  show: false
+  show: true
 -
   path: a8/ad/relo-banner-300x250.html
   category: travel
 -
   path: a8/ad/muse-banner-300x250.html
   category: travel
--
-  path: a8/ad/priority-banner-300x250.html
-  category: isp
--
-  path: a8/ad/hikari-banner-300x250.html
-  category: isp
 -
   path: a8/ad/goo-sim-banner-300x250.html
   category: mobile

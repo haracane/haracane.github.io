@@ -12,11 +12,12 @@ default:
   - "#dbffb7" #黄緑
   - "#ffffb7" #黄色
   - "#ffdbb7" #橙
-Ruby:
-  - "#ffb7b7" #サーモンピンク
-MySQL:
-  - "#b7ffff" #水色
-ActiveRecord:
-  - "#ffdbb7" #橙
-Rails:
-  - "#ffb7db" #赤
+桜: "#ffb7ff" #ピンク
+Ruby: "#ffb7b7" #サーモンピンク
+MySQL: "#b7ffff" #水色
+ActiveRecord: "#ffdbb7" #橙
+Rails: "#ffb7db" #赤
+ケーキ: "#ffffb7" #黄色
+コーヒー: "#ffdbb7" #橙
+ベーカリー: "#ffdbb7" #橙
+ランチ: "#ffb7b7" #サーモンピンク

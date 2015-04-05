@@ -1,2 +1,4 @@
+{% if post.tags[0] %}
 {% capture mark %}{{post.tags[0]}}{% endcapture %}
-<a class="title-mark" style="background-color: {{ post.tag_colors[mark] }}"href="{{ post.tag_urls[mark] }}">{{ mark }}</a>
+<a class="title-mark" style="background-color: {{ site.data['tag_colors'][mark] }}"href="{{ post.tag_urls[mark] }}">{{ mark }}</a>
+{% endif %}
