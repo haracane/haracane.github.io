@@ -1,9 +1,9 @@
 ---
 layout: post
-title: MySQLのBULK INSERTでデッドロック回避のためにINSERT順に気をつける
+title: MySQLのBULK INSERTでデッドロックを回避する
 date: 2015-04-05 09:50:41J
-tags: MySQL Rails
-keywords: MySQL Rails
+tags: MySQL Rails Ruby
+keywords: MySQL Rails Ruby
 description: Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。
 image: mysql.png
 ---
@@ -12,16 +12,18 @@ image: mysql.png
 
 ログ集計した結果をテーブルにBULK INSERTしていたら
 
-```ActiveRecord::StatementInvalid: Mysql2::Error: Deadlock found when trying to get lock; try restarting transaction: INSERT INTO `books` (`id`,`name`) VALUES
+```ActiveRecord::StatementInvalid: Mysql2::Error: Deadlock found when trying to get lock; try restarting transaction: INSERT INTO `books` (`id`,`name`) VALUES ...
 ```
 
-というエラーが発生しました。
+というデッドロックエラーが発生しました。
 
 ## BULK INSERTのエラー原因調査
 
-エラー原因を調べてみるとインサート順がインデックスに沿っていないとデッドロックが発生してしまうようです。（参考: [mysql deadlocks with concurrent inserts](http://thushw.blogspot.in/2010/11/mysql-deadlocks-with-concurrent-inserts.html)）
+ということでデッドロックの原因を調べてみたのですが、インサート順がインデックスに沿っていないことがまずかったようです。（参考: [mysql deadlocks with concurrent inserts](http://thushw.blogspot.in/2010/11/mysql-deadlocks-with-concurrent-inserts.html)）
 
 ### デッドロックが発生してしまうケース
+
+例えば以下のような場合にまずいことになります。
 
 まず、テーブルが
 
@@ -32,7 +34,7 @@ image: mysql.png
 
 となっていて、`name`カラムがUNIQUEキーになっていたとします。
 
-ここで、`books`テーブルに対してプロセス１とプロセス２が
+ここで、`books`テーブルに対してプロセスAとプロセスBが
 
 {% highlight sql %}
 INSERT INTO `books` (`id`,`name`) VALUES (NULL,'Rubyの本'),(NULL,'Capybaraの本');
@@ -46,39 +48,38 @@ INSERT INTO `books` (`id`,`name`) VALUES (NULL,'MySQLの本'),(NULL,'Railsの本
 
 ### デッドロックが発生するまでの処理内容
 
-上記のようなBULK INSERTを実行すると以下のような処理でデッドロックが発生してしまう場合があります。
+デッドロックは以下のような処理順の場合に発生してしまいます。
 
-1. プロセス１が`Rubyの本`をINSERTするために`PostgreSQLの本`から`Rubyの本`までのギャップロックAを取得
-2. プロセス２が`MySQLの本`をINSERTするために`ActiveRecordの本`から`MySQLの本`までのギャップロックBを取得
-3. プロセス２が`Railsの本`をINSERTするために`PostgreSQLの本`から`Railsの本`までのギャップロックCを取得しようとする
-  * プロセス１が取得している`PostgreSQLの本`から`Rubyの本`までのギャップロックAの解放を待つ
-4. プロセス１が`Capybaraの本`をINSERTするために`ActiveRecordの本`から`Capybaraの本`までのギャップロックDを取得しようとする
-  * プロセス１が取得している`ActiveRecordの本`から`MySQLの本`までのギャップロックBの解放を待つ
+1. プロセスAが`Rubyの本`をINSERTするために`PostgreSQLの本`から`Rubyの本`までのギャップロックA1を取得
+2. プロセスBが`MySQLの本`をINSERTするために`ActiveRecordの本`から`MySQLの本`までのギャップロックB1を取得
+3. プロセスBが`Railsの本`をINSERTするために`PostgreSQLの本`から`Railsの本`までのギャップロックB2を取得しようとする
+  * プロセスAが取得している`PostgreSQLの本`から`Rubyの本`までのギャップロックA1の解放を待つ
+4. プロセスAが`Capybaraの本`をINSERTするために`ActiveRecordの本`から`Capybaraの本`までのギャップロックA2を取得しようとする
+  * プロセスBが取得している`ActiveRecordの本`から`MySQLの本`までのギャップロックB1の解放を待つ
 
 図にすると
 
-
-|レコード|プロセス１|プロセス２|
+|レコード|プロセスA|プロセスB|
 |-------|:--------:|:--------:|
-|ActiveRecordの本| | ギャップロックB |
-|Capybaraの本| ギャップロックD | ‖ |
-|MySQLの本| ギャップロックD | ギャップロックB |
-|PostgreSQLの本| ギャップロックA | ギャップロックC |
-|Railsの本| ‖ | ギャップロックC |
-|Rubyの本| ギャップロックA | |
+|ActiveRecordの本| | ギャップロックB1 |
+|Capybaraの本| ギャップロックA2 | ‖ |
+|MySQLの本| ギャップロックA2 | ギャップロックB1 |
+|PostgreSQLの本| ギャップロックA1 | ギャップロックB2 |
+|Railsの本| ‖ | ギャップロックB2 |
+|Rubyの本| ギャップロックA1 | |
 
 という感じになります。
 
 ご覧の通り
 
-* プロセス１がプロセス２のギャップロックBの解放を待つ
-* プロセス２がプロセス１のギャップロックAの解放を待つ
+* プロセスAがギャップロックB1の解放を待つ
+* プロセスBがギャップロックA1の解放を待つ
 
 という形でデッドロックが発生してしまいます。
 
 ## デッドロックの回避方法
 
-デッドロックを回避するにはBULK INSERTする時の順番を気をつければOKです。
+このようなデッドロックはBULK INSERTする時の順番を気をつければ回避できます。
 
 今回の場合だと
 
@@ -94,14 +95,14 @@ INSERT INTO `books` (`id`,`name`) VALUES (NULL,'MySQLの本'),(NULL,'Railsの本
 
 こうすると今回の例のような場合でも
 
-|レコード|プロセス１|プロセス２|
+|レコード|プロセスA|プロセスB|
 |-------|:--------:|:--------:|
-|ActiveRecordの本| | ギャップロックB |
-|Capybaraの本| ギャップロックA | ‖ |
-|MySQLの本| ギャップロックA | ギャップロックB |
-|PostgreSQLの本| ギャップロックD | ギャップロックC |
-|Railsの本| ‖ | ギャップロックC |
-|Rubyの本| ギャップロックD | |
+|ActiveRecordの本| | ギャップロックB1 |
+|Capybaraの本| ギャップロックA1 | ‖ |
+|MySQLの本| ギャップロックA1 | ギャップロックB1 |
+|PostgreSQLの本| ギャップロックA2 | ギャップロックB2 |
+|Railsの本| ‖ | ギャップロックB2 |
+|Rubyの本| ギャップロックA2 | |
 
 という感じになって解放待ちのギャップロックを辿ってもループしなくなるのでデッドロックを回避できます。
 
