@@ -1,10 +1,11 @@
 -
   path: a8/ad/kakaku-car-banner-300x250.html
   category: car
+  show: false
 -
   path: smart-vehicle-banner-300x250.html
   category: car
-  show: true
+  show: false
 -
   path: a8/ad/relo-banner-300x250.html
   category: travel
@@ -26,3 +27,10 @@
   category: homeloan
 -
   category: adsense
+  id: 1
+-
+  category: adsense
+  id: 2
+-
+  category: adsense
+  id: 3

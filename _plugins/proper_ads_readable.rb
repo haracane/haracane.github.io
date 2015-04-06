@@ -21,16 +21,10 @@ module ProperAdsReadable
         filepath = "_includes/#{ad['path']}"
         next unless File.exists?(filepath)
         ad['content'] = File.read(filepath)
-        if site.config['show_drafts']
-          ad['content'] = ad['content']
-        end
       end
       valid_ad_freqs[ad['category']].times { ad_records << ad }
     end
-    ad_records = ad_records.shuffle.uniq { |ad| [ad['category'], ad['path']] }
-    adsense_count = ad_records.select { |ad| ad['category'] == 'adsense' }.size
-    (3 - adsense_count).times { ad_records << {'category' => 'adsense'} }
-    ad_records
+    ad_records.shuffle.uniq { |ad| [ad['category'], ad['id'], ad['path']] }
   end
 end
 
