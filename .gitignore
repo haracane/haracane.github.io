@@ -1,7 +1,6 @@
 _site
 .sass-cache
 _drafts
-img/draft
 
 .bundle
 bundle_bin
@@ -11,3 +10,10 @@ memo.txt
 _data/cache.json
 _erbs
 _records
+tmp
+
+img/draft
+img/original
+
+_twitter/tweets.txt
+_twitter/history.txt
