@@ -17,7 +17,7 @@
     {% else %}
       {% assign active_index = 0 %}
     {% endif %}
-    {% for nav in site.data.category_navigations %}
+    {% for nav in site.category_navigations %}
       {% if forloop.index0 == active_index %}
         <li class="active"><a href="#">{{ nav["name"] }}</a></li>
       {% else %}

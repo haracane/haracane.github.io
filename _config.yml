@@ -59,8 +59,11 @@ category_navigations:
     name: トップ
     url: /
   -
+    name: 連載記事
+    url: /categories.html
+  -
     name: ジャンル
-    url: /genre/dp.html
+    url: /genres.html
   -
     name: バックナンバー
     url: /backnumber.html
