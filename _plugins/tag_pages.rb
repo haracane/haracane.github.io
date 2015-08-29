@@ -51,7 +51,7 @@ module TagPages
           )
         end
 
-        tag_link_params[tag]['links'] = links.sort_by { |link| link['date'] }.reverse
+        tag_link_params[tag]['links'] = links.sort_by { |link| link['date'] || '' }.reverse
 
         next unless tag_url
         site.pages << TagPage.new(site, site.source, tag_url, tag, posts)
@@ -61,6 +61,7 @@ module TagPages
       output_filepath = '../template.enogineer.com/_data/tag_link_boxes.json'
       if File.exists?(output_filepath)
         File.write(output_filepath, tag_link_params.to_json)
+        puts "Updated #{output_filepath}"
       end
     end
   end

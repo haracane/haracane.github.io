@@ -22,6 +22,7 @@ class Jekyll::Post
     return data["order_in_category"] if data["order_in_category"]
     urls = site.categories[primary_category].map(&:url)
     index = urls.index(url)
+    # require 'pry'; binding.pry
     return nil if index.nil?
     data["order_in_category"] = urls.size - index
   end

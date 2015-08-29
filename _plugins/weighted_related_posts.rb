@@ -6,7 +6,9 @@ module WeightedRelatedPosts
   # Returns [<Post>]
   def related_posts(posts)
     return [] unless posts.size > 1
-    highest_freq = tag_freq(posts).values.max
+    freqs = tag_freqs(posts)
+
+    highest_freq = freqs.values.max
     related_scores = Hash.new(0)
 
     tag_weights = {}
@@ -15,22 +17,22 @@ module WeightedRelatedPosts
 
     posts.each do |post|
       next if post == self
-      next if post.categories == self.categories
+      next if self.categories.size > 1 && post.categories == self.categories
       next if post.categories.include?(self.data["sub_category"])
       post.tags.each do |tag|
-        if self.tags.include?(tag)
-          cat_freq = tag_freq(posts)[tag]
-          related_scores[post] += (1 + highest_freq - cat_freq) * tag_weights[tag]
-        end
+        next unless self.tags.include?(tag)
+        cat_freq = freqs[tag]
+        related_scores[post] += (1 + highest_freq - cat_freq) * tag_weights[tag]
       end
     end
+
     sort_related_posts(related_scores)
   end
 
   # Calculate the frequency of each tag.
   #
   # Returns {tag => freq, tag => freq, ...}
-  def tag_freq(posts)
+  def tag_freqs(posts)
     return @tag_freq if @tag_freq
     @tag_freq = Hash.new(0)
     posts.each do |post|

@@ -1,5 +1,7 @@
 <header class="post-header">
   {% include post/tags.html %}
-  <h1>{% include post/title.html %}</h1>
+  {% include post/category-title.html %}
+  <span class="post-title-name lh1" style="font-size: 32px;">{% include post/title-mark.html %}</span>
+  <h1 style="display:inline;"><a href="{{ post.url }}">{{ post.title }}</a></h1>
   {% include sns-buttons/flat.html %}
 </header>

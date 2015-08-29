@@ -19,7 +19,7 @@
 
 {% capture description %}{% if page_description %}{{ page_description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 
-{% capture title %}{{ parent_post.title }}{% if parent_post %}：{% endif %}{{ page_title }}{% if page_title %}｜{% endif %}{{ site.title }}{% if site.sub_title %} 〜{{ site.sub_title }}〜{% endif %}{% endcapture %}
+{% capture title %}{{ page_title }}{% if page_title %}｜{% endif %}{{ site.title }}{% if site.sub_title %} 〜{{ site.sub_title }}〜{% endif %}{% endcapture %}
 
 {% include decorate-post.html %}
 <head>

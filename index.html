@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
-{% assign posts = paginator.posts %}
-{% assign post_layout = site.styles.index.layout %}
-{% include post-summaries-layout.html %}
+{% if site.styles.index.original %}
+<article class="post">
+{%   capture original_md %}{% include index/original.md %}{% endcapture %}
+{{   original_md | markdownify }}
+</article>
+{% else %}
+{%   assign posts = paginator.posts %}
+{%   assign post_layout = site.styles.index.layout %}
+{%   include post-summaries-layout.html %}
+{% endif %}
