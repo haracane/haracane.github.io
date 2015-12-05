@@ -38,10 +38,11 @@ class Jekyll::Post
 
   def twitter_count
     return data['twitter_count'] if data['twitter_count']
-    uri = "http://urls.api.twitter.com/1/urls/count.json?url=#{full_url}"
+    data['twitter_count'] = 0
+    # uri = "http://urls.api.twitter.com/1/urls/count.json?url=#{full_url}"
 
-    body = get_response_body(uri)
-    data['twitter_count'] = body && JSON.parse(body)['count'] || 0
+    # body = get_response_body(uri)
+    # data['twitter_count'] = body && JSON.parse(body)['count'] || 0
   end
 end
 
