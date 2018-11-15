@@ -1,7 +1,7 @@
 # Site settings
-title: "江の島エンジニアBlog"
-description: "湘南在住, 渋谷で働くエンジニアのブログです"
-profile: "湘南から渋谷に通うエンジニアです。お祝い金がもらえる賃貸情報サイト <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発をしています。<br/>以前はTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。"
+title: "SporTechなエンジニアBlog"
+description: "渋谷にあるスポーツTechベンチャー FanForwardで働くエンジニアのブログです"
+profile: "湘南から渋谷のスポーツTechベンチャーに通うエンジニアです。現在はFanForwardでチーフエンジニアしてます。前職ではCTOとして <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発を、その前のNTTではTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。横浜スタジアム、等々力陸上競技場、とどろきアリーナにもよく通っています。"
 baseurl: ""
 domain: blog.enogineer.com
 url: "http://blog.enogineer.com"
@@ -20,8 +20,6 @@ footer_tags: true
 
 ad_freqs:
   adsense: 1
-
-keywords: "江の島"
 
 h1:
   index: "Ruby(Rails, RSpec)やHadoop, Elasticsearchでのデータ処理などについてよく書いています"
@@ -102,11 +100,11 @@ link_boxes:
         title: LinkedIn:haracane
         url: https://www.linkedin.com/profile/view?id=205504421
       -
-        title: キャッシュバック賃貸
-        url: http://cbchintai.com
+        title: FanForward
+        url: http://www.fanforward.jp/
       -
-        title: 賃貸情報株式会社
-        url: http://chintaijyoho.co.jp
+        title: キャッシュバック賃貸
+        url: https://cbchintai.com/
       -
         title: BuzzFinder
         url: https://www.nttcoms.com/service/buzzfinder/

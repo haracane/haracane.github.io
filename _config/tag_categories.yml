@@ -25,7 +25,9 @@
   url: /genre/misc.html
   name: "その他"
   tags:
+    FanForward: fanforward
     Git: git
+    Heroku: heroku
     Vagrant: vagrant
     HTML5: html5
     CSS: css
