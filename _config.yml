@@ -1,15 +1,15 @@
 # Site settings
-title: "SportechなエンジニアBlog"
-description: "渋谷にあるスポーツTechベンチャー FanForwardで働くエンジニアのブログです"
-profile: "湘南から渋谷のスポーツTechベンチャーに通うエンジニアです。現在はFanForwardでチーフエンジニアしてます。前職ではCTOとして <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発を、その前のNTTではTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>技術分野はRuby/Railsベースのアジャイル開発、Hadoopでの大規模分散処理など。横浜スタジアム、等々力陸上競技場、とどろきアリーナにも家族連れでよく通っています。"
+title: "haracaneのブログ"
+description: "主にスタートアップでCTOやTLをやっているエンジニアのブログです"
+profile: "エクサウィザーズで<a href=\"https://hanasuto.carewiz.ai/\">CareWiz ハナスト</a>開発チームのテックリードしてます。前職ではCTOとして <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発を、その前のNTTではTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>好きな技術用語はClean Architecture、GraphQL、TDD、kotlinです。"
 baseurl: ""
 domain: blog.enogineer.com
 url: "http://blog.enogineer.com"
 author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=72
 twitter_username: haracane
-#twitter_username_ruby: はらけん
+twitter_username_ruby: はらけん
 github_username:  haracane
-#qiita_username:  haracane
+qiita_username:  haracane
 google_analysis_id: UA-53664731-1
 amazon_associate_id: haracane-22
 google_adsense: true
@@ -68,37 +68,20 @@ category_navigations:
 
 link_boxes:
   -
-    title: 関連コンテンツ
-    type: dl
-    links:
-      -
-        title: 湘南・藤沢おすすめ情報ブログ＠湘南T-SITE
-        description: 湘南近辺のおすすめローカル情報です
-        url: http://local.enogineer.com
-      -
-        title: 業務スーパーかんたんレシピ
-        description: 業務スーパーを使ったおすすめ料理レシピです
-        url: http://recipe.enogineer.com
-      -
-        title: ポケットサックス演奏動画とかブログ
-        description: ポケットサックスを中心とした音楽情報です
-        url: http://music.enogineer.com
-
-  -
     title: リンク
     links:
       -
         title: Github:haracane
         url: https://github.com/haracane
       -
-        title: Rubygems:haracane
-        url: https://rubygems.org/profiles/58011
+        title: Qiita:haracane
+        url: https://qiita.com/haracane
+      -
+        title: LinkedIn:haracane
+        url: https://linkedin.com/in/haracane
       -
         title: SlideShare:haracane
         url: http://www.slideshare.net/haracane
-      -
-        title: LinkedIn:haracane
-        url: https://www.linkedin.com/profile/view?id=205504421
       -
         title: FanForward
         url: http://www.fanforward.jp/
