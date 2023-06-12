@@ -1,8 +1,0 @@
-{% assign next_flag = false %}
-{% for i_post in site.categories[post_category] reversed %}
-  {% if next_flag %}
-    <div class="next-post mb10 center p4">次の記事は「<a href="{{i_post.url}}">{{i_post.title}}</a>」です</div>
-    {% assign next_flag = false %}
-  {% endif %}
-  {% if i_post.url == post.url %}{% assign next_flag = true %}{% endif %}
-{% endfor %}

@@ -1,146 +1,41 @@
-# Site settings
-title: "haracaneのブログ"
-description: "主にスタートアップでCTOやTLをやっているエンジニアのブログです"
-profile: "エクサウィザーズで<a href=\"https://hanasuto.carewiz.ai/\">CareWiz ハナスト</a>開発チームのテックリードしてます。前職ではCTOとして <a href=\"http://cbchintai.com\">キャッシュバック賃貸</a>の開発を、その前のNTTではTwitter全量リアルタイム解析サービス <a href=\"https://www.nttcoms.com/service/buzzfinder/\">BuzzFinder</a> の設計・開発をしていました。<br/>好きな技術用語はClean Architecture、GraphQL、TDD、kotlinです。"
-baseurl: ""
-domain: blog.enogineer.com
-url: "http://blog.enogineer.com"
-author_image: https://s.gravatar.com/avatar/f3cde9d5daed8b98e02dfd2d6a1d6355?s=72
-twitter_username: haracane
-twitter_username_ruby: はらけん
-github_username:  haracane
-qiita_username:  haracane
-google_analysis_id: UA-53664731-1
-amazon_associate_id: haracane-22
-google_adsense: true
-paginate: 10
+title: haracaneのブログ
+description: >- # this means to ignore newlines until "baseurl:"
+  プロダクト開発が好きなプログラマのブログです。
+  RubyとTypeScriptによくお世話になっています。
 
-post_summary_sidebar: true
-footer_tags: true
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://blog.enogineer.com" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: haracane
+# github_username:  haracane
 
-ad_freqs:
-  adsense: 1
-
-h1:
-  index: "Ruby(Rails, RSpec)やHadoop, Elasticsearchでのデータ処理などについてよく書いています"
-  genre: "各タグに関連する記事の一覧です:"
-  backnumber: 過去に投稿した記事の一覧です
-
-# 320, 240, 120
-# for file in $(ls); do ruby -e 'readlines.each_with_index { |line, i| if i > 0 && line == "---\n" then print "image: blank.gif\n"; end;  print line }' -i $file; done
-styles:
-  post:
-    image_class: w0
-  summary:
-    image_class: w60
-  index:
-    layout: post/default-summary.html
-    wrap_class: ""
-    layout_center_class: layout-center
-    box_class: ""
-    sidebar: true
-  backnumber:
-    layout: post/description-link.html
-    wrap_class: ""
-    layout_center_class: layout-center
-    box_class: "border-box padding-box pt10 mb10"
-    sidebar: true
-  nav-post-link:
-    layout: post/text-link.html
-  tag-post-link:
-    layout: post/description-link.html
-  category-post-link:
-    layout: post/category-text-link.html
-
-category_navigations:
-  -
-    name: トップ
-    url: /
-  -
-    name: 連載記事
-    url: /categories.html
-  -
-    name: ジャンル
-    url: /genres.html
-  -
-    name: バックナンバー
-    url: /backnumber.html
-
-link_boxes:
-  -
-    title: リンク
-    links:
-      -
-        title: Github:haracane
-        url: https://github.com/haracane
-      -
-        title: Qiita:haracane
-        url: https://qiita.com/haracane
-      -
-        title: LinkedIn:haracane
-        url: https://linkedin.com/in/haracane
-      -
-        title: SlideShare:haracane
-        url: http://www.slideshare.net/haracane
-      -
-        title: FanForward
-        url: http://www.fanforward.jp/
-      -
-        title: キャッシュバック賃貸
-        url: https://cbchintai.com/
-      -
-        title: BuzzFinder
-        url: https://www.nttcoms.com/service/buzzfinder/
-
-  -
-    title: 過去の発表
-    type: dl
-    links:
-      -
-        title: "\"見える\"Twitter全量リアルタイム解析 ～Hadoop/RabbitMQ処理の仕組みと可視化～"
-        description:  Hadoop Conference Japan 2013 Winter＠東京ビッグサイト by 日本Hadoopユーザー会 [<a target="_blank" href="http://www.ustream.tv/recorded/28694028">Video</a>]
-        url: https://speakerdeck.com/haracane/rabbitmqchu-li-falseshi-zu-mitoke-shi-hua
-      -
-        title: Hadoop＆RabbitMQを利用したTwitter全量リアルタイム解析
-        description: Hadoopエンタープライズソリューションセミナー2012＠東京カンファレンスセンター品川 by NTTデータ
-        url: https://speakerdeck.com/haracane/hadoopentapuraizusoriyusiyonsemina2012-hadoop-rabbitmqwoli-yong-sitatwitterquan-liang-riarutaimujie-xi
-      -
-        title: Large Scale Log Analysis for Marketing in NTT Communications
-        description: Hadoop World 2011＠Sheraton NY by Cloudera
-        url: http://www.slideshare.net/haracane/hadoop-world-2011-large-scale-log-data-analysis-for-marketing-in-ntt-communications-15528625
-      -
-        title: マーケティング向け大規模ログ解析事例紹介
-        description: Hadoop Conference Japan 2011 Fall＠ベルサール汐留 by 日本Hadoopユーザー会 [<a target="_blank" href="http://www.ustream.tv/recorded/17518176">Video</a>]
-        url: http://www.slideshare.net/haracane/hcj2011-fall0926
-
-  -
-    title: gem
-    type: dl
-    links:
-      -
-        title: bunnish
-        description: お手軽RabbitMQ操作コマンド
-        url: http://hatacomp.hateblo.jp/entry/release-bunnish-gem
-      -
-        title: priam
-        description: Cassandra操作コマンド
-        url: http://hatacomp.hateblo.jp/entry/release-priam-gem
-      -
-        title: apjson
-        description: coolなjson表示コマンド
-        url: http://hatacomp.hateblo.jp/entry/release-apjson-gem
-      -
-        title: okuyama
-        description: OkuyamaのRubyクライアント
-        url: https://github.com/haracane/okuyama
-      -
-        title: oauthtoken
-        description: OAuth認証用トークン取得コマンド
-        url: http://hatacomp.hateblo.jp/entry/2013/11/07/222716
-
-# Build settings
-markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
-gems:
-  - jekyll-compass
+# Build settings
+theme: minima
+
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+- .gitignore
+- .tool-versions
+- bin
+- tmp
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

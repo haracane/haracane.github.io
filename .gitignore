@@ -1,19 +1,15 @@
-_site
-.sass-cache
-_drafts
-
-.bundle
-bundle_bin
-
-memo.txt
-
-_data/cache.json
-_erbs
-_records
+# common
+bin
 tmp
 
-img/draft
-img/original
+# jekyll
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_drafts
+# _site
 
-_twitter/tweets.txt
-_twitter/history.txt
+# ruby
+.ruby-version
+vendor
+

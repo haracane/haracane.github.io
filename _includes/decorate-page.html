@@ -1,6 +1,0 @@
-{% if paginator.page > 1 %}
-  {% assign page_primary_path = "index" %}
-{% else %}
-  {% assign page_split_path = page.url | split : "/" %}
-  {% assign page_primary_path = page_split_path[1] | split : "." | first %}
-{% endif %}
