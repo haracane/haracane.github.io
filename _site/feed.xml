@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://blog.enogineer.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.enogineer.com/" rel="alternate" type="text/html" /><updated>2023-06-12T13:53:45+09:00</updated><id>http://blog.enogineer.com/feed.xml</id><title type="html">haracaneのブログ</title><subtitle>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</subtitle><entry><title type="html">アメフト観戦のグループチケットサービスをFanForwardでリリースしました</title><link href="http://blog.enogineer.com/2018/11/19/release-group-ticket/" rel="alternate" type="text/html" title="アメフト観戦のグループチケットサービスをFanForwardでリリースしました" /><published>2018-11-19T10:00:00+09:00</published><updated>2018-11-19T10:00:00+09:00</updated><id>http://blog.enogineer.com/2018/11/19/release-group-ticket</id><content type="html" xml:base="http://blog.enogineer.com/2018/11/19/release-group-ticket/"><![CDATA[<p>FanForwardにjoinしてからの第一弾サービスとしてグループチケットサービスをリリースしました。</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://blog.enogineer.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.enogineer.com/" rel="alternate" type="text/html" /><updated>2023-06-12T18:42:41+09:00</updated><id>http://blog.enogineer.com/feed.xml</id><title type="html">haracaneのブログ</title><subtitle>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</subtitle><entry><title type="html">PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話</title><link href="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/" rel="alternate" type="text/html" title="PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話" /><published>2022-12-01T10:00:00+09:00</published><updated>2022-12-01T10:00:00+09:00</updated><id>http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver</id><content type="html" xml:base="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/"><![CDATA[<p>エクサウィザーズのTechBlogに記事を書きました(2回目)。</p>
+
+<ul>
+  <li><a href="https://techblog.exawizards.com/entry/2022/12/01/154745" target="_blank">PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話</a></li>
+</ul>
+
+<p>GraphQLでバックエンドを実装する際に避けては通れないN+1問題対応の話です。</p>]]></content><author><name></name></author><summary type="html"><![CDATA[エクサウィザーズのTechBlogに記事を書きました(2回目)。]]></summary></entry><entry><title type="html">エクサウィザーズのTLが実践する、開発が遅くならないテストの書き方</title><link href="http://blog.enogineer.com/2022/08/22/exawizards-test/" rel="alternate" type="text/html" title="エクサウィザーズのTLが実践する、開発が遅くならないテストの書き方" /><published>2022-08-22T10:00:00+09:00</published><updated>2022-08-22T10:00:00+09:00</updated><id>http://blog.enogineer.com/2022/08/22/exawizards-test</id><content type="html" xml:base="http://blog.enogineer.com/2022/08/22/exawizards-test/"><![CDATA[<p>エクサウィザーズのTechBlogに記事を書きました。</p>
+
+<ul>
+  <li><a href="https://techblog.exawizards.com/entry/2022/08/22/172230" target="_blank">エクサウィザーズのTLが実践する、開発が遅くならないテストの書き方</a></li>
+</ul>
+
+<p>普段テストを書く際に気を付けていることをまとめてみました。</p>]]></content><author><name></name></author><summary type="html"><![CDATA[エクサウィザーズのTechBlogに記事を書きました。]]></summary></entry><entry><title type="html">エクサウィザーズにジョインしました</title><link href="http://blog.enogineer.com/2020/09/01/exawizards/" rel="alternate" type="text/html" title="エクサウィザーズにジョインしました" /><published>2020-09-01T10:00:00+09:00</published><updated>2020-09-01T10:00:00+09:00</updated><id>http://blog.enogineer.com/2020/09/01/exawizards</id><content type="html" xml:base="http://blog.enogineer.com/2020/09/01/exawizards/"><![CDATA[<p>ソフトウェアエンジニアとしてエクサウィザーズにジョインしました。</p>
+
+<p>エクサウィザーズでは社会課題解決のためのプロダクト開発をやっていきます。</p>
+
+<p>よろしくお願いします。</p>]]></content><author><name></name></author><summary type="html"><![CDATA[ソフトウェアエンジニアとしてエクサウィザーズにジョインしました。]]></summary></entry><entry><title type="html">アメフト観戦のグループチケットサービスをFanForwardでリリースしました</title><link href="http://blog.enogineer.com/2018/11/19/release-group-ticket/" rel="alternate" type="text/html" title="アメフト観戦のグループチケットサービスをFanForwardでリリースしました" /><published>2018-11-19T10:00:00+09:00</published><updated>2018-11-19T10:00:00+09:00</updated><id>http://blog.enogineer.com/2018/11/19/release-group-ticket</id><content type="html" xml:base="http://blog.enogineer.com/2018/11/19/release-group-ticket/"><![CDATA[<p>FanForwardにjoinしてからの第一弾サービスとしてグループチケットサービスをリリースしました。</p>
 
 <p><a href="https://kcafl.group-ticket.jp/wjb/">ウエスタンジャパンボウル2018のグループチケット</a></p>
 
@@ -47,7 +63,11 @@
 
 <p>ということでこの日なら大阪でグループでアメフト観戦してもいいかな、という人は是非使ってみてください！</p>
 
-<p>FanForwardに興味がある方も是非遊びに来てください！DMウェルカムです。</p>]]></content><author><name></name></author><category term="FanForward" /><category term="Rails" /><category term="Heroku" /><summary type="html"><![CDATA[グループチケットサービスをFanForwardからリリースしました。アメフトをグループ観戦できますよ。というか報告していませんでしたが、10/1からスポーツTechベンチャー FanForwardにjoinしてました。12/2(日)に大阪の万博記念公園で開催されるウエスタンジャパンボウル2018をグループ観戦される方は使ってみてください。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/rails.png" /><media:content medium="image" url="http://blog.enogineer.com/rails.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">RailsとElasticsearchとkaminariの組み合わせで気をつけること</title><link href="http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari/" rel="alternate" type="text/html" title="RailsとElasticsearchとkaminariの組み合わせで気をつけること" /><published>2016-12-17T09:32:21+09:00</published><updated>2016-12-17T09:32:21+09:00</updated><id>http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari</id><content type="html" xml:base="http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari/"><![CDATA[<p>この記事は<a href="http://qiita.com/advent-calendar/2016/ruby_on_rails">Ruby on Rails Advent Calendar 2016</a>の17日目です。</p>
+<p>FanForwardに興味がある方も是非遊びに来てください！DMウェルカムです。</p>]]></content><author><name></name></author><category term="FanForward" /><category term="Rails" /><category term="Heroku" /><summary type="html"><![CDATA[グループチケットサービスをFanForwardからリリースしました。アメフトをグループ観戦できますよ。というか報告していませんでしたが、10/1からスポーツTechベンチャー FanForwardにjoinしてました。12/2(日)に大阪の万博記念公園で開催されるウエスタンジャパンボウル2018をグループ観戦される方は使ってみてください。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/rails.png" /><media:content medium="image" url="http://blog.enogineer.com/rails.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">FanForwardにジョインしました</title><link href="http://blog.enogineer.com/2018/10/01/fanforward/" rel="alternate" type="text/html" title="FanForwardにジョインしました" /><published>2018-10-01T10:00:00+09:00</published><updated>2018-10-01T10:00:00+09:00</updated><id>http://blog.enogineer.com/2018/10/01/fanforward</id><content type="html" xml:base="http://blog.enogineer.com/2018/10/01/fanforward/"><![CDATA[<p>リードエンジニアとしてFanForwardにジョインしました。</p>
+
+<p>スポーツを盛り上げるプロダクト開発をする予定です。</p>
+
+<p>よろしくお願いします。</p>]]></content><author><name></name></author><summary type="html"><![CDATA[リードエンジニアとしてFanForwardにジョインしました。]]></summary></entry><entry><title type="html">RailsとElasticsearchとkaminariの組み合わせで気をつけること</title><link href="http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari/" rel="alternate" type="text/html" title="RailsとElasticsearchとkaminariの組み合わせで気をつけること" /><published>2016-12-17T09:32:21+09:00</published><updated>2016-12-17T09:32:21+09:00</updated><id>http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari</id><content type="html" xml:base="http://blog.enogineer.com/2016/12/17/elasticsearch-rails-kaminari/"><![CDATA[<p>この記事は<a href="http://qiita.com/advent-calendar/2016/ruby_on_rails">Ruby on Rails Advent Calendar 2016</a>の17日目です。</p>
 
 <p>RailsでElasticsearchといえば<a href="https://github.com/elastic/elasticsearch-rails">elasticsearch-rails</a>ですね。</p>
 
@@ -808,204 +828,4 @@ HTTP/1.1 401 Unauthorized
 
 <p>という感じになって解放待ちのギャップロックを辿ってもループしなくなるのでデッドロックを回避できます。</p>
 
-<p>ということでBULK INSERTの際はINSERTの順番に気をつけましょう。</p>]]></content><author><name></name></author><category term="MySQL" /><category term="Rails" /><category term="Ruby" /><summary type="html"><![CDATA[Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/mysql.png" /><media:content medium="image" url="http://blog.enogineer.com/mysql.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Rubyでのメソッドの委譲方法をまとめてみた</title><link href="http://blog.enogineer.com/2015/03/26/ruby-delegate/" rel="alternate" type="text/html" title="Rubyでのメソッドの委譲方法をまとめてみた" /><published>2015-03-26T09:09:07+09:00</published><updated>2015-03-26T09:09:07+09:00</updated><id>http://blog.enogineer.com/2015/03/26/ruby-delegate</id><content type="html" xml:base="http://blog.enogineer.com/2015/03/26/ruby-delegate/"><![CDATA[<h2 id="インスタンスメソッドを委譲する">インスタンスメソッドを委譲する</h2>
-
-<p>まずはインスタンスメソッドを委譲する方法をいくつか紹介します。</p>
-
-<h3 id="delegateを使う"><code class="language-plaintext highlighter-rouge">delegate</code>を使う</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span>
-  <span class="n">delegate</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">,</span> <span class="ss">to: :info</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>ここでは<code class="language-plaintext highlighter-rouge">name</code>と<code class="language-plaintext highlighter-rouge">age</code>メソッドを<code class="language-plaintext highlighter-rouge">info</code>に委譲しています。</p>
-
-<h3 id="forwardabledef_delegatorsを使う"><code class="language-plaintext highlighter-rouge">Forwardable.def_delegators</code>を使う</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span>
-  <span class="kp">extend</span> <span class="no">Forwardable</span>
-  <span class="n">def_delegators</span> <span class="ss">:info</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>同じ例を<code class="language-plaintext highlighter-rouge">Forwardable</code>の<code class="language-plaintext highlighter-rouge">def_delegators</code>を使って書くとこんな感じになります。</p>
-
-<h3 id="forwardabledef_delegatorを使う"><code class="language-plaintext highlighter-rouge">Forwardable.def_delegator</code>を使う</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span>
-  <span class="kp">extend</span> <span class="no">Forwardable</span>
-  <span class="n">def_delegator</span> <span class="ss">:info</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:info_name</span>
-<span class="k">end</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">def_delegator</code>を使うとメソッド名をカスタマイズすることもできます。</p>
-
-<p>この例では<code class="language-plaintext highlighter-rouge">info_name</code>で<code class="language-plaintext highlighter-rouge">info.name</code>を参照できるようにしています。</p>
-
-<p><code class="language-plaintext highlighter-rouge">def_delegators</code>と引数の扱いが違うので気をつけましょう。</p>
-
-<h2 id="クラスメソッドを委譲する">クラスメソッドを委譲する</h2>
-
-<p>クラスメソッドを委譲する方法もいくつかあります。</p>
-
-<h3 id="class--selfを使う"><code class="language-plaintext highlighter-rouge">class &lt;&lt; self</code>を使う</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">User</span>
-  <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
-    <span class="n">delegate</span> <span class="ss">:log</span><span class="p">,</span> <span class="ss">to: :instance</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">class &lt;&lt; self</code>と<code class="language-plaintext highlighter-rouge">delegate</code>を使って委譲します。</p>
-
-<h3 id="singleforwardableを使う"><code class="language-plaintext highlighter-rouge">SingleForwardable</code>を使う</h3>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Logger</span>
-  <span class="kp">extend</span> <span class="no">SingleForwardable</span>
-  <span class="n">def_delegators</span> <span class="ss">:instance</span><span class="p">,</span> <span class="ss">:log</span>
-<span class="k">end</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">Forwardable</code>の代わりに<code class="language-plaintext highlighter-rouge">SingleForwardable</code>を使えばクラスメソッドを委譲出来ます。</p>
-
-<p>もちろん<code class="language-plaintext highlighter-rouge">def_delegators</code>を使ってもOKです。</p>
-
-<h3 id="まとめ">まとめ</h3>
-
-<p>ということでRubyで委譲をする方法をいくつかご紹介しました。</p>]]></content><author><name></name></author><category term="tips" /><category term="Ruby" /><summary type="html"><![CDATA[Rubyでは委譲の方法がいくつかあるのでまとめてみました。インスタンスメソッドの委譲方法とクラスメソッドの委譲方法をまとめています。チームで開発している場合はあらかじめ方法を統一しておくと良いと思います。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/rails.png" /><media:content medium="image" url="http://blog.enogineer.com/rails.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">MySQLでインデックスや外部キー制約をリネームする</title><link href="http://blog.enogineer.com/2015/03/26/mysql-rename-index/" rel="alternate" type="text/html" title="MySQLでインデックスや外部キー制約をリネームする" /><published>2015-03-26T08:49:49+09:00</published><updated>2015-03-26T08:49:49+09:00</updated><id>http://blog.enogineer.com/2015/03/26/mysql-rename-index</id><content type="html" xml:base="http://blog.enogineer.com/2015/03/26/mysql-rename-index/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">new_</code>というプレフィックスのついたインデックスや外部キー制約から<code class="language-plaintext highlighter-rouge">new_</code>を外す場合の例を紹介します。</p>
-
-<h2 id="インデックスの追加">インデックスの追加</h2>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="k">ADD</span> <span class="k">KEY</span> <span class="n">index_posts_on_category_id</span><span class="p">(</span><span class="n">category_id</span><span class="p">);</span>
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="k">ADD</span> <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="n">index_posts_on_url</span><span class="p">(</span><span class="n">url</span><span class="p">);</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">ADD KEY</code>または<code class="language-plaintext highlighter-rouge">ADD UNIQUE KEY</code>で追加します。</p>
-
-<h2 id="インデックスの削除">インデックスの削除</h2>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="k">DROP</span> <span class="k">KEY</span> <span class="n">new_index_posts_on_category_id</span><span class="p">;</span>
-<span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="k">DROP</span> <span class="k">KEY</span> <span class="n">new_index_posts_on_url</span><span class="p">;</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">DROP KEY</code>で削除します。</p>
-
-<h2 id="外部キー制約の追加">外部キー制約の追加</h2>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span>
-  <span class="k">ADD</span> <span class="k">CONSTRAINT</span>
-    <span class="n">posts_blog_id_fk</span>
-      <span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="n">blog_id</span><span class="p">)</span>
-      <span class="k">REFERENCES</span> <span class="n">blogs</span><span class="p">;</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">ADD CONSTRAINT * FOREIGN KEY(*) REFERENCES *</code>で追加します。</p>
-
-<h2 id="外部キー制約の削除">外部キー制約の削除</h2>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">new_posts_blog_id_fk</span><span class="p">;</span></code></pre></figure>
-
-<p><code class="language-plaintext highlighter-rouge">DROP FOREIGN KEY</code>で削除します。</p>
-
-<h2 id="まとめてみると">まとめてみると</h2>
-
-<p>それぞれの追加＆削除をまとめて実行するならこんな感じになります。</p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">posts</span>
-  <span class="k">ADD</span> <span class="k">KEY</span> <span class="n">index_posts_on_category_id</span><span class="p">(</span><span class="n">category_id</span><span class="p">),</span>
-  <span class="k">ADD</span> <span class="k">UNIQUE</span> <span class="k">KEY</span> <span class="n">index_posts_on_url</span><span class="p">(</span><span class="n">url</span><span class="p">),</span>
-  <span class="k">DROP</span> <span class="k">KEY</span> <span class="n">new_index_posts_on_category_id</span><span class="p">,</span>
-  <span class="k">DROP</span> <span class="k">KEY</span> <span class="n">new_index_posts_on_url</span><span class="p">,</span>
-  <span class="k">ADD</span> <span class="k">CONSTRAINT</span>
-    <span class="n">posts_blog_id_fk</span>
-      <span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="n">blog_id</span><span class="p">)</span>
-      <span class="k">REFERENCES</span> <span class="n">blogs</span><span class="p">,</span>
-  <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">new_posts_blog_id_fk</span><span class="p">;</span></code></pre></figure>
-
-<p>以上、MySQLでのインデックス＆外部キー制約のリネーム方法でした。</p>]]></content><author><name></name></author><category term="tips" /><category term="MySQL" /><summary type="html"><![CDATA[テーブルを置き換える場合などにはテーブル名だけでなく、インデックスや外部キー制約も名前変更する必要があります。MySQL5.7系だとRENAME INDEXができるのですが、5.6系だと残念ながら削除＆追加するしかないので、その方法をまとめておきます。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/mysql.png" /><media:content medium="image" url="http://blog.enogineer.com/mysql.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">MySQLでクエリの実行時間を手っ取り早く計測する</title><link href="http://blog.enogineer.com/2015/03/26/mysql-time/" rel="alternate" type="text/html" title="MySQLでクエリの実行時間を手っ取り早く計測する" /><published>2015-03-26T08:30:38+09:00</published><updated>2015-03-26T08:30:38+09:00</updated><id>http://blog.enogineer.com/2015/03/26/mysql-time</id><content type="html" xml:base="http://blog.enogineer.com/2015/03/26/mysql-time/"><![CDATA[<h2 id="クエリを組み立てる">クエリを組み立てる</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ SQL='SELECT * FROM records;'
-</code></pre></div></div>
-
-<p>計測したいクエリを設定します。</p>
-
-<h2 id="実行sqlファイルを作る">実行SQLファイルを作る</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ (for i in $(seq 1 100000); do echo "$SQL"; done) &gt; test.sql
-</code></pre></div></div>
-
-<p>10万回クエリを実行するSQLファイルを作ります。</p>
-
-<h2 id="timeコマンドで計測する">timeコマンドで計測する</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ time (cat test.sql | mysql -u mysql database &gt; /dev/null)
-</code></pre></div></div>
-
-<p>SQLファイルを実行して時間を計測します。</p>
-
-<h2 id="1行にまとめると">1行にまとめると</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ time ((for i in $(seq 1 100000); do echo "SELECT * FROM records;";done) | mysql -u mysql database &gt; /dev/null)
-</code></pre></div></div>
-
-<p>こんな感じになります。</p>]]></content><author><name></name></author><category term="tips" /><category term="MySQL" /><summary type="html"><![CDATA[MySQLでインデックスがちゃんと効いているか確認する時などに実際にクエリを走らせることがあるのですが、だいたいこんな感じで手っ取り早く済ませてますというTipsです。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/mysql.png" /><media:content medium="image" url="http://blog.enogineer.com/mysql.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみた</title><link href="http://blog.enogineer.com/2015/03/25/load-s3-gz-csv/" rel="alternate" type="text/html" title="S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみた" /><published>2015-03-25T20:44:12+09:00</published><updated>2015-03-25T20:44:12+09:00</updated><id>http://blog.enogineer.com/2015/03/25/load-s3-gz-csv</id><content type="html" xml:base="http://blog.enogineer.com/2015/03/25/load-s3-gz-csv/"><![CDATA[<h2 id="s3のキーを設定する">S3のキーを設定する</h2>
-
-<p>S3にアクセスするためにまずキーの設定を行います。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">AWS</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span>
-  <span class="ss">access_key_id: </span><span class="s1">'アクセスキーID'</span><span class="p">,</span>
-  <span class="ss">secret_access_key: </span><span class="s1">'シークレットアクセスキー'</span>
-<span class="p">)</span></code></pre></figure>
-
-<h2 id="awss3オブジェクトを作る">AWS::S3オブジェクトを作る</h2>
-
-<p>キーを設定したら<code class="language-plaintext highlighter-rouge">AWS::S3</code>を使ってS3からデータを読み込むクライアントを作ります。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">s3</span> <span class="o">=</span> <span class="no">AWS</span><span class="o">::</span><span class="no">S3</span><span class="p">.</span><span class="nf">new</span></code></pre></figure>
-
-<h2 id="バケットを取得する">バケットを取得する</h2>
-
-<p>続いてバケット名前を指定してバケットオブジェクトを取得します</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bucket</span> <span class="o">=</span> <span class="n">s3</span><span class="p">.</span><span class="nf">buckets</span><span class="p">[</span><span class="s1">'my-bucket'</span><span class="p">]</span></code></pre></figure>
-
-<h2 id="ファイルを取得する">ファイルを取得する</h2>
-
-<p>次はバケット内のファイルを取得します。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">file</span> <span class="o">=</span> <span class="n">bucket</span><span class="p">.</span><span class="nf">objects</span><span class="p">[</span><span class="s1">'books.csv.gz'</span><span class="p">]</span></code></pre></figure>
-
-<h2 id="ファイルを読み込む">ファイルを読み込む</h2>
-
-<p>取得したファイルをパイプストリームに書き込みます。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">reader</span><span class="p">,</span> <span class="n">writer</span> <span class="o">=</span> <span class="no">IO</span><span class="p">.</span><span class="nf">pipe</span>
-
-<span class="n">file</span><span class="p">.</span><span class="nf">read</span> <span class="p">{</span> <span class="o">|</span><span class="n">chunk</span><span class="o">|</span> <span class="n">writer</span><span class="p">.</span><span class="nf">write</span> <span class="n">chunk</span> <span class="p">}</span>
-
-<span class="n">writer</span><span class="p">.</span><span class="nf">close</span></code></pre></figure>
-
-<h2 id="gzip圧縮データを解凍する">Gzip圧縮データを解凍する</h2>
-
-<p>読み込んだデータはGzip圧縮してあるので<code class="language-plaintext highlighter-rouge">GzipReader</code>を使って解凍します。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'zlib'</span>
-
-<span class="n">text</span> <span class="o">=</span> <span class="no">Zlib</span><span class="o">::</span><span class="no">GzipReader</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">reader</span><span class="p">).</span><span class="nf">read</span>
-<span class="n">reader</span><span class="p">.</span><span class="nf">close</span></code></pre></figure>
-
-<h2 id="おまけ-gzip圧縮した文字列を解凍する">おまけ: Gzip圧縮した文字列を解凍する</h2>
-
-<p>上の例のように圧縮データはストリームに書き込むのが基本ですが、サイズが小さければ連結して<code class="language-plaintext highlighter-rouge">StringIO</code>経由で解凍してもOKです。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">data</span> <span class="o">=</span> <span class="s1">''</span>
-
-<span class="n">file</span><span class="p">.</span><span class="nf">read</span> <span class="p">{</span> <span class="o">|</span><span class="n">chunk</span><span class="o">|</span> <span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="n">chunk</span> <span class="p">}</span>
-
-<span class="n">text</span> <span class="o">=</span> <span class="no">Zlib</span><span class="o">::</span><span class="no">GzipReader</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">StringIO</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">data</span><span class="p">)).</span><span class="nf">read</span></code></pre></figure>
-
-<h2 id="解凍したcsvデータを読み込む">解凍したCSVデータを読み込む</h2>
-
-<p>解凍したデータはCSV形式になっているので<code class="language-plaintext highlighter-rouge">CSV.parse</code>で読み込みます。</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">CSV</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">text</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
-  <span class="nb">puts</span> <span class="n">row</span><span class="p">.</span><span class="nf">inspect</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>これで無事読み込めました。</p>
-
-<p>今回はこれでおしまいです。</p>]]></content><author><name></name></author><category term="AWS" /><category term="S3" /><category term="Ruby" /><summary type="html"><![CDATA[Rubyでaws-sdkを使ってS3に置いたGzip圧縮したCSVファイル読み込む手順をご紹介します。]]></summary></entry></feed>
+<p>ということでBULK INSERTの際はINSERTの順番に気をつけましょう。</p>]]></content><author><name></name></author><category term="MySQL" /><category term="Rails" /><category term="Ruby" /><summary type="html"><![CDATA[Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/mysql.png" /><media:content medium="image" url="http://blog.enogineer.com/mysql.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
