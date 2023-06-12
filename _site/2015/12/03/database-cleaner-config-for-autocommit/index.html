@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処 | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。" />
+<meta property="og:description" content="RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。" />
+<link rel="canonical" href="http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/" />
+<meta property="og:url" content="http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-12-03T08:05:44+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="twitter:title" content="RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2015-12-03T08:05:44+09:00","datePublished":"2015-12-03T08:05:44+09:00","description":"RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。","headline":"RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処","image":"http://blog.enogineer.com/rails.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/"},"url":"http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-12-03T08:05:44+09:00" itemprop="datePublished">Dec 3, 2015
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/&text=RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2015/12/03/database-cleaner-config-for-autocommit/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>この記事は<a href="http://qiita.com/advent-calendar/2015/rails">Ruby on Rails Advent Calendar 2015</a>の3日目です。</p>
+
+<h2 id="databasecleanerでテスト実行毎にデータを削除する">DatabaseCleanerでテスト実行毎にデータを削除する</h2>
+
+<p>RSpecでテストをする際に、各テストケースの実行毎にデータベースの状態をクリアしてくれる<a href="https://github.com/DatabaseCleaner/database_cleaner">database_cleaner</a>というgemがあります。</p>
+
+<p>このgemはとても便利で、<code class="language-plaintext highlighter-rouge">rails_helper.rb</code>に以下のような感じで設定しておくと他のテストの影響を受けずに各テストケースを実行できます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="o">...</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">use_transactional_fixtures</span> <span class="o">=</span> <span class="kp">false</span>
+
+  <span class="n">except_tables</span> <span class="o">=</span> <span class="sx">%w(blog_categories)</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+    <span class="c1"># db/seeds.rbでblog_categoriesテーブルのデータを設定</span>
+    <span class="nb">load</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'db'</span><span class="p">,</span> <span class="s1">'seeds.rb'</span><span class="p">)</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">clean_with</span><span class="p">(</span><span class="ss">:truncation</span><span class="p">,</span> <span class="ss">except: </span><span class="n">except_tables</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:transaction</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">js: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:truncation</span><span class="p">,</span> <span class="p">{</span><span class="ss">except: </span><span class="n">except_tables</span><span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">start</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">clean</span>
+  <span class="k">end</span>
+
+  <span class="c1">## スマホ版のfeature specを書く場合などは以下の設定もしておく</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">type: :mobile</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Capybara</span><span class="p">.</span><span class="nf">current_driver</span> <span class="o">=</span> <span class="ss">:mobile_client</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">type: :mobile</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Capybara</span><span class="p">.</span><span class="nf">use_default_driver</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="databasecleanerのautocommit問題">DatabaseCleanerのAUTOCOMMIT問題</h2>
+
+<p>ただ、transaction strategyで実行している場合は<code class="language-plaintext highlighter-rouge">DatabaseCleaner.clean</code>実行後も<code class="language-plaintext highlighter-rouge">AUTOCOMMIT</code>されたデータが削除されません。</p>
+
+<p>そのため「個別にテストを実行すると成功するのに<code class="language-plaintext highlighter-rouge">rake spec</code>では失敗する」といったことが起きてしまう場合があります。</p>
+
+<h2 id="autocommit問題の対策">AUTOCOMMIT問題の対策</h2>
+
+<p>で、そのための対策なのですが、<code class="language-plaintext highlighter-rouge">rails_helper.rb</code>に</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">truncation: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:truncation</span><span class="p">,</span> <span class="p">{</span><span class="ss">except: </span><span class="n">except_tables</span><span class="p">}</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>を追加して、<code class="language-plaintext highlighter-rouge">AUTOCOMMIT</code>が行われるテストケースに</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">it</span> <span class="s1">'performs AUTOCOMMIT'</span><span class="p">,</span> <span class="ss">truncation: </span><span class="kp">true</span> <span class="k">do</span>
+  <span class="o">...</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>と<code class="language-plaintext highlighter-rouge">truncation: true</code>を設定します。</p>
+
+<p>こうするとこのテストケースはtruncation strategyで実行するのでAUTOCOMMITされたデータも削除してくれます。</p>
+
+<h2 id="autocommitされるテストケースを見つける">AUTOCOMMITされるテストケースを見つける</h2>
+
+<p>ただ、どのテストケースで<code class="language-plaintext highlighter-rouge">AUTOCOMMIT</code>が行われているのかをひとつひとつ確認するのは大変です。</p>
+
+<p>なので、各テストケース終了後にデータが残っていないか確認するようにしておくと便利です。</p>
+
+<p>例えば</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+  <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">clean</span>
+  <span class="p">[</span><span class="no">Blog</span><span class="o">::</span><span class="no">User</span><span class="p">,</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Tag</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">model</span><span class="o">|</span>
+    <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">model</span><span class="si">}</span><span class="s2"> exists after example"</span> <span class="k">if</span> <span class="n">model</span><span class="p">.</span><span class="nf">unscoped</span><span class="p">.</span><span class="nf">exists?</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>のようにしておくと、各テストケースの実行後にデータが残っている場合にちゃんとテストを失敗させることができます。</p>
+
+<p>ちなみに<code class="language-plaintext highlighter-rouge">unscoped</code>は<code class="language-plaintext highlighter-rouge">default_scope</code>の影響を除外するために追加しています。</p>
+
+<p>問題のあるテストケースが見つかれば、あとは<code class="language-plaintext highlighter-rouge">truncation: true</code>を設定するだけです。</p>
+
+<h3 id="チェックするモデルの選び方">チェックするモデルの選び方</h3>
+
+<p>全てのモデルのチェックをテスト実行毎に行うとテスト実行時間が長くなってしまうので、必要なモデルだけチェックするようにしましょう。</p>
+
+<p>例えば<code class="language-plaintext highlighter-rouge">Blog::Site</code>が<code class="language-plaintext highlighter-rouge">Blog::User</code>に依存している場合は<code class="language-plaintext highlighter-rouge">Blog::Site</code>のチェックは不要です。</p>
+
+<p>依存先がないモデルは全てチェックした方が良いのですが、全モデルのチェックは問題があった時に行うだけにして、毎回チェックするモデルは絞り込みましょう。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>テスト後にデータが残っていると<code class="language-plaintext highlighter-rouge">AUTOCOMMIT</code>されたテストケースは成功するのに、その後で別のテストが失敗したりするので原因を探すのが結構大変です。</p>
+
+<p>しかもテストの実行順によって時々失敗したり、失敗するテストケースも異なったりします。</p>
+
+<p>この状態で放置しているとCIが機能しなくなってしまうので、<code class="language-plaintext highlighter-rouge">AUTOCOMMIT</code>したデータはしっかり削除するようにしましょう。</p>
+
+<p>最後に最終的な<code class="language-plaintext highlighter-rouge">rails_helper.rb</code>の内容も載せておきます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="o">...</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">use_transactional_fixtures</span> <span class="o">=</span> <span class="kp">false</span>
+
+  <span class="n">except_tables</span> <span class="o">=</span> <span class="sx">%w(blog_categories)</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+    <span class="c1"># db/seeds.rbでblog_categoriesテーブルのデータを設定</span>
+    <span class="nb">load</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'db'</span><span class="p">,</span> <span class="s1">'seeds.rb'</span><span class="p">)</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">clean_with</span><span class="p">(</span><span class="ss">:truncation</span><span class="p">,</span> <span class="ss">except: </span><span class="n">except_tables</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:transaction</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">truncation: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:truncation</span><span class="p">,</span> <span class="p">{</span><span class="ss">except: </span><span class="n">except_tables</span><span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">js: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">strategy</span> <span class="o">=</span> <span class="ss">:truncation</span><span class="p">,</span> <span class="p">{</span><span class="ss">except: </span><span class="n">except_tables</span><span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">start</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:example</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">DatabaseCleaner</span><span class="p">.</span><span class="nf">clean</span>
+    <span class="p">[</span><span class="no">Blog</span><span class="o">::</span><span class="no">User</span><span class="p">,</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Tag</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">model</span><span class="o">|</span>
+      <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">model</span><span class="si">}</span><span class="s2"> exists after example"</span> <span class="k">if</span> <span class="n">model</span><span class="p">.</span><span class="nf">unscoped</span><span class="p">.</span><span class="nf">exists?</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1">## スマホ版のfeature specを書く場合などは以下の設定もしておく</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">type: :mobile</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Capybara</span><span class="p">.</span><span class="nf">current_driver</span> <span class="o">=</span> <span class="ss">:mobile_client</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:example</span><span class="p">,</span> <span class="ss">type: :mobile</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">Capybara</span><span class="p">.</span><span class="nf">use_default_driver</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+
+  </div><a class="u-url" href="/2015/12/03/database-cleaner-config-for-autocommit/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

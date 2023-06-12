@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>has-many関連のuniqueness validationをするカスタムバリデータを作ってみた | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="has-many関連のuniqueness validationをするカスタムバリデータを作ってみた" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。" />
+<meta property="og:description" content="ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。" />
+<link rel="canonical" href="http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/" />
+<meta property="og:url" content="http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-01-08T08:07:11+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="twitter:title" content="has-many関連のuniqueness validationをするカスタムバリデータを作ってみた" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2015-01-08T08:07:11+09:00","datePublished":"2015-01-08T08:07:11+09:00","description":"ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。","headline":"has-many関連のuniqueness validationをするカスタムバリデータを作ってみた","image":"http://blog.enogineer.com/rails.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/"},"url":"http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">has-many関連のuniqueness validationをするカスタムバリデータを作ってみた</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-01-08T08:07:11+09:00" itemprop="datePublished">Jan 8, 2015
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/&text=has-many関連のuniqueness validationをするカスタムバリデータを作ってみた" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2015/01/08/nested-attributes-uniqueness-validation/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="uniquenessvalidatorの問題">UniquenessValidatorの問題</h2>
+
+<p>ActiveRecordのUniquenessValidatorはDBに保存済みのレコードと重複した場合はvalidationしてくれますが、
+ネストしたパラメタで重複したオブジェクトを作ろうとしてもスルーしてしまいます。</p>
+
+<p>例えば以下のパラメタが入力された場合に<code class="language-plaintext highlighter-rouge">tag_id</code>の重複をvalidationできません。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+  <span class="s2">"posts_attributes"</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">"0"</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">"post_tags_attributes"</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">"0"</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"tag_id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"1"</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"tag_id"</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="カスタムバリデータでuniqueness-validationを行う">カスタムバリデータでuniqueness validationを行う</h2>
+
+<p>今回はこんな感じでvalidationできるようにします。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># app/models/blog/post.rb</span>
+<span class="k">class</span> <span class="nc">Blog::Post</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="no">MAX_POST_TAGS_LENGTH</span> <span class="o">=</span> <span class="mi">5</span>
+
+  <span class="n">has_many</span> <span class="ss">:post_tags</span><span class="p">,</span> <span class="ss">foreign_key: :blog_post_id</span>
+  <span class="n">has_many</span> <span class="ss">:tags</span><span class="p">,</span> <span class="ss">through: :post_tags</span>
+
+  <span class="n">validates</span> <span class="ss">:post_tags</span><span class="p">,</span> <span class="ss">nested_attributes_uniqueness: </span><span class="p">{</span><span class="ss">fields: </span><span class="p">[</span><span class="ss">:blog_tag_id</span><span class="p">]}</span>
+
+  <span class="n">accepts_nested_attributes_for</span> <span class="ss">:post_tags</span><span class="p">,</span> <span class="ss">allow_destroy: </span><span class="kp">true</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="nestedattributesuniquenessvalidatorの実装">NestedAttributesUniquenessValidatorの実装</h2>
+
+<p>入力パラメタ内での重複をチェックするカスタムバリデータの実装はこんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># app/validators/nested_attributes_uniqueness_validator.rb</span>
+<span class="k">class</span> <span class="nc">NestedAttributesUniquenessValidator</span> <span class="o">&lt;</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">EachValidator</span>
+  <span class="k">def</span> <span class="nf">validate_each</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">attribute</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:fields</span><span class="p">]</span> <span class="o">||</span> <span class="p">[</span><span class="ss">:self</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">unique_constraint_is_violated?</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+      <span class="n">record</span><span class="p">.</span><span class="nf">errors</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="ss">:not_unique</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">unique_constraint_is_violated?</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="n">fields</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_s</span><span class="p">)</span>
+    <span class="n">values_collection</span> <span class="o">=</span>
+      <span class="n">records</span><span class="p">.</span>
+        <span class="nf">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">record</span><span class="o">|</span> <span class="n">record</span><span class="p">.</span><span class="nf">attributes</span><span class="p">.</span><span class="nf">values_at</span><span class="p">(</span><span class="o">*</span><span class="n">fields</span><span class="p">)</span> <span class="p">}.</span>
+        <span class="nf">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">values</span><span class="o">|</span> <span class="n">values</span><span class="p">.</span><span class="nf">none?</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:nil?</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">values_collection</span><span class="p">.</span><span class="nf">size</span> <span class="o">!=</span> <span class="n">values_collection</span><span class="p">.</span><span class="nf">uniq</span><span class="p">.</span><span class="nf">size</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>ついでにエラーメッセージも設定しておきます。</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">ja</span><span class="pi">:</span>
+  <span class="na">activerecord</span><span class="pi">:</span>
+    <span class="na">errors</span><span class="pi">:</span>
+      <span class="na">models</span><span class="pi">:</span>
+        <span class="na">blog/post</span><span class="pi">:</span>
+          <span class="na">attributes</span><span class="pi">:</span>
+            <span class="na">post_tags</span><span class="pi">:</span>
+              <span class="na">not_unique</span><span class="pi">:</span> <span class="s1">'</span><span class="s">が重複しています'</span>
+    <span class="na">models</span><span class="pi">:</span>
+      <span class="na">blog/post</span><span class="pi">:</span> <span class="s">ブログ記事</span>
+    <span class="na">attributes</span><span class="pi">:</span>
+      <span class="na">blog/post</span><span class="pi">:</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">管理ID</span>
+        <span class="na">post_tags</span><span class="pi">:</span> <span class="s">タグ</span></code></pre></figure>
+
+<h2 id="nestedattributesuniquenessvalidatorのテスト">NestedAttributesUniquenessValidatorのテスト</h2>
+
+<p>カスタムバリデータのテストはこんな感じ。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># spec/validators/nested_attributes_uniqueness_validator_spec.rb</span>
+<span class="n">describe</span> <span class="no">NestedAttributesUniquenessValidator</span> <span class="k">do</span>
+  <span class="n">let</span><span class="p">(</span><span class="ss">:validator</span><span class="p">)</span> <span class="k">do</span>
+    <span class="no">NestedAttributesUniquenessValidator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+      <span class="ss">attributes: </span><span class="p">[</span><span class="ss">:post_tags</span><span class="p">],</span>
+      <span class="ss">fields: </span><span class="p">[</span><span class="ss">:tag_id</span><span class="p">]</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">subject</span><span class="p">(</span><span class="ss">:record</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">double</span><span class="p">(</span><span class="ss">:post</span><span class="p">,</span> <span class="ss">errors: </span><span class="n">double</span><span class="p">(</span><span class="ss">:errors</span><span class="p">,</span> <span class="ss">add: </span><span class="kp">nil</span><span class="p">))</span>
+  <span class="k">end</span>
+
+  <span class="n">describe</span> <span class="s1">'#validate_each'</span> <span class="k">do</span>
+    <span class="n">let</span><span class="p">(</span><span class="ss">:first_value</span><span class="p">)</span> <span class="p">{</span> <span class="n">double</span><span class="p">(</span><span class="ss">:post_tag</span><span class="p">,</span> <span class="ss">attributes: </span><span class="p">{</span><span class="s1">'tag_id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">})</span> <span class="p">}</span>
+    <span class="n">after</span> <span class="p">{</span> <span class="n">validator</span><span class="p">.</span><span class="nf">validate_each</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="ss">:post_tags</span><span class="p">,</span> <span class="p">[</span><span class="n">first_value</span><span class="p">,</span> <span class="n">second_value</span><span class="p">])</span> <span class="p">}</span>
+
+    <span class="n">context</span> <span class="s1">'with unique values'</span> <span class="k">do</span>
+      <span class="n">let</span><span class="p">(</span><span class="ss">:second_value</span><span class="p">)</span> <span class="p">{</span> <span class="n">double</span><span class="p">(</span><span class="ss">:post_tag</span><span class="p">,</span> <span class="ss">attributes: </span><span class="p">{</span><span class="s1">'tag_id'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">})</span> <span class="p">}</span>
+      <span class="n">it</span> <span class="p">{</span> <span class="n">should_not</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:errors</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">end</span>
+
+    <span class="n">context</span> <span class="s1">'with not unique values'</span> <span class="k">do</span>
+      <span class="n">let</span><span class="p">(</span><span class="ss">:second_value</span><span class="p">)</span> <span class="p">{</span> <span class="n">double</span><span class="p">(</span><span class="ss">:post_tag</span><span class="p">,</span> <span class="ss">attributes: </span><span class="p">{</span><span class="s1">'tag_id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">})</span> <span class="p">}</span>
+      <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:errors</span><span class="p">).</span><span class="nf">once</span> <span class="p">}</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>RailsのNested Attributesに欲しい機能が足りないようだったので今回はカスタムバリデータを作りました。</p>
+
+<p>もっといいやり方をご存知でしたらツッコミ歓迎です。よろしくお願いします。</p>
+
+<p>追記: 「<a href="/2015/01/08/rspec-validate-objects-uniquness-of-matcher/">has-many関連のuniqueness validationをテストするカスタムマッチャも作ってみた</a>」を追加しました。</p>
+
+  </div><a class="u-url" href="/2015/01/08/nested-attributes-uniqueness-validation/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

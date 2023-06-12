@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編) | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="前回に引き続き『Hadoop&amp;RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)の発表内容をご紹介します。" />
+<meta property="og:description" content="前回に引き続き『Hadoop&amp;RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)の発表内容をご紹介します。" />
+<link rel="canonical" href="http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/" />
+<meta property="og:url" content="http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-12-23T21:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2012-12-23T21:00:00+09:00","datePublished":"2012-12-23T21:00:00+09:00","description":"前回に引き続き『Hadoop&amp;RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)の発表内容をご紹介します。","headline":"つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/"},"url":"http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2012-12-23T21:00:00+09:00" itemprop="datePublished">Dec 23, 2012
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/&text=つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (中編)" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2012/12/23/fight-against-socialmedia-2/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-1">前回</a>に引き続き『Hadoop&amp;RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)の発表内容をご紹介します。</p>
+
+<p>前回の内容は</p>
+<ul>
+  <li>BuzzFinderとは</li>
+  <li>Twitterデータのデータ量と情報内容</li>
+  <li>BuzzFinderでの日本語解析処理
+でしたが、今回はメインテーマである大規模データ処理フローです。</li>
+</ul>
+
+<h2 id="5-buzzfinderでのtwitterデータ処理フロー">5. BuzzFinderでのTwitterデータ処理フロー</h2>
+
+<p>まずはバーン！と全体フロー。
+<img src="https://lh5.googleusercontent.com/-dvQus-6e1qQ/UNUuURv2QyI/AAAAAAAAAQo/b3bn1dnu1bA/slide-13.png" alt="全体フロー" /></p>
+
+<p>ここでは</p>
+<ul>
+  <li>Twitterデータを取得</li>
+  <li>取得したデータをTwitter解析クラスタで解析。Twitter解析クラスタはHadoop＆RabbitMQで構成</li>
+  <li>解析データはPostgreSQLとCassandraに蓄積</li>
+  <li>RailsサーバはPostgreSQLとCassandraから取得したデータをXML/JSON形式でAPI出力
+という流れでデータを処理しています。</li>
+</ul>
+
+<h2 id="6-twitter解析クラスタの構成">6. Twitter解析クラスタの構成</h2>
+
+<p>次はTwitter解析クラスタの中身です。</p>
+
+<p><img src="https://lh3.googleusercontent.com/-1OoLJVHa2Mo/UNUuUk0fLGI/AAAAAAAAAQs/2ZX8WSrtqcc/slide-14.png" alt="スライド" /></p>
+
+<p>Twitter解析クラスタは</p>
+<ul>
+  <li>「速報性」を重視したリアルタイム処理クラスタ</li>
+  <li>「データ網羅性」を重視したバッチ処理クラスタ
+の2つのクラスタで構成していて、どちらも解析したデータはPostgreSQLとCassandraに蓄積しています。</li>
+</ul>
+
+<h2 id="61-twitter解析バッチ処理クラスタ">6.1 Twitter解析バッチ処理クラスタ</h2>
+
+<p>バッチ処理クラスタのデータフローはこのようになっています。</p>
+
+<p><img src="https://lh4.googleusercontent.com/-TFSPGMrK0AU/UNUuVZadcPI/AAAAAAAAARI/eXfbgLjI-Zs/slide-16.png" alt="スライド" /></p>
+
+<h2 id="62-twitter解析リアルタイム処理クラスタ">6.2. Twitter解析リアルタイム処理クラスタ</h2>
+
+<p>一方、リアルタイム処理クラスタではMap処理にRabbitMQを利用。</p>
+
+<p><img src="https://lh5.googleusercontent.com/-Hj3vfQU4qO0/UNUubRfGxyI/AAAAAAAAASs/A4yPljEwT_M/slide-19.png" alt="スライド" /></p>
+
+<h3 id="補足-rabbitmqとは">補足: RabbitMQとは</h3>
+
+<p>RabbitMQとはメッセージキューソフトウェアと呼ばれるミドルウェアで、受け取ったメッセージを順番に出力します。</p>
+
+<p><img src="https://lh4.googleusercontent.com/-al5LXQcnWP4/UNUuVj5IbaI/AAAAAAAAARM/9JaZXq08B_Y/slide-18.png" alt="スライド" /></p>
+
+<p>RabbitMQにメッセージを送ることを「Publish」と、メッセージを取得することを「Subscribe」と言いますが、上の図ではメッセージA, メッセージB, メッセージCをPublishした順番にSubscribeしています。</p>
+
+<h2 id="7-バッチ処理からリアルタイム処理への移行">7. バッチ処理からリアルタイム処理への移行</h2>
+
+<p>BuzzFinderのバッチ処理は日本語解析Map処理、データ抽出Map処理、集計Reduce処理の3段構成で行っています。</p>
+
+<p><img src="https://lh6.googleusercontent.com/-15vpkW-iMp8/UNUuWoRCe_I/AAAAAAAAARc/FV3Z8EJEpsQ/slide-21.png" alt="スライド" /></p>
+
+<p>この処理では日本語解析Map処理が段違いに重い処理となっていて、リアルタイム処理化の際にはこのMap処理を高速化することがポイントとなります。</p>
+
+<p>そこでMap処理にRabbitMQを使ってストリーム処理化したのがこちらのアーキテクチャです。</p>
+
+<p><img src="https://lh5.googleusercontent.com/-v4UusNzEHCc/UNUuXTcqXPI/AAAAAAAAARk/eAhQBMKizHI/slide-22.png" alt="スライド" /></p>
+
+<p>Hadoopで行っていたMap処理をすべてRabbitMQ経由で行うことでストリーム処理化しています。</p>
+
+<h2 id="71-map処理のrabbitmq移行">7.1. Map処理のRabbitMQ移行</h2>
+
+<p>Map処理のHadoopからRabbitMQへの移行では、Hadoop Streamingで実行していたMapperプログラムをRabbitMQ経由に変更しています。</p>
+
+<p><img src="https://lh3.googleusercontent.com/-eTQa5XhpKdM/UNUuXsSb4lI/AAAAAAAAAR4/-KDfnkDNi-0/slide-23.png" alt="スライド" /></p>
+
+<p>こちらの図のように、Hadoopではある程度溜まった入力データを一気に処理していましたが、RabbitMQ経由の場合はメッセージキューにたまった入力データをデーモンプロセスが一つずつ処理しています。
+こうすることでMap処理のストリーム処理化を実現しています。</p>
+
+<h2 id="今回のまとめ">今回のまとめ</h2>
+
+<p>今回の記事ではBuzzFinderでのTwitterデータ処理フローをご紹介しました。</p>
+
+<p><img src="https://lh4.googleusercontent.com/--26axsMTrpM/UNUuY0OzwkI/AAAAAAAAASE/T6R-2i9g3J0/slide-24.png" alt="スライド" /></p>
+
+<p>BuzzFinderのリアルタイム処理はHadoopバッチ処理とRabbitMQストリーム処理の組み合わせになっているところが大きな特徴です。</p>
+
+<p>次回は最終回となりますが、BuzzFinderでの実際の解析例をご紹介する予定です。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+<ul>
+  <li><a href="/2012/12/22/fight-against-socialmedia-1">つぶやきを追え ～『爆発するソーシャルメディア』との戦い (前編)</a></li>
+  <li>つぶやきを追え ～『爆発するソーシャルメディア』との戦い (中編)</li>
+  <li><a href="/2012/12/31/fight-against-socialmedia-3">つぶやきを追え ～『爆発するソーシャルメディア』との戦い (後編)</a></li>
+</ul>
+
+  </div><a class="u-url" href="/2012/12/23/fight-against-socialmedia-2/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="@hamaknがDevSumiで『OSSで作る！クラウドサービス開発戦記』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。" />
+<meta property="og:description" content="@hamaknがDevSumiで『OSSで作る！クラウドサービス開発戦記』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。" />
+<link rel="canonical" href="http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/" />
+<meta property="og:url" content="http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-02-16T21:00:00+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2013-02-16T21:00:00+09:00","datePublished":"2013-02-16T21:00:00+09:00","description":"@hamaknがDevSumiで『OSSで作る！クラウドサービス開発戦記』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。","headline":"NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/"},"url":"http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-02-16T21:00:00+09:00" itemprop="datePublished">Feb 16, 2013
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/&text=NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2013/02/16/agilers-in-ntt-communications/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://twitter.com/hamakn">@hamakn</a>がDevSumiで『<a href="https://speakerdeck.com/hamakn/ossdezuo-ru-kuraudosabisukai-fa-zhan-ji">OSSで作る！クラウドサービス開発戦記</a>』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。</p>
+
+<p>同じ会社の中でもチームが違うと全然何やってるかわからなかったりするので。</p>
+
+<p>ちなみに今回の記事は
+-「DevSumiでも発表してたし、NTTコミュニケーションズのエンジニアって結構アジャイラーなんだ」と思ってもらうこと</p>
+<ul>
+  <li>社内、NTTグループ内のアジャイラーにBuzzFinderでのアジャイル開発の様子を知ってもらうこと
+を目標にしています^^</li>
+</ul>
+
+<h2 id="buzzfinderインキュ開発チームと準スクラム開発">BuzzFinderインキュ開発チームと準スクラム開発</h2>
+
+<p>まずはチーム紹介から。</p>
+
+<p>うちのチームでは<a href="http://www.nttcoms.com/service/buzzfinder.html/">BuzzFinder</a>というTwitter全量リアルタイム分析サービスのための機能追加などをメインにやってます。</p>
+
+<p>チームの人数は割と変動的でフェーズによって3人～6人くらいの範囲で増減します。
+というのもNTTコミュニケーションズ先端IPアーキテクチャセンタ(R&amp;D部門です)では掛け持ちでプロジェクトを持っている人が多いので、そちらのプロジェクトの状況によっては一時的にオブサーバーになったりチームを抜けたりしてしまうのです。</p>
+
+<p>そのような状況だと完全にスクラム開発体制を作るのは難しいので、コアメンバーのスクラムに助っ人が入るような感じの準スクラム開発的なプロジェクト管理をしています。</p>
+
+<p>と、チーム紹介とプロジェクト管理の概要はこのあたりにしてあとは具体的なツールの話です。</p>
+
+<h2 id="redmine-vmの準備">Redmine VMの準備</h2>
+
+<p>まずプロジェクト管理ツールには<a href="http://redmine.jp/">Redmine</a>を使っています。
+ただ、新しくプロジェクトを立てるたびに構築し直すのは面倒なのでCentOS6に<a href="http://alminium.github.com/alminium/">ALMinium</a>を入れたVMを用意しておいて、プロジェクト開始時にこのVMをコピーしてRedmine VMを作っています。</p>
+
+<p>このVMにはRedmine以外にも以下のようなツールもインストールしています。</p>
+
+<h2 id="redmine-backlogs-pluginでスクラム開発">Redmine Backlogs Pluginでスクラム開発</h2>
+
+<p><a href="http://www.redminebacklogs.net/en/introduction.html">Redmine Backlogs Plugin</a>は<a href="http://www.atmarkit.co.jp/fjava/index/index_scrum.html">@ITのありがたい記事</a>でも説明されている便利プラグインです。ALMiniumを入れると自動的にこのプラグインもインストールされるのでそういう意味でも便利です^^</p>
+
+<p>このプラグインで提供される</p>
+<ul>
+  <li>バックログ</li>
+  <li>かんばん</li>
+  <li>バーンダウンチャート
+などの使い方を知るのがチーム参加時の第一歩となっています。
+※いずれも上記の記事でわかりやすく説明されています</li>
+</ul>
+
+<h2 id="gitとsubversionで各種ファイルをバージョン管理">GitとSubversionで各種ファイルをバージョン管理</h2>
+
+<p>説明不要のバージョン管理ツールですが、<a href="http://ja.wikipedia.org/wiki/Git">Git</a>と<a href="http://ja.wikipedia.org/wiki/Apache_Subversion">Subversion</a>はALMiniumをインストールすると一緒についてきます。</p>
+
+<p>コードの管理はGit、Officeファイルの管理はSubversionという使い分けをすることが多いような気がします。</p>
+
+<p>チームメンバーにはまず最初にGit/Subversionの使い方を覚えてもらっていますが、
+企画担当などコードを書かないメンバーにはSubversionの使い方だけ覚えてもらっています。</p>
+
+<h2 id="yardでrubyコードをドキュメンテーション">YARDでRubyコードをドキュメンテーション</h2>
+
+<p>BuzzFinderがRubyベースなのでRubyコードのドキュメンテーションには<a href="http://yardoc.org/">YARD</a>を使っています。</p>
+
+<p>なのでメンバーにはYARDでのドキュメントの書き方も覚えてもらっています。</p>
+
+<p>とはいえ最初に覚えるというよりは書きながら覚えるという感じです。</p>
+
+<p>ちなみにYARDでドキュメントを作ると<a href="http://rubydoc.info/gems/lapidary/0.2.3/frames">こんな感じ</a>になります。</p>
+
+<h2 id="sphinxでその他の内容をドキュメンテーション">Sphinxでその他の内容をドキュメンテーション</h2>
+
+<p>RubyコードのドキュメンテーションにはYARDを使っているのですが、それ以外のインストール手順やシェルスクリプト等のドキュメンテーションには<a href="http://sphinx-users.jp/">Sphinx</a>を使っています。</p>
+
+<p>Sphinxでドキュメントを作るとHTMLだけでなくPDF版も生成できるので運用チームにドキュメントを渡す時にも助かっています。</p>
+
+<p>YARDと同じで、メンバーにはSphinxでのドキュメントの書き方も覚えてもらっています。</p>
+
+<h2 id="jenkinsでドキュメントビルド">Jenkinsでドキュメントビルド</h2>
+
+<p>このVMはテストマシンではないのですが<a href="https://wiki.jenkins-ci.org/display/JA/Jenkins">Jenkins</a>もインストールしています。</p>
+
+<p>というのもYARDやSphinxでドキュメントを書いていると、RedmineサーバでHTML&amp;PDF版のドキュメントが自動更新されると何かと便利なのでJenkinsではその自動化をしています。</p>
+
+<p>ちなみにJenkinsについても<a href="http://www.atmarkit.co.jp/fjava/rensai4/devtool21/devtool21_1.html">@ITの記事</a>がありがたそうな気がします。</p>
+
+<h2 id="chef-soloで構成管理">Chef-Soloで構成管理</h2>
+
+<p>上記のような構成を<a href="http://wiki.opscode.com/display/chef/Chef+Solo">Chef-Solo</a>で構築しています。</p>
+
+<p>他チームに渡すときなどは基本的にはコピーVMを渡すので良いのですが、その後マスターVMにソフトウェアを追加した際にもコピー先VMをアップデートしやすいように上記のツールは全てChef-Soloで管理しています。</p>
+
+<p>ちなみにこのChef設定は<a href="https://github.com/haracane/chef">Githubで公開</a>しているので、VMはいいからChefだけ使いたいという場合はこちらをご利用ください。</p>
+
+<p>ALMiniumをインストール済みのCentOS6なら</p>
+
+<pre><code>git clone https://github.com/haracane/chef.git
+sudo chef/bin/chef-solo-role agile
+</code></pre>
+
+<p>で上記の構成を構築できる、かもしれません。。</p>
+
+<h2 id="redmine-vmまとめ">Redmine VMまとめ</h2>
+
+<p>BuzzFinderチームでは上記のような構成でプロジェクト管理サーバを運用していますが、「こうするともっと良いよ」みたいなフィードバックをもらえたりすると嬉しいです。</p>
+
+<p>今回は主にツールの紹介でしたが、実際のプロジェクト管理のやり方についてはまた別の日に書こうと思います。</p>
+
+  </div><a class="u-url" href="/2013/02/16/agilers-in-ntt-communications/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

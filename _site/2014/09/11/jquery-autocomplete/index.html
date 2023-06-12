@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。" />
+<meta property="og:description" content="jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。" />
+<link rel="canonical" href="http://blog.enogineer.com/2014/09/11/jquery-autocomplete/" />
+<meta property="og:url" content="http://blog.enogineer.com/2014/09/11/jquery-autocomplete/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-09-11T22:03:03+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2014-09-11T22:03:03+09:00","datePublished":"2014-09-11T22:03:03+09:00","description":"jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。","headline":"jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2014/09/11/jquery-autocomplete/"},"url":"http://blog.enogineer.com/2014/09/11/jquery-autocomplete/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-09-11T22:03:03+09:00" itemprop="datePublished">Sep 11, 2014
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2014/09/11/jquery-autocomplete/&text=jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2014/09/11/jquery-autocomplete/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2014/09/11/jquery-autocomplete/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>例えば/data/suggest/words.jsonがサジェスト候補を返すAPIだったとすると、CoffeeScriptで以下のように書けばOKです。</p>
+
+<figure class="highlight"><pre><code class="language-coffee" data-lang="coffee"><span class="nx">$</span> <span class="o">-&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s">'body'</span><span class="p">).</span><span class="na">each</span> <span class="o">-&gt;</span>
+    <span class="nx">$</span><span class="p">.</span><span class="na">widget</span><span class="p">(</span> <span class="s">"custom.sampleAutocomplete"</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="na">ui</span><span class="p">.</span><span class="na">autocomplete</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">_renderItem</span><span class="o">:</span> <span class="p">(</span><span class="nx">ul</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">li</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s">"&lt;li&gt;"</span><span class="p">).</span><span class="na">addClass</span><span class="p">(</span><span class="s">"list"</span><span class="p">).</span><span class="na">text</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="na">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">item</span><span class="p">.</span><span class="na">ruby</span>
+          <span class="nx">li</span><span class="p">.</span><span class="na">append</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s">"&lt;span&gt;"</span><span class="p">,</span> <span class="na">class</span><span class="o">:</span> <span class="s">"f11"</span><span class="p">).</span><span class="na">text</span><span class="p">(</span><span class="s">"（</span><span class="si">#{</span><span class="nx">item</span><span class="p">.</span><span class="na">ruby</span><span class="si">}</span><span class="s">）"</span><span class="p">))</span>
+        <span class="nx">li</span><span class="p">.</span><span class="na">appendTo</span><span class="p">(</span><span class="nx">ul</span><span class="p">)</span>
+      <span class="na">_renderMenu</span><span class="o">:</span> <span class="p">(</span><span class="nx">ul</span><span class="p">,</span> <span class="nx">items</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">$</span><span class="p">.</span><span class="na">each</span><span class="p">(</span> <span class="nx">items</span><span class="p">,</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="o">=&gt;</span>
+          <span class="vi">@</span><span class="na">_renderItemData</span><span class="p">(</span> <span class="nx">ul</span><span class="p">,</span> <span class="nx">item</span> <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nx">ul</span><span class="p">).</span><span class="na">addClass</span><span class="p">(</span><span class="s">"suggest"</span><span class="p">)</span>
+    <span class="p">})</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s">'#suggest'</span><span class="p">).</span><span class="na">sampleAutocomplete</span>
+      <span class="na">source</span><span class="o">:</span> <span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">$</span><span class="p">.</span><span class="na">ajax</span>
+          <span class="na">url</span><span class="o">:</span> <span class="s">'/data/suggest/words.json'</span><span class="p">,</span>
+          <span class="na">data</span><span class="o">:</span> <span class="p">{</span> <span class="na">term</span><span class="o">:</span> <span class="nx">request</span><span class="p">.</span><span class="na">term</span> <span class="p">},</span>
+          <span class="na">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="o">-&gt;</span>
+            <span class="nx">response</span><span class="p">(</span> <span class="nx">data</span><span class="p">.</span><span class="na">map</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="o">-&gt;</span>
+              <span class="k">return</span> <span class="p">{</span> <span class="na">value</span><span class="o">:</span> <span class="nx">item</span><span class="p">.</span><span class="na">value</span><span class="p">,</span> <span class="na">url</span><span class="o">:</span> <span class="nx">item</span><span class="p">.</span><span class="na">url</span> <span class="p">}</span>
+            <span class="p">)</span>
+      <span class="na">appendTo</span><span class="o">:</span> <span class="s">'.search-box'</span><span class="p">,</span>
+      <span class="na">select</span><span class="o">:</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="o">-&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s">".search-input"</span><span class="p">).</span><span class="na">val</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="na">item</span><span class="p">.</span><span class="na">value</span><span class="p">)</span>
+        <span class="nb">window</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="na">item</span><span class="p">.</span><span class="na">url</span><span class="p">,</span> <span class="s">"_self"</span><span class="p">)</span></code></pre></figure>
+
+<p>簡単に説明すると、jQueryのwidget factoryを使ってsampleAutocompleteを作成して、text input要素からsampleAutocompleteを実行してオートコンプリート機能を追加するようになっています。</p>
+
+<p>オートコンプリートの動作は</p>
+
+<ul>
+  <li>ユーザがテキストを入力するとAPIにアクセスする</li>
+  <li>APIから取得したデータを<code class="language-plaintext highlighter-rouge">_renderMenu</code>と<code class="language-plaintext highlighter-rouge">_renderItem</code>でサジェスト候補を表示する</li>
+  <li>ユーザが候補を選択したら<code class="language-plaintext highlighter-rouge">select</code>でURLにジャンプする</li>
+</ul>
+
+<p>というようになります。</p>
+
+<p>このスクリプトを使うためのHTMLは例えば</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//code.jquery.com/jquery-1.10.2.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//code.jquery.com/ui/1.11.1/jquery-ui.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/js/suggest.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">".search-box"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"suggest"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<p>のようになります。</p>
+
+<h3 id="関連リンク">関連リンク</h3>
+
+<ul>
+  <li><a href="http://jqueryui.com/autocomplete/">jQuery UI Autocompleteの例</a></li>
+  <li><a href="http://api.jqueryui.com/autocomplete/">jQuery UI Autocompleteのドキュメント</a></li>
+</ul>
+
+  </div><a class="u-url" href="/2014/09/11/jquery-autocomplete/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

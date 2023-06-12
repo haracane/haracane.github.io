@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Vagrantで固定IPのVMを作ってみたら超簡単だった | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Vagrantで固定IPのVMを作ってみたら超簡単だった" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。" />
+<meta property="og:description" content="VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。" />
+<link rel="canonical" href="http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/" />
+<meta property="og:url" content="http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-25T07:04:04+09:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Vagrantで固定IPのVMを作ってみたら超簡単だった" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2013-07-25T07:04:04+09:00","datePublished":"2013-07-25T07:04:04+09:00","description":"VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。","headline":"Vagrantで固定IPのVMを作ってみたら超簡単だった","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/"},"url":"http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Vagrantで固定IPのVMを作ってみたら超簡単だった</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-07-25T07:04:04+09:00" itemprop="datePublished">Jul 25, 2013
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/&text=Vagrantで固定IPのVMを作ってみたら超簡単だった" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2013/07/25/vagrant-network-bridge/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    
+<p>本当に超簡単。
+まずはいつも通り</p>
+
+<pre><code>$ vagrant box add centos http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.3-x86_64-v20130101.box
+$ vagrant init centos
+</code></pre>
+
+<p>してから</p>
+
+<p><a href="http://docs-v1.vagrantup.com/v1/docs/bridged_networking.html">Vagrantのドキュメント</a>の通りにVagrantFileに</p>
+
+<pre><code>Vagrant::Config.run do |config|
+  config.vm.network :bridged
+end
+</code></pre>
+
+<p>を追加します。</p>
+
+<p>設定後にvagrant upすると</p>
+
+<pre><code>$ vagrant up
+default] VM already created. Booting if it's not already running...
+[default] Clearing any previously set forwarded ports...
+[default] Forwarding ports...
+[default] -- 22 =&gt; 2222 (adapter 1)
+[default] Creating shared folders metadata...
+[default] Clearing any previously set network interfaces...
+[default] Available bridged network interfaces:
+1) en1: AirMac (AirPort)
+2) en0: Ethernet
+What interface should the network bridge to?
+</code></pre>
+
+<p>と、どのNICをブリッジ接続するか聞かれます。</p>
+
+<p>ここでは1のAirMacを選択して</p>
+
+<pre><code>
+What interface should the network bridge to? 1
+[default] Preparing network interfaces based on configuration...
+[default] Booting VM...
+[default] Waiting for VM to boot. This can take a few minutes.
+[default] VM booted and ready for use!
+[default] The guest additions on this VM do not match the install version of
+VirtualBox! This may cause things such as forwarded ports, shared
+folders, and more to not work properly. If any of those things fail on
+this machine, please update the guest additions and repackage the
+box.
+
+Guest Additions Version: 4.2.6
+VirtualBox Version: 4.2.16
+[default] Configuring and enabling network interfaces...
+[default] Mounting shared folders...
+[default] -- v-root: /vagrant
+</code></pre>
+
+<p>という具合に起動します。</p>
+
+<p>起動したのでVMに入ってみて</p>
+
+<pre><code>$ vagrant ssh
+</code></pre>
+
+<p>NICを確認するとeth1が追加されています。</p>
+
+<pre><code>[vagrant@localhost ~]$ ifconfig -a
+eth0      Link encap:Ethernet  HWaddr **:**:**:**:**:**  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fef7:f048/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1714 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:942 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:147291 (143.8 KiB)  TX bytes:120029 (117.2 KiB)
+
+eth1      Link encap:Ethernet  HWaddr **:**:**:**:**:**  
+          inet addr:192.168.0.7  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe27:a6b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:314 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:84 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:57350 (56.0 KiB)  TX bytes:10918 (10.6 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+</code></pre>
+
+<p>ルーティングテーブルもOK。</p>
+
+<pre><code>[vagrant@localhost ~]$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.2.0        *               255.255.255.0   U     0      0        0 eth0
+192.168.0.0     *               255.255.255.0   U     0      0        0 eth1
+link-local      *               255.255.0.0     U     1002   0        0 eth0
+link-local      *               255.255.0.0     U     1003   0        0 eth1
+default         web.setup       0.0.0.0         UG    0      0        0 eth1
+</code></pre>
+
+<p>という具合にeth1がちゃんとブリッジ接続してます。</p>
+
+<p>静的IP(固定IP)設定は普通にifcfg-eth1を編集すればOK。</p>
+
+<p>eth1の設定を静的IPに設定して</p>
+
+<pre><code>[vagrant@localhost ~]$ sudo vi /etc/sysconfig/network-scripts/ifcfg-eth1 
+#VAGRANT-BEGIN
+# The contents below are automatically generated by Vagrant. Do not modify.
+#BOOTPROTO=dhcp
+ONBOOT=yes
+DEVICE=eth1
+#VAGRANT-END
+
+# Use static IP 
+BOOTPROTO=static
+IPADDR=192.168.0.27
+PREFIX=24
+GATEWAY=192.160.0.1
+DNS1=192.168.0.1
+</code></pre>
+
+<p>ネットワークを再起動。</p>
+
+<pre><code>[vagrant@localhost ~]$ sudo /etc/init.d/network restart
+Shutting down interface eth0:                              [  OK  ]
+Shutting down interface eth1:                              [  OK  ]
+Shutting down loopback interface:                          [  OK  ]
+Bringing up loopback interface:                            [  OK  ]
+Bringing up interface eth0:  
+Determining IP information for eth0... done.
+                                                           [  OK  ]
+Bringing up interface eth1:                                [  OK  ]
+</code></pre>
+
+<p>eth1のIPアドレスを確認するとちゃんと192.168.0.27になっています。</p>
+
+<pre><code>
+[vagrant@localhost ~]$ ifconfig -a
+eth0      Link encap:Ethernet  HWaddr **:**:**:**:**:**  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fef7:f048/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2231 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1222 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:189405 (184.9 KiB)  TX bytes:153603 (150.0 KiB)
+
+eth1      Link encap:Ethernet  HWaddr **:**:**:**:**:**  
+          inet addr:192.168.0.27  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe27:a6b/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:333 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:104 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:60813 (59.3 KiB)  TX bytes:12044 (11.7 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:2 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:198 (198.0 b)  TX bytes:198 (198.0 b)
+</code></pre>
+
+<p>ルーティングテーブルも問題なし。</p>
+
+<pre><code>[vagrant@localhost ~]$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.2.0        *               255.255.255.0   U     0      0        0 eth0
+192.168.0.0     *               255.255.255.0   U     0      0        0 eth1
+link-local      *               255.255.0.0     U     1002   0        0 eth0
+link-local      *               255.255.0.0     U     1003   0        0 eth1
+default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0
+</code></pre>
+
+<p>と、何もトラブルなく設定完了してしまいました。</p>
+
+  </div><a class="u-url" href="/2013/07/25/vagrant-network-bridge/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

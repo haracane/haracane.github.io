@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>RSpec3.1の主な変更点をまとめてみた | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="RSpec3.1の主な変更点をまとめてみた" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="RSpec3.1がリリースされたので新機能＆変更点をまとめてみました" />
+<meta property="og:description" content="RSpec3.1がリリースされたので新機能＆変更点をまとめてみました" />
+<link rel="canonical" href="http://blog.enogineer.com/2014/09/12/rspec-3.1-release/" />
+<meta property="og:url" content="http://blog.enogineer.com/2014/09/12/rspec-3.1-release/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/rspec.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-09-12T07:06:12+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/rspec.png" />
+<meta property="twitter:title" content="RSpec3.1の主な変更点をまとめてみた" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2014-09-12T07:06:12+09:00","datePublished":"2014-09-12T07:06:12+09:00","description":"RSpec3.1がリリースされたので新機能＆変更点をまとめてみました","headline":"RSpec3.1の主な変更点をまとめてみた","image":"http://blog.enogineer.com/rspec.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2014/09/12/rspec-3.1-release/"},"url":"http://blog.enogineer.com/2014/09/12/rspec-3.1-release/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">RSpec3.1の主な変更点をまとめてみた</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-09-12T07:06:12+09:00" itemprop="datePublished">Sep 12, 2014
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2014/09/12/rspec-3.1-release/&text=RSpec3.1の主な変更点をまとめてみた" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2014/09/12/rspec-3.1-release/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2014/09/12/rspec-3.1-release/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>もう1週間経ってしまいましたがRSpec3.1がリリースされたので勉強がてら主な新機能・変更点をまとめてみました。</p>
+
+<p>なお、この記事は<a href="http://myronmars.to/n/dev-blog/2014/09/rspec-3-1-has-been-released">Myron Marstonの記事</a>の要約になっています。</p>
+
+<h2 id="backtraceフィルタの変更">Backtraceフィルタの変更</h2>
+
+<p>RSpec3.0では表示していなかったgemの中のbacktraceをデフォルトで表示するようになっています。</p>
+
+<p>非表示にする場合は以下を設定します。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">backtrace_exclusion_patterns</span> <span class="o">&lt;&lt;</span> <span class="sr">/gems/</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>特定のgemのbacktraceを非表示にすることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">filter_gems_from_backtrace</span> <span class="s2">"rack"</span><span class="p">,</span> <span class="s2">"rake"</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="exclude-patternオプションの追加">–exclude-patternオプションの追加</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rspec --pattern "spec/**/*_spec.rb" --exclude-pattern "spec/acceptance/**/*_spec.rb"
+</code></pre></div></div>
+
+<p>という感じで除外するspecファイルを指定できます。</p>
+
+<p>Rakefileに書くとこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'rspec/core/rake_task'</span>
+
+<span class="n">desc</span> <span class="s2">"Run all but the acceptance specs"</span>
+<span class="no">RSpec</span><span class="o">::</span><span class="no">Core</span><span class="o">::</span><span class="no">RakeTask</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:all_but_acceptance</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+  <span class="n">t</span><span class="p">.</span><span class="nf">exclude_pattern</span> <span class="o">=</span> <span class="s2">"spec/acceptance/**/*_spec.rb"</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="スタンドアロンでも設定なしで動く">スタンドアロンでも設定なしで動く</h2>
+
+<p>RSpec3.0のデフォルト設定ではrspec-expectationやrspec-mocksがないとロード失敗でエラーになっていました。</p>
+
+<p>RSpec3.1ではロードできなくてもエラーが起きないようになっていて、spec-coreだけで使いやすくなっています。</p>
+
+<h2 id="rspecをwarningsフラグtrueで生成しない">.rspecを–warningsフラグtrueで生成しない</h2>
+
+<p>RailsでWarningがたくさん出てしまうという理由で、Railsで<code class="language-plaintext highlighter-rouge">.rspec</code>を自動生成した時の<code class="language-plaintext highlighter-rouge">--warnings</code>のデフォルト値を<code class="language-plaintext highlighter-rouge">true</code>にしないようになっています。</p>
+
+<h2 id="have_attributesマッチャの追加">have_attributesマッチャの追加</h2>
+
+<p>オブジェクトのattributeテストを簡単に行える<code class="language-plaintext highlighter-rouge">have_attributes</code>マッチャが追加されています。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Person</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
+<span class="n">person</span> <span class="o">=</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">person</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_attributes</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Alice"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">20</span><span class="p">)</span></code></pre></figure>
+
+<p>このマッチャは<code class="language-plaintext highlighter-rouge">an_object_having_attributes</code>にもエイリアスされていて</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">people</span> <span class="o">=</span> <span class="p">[</span><span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="no">Person</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)]</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">people</span><span class="p">).</span><span class="nf">to</span> <span class="n">match</span><span class="p">([</span>
+  <span class="n">an_object_having_attributes</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Alice"</span><span class="p">,</span> <span class="ss">age: </span><span class="mi">20</span><span class="p">),</span>
+  <span class="n">an_object_having_attributes</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Bob"</span><span class="p">,</span>   <span class="ss">age: </span><span class="mi">30</span><span class="p">)</span>
+<span class="p">])</span></code></pre></figure>
+
+<p>という使い方もできます。</p>
+
+<p>メソッドへ渡るメッセージにも使えるようです。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">expect</span><span class="p">(</span><span class="n">article</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:author</span><span class="o">=</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span>
+  <span class="n">an_object_having_attributes</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Alice"</span><span class="p">)</span>
+<span class="p">)</span></code></pre></figure>
+
+<h2 id="compoundマッチャをブロックでも利用可能">Compoundマッチャをブロックでも利用可能</h2>
+
+<p>以下のように1つのブロックに対して複数のマッチャを続けて書くことができます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">expect</span> <span class="p">{</span>
+  <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="n">y</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="p">}.</span><span class="nf">to</span> <span class="n">change</span> <span class="p">{</span> <span class="n">x</span> <span class="p">}.</span><span class="nf">to</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nf">and</span> <span class="n">change</span> <span class="p">{</span> <span class="n">y</span> <span class="p">}.</span><span class="nf">to</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="define_negated_matcherの追加">define_negated_matcherの追加</h2>
+
+<p>例えば<code class="language-plaintext highlighter-rouge">exclude</code>を<code class="language-plaintext highlighter-rouge">include</code>の反対として定義できます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">define_negated_matcher</span> <span class="ss">:exclude</span><span class="p">,</span> <span class="ss">:include</span></code></pre></figure>
+
+<p>こうすると</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">expect</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">).</span><span class="nf">not_to</span> <span class="kp">include</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span></code></pre></figure>
+
+<p>の代わりに</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">expect</span><span class="p">(</span><span class="n">odd_numbers</span><span class="p">).</span><span class="nf">to</span> <span class="n">exclude</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span></code></pre></figure>
+
+<p>と書けるようになります。</p>
+
+<p>この機能はCompoundマッチャと組み合わせると非常に便利です。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">adults</span> <span class="o">=</span> <span class="no">Town</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s2">"Springfield"</span><span class="p">).</span><span class="nf">adults</span>
+<span class="n">marge</span>  <span class="o">=</span> <span class="no">Character</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s2">"Marge"</span><span class="p">)</span>
+<span class="n">bart</span>   <span class="o">=</span> <span class="no">Character</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="s2">"Bart"</span><span class="p">)</span>
+
+<span class="n">expect</span><span class="p">(</span><span class="n">adults</span><span class="p">).</span><span class="nf">to</span> <span class="kp">include</span><span class="p">(</span><span class="n">marge</span><span class="p">).</span><span class="nf">and</span> <span class="n">exclude</span><span class="p">(</span><span class="n">bart</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="カスタムマッチャチェインをdescriptionにも出力">カスタムマッチャチェインをdescriptionにも出力</h2>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Spec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">define</span> <span class="ss">:be_smaller_than</span> <span class="k">do</span> <span class="o">|</span><span class="n">max</span><span class="o">|</span>
+  <span class="n">chain</span> <span class="ss">:and_bigger_than</span> <span class="k">do</span> <span class="o">|</span><span class="n">min</span><span class="o">|</span>
+    <span class="vi">@min</span> <span class="o">=</span> <span class="n">min</span>
+  <span class="k">end</span>
+
+  <span class="n">match</span> <span class="k">do</span> <span class="o">|</span><span class="n">actual</span><span class="o">|</span>
+    <span class="n">actual</span> <span class="o">&lt;</span> <span class="n">max</span> <span class="o">&amp;&amp;</span> <span class="n">actual</span> <span class="o">&gt;</span> <span class="vi">@min</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># usage:</span>
+<span class="n">expect</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">to</span> <span class="n">be_smaller_than</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="nf">and_bigger_than</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></code></pre></figure>
+
+<p>のようなカスタムマッチャがあった場合、RSpec3.0だとこのようなメッセージが出力されていました。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failure/Error: expect(5).to be_smaller_than(10).and_bigger_than(7)
+  expected 5 to be smaller than 10
+</code></pre></div></div>
+
+<p>RSpec3.1では次のようになります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failure/Error: expect(5).to be_smaller_than(10).and_bigger_than(7)
+  expected 5 to be smaller than 10 and bigger than 7
+</code></pre></div></div>
+
+<p>ただし、この機能は後方互換のためにデフォルトoffになっているので</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">expect_with</span> <span class="ss">:rspec</span> <span class="k">do</span> <span class="o">|</span><span class="n">expectations</span><span class="o">|</span>
+    <span class="n">expectations</span><span class="p">.</span><span class="nf">include_chain_clauses_in_custom_matcher_descriptions</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>を設定する必要があります。</p>
+
+<p>RSpec4からはデフォルトでonになるようです。</p>
+
+<h2 id="_spyメソッドの追加">*_spyメソッドの追加</h2>
+
+<p>これまでdoubleを使う時に<code class="language-plaintext highlighter-rouge">nil</code>を返すだけのメソッドでも</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">spy</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="kp">nil</span><span class="p">)</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">spy</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_received</span><span class="p">(</span><span class="ss">:foo</span><span class="p">)</span></code></pre></figure>
+
+<p>というようにメソッド名(<code class="language-plaintext highlighter-rouge">:foo</code>)を2回書かなければいけませんでした。</p>
+
+<p>RSpec3.1では<code class="language-plaintext highlighter-rouge">as_null_object</code>メソッドが追加されて</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">spy</span> <span class="o">=</span> <span class="n">double</span><span class="p">.</span><span class="nf">as_null_object</span>
+<span class="n">expect</span><span class="p">(</span><span class="n">spy</span><span class="p">).</span><span class="nf">to</span> <span class="n">have_received</span><span class="p">(</span><span class="ss">:foo</span><span class="p">)</span></code></pre></figure>
+
+<p>というようにメソッド名を1回だけ書けば済むようになっています。</p>
+
+<p>また、<code class="language-plaintext highlighter-rouge">as_null_object</code>をいちいち書かなくてもいいように下記のメソッドが用意されています。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">spy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>          <span class="c1"># double(...).as_null_object と同じ</span>
+<span class="n">instance_spy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># instance_double(...).as_null_object  と同じ</span>
+<span class="n">class_spy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="c1"># class_double(...).as_null_object と同じ</span>
+<span class="n">object_spy</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="c1"># object_double(...).as_null_object と同じ</span></code></pre></figure>
+
+<h2 id="and_wrap_originalの追加">and_wrap_originalの追加</h2>
+
+<p><code class="language-plaintext highlighter-rouge">and_wrap_original</code>を使うとテスト時にメソッドをラップできるようになります。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">allow</span><span class="p">(</span><span class="n">api_client</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:fetch_users</span><span class="p">).</span><span class="nf">and_wrap_original</span> <span class="k">do</span> <span class="o">|</span><span class="n">original_method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="o">|</span>
+  <span class="n">original_method</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">).</span><span class="nf">first</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># テスト時は10ユーザだけ取得する</span>
+<span class="k">end</span></code></pre></figure>
+
+<h2 id="rails42のサポート">Rails4.2のサポート</h2>
+
+<p>Rails3.1は公式にRails4.2をサポートするとのことです。</p>
+
+<h2 id="rails_helperrbではspecsupportを自動ロードしない">rails_helper.rbではspec/supportを自動ロードしない</h2>
+
+<p><code class="language-plaintext highlighter-rouge">spec/support</code>を全てロードすると時間がかかるため、自動生成された<code class="language-plaintext highlighter-rouge">rails_helper.rb</code>では<code class="language-plaintext highlighter-rouge">spec/support</code>を自動ロードしないようになっています。</p>
+
+<p>RSpec3.1では必要なファイルだけロードすることが推奨されています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>以上、RSpec3.1の新機能の紹介でした。</p>
+
+<p>個人的には<code class="language-plaintext highlighter-rouge">define_negated_matcher</code>が活躍してくれそうな気がしてます。</p>
+
+  </div><a class="u-url" href="/2014/09/12/rspec-3.1-release/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

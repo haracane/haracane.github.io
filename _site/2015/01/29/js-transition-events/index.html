@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。" />
+<meta property="og:description" content="ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。" />
+<link rel="canonical" href="http://blog.enogineer.com/2015/01/29/js-transition-events/" />
+<meta property="og:url" content="http://blog.enogineer.com/2015/01/29/js-transition-events/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/js.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-01-29T07:36:38+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/js.png" />
+<meta property="twitter:title" content="ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2015-01-29T07:36:38+09:00","datePublished":"2015-01-29T07:36:38+09:00","description":"ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。","headline":"ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた","image":"http://blog.enogineer.com/js.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2015/01/29/js-transition-events/"},"url":"http://blog.enogineer.com/2015/01/29/js-transition-events/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-01-29T07:36:38+09:00" itemprop="datePublished">Jan 29, 2015
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2015/01/29/js-transition-events/&text=ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2015/01/29/js-transition-events/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2015/01/29/js-transition-events/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>例えばページロード時にSafari(7.1)だとpopStateイベントが発生して、Chrome(40.0.2214.91)やFirefox(35.0.1)だと発生しなかったりします。</p>
+
+<p><a name="self"></a>
+<a name="push"></a>
+<a name="replace"></a></p>
+
+<h2 id="ページ遷移イベントの動作を確認する">ページ遷移イベントの動作を確認する</h2>
+
+<p>今回のコードではJavaScriptコンソールと画面にload, pageShow, popStateの各イベントの発生を通知します。</p>
+
+<p>pushStateやreplaceStateもボタンから実行できるので色々試してみてください。</p>
+
+<p><a href="/2015/01/29/js-transition-events/">自己リンク</a>と<a href="#self">ページ内リンク</a>も用意しておきます。</p>
+
+<script src="/js/jquery.min.js"></script>
+
+<script src="/js/transition.js"></script>
+
+<p><input type="button" class="push-state-button" value="pushState" />
+<input type="button" class="replace-state-button" value="replaceState" /></p>
+<pre><code class="event-output"></code></pre>
+
+<h2 id="ページ遷移イベント動作確認コードのcoffeescript">ページ遷移イベント動作確認コードのCoffeeScript</h2>
+
+<p>ちなみにイベントハンドラの設定コードはこんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-coffee" data-lang="coffee"><span class="nx">$</span> <span class="o">-&gt;</span>
+  <span class="nx">outputSelector</span> <span class="o">=</span> <span class="s">'.event-output'</span>
+
+  <span class="nx">notify</span> <span class="o">=</span> <span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">message</span> <span class="o">=</span> <span class="s">"[</span><span class="si">#{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="na">toLocaleString</span><span class="p">()</span><span class="si">}</span><span class="s">] </span><span class="si">#{</span><span class="nx">text</span><span class="si">}</span><span class="s">"</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">outputSelector</span><span class="p">).</span><span class="na">append</span><span class="p">(</span><span class="s">"</span><span class="si">#{</span><span class="nx">message</span><span class="si">}</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="nx">message</span><span class="p">)</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="na">on</span> <span class="s">'load'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">notify</span><span class="p">(</span>
+      <span class="s">"loadイベントが発生しました。</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span>
+      <span class="s">"  location.href = </span><span class="si">#{</span><span class="nx">location</span><span class="p">.</span><span class="na">href</span><span class="si">}</span><span class="s">"</span>
+    <span class="p">)</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="na">on</span> <span class="s">'pageshow'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">notify</span><span class="p">(</span>
+      <span class="s">"pageshowイベントが発生しました。</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span>
+      <span class="s">"  location.href = </span><span class="si">#{</span><span class="nx">location</span><span class="p">.</span><span class="na">href</span><span class="si">}</span><span class="s">"</span>
+    <span class="p">)</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="na">on</span> <span class="s">'popstate'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="nx">notify</span><span class="p">(</span>
+      <span class="s">"popstateイベントが発生しました。</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span>
+      <span class="s">"  location.href = </span><span class="si">#{</span><span class="nx">location</span><span class="p">.</span><span class="na">href</span><span class="si">}</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span>
+      <span class="s">"  event.originalEvent.state = </span><span class="si">#{</span><span class="nx">event</span><span class="p">.</span><span class="na">originalEvent</span><span class="p">.</span><span class="na">state</span><span class="si">}</span><span class="s">"</span>
+    <span class="p">)</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="na">on</span> <span class="s">'click'</span><span class="p">,</span> <span class="s">'.push-state-button'</span><span class="p">,</span> <span class="o">-&gt;</span>
+    <span class="nx">state</span> <span class="o">=</span> <span class="s">"push:</span><span class="si">#{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="na">toLocaleString</span><span class="p">()</span><span class="si">}</span><span class="s">"</span>
+    <span class="nx">notify</span><span class="p">(</span><span class="s">"history.pushState('</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">', null, '#push')"</span><span class="p">)</span>
+    <span class="nx">history</span><span class="p">.</span><span class="na">pushState</span><span class="p">(</span><span class="s">"</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">"</span><span class="p">,</span> <span class="no">null</span><span class="p">,</span> <span class="s">'#push'</span><span class="p">)</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="na">on</span> <span class="s">'click'</span><span class="p">,</span> <span class="s">'.replace-state-button'</span><span class="p">,</span> <span class="o">-&gt;</span>
+    <span class="nx">state</span> <span class="o">=</span> <span class="s">"replace:</span><span class="si">#{</span><span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="na">toLocaleString</span><span class="p">()</span><span class="si">}</span><span class="s">"</span>
+    <span class="nx">notify</span><span class="p">(</span><span class="s">"history.replaceState('</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">', null, '#replace')"</span><span class="p">)</span>
+    <span class="nx">history</span><span class="p">.</span><span class="na">replaceState</span><span class="p">(</span><span class="s">"</span><span class="si">#{</span><span class="nx">state</span><span class="si">}</span><span class="s">"</span><span class="p">,</span> <span class="no">null</span><span class="p">,</span> <span class="s">'#replace'</span><span class="p">)</span>
+
+  <span class="nx">notify</span><span class="p">(</span><span class="s">'load, pageShow, popStateイベントハンドラをbindしました。'</span><span class="p">)</span></code></pre></figure>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>以上、JavaScriptのページ遷移イベント確認コードの紹介でした。</p>
+
+<p>こういうことは調べるより実際に動かしてみた方が早かったりするので、よろしければご利用ください。</p>
+
+  </div><a class="u-url" href="/2015/01/29/js-transition-events/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

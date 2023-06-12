@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>destroyアクションで記事を削除する | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="destroyアクションで記事を削除する" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="前回までにRailsで記事削除・作成・更新を行ってきましたが、今回はdestroyアクションでRESTfulに記事データを削除します。" />
+<meta property="og:description" content="前回までにRailsで記事削除・作成・更新を行ってきましたが、今回はdestroyアクションでRESTfulに記事データを削除します。" />
+<link rel="canonical" href="http://blog.enogineer.com/2014/10/03/rails-restful-destroy/" />
+<meta property="og:url" content="http://blog.enogineer.com/2014/10/03/rails-restful-destroy/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-10-03T07:07:40+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="twitter:title" content="destroyアクションで記事を削除する" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2014-10-03T07:07:40+09:00","datePublished":"2014-10-03T07:07:40+09:00","description":"前回までにRailsで記事削除・作成・更新を行ってきましたが、今回はdestroyアクションでRESTfulに記事データを削除します。","headline":"destroyアクションで記事を削除する","image":"http://blog.enogineer.com/rails.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2014/10/03/rails-restful-destroy/"},"url":"http://blog.enogineer.com/2014/10/03/rails-restful-destroy/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">destroyアクションで記事を削除する</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-10-03T07:07:40+09:00" itemprop="datePublished">Oct 3, 2014
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2014/10/03/rails-restful-destroy/&text=destroyアクションで記事を削除する" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2014/10/03/rails-restful-destroy/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2014/10/03/rails-restful-destroy/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="記事削除機能のルーティング設定">記事削除機能のルーティング設定</h2>
+
+<p>まずはroutes.rbでdestroyアクションのルーティング設定を行います。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># config/routes.rb</span>
+<span class="n">namespace</span> <span class="ss">:blog</span> <span class="k">do</span>
+  <span class="n">resources</span> <span class="ss">:posts</span><span class="p">,</span> <span class="ss">only: </span><span class="p">[</span><span class="ss">:destroy</span><span class="p">]</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>と設定します。</p>
+
+<p>設定してからルーティング情報を出力すると</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rake routes
+blog_post DELETE /blog/posts/:id(.:format) blog/posts#destroy
+</code></pre></div></div>
+
+<p>となります。</p>
+
+<p>確認すると</p>
+
+<ol>
+  <li>Prefixは<code class="language-plaintext highlighter-rouge">blog_post</code>で、<code class="language-plaintext highlighter-rouge">blog_post_path(blog_post.id)</code>といったヘルパーでパスを取得できる</li>
+  <li><code class="language-plaintext highlighter-rouge">/blog/posts/:id(.:format)</code>への<code class="language-plaintext highlighter-rouge">DELETE</code>リクエストでアクセスできる</li>
+  <li><code class="language-plaintext highlighter-rouge">blog_posts</code>コントローラの<code class="language-plaintext highlighter-rouge">destroy</code>アクションを実行する</li>
+</ol>
+
+<p>ということがわかります。</p>
+
+<h2 id="記事削除機能のコントローラ">記事削除機能のコントローラ</h2>
+
+<p>コントローラではdestroyアクションを実装します。</p>
+
+<p>destroyアクションでは指定されたidの記事を削除します。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># app/controllers/blog/posts_controller.rb</span>
+<span class="n">before_action</span> <span class="ss">:set_blog_post</span><span class="p">,</span> <span class="ss">only: </span><span class="p">[</span><span class="ss">:destroy</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">destroy</span>
+  <span class="k">if</span> <span class="vi">@post</span><span class="p">.</span><span class="nf">delete</span>
+    <span class="n">flash</span><span class="p">[</span><span class="ss">:success</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"deleted"</span>
+  <span class="k">end</span>
+  <span class="n">redirect_to</span> <span class="n">blog_posts_path</span>
+<span class="k">end</span>
+
+<span class="kp">private</span>
+  <span class="k">def</span> <span class="nf">set_blog_post</span>
+    <span class="vi">@post</span> <span class="o">=</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
+  <span class="k">end</span></code></pre></figure>
+
+<h2 id="記事削除機能のビュー">記事削除機能のビュー</h2>
+
+<p>destroyアクションでも<a href="/2014/10/03/rails-restful-create/">createアクション</a>と<a href="/2014/10/03/rails-restful-update/">updateアクション</a>同様にビューは用意しておらず、削除に成功しても失敗しても記事一覧にリダイレクトするようにしています。</p>
+
+<p>今回でRails4でのRESTfulな記事管理機能の実装はおしまいです。</p>
+
+<p>ひとつひとつはそれほど難しいことではないので、よく理解してRESTfulなシステムを作っていきましょう。</p>
+
+  </div><a class="u-url" href="/2014/10/03/rails-restful-destroy/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

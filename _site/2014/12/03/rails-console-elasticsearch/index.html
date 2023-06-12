@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる | haracaneのブログ</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。" />
+<meta property="og:description" content="ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。" />
+<link rel="canonical" href="http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/" />
+<meta property="og:url" content="http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/" />
+<meta property="og:site_name" content="haracaneのブログ" />
+<meta property="og:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-12-03T07:08:56+09:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://blog.enogineer.com/rails.png" />
+<meta property="twitter:title" content="Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2014-12-03T07:08:56+09:00","datePublished":"2014-12-03T07:08:56+09:00","description":"ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。","headline":"Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる","image":"http://blog.enogineer.com/rails.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/"},"url":"http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://blog.enogineer.com/feed.xml" title="haracaneのブログ" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">haracaneのブログ</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-12-03T07:08:56+09:00" itemprop="datePublished">Dec 3, 2014
+      </time><div class="sns-buttons">
+        <a class="btn-mr" href="http://twitter.com/share?url=http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/&text=Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる" target="_blank">
+          <div class="btn btn-twitter" >
+            <img width="14" height="14" src="/assets/images/icons/twitter.svg" alt="Twitter"/>
+          </div>
+        </a>
+
+        <a
+          class="btn-mr"
+          href="http://www.facebook.com/share.php?u=http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/"
+          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
+          <div class="btn btn-facebook">シェア</div>
+        </a>
+
+        <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://blog.enogineer.com/2014/12/03/rails-console-elasticsearch/" target="_blank">
+          <div class="btn btn-hatena" >B!</div>
+        </a>
+      </div>
+    </p>
+  </header>
+
+  
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>この記事は<a href="http://qiita.com/advent-calendar/2014/elasticsearch">Elasticsearch Advent Calendar 2014</a>の3日目です。</p>
+
+<p>2日目は<a href="http://qiita.com/ariarijp">@ariarijp</a>さんの「<a href="http://qiita.com/ariarijp/items/d0fc7a4161f56f4cda32">入門記事：ElasticSearch1.4.0とKibana4.0.0の環境構築</a>」でした。おつかれさまでした。</p>
+
+<p>ではさっそくはじめましょう。</p>
+
+<h2 id="elasticsearch-rails-gemを追加する">elasticsearch-rails Gemを追加する</h2>
+
+<p>Rails Consoleを起動する前にまずGemfileに</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="s1">'elasticsearch-model'</span>
+<span class="n">gem</span> <span class="s1">'elasticsearch-rails'</span></code></pre></figure>
+
+<p>を追加します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">bundle install</code>で<a href="https://github.com/elasticsearch/elasticsearch-rails">elasticsearch-rails</a>をインストールしたら、Rails Consoleを起動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% rails c
+</code></pre></div></div>
+
+<h2 id="elasticsearchmodelを組み込む">Elasticsearch::Modelを組み込む</h2>
+
+<p>最初に扱いたいデータのActiveRecordモデルクラスで<code class="language-plaintext highlighter-rouge">Elasticsearch::Model</code>を<code class="language-plaintext highlighter-rouge">include</code>します。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">Blog::Site</span><span class="p">;</span> <span class="kp">include</span> <span class="no">Elasticsearch</span><span class="o">::</span><span class="no">Model</span><span class="p">;</span> <span class="k">end</span>
+<span class="o">=&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span> <span class="p">(</span><span class="n">call</span> <span class="s1">'Blog::Site.connection'</span> <span class="n">to</span> <span class="n">establish</span> <span class="n">a</span> <span class="n">connection</span><span class="p">)</span></code></pre></figure>
+
+<p>これで<code class="language-plaintext highlighter-rouge">Blog::Site</code>モデルに一通りメソッドが追加されます。</p>
+
+<h2 id="elasticsearchにデータをインポートする">Elasticsearchにデータをインポートする</h2>
+
+<p>Elasticsearchへのインポートには<code class="language-plaintext highlighter-rouge">import</code>メソッドを使います。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">import</span>
+<span class="c1"># Blog::Site Load (1.9ms)  SELECT  `blog_sites`.* FROM `blog_sites`   ORDER BY `blog_sites`.`id` ASC LIMIT 1000</span>
+<span class="o">=&gt;</span> <span class="mi">0</span></code></pre></figure>
+
+<p>続いてElasticsearchに問い合わせてインポート結果を確認します。</p>
+
+<h2 id="マッピングを確認する">マッピングを確認する</h2>
+
+<p>Elasticsearchに問い合わせるにはインデックス名とタイプ名が必要なので、まずはそちらを確認してみます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">index_name</span>
+<span class="s2">"blog-sites"</span>
+<span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">document_type</span>
+<span class="s2">"site"</span></code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">blog-sites</code>インデックスの<code class="language-plaintext highlighter-rouge">site</code>タイプとして登録されたようです。</p>
+
+<p>この名前がわかればElasticsearchのAPIにアクセスできるので、インポート結果を確認してみましょう。</p>
+
+<p>マッピングを確認する方法はいくつかあるのですが、今回は<code class="language-plaintext highlighter-rouge">perform_request</code>を使います。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">client</span><span class="p">.</span><span class="nf">perform_request</span><span class="p">(</span>
+  <span class="ss">:get</span><span class="p">,</span>
+  <span class="s1">'blog-sites/site/_mapping'</span>
+<span class="p">).</span><span class="nf">body</span>
+<span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"blog-sites"</span><span class="o">=&gt;</span>
+  <span class="p">{</span><span class="s2">"mappings"</span><span class="o">=&gt;</span>
+    <span class="p">{</span><span class="s2">"site"</span><span class="o">=&gt;</span>
+      <span class="p">{</span><span class="s2">"properties"</span><span class="o">=&gt;</span>
+        <span class="p">{</span><span class="s2">"created_at"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"date"</span><span class="p">,</span> <span class="s2">"format"</span><span class="o">=&gt;</span><span class="s2">"dateOptionalTime"</span><span class="p">},</span>
+         <span class="s2">"description"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"string"</span><span class="p">},</span>
+         <span class="s2">"id"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"long"</span><span class="p">},</span>
+         <span class="s2">"language"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"string"</span><span class="p">},</span>
+         <span class="s2">"title"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"string"</span><span class="p">},</span>
+         <span class="s2">"updated_at"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"date"</span><span class="p">,</span> <span class="s2">"format"</span><span class="o">=&gt;</span><span class="s2">"dateOptionalTime"</span><span class="p">},</span>
+         <span class="s2">"user_id"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"type"</span><span class="o">=&gt;</span><span class="s2">"long"</span><span class="p">}}}}}}</span></code></pre></figure>
+
+<p>各プロパティが<code class="language-plaintext highlighter-rouge">long</code>, <code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">date</code>型で登録されていますね。</p>
+
+<h2 id="件数を取得する">件数を取得する</h2>
+
+<p>続いて件数も見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">client</span><span class="p">.</span><span class="nf">perform_request</span><span class="p">(</span>
+  <span class="ss">:get</span><span class="p">,</span>
+  <span class="s1">'blog-sites/site/_count'</span>
+<span class="p">).</span><span class="nf">body</span>
+<span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"count"</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"_shards"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"total"</span><span class="o">=&gt;</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"successful"</span><span class="o">=&gt;</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"failed"</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">}}</span></code></pre></figure>
+
+<h2 id="データを確認する">データを確認する</h2>
+
+<p>id=1のデータの中身も見てみます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">client</span><span class="p">.</span><span class="nf">perform_request</span><span class="p">(</span>
+  <span class="ss">:get</span><span class="p">,</span>
+  <span class="s1">'blog-sites/site/1'</span>
+<span class="p">).</span><span class="nf">body</span>
+<span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"_index"</span><span class="o">=&gt;</span><span class="s2">"blog-sites"</span><span class="p">,</span>
+ <span class="s2">"_type"</span><span class="o">=&gt;</span><span class="s2">"site"</span><span class="p">,</span>
+ <span class="s2">"_id"</span><span class="o">=&gt;</span><span class="s2">"1"</span><span class="p">,</span>
+ <span class="s2">"_version"</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span>
+ <span class="s2">"found"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">,</span>
+ <span class="s2">"_source"</span><span class="o">=&gt;</span>
+  <span class="p">{</span><span class="s2">"id"</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span>
+   <span class="s2">"user_id"</span><span class="o">=&gt;</span><span class="mi">11</span><span class="p">,</span>
+   <span class="s2">"language"</span><span class="o">=&gt;</span><span class="s2">"ja"</span><span class="p">,</span>
+   <span class="s2">"title"</span><span class="o">=&gt;</span><span class="s2">"Railsブログ"</span><span class="p">,</span>
+   <span class="s2">"description"</span><span class="o">=&gt;</span><span class="s2">"Railsの技術ブログです"</span><span class="p">,</span>
+   <span class="s2">"created_at"</span><span class="o">=&gt;</span><span class="s2">"2014-11-07T09:32:46.000+09:00"</span><span class="p">,</span>
+   <span class="s2">"updated_at"</span><span class="o">=&gt;</span><span class="s2">"2014-11-07T09:32:46.000+09:00"</span><span class="p">}}</span></code></pre></figure>
+
+<p>ちゃんとデータが取得できました。</p>
+
+<h2 id="フィルタで検索する">フィルタで検索する</h2>
+
+<p>続いて検索をしてみましょう。検索には<code class="language-plaintext highlighter-rouge">search</code>メソッドを利用します。</p>
+
+<p>まずは<a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-term-filter.html">termフィルタ</a>を利用して<code class="language-plaintext highlighter-rouge">language</code>が<code class="language-plaintext highlighter-rouge">ja</code>のデータを検索してみます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span>
+  <span class="ss">filter: </span><span class="p">{</span><span class="ss">term: </span><span class="p">{</span><span class="ss">language: </span><span class="s1">'ja'</span><span class="p">}}</span>
+<span class="p">).</span><span class="nf">records</span><span class="p">.</span><span class="nf">to_a</span>
+<span class="c1"># Blog::Site Load (0.3ms)  SELECT `blog_sites`.* FROM `blog_sites`  WHERE `blog_sites`.`id` IN (2, 1)</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="c1">#&lt;Blog::Site id: 2, user_id: 11, language: "ja", title: "Elasticsearchブログ", description: "Elasticsearchの技術ブログです", created_at: "2014-11-07 00:32:47", updated_at: "2014-11-07 00:32:47"&gt;,</span>
+ <span class="c1">#&lt;Blog::Site id: 1, user_id: 11, language: "ja", title: "Railsブログ", description: "Railsの技術ブログです", created_at: "2014-11-07 00:32:46", updated_at: "2014-11-07 00:32:46"&gt;]</span></code></pre></figure>
+
+<p>2件のデータがヒットしました。</p>
+
+<h2 id="クエリで検索する">クエリで検索する</h2>
+
+<p>続いて<a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-match-query.html">matchクエリ</a>で<code class="language-plaintext highlighter-rouge">title</code>にElasticsearchを含むデータを検索してみましょう</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span>
+  <span class="ss">query: </span><span class="p">{</span><span class="ss">match: </span><span class="p">{</span><span class="ss">title: </span><span class="s1">'Elasticsearch'</span><span class="p">}}</span>
+<span class="p">).</span><span class="nf">records</span><span class="p">.</span><span class="nf">to_a</span>
+<span class="c1"># Blog::Site Load (0.2ms)  SELECT `blog_sites`.* FROM `blog_sites`  WHERE `blog_sites`.`id` IN (2)</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="c1">#&lt;Blog::Site id: 2, user_id: 11, language: "ja", title: "Elasticsearchブログ", description: "Elasticsearchの技術ブログです", created_at: "2014-11-07 00:32:47", updated_at: "2014-11-07 00:32:47"&gt;]</span></code></pre></figure>
+
+<p>ちゃんとElasticsearchのデータが検索できました。</p>
+
+<h2 id="アグリゲーションで集計する">アグリゲーションで集計する</h2>
+
+<p>次は<a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations-bucket-terms-aggregation.html">termsアグリゲーション</a>で<code class="language-plaintext highlighter-rouge">language</code>毎の件数を集計してみます。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span>
+  <span class="p">{</span><span class="ss">aggs: </span><span class="p">{</span><span class="ss">agg: </span><span class="p">{</span><span class="ss">terms: </span><span class="p">{</span><span class="ss">field: :language</span><span class="p">}}}},</span>
+  <span class="ss">search_type: :count</span>
+<span class="p">).</span><span class="nf">response</span><span class="p">[</span><span class="s2">"aggregations"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"agg"</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">"buckets"</span><span class="o">=&gt;</span><span class="p">[{</span><span class="s2">"key"</span><span class="o">=&gt;</span><span class="s2">"ja"</span><span class="p">,</span> <span class="s2">"doc_count"</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">}]}}</span></code></pre></figure>
+
+<p><code class="language-plaintext highlighter-rouge">language</code>がjaのデータが2件という集計結果でした。</p>
+
+<h2 id="インデックスを削除する">インデックスを削除する</h2>
+
+<p>一通り動作を確認したので、最後にインデックスを削除します。</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Blog</span><span class="o">::</span><span class="no">Site</span><span class="p">.</span><span class="nf">__elasticsearch__</span><span class="p">.</span><span class="nf">delete_index!</span>
+<span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"acknowledged"</span><span class="o">=&gt;</span><span class="kp">true</span><span class="p">}</span></code></pre></figure>
+
+<p>削除したらこのままRails Consoleを抜けておしまいです。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回はElasticsearchをRailsから手軽に扱う方法をご紹介しました。</p>
+
+<p>Elasticsearchに慣れた後でも、データベースのデータをサッとElasticsearchに入れて動作確認できると結構便利なのでそういった時にも参考にしていただければ良いかと思います。</p>
+
+<p>もちろんやろうと思えばもっといろんなことができるので、その際はElasticsearchやElasticsearch-railsのドキュメントを見ながら色々試してみてください。</p>
+
+<p>4日目は<a href="http://qiita.com/tady">@tady</a>さんです。よろしくお願いします。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+  <li><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-filters.html">Elasticsearch Filters</a></li>
+  <li><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-queries.html">Elasticsearch Queries</a></li>
+  <li><a href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/search-aggregations.html">Elasticsearch Aggregations</a></li>
+</ul>
+
+  </div><a class="u-url" href="/2014/12/03/rails-console-elasticsearch/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">haracaneのブログ</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">haracaneのブログ</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
