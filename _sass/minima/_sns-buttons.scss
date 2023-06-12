@@ -1,0 +1,40 @@
+.sns-buttons {
+  overflow: none;
+  white-space: nowrap;
+
+  .item {
+    overflow: none;
+    list-style: none;
+    font-weight: 600;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .btn {
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    font-weight: 500;
+    padding: 6px 4px;
+    overflow: none;
+    text-align: center;
+    width: 64px;
+  }
+
+  .btn-facebook {
+    background-color:#3b5998;
+  }
+
+  .btn-hatena {
+    background-color:#01a5df;
+  }
+
+  .btn-twitter {
+    background-color:#1da1f2;
+  }
+
+  .btn-mr {
+    margin-right: 4px;
+  }
+}
+
