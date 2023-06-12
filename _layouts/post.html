@@ -14,23 +14,45 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
 
-      <div class="sns-buttons">
-        <a class="btn-mr" href="http://twitter.com/share?url={{ site.url }}{{ page.url }}&text={{page.title}}" target="_blank">
-          <div class="btn btn-twitter" >
-            <img width="14" height="14" src="{{ site.baseurl }}/assets/images/icons/twitter.svg" alt="Twitter"/>
-          </div>
-        </a>
-
+      <div>
         <a
-          class="btn-mr"
-          href="http://www.facebook.com/share.php?u={{ site.url }}{{ page.url }}"
-          onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;">
-          <div class="btn btn-facebook">シェア</div>
-        </a>
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-show-count="false"
+          >Tweet</a
+        ><script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
 
-        <a href="http://b.hatena.ne.jp/add?mode=confirm&url={{ site.url }}{{ page.url }}" target="_blank">
-          <div class="btn btn-hatena" >B!</div>
-        </a>
+        <div style="display: inline-block;">
+          <a
+        href="http://b.hatena.ne.jp/entry/"
+        class="hatena-bookmark-button"
+        data-hatena-bookmark-layout="basic-label"
+        data-hatena-bookmark-lang="ja"
+        title="このエントリーをはてなブックマークに追加"
+        ><img
+          src="https://b.st-hatena.com/images/entry-button/button-only@2x.png"
+          alt="このエントリーをはてなブックマークに追加"
+          width="20"
+          height="20"
+          style="border: none;"/></a
+        ><script
+          type="text/javascript"
+          src="https://b.st-hatena.com/js/bookmark_button.js"
+          charset="utf-8"
+          async="async"
+        ></script>
+        </div>
+
+        <div style="display: inline-block;position:relative;top:-6px;">
+          <div class="fb-share-button" data-href="" data-layout="button" data-size="">
+          </div>
+          <div id="fb-root"></div>
+          <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v17.0" nonce="ne9v4ZE4"></script>
+        </div>
       </div>
     </p>
   </header>
