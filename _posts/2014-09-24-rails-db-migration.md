@@ -7,6 +7,7 @@ keywords: Ruby,Rails
 description: Railsのmigration例
 image: rails.png
 ---
+[Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 モデル作成コマンドは
 

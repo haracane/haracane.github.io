@@ -7,6 +7,7 @@ keywords: Pundit Policy Rails Ruby
 description: Railsのアクションでユーザ毎の権限に応じて実行結果を変えたかったので、Pundit gemを使って設定してみました。
 image: rails.png
 ---
+[Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 サンプルコードでは
 
@@ -173,4 +174,3 @@ end
 以上、ポリシー設定のサンプルコード紹介でした。
 
 詳しくは[Punditのドキュメント](https://github.com/elabs/pundit)や[るびまのPundit解説記事](http://magazine.rubyist.net/?0047-IntroductionToPundit)を読むと参考になると思います。
-

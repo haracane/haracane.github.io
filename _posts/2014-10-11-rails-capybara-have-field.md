@@ -8,6 +8,7 @@ categories: rails-capybara
 description: フォームの入力フィールドをhave_fieldマッチャで確認テストを行います。
 image: rspec.png
 ---
+[Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 

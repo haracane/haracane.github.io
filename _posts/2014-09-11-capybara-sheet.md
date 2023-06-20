@@ -7,6 +7,7 @@ keywords: Capybara,RSpec,Ruby,Rails
 description: Capybaraを使う時に検索して調べることが多いのでマッチャ等を利用例にまとめました。
 image: rspec.png
 ---
+[Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 Capybaraの使い方を知りたい場合は[Ruby on Railsチュートリアルのテスト例](http://railstutorial.jp/chapters/static-pages?version=4.0#sec-first_tests)が参考になると思います。
 

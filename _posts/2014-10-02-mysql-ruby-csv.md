@@ -6,8 +6,7 @@ tags: MySQL Ruby
 keywords: MySQL Ruby
 description: MySQLのテーブルをCSV経由でRubyで読み込もうとしたら一筋縄ではいかなかったのでメモしておきます。
 ---
-
-
+[MySQL](/tags/mysql/) / [Ruby](/tags/ruby/)
 
 まず、素直に
 

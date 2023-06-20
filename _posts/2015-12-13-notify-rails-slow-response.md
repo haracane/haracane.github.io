@@ -6,6 +6,7 @@ tags: Rails
 description: Railsを運用しているとレスポンスタイムの監視は欠かせません。New Relicなどを使って監視している方が多いかと思いますが、今回はActive SupportのInstrumentation機能を使って10秒以上のレスポンスを通知するシンプルな方法をご紹介します。
 image: rails.png
 ---
+[Rails](/tags/rails/)
 
 この記事は[Ruby on Rails Advent Calendar 2015](http://qiita.com/advent-calendar/2015/rails)の13日目です。
 

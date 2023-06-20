@@ -9,4 +9,5 @@ categories: category-posts-index
 sub_category: rails-restful
 image: rails.png
 ---
+[Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 

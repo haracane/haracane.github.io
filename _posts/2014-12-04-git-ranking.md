@@ -7,6 +7,7 @@ keywords: Git
 description: Gitコマンドはターミナルで最もよく使うコマンドなのでエイリアスやシェル関数にして実行しているのですが、実際に何をよく使っているか調べてみました。
 image: git.png
 ---
+[Git](/tags/git/)
 
 この記事は[Git Advent Calendar 2014](http://qiita.com/advent-calendar/2014/git)の4日目です。
 

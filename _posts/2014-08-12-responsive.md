@@ -5,8 +5,7 @@ description: "Jekyllの初期設定だと小さい画面でも画像が大きい
 date:   2014-08-12 20:35:17J
 tags: Jekyll HTML5 CSS スマホ
 ---
-
-
+[Jekyll](/tags/jekyll/) / [HTML5](/tags/html5/) / [CSS](/tags/css/) / [スマホ](/tags/smartphone/)
 
 変更したのはCSSだけで
 

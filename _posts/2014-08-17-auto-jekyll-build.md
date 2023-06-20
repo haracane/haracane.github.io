@@ -5,8 +5,7 @@ description: "masterが更新されたときに自動的にリポジトリ更新
 date:   2014-08-17 14:55:06J
 tags: Jekyll Git
 ---
-
-
+[Jekyll](/tags/jekyll/) / [Git](/tags/git/)
 
 Git hookは使わずにシンプルにシェルスクリプトで行っています.
 

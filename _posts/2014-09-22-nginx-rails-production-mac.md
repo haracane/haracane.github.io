@@ -7,6 +7,7 @@ keywords: Nginx,Ruby,Rails
 description: Nginx+RailsをProduction環境で動かす。
 image: rails.png
 ---
+[Nginx](/tags/nginx/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 Nginxでサーバ設定。
 

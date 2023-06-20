@@ -6,6 +6,7 @@ tags: Nginx
 keywords: Nginx
 description: NginxでX-Forwarded-Protoの値を見てhttpsだったらhttpにリダイレクトする設定をしてcurlコマンドでテストしてみました。
 ---
+[Nginx](/tags/nginx/)
 
 SSLの処理は前段のロードバランサで行っていて、Nginxではhttpサーバとして動いている場合の例です。
 

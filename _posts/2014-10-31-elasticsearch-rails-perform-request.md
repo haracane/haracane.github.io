@@ -7,6 +7,7 @@ keywords: Elasticsearch Rails Ruby
 description: elasticsearch-railsのソースを軽く読んでいたら、任意のリクエストを送れるperform_requestという便利メソッドがあったので紹介します。
 image: rails.png
 ---
+[Elasticsearch](/tags/elasticsearch/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 `Blog::Post`が`Elasticsearch::Model`を`include`しているとして
 
@@ -40,5 +41,3 @@ ap Blog::Post.__elasticsearch__.client.perform_request(:get, 'blog-posts/_count'
 となっています。ドキュメントは[こちら](http://www.rubydoc.info/gems/elasticsearch-transport/Elasticsearch/Transport/Client:perform_request)。
 
 これでいちいちcurlや[Marvel](http://www.elasticsearch.org/overview/marvel/)に切り替えなくてもサクッとElasticsearchの応答を確認できますね。
-
-

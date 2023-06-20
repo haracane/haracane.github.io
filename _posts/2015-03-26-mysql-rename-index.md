@@ -8,6 +8,7 @@ description: テーブルを置き換える場合などにはテーブル名だ�
 mark: Tips
 image: mysql.png
 ---
+[tips](/tags/tips/) / [MySQL](/tags/mysql/)
 
 `new_`というプレフィックスのついたインデックスや外部キー制約から`new_`を外す場合の例を紹介します。
 

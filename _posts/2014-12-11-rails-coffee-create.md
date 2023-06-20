@@ -8,6 +8,7 @@ description: Railsで画面遷移なしでレコードを作成＆更新した�
 categories: rails-coffee
 image: coffee.png
 ---
+[CoffeeScript](/tags/coffeescript/) / [JavaScript](/tags/javascript/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 サンプルコードでは`Blog::Site`オブジェクトが持つ`Blog::SiteConfig`オブジェクトを作成・更新しています。
 

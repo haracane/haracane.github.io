@@ -7,6 +7,7 @@ keywords:  RSpec ActiveRecord Rails Ruby
 description: 前回の記事でカスタムバリデータを作ってhas-many関連のuniqueness validationを行いましたが、続いてテスト用にvalidate_objects_uniqueness_ofカスタムマッチャを作りました。
 image: rspec.png
 ---
+[RSpec](/tags/rspec/) / [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 ※前回の記事: [has-many関連のuniqueness validationをするカスタムバリデータを作ってみた]({% post_url 2015-01-08-nested-attributes-uniqueness-validation %})
 

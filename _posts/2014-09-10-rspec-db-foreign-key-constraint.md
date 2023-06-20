@@ -8,6 +8,7 @@ description: Railsでモデルを作る時に外部キー制約テストも簡�
 image: rspec.png
 categories: model-spec-custom-matchers
 ---
+[RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 [前々回のNOT NULL制約カスタムマッチャの記事](/2014/09/08/rspec-db-not-null-constraint/)と[前回のUNIQUE制約カスタムマッチャの記事](/2014/09/09/rspec-db-unique-constraint/)でDBの制約テストを簡単にしてきましたが、DB制約のRSpecカスタムマッチャも作りました。
 

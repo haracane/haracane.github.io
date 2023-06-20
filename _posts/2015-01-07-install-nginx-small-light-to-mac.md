@@ -6,6 +6,7 @@ tags: Nginx
 keywords: Nginx
 description: 画像のリサイズ等を動的に行ってくれるngx_small_lightをMacのNginxに組み込んでみたのでそのメモです。
 ---
+[Nginx](/tags/nginx/)
 
 ## ngx_small_lightでやりたいこと
 

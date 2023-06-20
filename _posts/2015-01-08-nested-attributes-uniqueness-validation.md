@@ -7,6 +7,7 @@ keywords: Rails ActiveRecord Uniqueness Validation
 description: ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。
 image: rails.png
 ---
+[Rails](/tags/rails/) / [ActiveRecord](/tags/activerecord/)
 
 ## UniquenessValidatorの問題
 

@@ -6,6 +6,7 @@ tags: FanForward Rails Heroku
 description: グループチケットサービスをFanForwardからリリースしました。アメフトをグループ観戦できますよ。というか報告していませんでしたが、10/1からスポーツTechベンチャー FanForwardにjoinしてました。12/2(日)に大阪の万博記念公園で開催されるウエスタンジャパンボウル2018をグループ観戦される方は使ってみてください。
 image: rails.png
 ---
+[FanForward](/tags/fanforward/) / [Rails](/tags/rails/) / [Heroku](/tags/heroku/)
 
 FanForwardにjoinしてからの第一弾サービスとしてグループチケットサービスをリリースしました。
 

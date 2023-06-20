@@ -5,6 +5,7 @@ description: "RailsからElasticsearchを使う場合に推奨となっている
 date:   2014-08-21 06:36:46J
 tags: Elasticsearch Ruby Rails
 ---
+[Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 この記事ではレシピ検索をする場合を例に検索機能を追加します.
 

@@ -8,6 +8,7 @@ description: Railsでモデルを作る時にNOT NULL制約テストを簡単に
 image: rspec.png
 categories: model-spec-custom-matchers
 ---
+[RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 Railsを使っているとDBのフィールドにNOT NULL制約をつけることがよくありますが、テストしようとするとデータを保存してエラーが起きることを確認したりして相当面倒です。
 

@@ -8,6 +8,7 @@ categories: rails-capybara
 description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
 image: rspec.png
 ---
+[Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 この連載ではRails4でCapybaraを使ったテストのやり方を順番に紹介します。
 

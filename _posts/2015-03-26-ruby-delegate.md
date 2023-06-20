@@ -8,6 +8,7 @@ description: Rubyでは委譲の方法がいくつかあるのでまとめてみ
 mark: Tips
 image: rails.png
 ---
+[tips](/tags/tips/) / [Ruby](/tags/ruby/)
 
 ## インスタンスメソッドを委譲する
 

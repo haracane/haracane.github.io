@@ -8,6 +8,7 @@ categories: rails-restful
 description: 記事の投稿・閲覧ができるようになったので、次はeditアクションでRESTfulな記事編集フォーム表示を行います。
 image: rails.png
 ---
+[Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 ## 記事編集フォーム表示機能のルーティング設定
 

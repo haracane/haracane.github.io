@@ -5,6 +5,7 @@ description: "いまだにHBaseには怖くて手が出せてないんですが�
 tags: HBase Hadoop
 date:   2013-02-16 21:00:00J
 ---
+[HBase](/tags/hbase/) / [Hadoop](/tags/hadoop/)
 
 いまだにHBaseには怖くて手が出せてないんですが、12/10の[Hadoopソリューションセミナー](http://oss.nttdata.co.jp/hadoop/event/201212/)＠東京カンファレンスセンター品川でのOKWaveさんの事例紹介が素晴らしかったのでご紹介します。
 

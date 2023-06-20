@@ -7,6 +7,7 @@ keywords: Formオブジェクト Rails Ruby
 description: Railsで実際にFormオブジェクトを作ってみたらいくつか気をつけるポイントがあったので紹介します。
 image: rails.png
 ---
+[ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 この記事は[Ruby on Rails Advent Calendar 2014](http://qiita.com/advent-calendar/2014/rails)の2日目です。
 

@@ -8,6 +8,7 @@ description: Rails4で外部キー制約を持つモデルでvalidate_uniqueness
 image: rspec.png
 categories: model-spec-custom-matchers
 ---
+[RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 外部キー制約のあるモデルに対して[shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 の`validate_uniqueness_of`カスタムマッチャを使うと

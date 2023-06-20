@@ -9,3 +9,5 @@ image: rspec.png
 categories: category-posts-index
 sub_category: model-spec-custom-matchers
 ---
+[RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
+

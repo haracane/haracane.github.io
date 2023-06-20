@@ -7,6 +7,7 @@ keywords: ActiveRecord Rails Ruby
 description: ActiveRecordのhas_manyな関連オブジェクトに上限数を設定したかったのでやってみました。
 image: rails.png
 ---
+[ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 この記事では`Blog::Post#tags`の数を5つまでに制限する場合のサンプルコードを紹介します。
 
@@ -149,4 +150,3 @@ end
     1 example, 0 failures
 
 となって無事成功しました。
-

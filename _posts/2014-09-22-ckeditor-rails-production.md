@@ -7,6 +7,7 @@ keywords: Ruby,Rails
 description: RailsのProduction環境でCKEditorを動かす
 image: rails.png
 ---
+[Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 Production環境でCKEditorを動かしたら編集画面が表示されず。。
 

@@ -6,6 +6,7 @@ date:   2014-08-30 01:31:58J
 keywords: Ruby,手抜き
 tags: Ruby
 ---
+[Ruby](/tags/ruby/)
 
 コードはこんな感じです。
 

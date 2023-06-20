@@ -8,6 +8,7 @@ description: Rails4でFactoryGirlがちゃんとしたモデルを生成する�
 image: rspec.png
 categories: model-spec-custom-matchers
 ---
+[RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
 このカスタムマッチャを使うと
 

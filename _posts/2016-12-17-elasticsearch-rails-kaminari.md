@@ -6,6 +6,7 @@ tags: Rails Elasticsearch
 description: RailsでElasticsearchと言えばelasticsearch-rails gemの出番ですが、kaminariと組み合わせる時に気をつけた方が良いことをまとめてみました。小ネタです。
 image: rails.png
 ---
+[Rails](/tags/rails/) / [Elasticsearch](/tags/elasticsearch/)
 
 この記事は[Ruby on Rails Advent Calendar 2016](http://qiita.com/advent-calendar/2016/ruby_on_rails)の17日目です。
 

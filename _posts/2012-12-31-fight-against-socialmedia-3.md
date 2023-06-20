@@ -6,6 +6,7 @@ tags: Hadoop RabbitMQ
 meta_keywords: "Hadoop,RabbitMQ"
 date:   2012-12-31 21:00:00J
 ---
+[Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/)
 
 [前編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-1)、[中編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-2)に続いて『Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)レポートの最終回です。
 
@@ -78,6 +79,3 @@ date:   2012-12-31 21:00:00J
 - [つぶやきを追え ～『爆発するソーシャルメディア』との戦い (前編)](/2012/12/22/fight-against-socialmedia-1)
 - [つぶやきを追え ～『爆発するソーシャルメディア』との戦い (中編)](/2012/12/23/fight-against-socialmedia-2)
 - つぶやきを追え ～『爆発するソーシャルメディア』との戦い (後編)
-
-
-

@@ -9,6 +9,7 @@ categories: category-posts-index
 sub_category: rails-capybara
 image: rspec.png
 ---
+[Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
 例えば①ログインする、②表示内容を確認する、③フォーム入力する、という流れをCapybaraでテストするとこんな感じになります。
 

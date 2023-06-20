@@ -8,6 +8,7 @@ description: MySQLでインデックスがちゃんと効いているか確認�
 image: mysql.png
 mark: Tips
 ---
+[tips](/tags/tips/) / [MySQL](/tags/mysql/)
 
 ## クエリを組み立てる
 

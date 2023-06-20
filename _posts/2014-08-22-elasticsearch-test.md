@@ -5,6 +5,7 @@ description: "前回RailsからElasticsearchを使ってみましたが, 今回�
 date:   2014-08-22 20:12:24J
 tags: Elasticsearch Ruby Rails RSpec
 ---
+[Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/) / [RSpec](/tags/rspec/)
 
 ## セッティングをテストする
 
