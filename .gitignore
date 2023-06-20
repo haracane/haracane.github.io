@@ -13,3 +13,5 @@ _drafts
 .ruby-version
 vendor
 
+# nodejs
+node_modules
