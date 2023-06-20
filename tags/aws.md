@@ -1,0 +1,7 @@
+---
+layout: default
+title: AWS
+---
+# AWSの記事一覧
+
+- [S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみた(2015/03/25)]({% post_url 2015-03-25-load-s3-gz-csv %})
