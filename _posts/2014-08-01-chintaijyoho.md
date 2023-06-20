@@ -1,9 +1,11 @@
 ---
 layout: post
-title: 賃貸情報株式会社にジョインしました
 date: 2014-08-01 10:00:00J
-description: 
+title: 賃貸情報株式会社にジョインしました
+tags: 報告 キャッシュバック賃貸
+description: Railsエンジニアとして賃貸情報株式会社にジョインしました。
 ---
+[報告](/tags/information/) / [キャッシュバック賃貸](/tags/cbchintai/)
 
 Railsエンジニアとして賃貸情報株式会社にジョインしました。
 

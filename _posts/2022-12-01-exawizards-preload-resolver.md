@@ -2,10 +2,10 @@
 layout: post
 date: 2022-12-01 10:00:00J
 title: PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話
-tags: エクサウィザーズ ハナスト テスト TypeScript Jest
+tags: GraphQL TypeScript テスト ハナスト エクサウィザーズ
 description: エクサウィザーズのTechBlogに「PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話」というタイトルで記事を書きました。
 ---
-[エクサウィザーズ](/tags/exawizards/) / [ハナスト](/tags/hanasuto/) / [テスト](/tags/test/) / [TypeScript](/tags/typescript/) / [Jest](/tags/jest/)
+[GraphQL](/tags/graphql/) / [TypeScript](/tags/typescript/) / [テスト](/tags/test/) / [ハナスト](/tags/hanasuto/) / [エクサウィザーズ](/tags/exawizards/)
 
 エクサウィザーズのTechBlogに記事を書きました(2回目)。
 

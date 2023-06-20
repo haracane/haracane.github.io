@@ -1,9 +1,11 @@
 ---
 layout: post
-title: FanForwardにジョインしました
 date: 2018-10-01 10:00:00J
-description: 
+title: FanForwardにジョインしました
+tags: 報告 FanForward
+description: リードエンジニアとしてFanForwardにジョインしました。
 ---
+[報告](/tags/information/) / [FanForward](/tags/fanforward/)
 
 リードエンジニアとしてFanForwardにジョインしました。
 

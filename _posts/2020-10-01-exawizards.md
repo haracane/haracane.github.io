@@ -1,9 +1,11 @@
 ---
 layout: post
-title: エクサウィザーズにジョインしました
 date: 2020-09-01 10:00:00J
-description: 
+title: エクサウィザーズにジョインしました
+tags: 報告 エクサウィザーズ
+description: ソフトウェアエンジニアとしてエクサウィザーズにジョインしました。
 ---
+[報告](/tags/information/) / [エクサウィザーズ](/tags/exawizards/)
 
 ソフトウェアエンジニアとしてエクサウィザーズにジョインしました。
 
