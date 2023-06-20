@@ -25,10 +25,14 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-- .gitignore
-- .tool-versions
-- bin
-- tmp
+  - .gitignore
+  - .tool-versions
+  - .vscode
+  - bin
+  - lib
+  - package-lock.json
+  - package.json
+  - tmp
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
