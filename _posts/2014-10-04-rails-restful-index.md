@@ -76,4 +76,4 @@ ul
 
 と書くことができます。
 
-次は[showアクションでの記事表示]({% post_url 2014-10-03-rails-restful-show %})を行います。
+次は[showアクションでの記事表示]({% post_url 2014-10-04-rails-restful-show %})を行います。

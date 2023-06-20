@@ -29,7 +29,7 @@ resources :posts, only: [:create]
 
 という行が出力されます。
 
-このURIは実は[indexアクション]({% post_url 2014-10-03-rails-restful-index %})と同じなのですが、createアクションの場合はGETメソッドではなくPOSTメソッドのリクエストを受け付けるというところが違います。
+このURIは実は[indexアクション]({% post_url 2014-10-04-rails-restful-index %})と同じなのですが、createアクションの場合はGETメソッドではなくPOSTメソッドのリクエストを受け付けるというところが違います。
 
 このようにリクエストメソッドによって動作を変えるところがRESTの大事なポイントです。
 
@@ -75,4 +75,4 @@ blog_post_paramsというメソッドはRails4の[Strong Parameters](https://git
 
 ここまでで記事の投稿・閲覧が行えるようになりました。
 
-次回は[editアクションでの記事編集フォーム表示]({% post_url 2014-10-03-rails-restful-edit %})を行います。
+次回は[editアクションでの記事編集フォーム表示]({% post_url 2014-10-04-rails-restful-edit %})を行います。

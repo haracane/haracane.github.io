@@ -62,7 +62,7 @@ private
 
 ## 記事削除機能のビュー
 
-destroyアクションでも[createアクション]({% post_url 2014-10-03-rails-restful-create %})と[updateアクション]({% post_url 2014-10-03-rails-restful-update %})同様にビューは用意しておらず、削除に成功しても失敗しても記事一覧にリダイレクトするようにしています。
+destroyアクションでも[createアクション]({% post_url 2014-10-04-rails-restful-create %})と[updateアクション]({% post_url 2014-10-04-rails-restful-update %})同様にビューは用意しておらず、削除に成功しても失敗しても記事一覧にリダイレクトするようにしています。
 
 今回でRails4でのRESTfulな記事管理機能の実装はおしまいです。
 

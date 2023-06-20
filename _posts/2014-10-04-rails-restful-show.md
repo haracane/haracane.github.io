@@ -33,7 +33,7 @@ end
 
 という行が出力されます。
 
-読み方は[indexアクションの時]({% post_url 2014-10-03-rails-restful-index %})と同じで
+読み方は[indexアクションの時]({% post_url 2014-10-04-rails-restful-index %})と同じで
 
 1. Prefixは`blog_post`で、`blog_post_path(blog_post.id)`といったヘルパーでパスを取得できる
 2. `/blog/posts/:id(.:format)`への`GET`リクエストでアクセスできる
@@ -80,4 +80,4 @@ p = @post.content
 
 ここまでで記事閲覧機能は完成しました。
 
-次は[newアクションでの記事入力フォーム表示]({% post_url 2014-10-03-rails-restful-new %})を行います。
+次は[newアクションでの記事入力フォーム表示]({% post_url 2014-10-04-rails-restful-new %})を行います。
