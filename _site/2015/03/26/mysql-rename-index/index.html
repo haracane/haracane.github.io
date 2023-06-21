@@ -41,9 +41,12 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">MySQLでインデックスや外部キー制約をリネームする</h1>
-    <p class="post-meta">
+    <div class="post-description">
+      テーブルを置き換える場合などにはテーブル名だけでなく、インデックスや外部キー制約も名前変更する必要があります。MySQL5.7系だとRENAME INDEXができるのですが、5.6系だと残念ながら削除＆追加するしかないので、その方法をまとめておきます。
+    </div>
+  <p class="post-meta">
       <time class="dt-published" datetime="2015-03-26T08:49:49+09:00" itemprop="datePublished">2015-03-26
-      </time><div>
+      </time><div class="post-sns-buttons">
         <a
           href="https://twitter.com/share?ref_src=twsrc%5Etfw"
           class="twitter-share-button"
