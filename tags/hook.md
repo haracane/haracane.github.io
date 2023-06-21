@@ -4,4 +4,4 @@ title: フック
 ---
 # フックの記事一覧
 
-- [Repositoryパターンの全件取得処理を型と関数で実装してみた(2023/06/21)]({% post_url 2023-06-21-repository-hook-find-all %})
+- [Repositoryパターンの全件取得処理を型と関数で実装してみた(2023/06/20)]({% post_url 2023-06-20-repository-hook-find-all %})
