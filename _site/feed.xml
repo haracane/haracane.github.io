@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://blog.enogineer.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.enogineer.com/" rel="alternate" type="text/html" /><updated>2023-06-20T13:21:35+09:00</updated><id>http://blog.enogineer.com/feed.xml</id><title type="html">haracaneのブログ</title><subtitle>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</subtitle><entry><title type="html">PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話</title><link href="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/" rel="alternate" type="text/html" title="PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話" /><published>2022-12-01T10:00:00+09:00</published><updated>2022-12-01T10:00:00+09:00</updated><id>http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver</id><content type="html" xml:base="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/"><![CDATA[<p><a href="/tags/graphql/">GraphQL</a> / <a href="/tags/typescript/">TypeScript</a> / <a href="/tags/test/">テスト</a> / <a href="/tags/hanasuto/">ハナスト</a> / <a href="/tags/exawizards/">エクサウィザーズ</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://blog.enogineer.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://blog.enogineer.com/" rel="alternate" type="text/html" /><updated>2023-06-21T09:37:19+09:00</updated><id>http://blog.enogineer.com/feed.xml</id><title type="html">haracaneのブログ</title><subtitle>プロダクト開発が好きなプログラマのブログです。 RubyとTypeScriptによくお世話になっています。</subtitle><entry><title type="html">Repositoryパターンの全件取得処理を型と関数で実装してみた</title><link href="http://blog.enogineer.com/2023/06/21/repository-hook-find-all/" rel="alternate" type="text/html" title="Repositoryパターンの全件取得処理を型と関数で実装してみた" /><published>2023-06-21T09:00:00+09:00</published><updated>2023-06-21T09:00:00+09:00</updated><id>http://blog.enogineer.com/2023/06/21/repository-hook-find-all</id><content type="html" xml:base="http://blog.enogineer.com/2023/06/21/repository-hook-find-all/"><![CDATA[<p><a href="/tags/typescript/">TypeScript</a> / <a href="/tags/hook/">フック</a> / <a href="/tags/repository-pattern/">Repositoryパターン</a></p>
+
+<p>これまでTypeScriptでRepositoryパターンを実装する時にオブジェクト指向で実装してたんですが、型と関数でも実装してみました。</p>
+
+<p>まずは手始めに全件取得処理を型と関数で実装してみます。</p>
+
+<h2 id="repositoryの共通部分をフックで実装する">Repositoryの共通部分をフックで実装する</h2>
+
+<p>まずはRepositoryの共通部分を実装してみます。</p>
+
+<p>Repositoryを型と関数で実装する場合、個別のテーブルやスキーマ情報をフックできる関数を作ると扱いやすいです。</p>
+
+<p>レコードを全件取得するRepositoryの実装例はこんな感じになります。</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">useFindAllRepository</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">RECORD</span><span class="p">,</span> <span class="nx">MODEL</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nx">table</span><span class="p">:</span> <span class="nx">PrismaClient</span><span class="p">,</span>
+  <span class="nx">schema</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nl">toModel</span><span class="p">:</span> <span class="p">(</span><span class="nx">record</span><span class="p">:</span> <span class="nx">RECORD</span><span class="p">):</span> <span class="nx">MODEL</span>
+  <span class="p">}</span>
+<span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">findAll</span><span class="p">:</span> <span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">MODEL</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// フックしたtableを使ってレコードを全件取得する</span>
+    <span class="kd">const</span> <span class="na">records</span><span class="p">:</span> <span class="nx">RECORD</span><span class="p">[]</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">table</span><span class="p">.</span><span class="nf">findMany</span><span class="p">()</span>
+
+    <span class="c1">// フックしたスキーマを使ってモデルに変換する</span>
+    <span class="k">return</span> <span class="nx">records</span><span class="p">.</span><span class="nf">map</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">toModel</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="k">as</span> <span class="kd">const</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>useRepository 関数はテーブルとスキーマ(load関数だけですが)を受け取って、findAll関数を持つオブジェクトを返しています。</p>
+
+<h2 id="userrepositoryをフックで実装する">UserRepositoryをフックで実装する</h2>
+
+<p>次はUserRepositoryです。</p>
+
+<p>さっそく先ほどのuseFindAllRepositoryを使って実装してみます。</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">id</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="na">email</span><span class="p">:</span> <span class="kr">string</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">useUserRepository</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">findAll</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useFindAllRepository</span><span class="o">&lt;</span><span class="nx">Users</span><span class="p">,</span> <span class="nx">User</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">prisma</span><span class="p">.</span><span class="nx">users</span><span class="p">,</span>
+    <span class="p">{</span>
+      <span class="na">load</span><span class="p">:</span> <span class="p">(</span><span class="na">record</span><span class="p">:</span> <span class="nx">Users</span><span class="p">):</span> <span class="nx">User</span> <span class="o">=&gt;</span>
+        <span class="p">({</span> <span class="na">id</span><span class="p">:</span> <span class="nx">record</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="na">email</span><span class="p">:</span> <span class="nx">record</span><span class="p">.</span><span class="nx">email</span> <span class="p">}),</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+
+  <span class="k">return</span> <span class="p">{</span> <span class="nx">findAll</span> <span class="p">}</span> <span class="k">as</span> <span class="kd">const</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">UserRepository</span> <span class="o">=</span> <span class="nb">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">useUserRepository</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>このように、useFindAllRepositoryにUserのテーブルとスキーマを渡してあげるとUserの配列を返すfindAll関数が取得できるので、その関数をそのまま使えばUserRepositoryを実装できます。</p>
+
+<h3 id="retutntypeを使ったuserrepository型の定義">RetutnTypeを使ったUserRepository型の定義</h3>
+
+<p>UserRepository型の定義にはReturnTypeを使っています。</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">UserRepository</span> <span class="o">=</span> <span class="nb">ReturnType</span><span class="o">&lt;</span><span class="k">typeof</span> <span class="nx">useUserRepository</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>ReturnTypeは戻り値の型を返すUtility Typeです。</p>
+
+<p>ここではUserRepositoryの型が、useUserRepository関数の戻り値の型である</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nl">findAll</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>となります。</p>
+
+<p>ReturnTypeについて詳しく知りたい方は<a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#returntypetype">公式ドキュメント</a>もご覧ください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>やってみたらRepositoryパターンは意外と簡単に型と関数で実装できました。</p>
+
+<p>今回は引数を受け取らないfindAll関数のみの実装でしたが、次はIDなどの引数を受け取るパターンも実装してみようと思います。</p>]]></content><author><name></name></author><category term="TypeScript" /><category term="フック" /><category term="Repositoryパターン" /><summary type="html"><![CDATA[これまでオブジェクト指向でRepositoryパターンの実装をしてたんですが、今回はRepositoryパターンの全件取得処理を型と関数で実装してみました。]]></summary></entry><entry><title type="html">PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話</title><link href="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/" rel="alternate" type="text/html" title="PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話" /><published>2022-12-01T10:00:00+09:00</published><updated>2022-12-01T10:00:00+09:00</updated><id>http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver</id><content type="html" xml:base="http://blog.enogineer.com/2022/12/01/exawizards-preload-resolver/"><![CDATA[<p><a href="/tags/graphql/">GraphQL</a> / <a href="/tags/typescript/">TypeScript</a> / <a href="/tags/test/">テスト</a> / <a href="/tags/hanasuto/">ハナスト</a> / <a href="/tags/exawizards/">エクサウィザーズ</a></p>
 
 <p>エクサウィザーズのTechBlogに記事を書きました(2回目)。</p>
 
@@ -666,186 +750,4 @@ HTTP/1.1 401 Unauthorized
 
 <p>というエラーが出たりします。</p>
 
-<p>そういう場合は<code class="language-plaintext highlighter-rouge">bundle update draper</code>でDraperのバージョンも上げましょう。</p>]]></content><author><name></name></author><category term="Rails" /><category term="Ruby" /><category term="OAuth2.0" /><summary type="html"><![CDATA[OAuth2認証の定番Doorkeeper gemを使ってコンソールからアクセストークンを発行してみました。自前で認証画面を作る場合など参考になるかと思います。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/rails.png" /><media:content medium="image" url="http://blog.enogineer.com/rails.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">MySQLのBULK INSERTでデッドロックを回避する</title><link href="http://blog.enogineer.com/2015/04/05/mysql-deadlock/" rel="alternate" type="text/html" title="MySQLのBULK INSERTでデッドロックを回避する" /><published>2015-04-05T09:50:41+09:00</published><updated>2015-04-05T09:50:41+09:00</updated><id>http://blog.enogineer.com/2015/04/05/mysql-deadlock</id><content type="html" xml:base="http://blog.enogineer.com/2015/04/05/mysql-deadlock/"><![CDATA[<p><a href="/tags/mysql/">MySQL</a> / <a href="/tags/rails/">Rails</a> / <a href="/tags/ruby/">Ruby</a></p>
-
-<h2 id="mysqlのbulk-insertでエラー発生">MySQLのBULK INSERTでエラー発生</h2>
-
-<p>ログ集計した結果をテーブルにBULK INSERTしていたら</p>
-
-<p><code class="language-plaintext highlighter-rouge">ActiveRecord::StatementInvalid: Mysql2::Error: Deadlock found when trying to get lock; try restarting transaction: INSERT INTO `books` (`id`,`name`) VALUES ...
-</code></p>
-
-<p>というデッドロックエラーが発生しました。</p>
-
-<h2 id="bulk-insertのエラー原因調査">BULK INSERTのエラー原因調査</h2>
-
-<p>ということでデッドロックの原因を調べてみたのですが、インサート順がインデックスに沿っていないことがまずかったようです。（参考: <a href="http://thushw.blogspot.in/2010/11/mysql-deadlocks-with-concurrent-inserts.html">mysql deadlocks with concurrent inserts</a>）</p>
-
-<h3 id="デッドロックが発生してしまうケース">デッドロックが発生してしまうケース</h3>
-
-<p>例えば以下のような場合にまずいことになります。</p>
-
-<p>まず、テーブルが</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>ActiveRecordの本</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>PostgreSQLの本</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>となっていて、<code class="language-plaintext highlighter-rouge">name</code>カラムがUNIQUEキーになっていたとします。</p>
-
-<p>ここで、<code class="language-plaintext highlighter-rouge">books</code>テーブルに対してプロセスAとプロセスBが</p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`books`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">,</span><span class="nv">`name`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Rubyの本'</span><span class="p">),(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Capybaraの本'</span><span class="p">);</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`books`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">,</span><span class="nv">`name`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'MySQLの本'</span><span class="p">),(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Railsの本'</span><span class="p">);</span></code></pre></figure>
-
-<p>というBULK INSERT処理を同時に実行しようとするとデッドロックが起こる場合があります。</p>
-
-<h3 id="デッドロックが発生するまでの処理内容">デッドロックが発生するまでの処理内容</h3>
-
-<p>デッドロックは以下のような処理順の場合に発生してしまいます。</p>
-
-<ol>
-  <li>プロセスAが<code class="language-plaintext highlighter-rouge">Rubyの本</code>をINSERTするために<code class="language-plaintext highlighter-rouge">PostgreSQLの本</code>から<code class="language-plaintext highlighter-rouge">Rubyの本</code>までのギャップロックA1を取得</li>
-  <li>プロセスBが<code class="language-plaintext highlighter-rouge">MySQLの本</code>をINSERTするために<code class="language-plaintext highlighter-rouge">ActiveRecordの本</code>から<code class="language-plaintext highlighter-rouge">MySQLの本</code>までのギャップロックB1を取得</li>
-  <li>プロセスBが<code class="language-plaintext highlighter-rouge">Railsの本</code>をINSERTするために<code class="language-plaintext highlighter-rouge">PostgreSQLの本</code>から<code class="language-plaintext highlighter-rouge">Railsの本</code>までのギャップロックB2を取得しようとする
-    <ul>
-      <li>プロセスAが取得している<code class="language-plaintext highlighter-rouge">PostgreSQLの本</code>から<code class="language-plaintext highlighter-rouge">Rubyの本</code>までのギャップロックA1の解放を待つ</li>
-    </ul>
-  </li>
-  <li>プロセスAが<code class="language-plaintext highlighter-rouge">Capybaraの本</code>をINSERTするために<code class="language-plaintext highlighter-rouge">ActiveRecordの本</code>から<code class="language-plaintext highlighter-rouge">Capybaraの本</code>までのギャップロックA2を取得しようとする
-    <ul>
-      <li>プロセスBが取得している<code class="language-plaintext highlighter-rouge">ActiveRecordの本</code>から<code class="language-plaintext highlighter-rouge">MySQLの本</code>までのギャップロックB1の解放を待つ</li>
-    </ul>
-  </li>
-</ol>
-
-<p>図にすると</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>レコード</th>
-      <th style="text-align: center">プロセスA</th>
-      <th style="text-align: center">プロセスB</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ActiveRecordの本</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">ギャップロックB1</td>
-    </tr>
-    <tr>
-      <td>Capybaraの本</td>
-      <td style="text-align: center">ギャップロックA2</td>
-      <td style="text-align: center">‖</td>
-    </tr>
-    <tr>
-      <td>MySQLの本</td>
-      <td style="text-align: center">ギャップロックA2</td>
-      <td style="text-align: center">ギャップロックB1</td>
-    </tr>
-    <tr>
-      <td>PostgreSQLの本</td>
-      <td style="text-align: center">ギャップロックA1</td>
-      <td style="text-align: center">ギャップロックB2</td>
-    </tr>
-    <tr>
-      <td>Railsの本</td>
-      <td style="text-align: center">‖</td>
-      <td style="text-align: center">ギャップロックB2</td>
-    </tr>
-    <tr>
-      <td>Rubyの本</td>
-      <td style="text-align: center">ギャップロックA1</td>
-      <td style="text-align: center"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>という感じになります。</p>
-
-<p>ご覧の通り</p>
-
-<ul>
-  <li>プロセスAがギャップロックB1の解放を待つ</li>
-  <li>プロセスBがギャップロックA1の解放を待つ</li>
-</ul>
-
-<p>という形でデッドロックが発生してしまいます。</p>
-
-<h2 id="デッドロックの回避方法">デッドロックの回避方法</h2>
-
-<p>このようなデッドロックはBULK INSERTする時の順番を気をつければ回避できます。</p>
-
-<p>今回の場合だと</p>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`books`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">,</span><span class="nv">`name`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Capybaraの本'</span><span class="p">),</span> <span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Rubyの本'</span><span class="p">);</span></code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">INSERT</span> <span class="k">INTO</span> <span class="nv">`books`</span> <span class="p">(</span><span class="nv">`id`</span><span class="p">,</span><span class="nv">`name`</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'MySQLの本'</span><span class="p">),(</span><span class="k">NULL</span><span class="p">,</span><span class="s1">'Railsの本'</span><span class="p">);</span></code></pre></figure>
-
-<p>とすればOKです。</p>
-
-<p>こうすると今回の例のような場合でも</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>レコード</th>
-      <th style="text-align: center">プロセスA</th>
-      <th style="text-align: center">プロセスB</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ActiveRecordの本</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">ギャップロックB1</td>
-    </tr>
-    <tr>
-      <td>Capybaraの本</td>
-      <td style="text-align: center">ギャップロックA1</td>
-      <td style="text-align: center">‖</td>
-    </tr>
-    <tr>
-      <td>MySQLの本</td>
-      <td style="text-align: center">ギャップロックA1</td>
-      <td style="text-align: center">ギャップロックB1</td>
-    </tr>
-    <tr>
-      <td>PostgreSQLの本</td>
-      <td style="text-align: center">ギャップロックA2</td>
-      <td style="text-align: center">ギャップロックB2</td>
-    </tr>
-    <tr>
-      <td>Railsの本</td>
-      <td style="text-align: center">‖</td>
-      <td style="text-align: center">ギャップロックB2</td>
-    </tr>
-    <tr>
-      <td>Rubyの本</td>
-      <td style="text-align: center">ギャップロックA2</td>
-      <td style="text-align: center"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>という感じになって解放待ちのギャップロックを辿ってもループしなくなるのでデッドロックを回避できます。</p>
-
-<p>ということでBULK INSERTの際はINSERTの順番に気をつけましょう。</p>]]></content><author><name></name></author><category term="MySQL" /><category term="Rails" /><category term="Ruby" /><summary type="html"><![CDATA[Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/mysql.png" /><media:content medium="image" url="http://blog.enogineer.com/mysql.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>そういう場合は<code class="language-plaintext highlighter-rouge">bundle update draper</code>でDraperのバージョンも上げましょう。</p>]]></content><author><name></name></author><category term="Rails" /><category term="Ruby" /><category term="OAuth2.0" /><summary type="html"><![CDATA[OAuth2認証の定番Doorkeeper gemを使ってコンソールからアクセストークンを発行してみました。自前で認証画面を作る場合など参考になるかと思います。]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://blog.enogineer.com/rails.png" /><media:content medium="image" url="http://blog.enogineer.com/rails.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

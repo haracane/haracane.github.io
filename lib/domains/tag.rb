@@ -9,8 +9,10 @@ CODES = {
   "キャッシュバック賃貸" => "cbchintai",
   "エクサウィザーズ" => "exawizards",
   "ハナスト" => "hanasuto",
+  "フック" => "hook",
   "報告" => "information",
   "OAuth2.0" => "oauth2",
+  "Repositoryパターン" => "repository-pattern",
   "スマホ" => "smartphone",
   "テスト" => "test"
 }
