@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  RSpecカスタムマッチャでデータベースのUNIQUE制約をテストする
 date: 2014-09-09 07:53:09J

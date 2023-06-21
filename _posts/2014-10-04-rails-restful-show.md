@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  showアクションで記事表示機能を作る
 date: 2014-10-03 07:02:32J

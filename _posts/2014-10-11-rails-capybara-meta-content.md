@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: find＆nativeメソッドでmeta要素をテストする
 date: 2014-10-11 08:53:44J

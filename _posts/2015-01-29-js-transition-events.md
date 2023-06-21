@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた
 date: 2015-01-29 07:36:38J

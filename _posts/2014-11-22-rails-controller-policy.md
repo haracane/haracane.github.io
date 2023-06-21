@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4.1.8でアクション毎の実行権限を設定してみる
 date: 2014-11-22 08:56:33J

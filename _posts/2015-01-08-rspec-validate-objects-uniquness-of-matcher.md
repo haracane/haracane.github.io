@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: has-many関連のuniqueness validationをテストするカスタムマッチャも作ってみた
 date: 2015-01-08 08:16:39J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 date: 2018-10-01 10:00:00J
 title: FanForwardにジョインしました

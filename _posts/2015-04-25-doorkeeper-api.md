@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Doorkeeper2.1.4でコンソールからOAuth2.0認証API用のアクセストークンを発行してみた
 date: 2015-04-25 11:28:33J

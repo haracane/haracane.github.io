@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rubyでのメソッドの委譲方法をまとめてみた
 date: 2015-03-26 09:09:07J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: S3に置いたGzip圧縮済みCSVファイルをRubyで読み込んでみた
 date: 2015-03-25 20:44:12J

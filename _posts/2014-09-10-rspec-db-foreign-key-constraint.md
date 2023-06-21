@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  RSpecカスタムマッチャでデータベースの外部キー制約をテストする
 date: 2014-09-10 07:59:50J

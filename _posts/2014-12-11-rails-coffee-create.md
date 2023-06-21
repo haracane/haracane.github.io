@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4でhas-one関連先のレコードをCoffeeScriptから作成＆更新する
 date: 2014-12-11 07:07:43J

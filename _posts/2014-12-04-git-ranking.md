@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: よく使うGitコマンドのエイリアス＆シェル関数トップ10+α
 date: 2014-12-04 07:23:33J

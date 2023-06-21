@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4でRESTfulアプリケーションの7アクション＋αを作る
 date: 2014-10-30 19:52:35J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: allメソッドで要素リストを取得する
 date: 2014-10-11 08:51:44J

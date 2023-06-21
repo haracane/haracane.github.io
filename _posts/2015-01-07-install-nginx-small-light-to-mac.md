@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: ngx_small_lightをMacで使ってみた
 date: 2015-01-07 08:08:19J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処
 date: 2015-12-03 08:05:44J

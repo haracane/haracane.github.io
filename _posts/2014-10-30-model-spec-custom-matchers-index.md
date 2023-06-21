@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  Rails4のActiveRecord向けRSpecカスタムマッチャ5選
 date: 2014-10-30 07:59:50J

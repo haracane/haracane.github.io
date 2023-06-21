@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 date: 2014-08-01 10:00:00J
 title: 賃貸情報株式会社にジョインしました

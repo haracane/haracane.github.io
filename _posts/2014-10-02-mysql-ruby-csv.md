@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  MySQLからエクスポートしたCSVをRubyで読み込む
 date: 2014-09-30 19:52:46J

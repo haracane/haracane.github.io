@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: indexアクションで記事一覧機能を作る
 date: 2014-10-03 07:01:32J

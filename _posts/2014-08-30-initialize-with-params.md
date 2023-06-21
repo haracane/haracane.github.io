@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "Rubyでデータオブジェクト用クラスを手抜き作成"
 description: "Rubyでとりあえずデータオブジェクト用のクラスが欲しい時によくこんなことしてます"

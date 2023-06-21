@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: uncheckメソッドでチェックボックスを選択解除する
 date: 2014-10-11 08:46:44J

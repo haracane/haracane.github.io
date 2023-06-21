@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: selectメソッドでセレクトボックスから要素を選択する
 date: 2014-10-11 08:43:44J

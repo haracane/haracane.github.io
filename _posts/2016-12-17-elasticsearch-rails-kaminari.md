@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: RailsとElasticsearchとkaminariの組み合わせで気をつけること
 date: 2016-12-17 09:32:21J

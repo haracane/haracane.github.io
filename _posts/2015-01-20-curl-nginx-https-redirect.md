@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: curlコマンドでNginxのX-Forwarded-ProtoでのHTTPSリダイレクトのテストをする
 date: 2015-01-20 07:40:40J

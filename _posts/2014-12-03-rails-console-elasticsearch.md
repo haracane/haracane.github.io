@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる
 date: 2014-12-03 07:08:56J

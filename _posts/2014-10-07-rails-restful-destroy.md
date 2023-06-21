@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: destroyアクションで記事を削除する
 date: 2014-10-03 07:07:40J

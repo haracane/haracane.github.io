@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: fill_inメソッドでフォームにテキストを入力する
 date: 2014-10-11 08:42:44J

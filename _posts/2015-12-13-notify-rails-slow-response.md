@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Railsのレスポンス遅延を通知する
 date: 2015-12-13 09:32:21J

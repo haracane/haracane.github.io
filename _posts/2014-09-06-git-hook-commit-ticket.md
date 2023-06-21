@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  git commitをフックしてコミットメッセージに自動的にチケット番号を追加する
 date: 2014-09-06 17:39:08J

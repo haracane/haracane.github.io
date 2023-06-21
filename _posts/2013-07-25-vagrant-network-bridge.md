@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "Vagrantで固定IPのVMを作ってみたら超簡単だった"
 date: 2013-07-25 07:04:04J

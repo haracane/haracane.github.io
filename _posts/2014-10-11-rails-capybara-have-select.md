@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: have_selectマッチャで指定したセレクトボックスの選択内容を確認する
 date: 2014-10-11 08:40:44J

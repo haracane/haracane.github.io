@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: 息をするようにプルリクするための6つのGitの使い方
 date: 2015-02-05 07:16:51J

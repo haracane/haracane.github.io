@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: newアクションで記事投稿フォームを作る
 date: 2014-10-03 07:03:28J

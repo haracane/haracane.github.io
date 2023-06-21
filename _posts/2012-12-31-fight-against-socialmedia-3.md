@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (後編)"
 description: "前編、中編に続いて『Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)レポートの最終回です。"

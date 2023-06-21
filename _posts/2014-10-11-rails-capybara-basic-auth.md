@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Basic認証が必要なページをテストする
 date: 2014-10-11 08:54:44J

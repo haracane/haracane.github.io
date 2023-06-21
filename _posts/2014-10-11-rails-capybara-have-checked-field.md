@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: have_checked_fieldマッチャで指定したチェックボックス/ラジオボタンを確認する
 date: 2014-10-11 08:38:44J

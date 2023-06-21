@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  RSpecカスタムマッチャでFactoryGirlでのモデル生成をテストする
 date: 2014-10-26 07:59:50J

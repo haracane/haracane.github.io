@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: updateアクションで記事を更新する
 date: 2014-10-03 07:06:40J

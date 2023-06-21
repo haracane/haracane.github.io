@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: have_cssマッチャで指定したタグの内容を確認する
 date: 2014-10-11 08:35:44J

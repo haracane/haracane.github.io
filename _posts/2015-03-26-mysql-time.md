@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: MySQLでクエリの実行時間を手っ取り早く計測する
 date: 2015-03-26 08:30:38J

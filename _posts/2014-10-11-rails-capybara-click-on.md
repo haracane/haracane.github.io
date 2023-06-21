@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: click_onメソッドでボタンをクリックする
 date: 2014-10-11 08:41:44J

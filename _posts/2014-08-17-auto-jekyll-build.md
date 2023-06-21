@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "JekyllでGitリポジトリのmasterブランチが更新されたら自動ビルドする"
 description: "masterが更新されたときに自動的にリポジトリ更新 & jekyll buildをする設定です."

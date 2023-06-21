@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る
 date: 2014-09-11 22:03:03J

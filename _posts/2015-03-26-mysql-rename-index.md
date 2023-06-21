@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: MySQLでインデックスや外部キー制約をリネームする
 date: 2015-03-26 08:49:49J

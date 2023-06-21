@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: elasticsearch-railsで任意のリクエストを送れるperform_requestメソッドが便利
 date: 2014-10-31 07:59:39J

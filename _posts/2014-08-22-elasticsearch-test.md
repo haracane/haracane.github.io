@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "elasticsearch-rails0.1.4の検索機能をRSpecでテストする"
 description: "前回RailsからElasticsearchを使ってみましたが, 今回はRSpecでモデルのElasticsearch機能のテストを行います."

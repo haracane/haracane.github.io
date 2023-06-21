@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  Nginx+RailsをProduction環境で動かす
 date: 2014-09-22 10:14:59J

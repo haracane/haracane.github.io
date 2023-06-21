@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: has-many関連のuniqueness validationをするカスタムバリデータを作ってみた
 date: 2015-01-08 08:07:11J

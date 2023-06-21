@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  createアクションで記事を作成する
 date: 2014-10-03 07:04:32J

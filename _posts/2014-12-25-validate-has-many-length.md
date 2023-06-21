@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4でhas_manyな関連オブジェクトの上限数を設定＆テストする
 date: 2014-12-25 07:26:16J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4でエンタープライズなActiveRecordモデルを作るための6のステップ
 date: 2014-10-26 10:33:31J

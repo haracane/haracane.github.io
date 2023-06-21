@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  Capybaraでよく使うマッチャ＆メソッド
 date: 2014-09-11 07:09:07J

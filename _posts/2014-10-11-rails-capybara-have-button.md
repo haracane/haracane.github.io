@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: have_buttonマッチャで指定したボタンを確認する
 date: 2014-10-11 08:36:44J

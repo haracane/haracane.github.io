@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  ActiveRecordモデルの設計例
 date: 2014-09-24 09:35:27J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 date: 2023-06-20 10:00:00J
 title: Repositoryパターンの全件取得処理を型と関数で実装してみた

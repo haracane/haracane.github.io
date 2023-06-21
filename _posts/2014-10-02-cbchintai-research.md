@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  キャッシュバック賃貸の新サービス「住まいの調査隊」でのRails＆Redis活用
 date: 2014-10-02 07:11:10J

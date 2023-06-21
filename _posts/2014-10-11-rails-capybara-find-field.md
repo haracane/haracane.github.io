@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: find_fieldメソッドでフィールド要素を取得する
 date: 2014-10-11 08:48:44J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: chooseメソッドでラジオボタンから要素を選択する
 date: 2014-10-11 08:44:44J

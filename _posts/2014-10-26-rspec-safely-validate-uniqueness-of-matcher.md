@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  Rails4のuniqueness validationテストでInvalidForeignKeyエラーにならないカスタムマッチャを作る
 date: 2014-10-26 10:09:50J

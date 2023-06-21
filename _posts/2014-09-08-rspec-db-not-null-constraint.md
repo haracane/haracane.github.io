@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  RSpecカスタムマッチャでデータベースのNOT NULL制約をテストする
 date: 2014-09-08 07:53:09J

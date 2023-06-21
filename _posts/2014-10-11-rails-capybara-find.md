@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: findメソッドでオブジェクトを取得する
 date: 2014-10-11 08:46:45J

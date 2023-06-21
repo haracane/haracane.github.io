@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー"
 description: "@hamaknがDevSumiで『OSSで作る！クラウドサービス開発戦記』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。"

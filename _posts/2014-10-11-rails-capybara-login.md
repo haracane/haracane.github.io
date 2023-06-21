@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: ログインが必要なページをテストする
 date: 2014-10-11 08:55:44J

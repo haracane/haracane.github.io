@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: MySQLのBULK INSERTでデッドロックを回避する
 date: 2015-04-05 09:50:41J

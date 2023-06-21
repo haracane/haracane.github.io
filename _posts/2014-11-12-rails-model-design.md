@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4.1.7のActiveRecordにCallbackクラス＆Validatorクラス＆Valueオブジェクトを組み込んでみる
 date: 2014-11-12 07:46:13J

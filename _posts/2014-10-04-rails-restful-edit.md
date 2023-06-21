@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: editアクションで記事編集フォームを作る
 date: 2014-10-03 07:05:37J

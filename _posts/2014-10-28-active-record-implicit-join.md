@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: ActiveRecordでincludesとwhereを同時に使う時はJOINするテーブル名の指定に気をつける
 date: 2014-10-28 19:48:23J

@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α
 date: 2014-10-30 19:52:42J

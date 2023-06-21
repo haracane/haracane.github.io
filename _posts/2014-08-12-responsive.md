@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  "Jekyll2.2.0でレスポンシブにしてスマホ対応してみた"
 description: "Jekyllの初期設定だと小さい画面でも画像が大きいままで, スマホで読みにくかったのでレスポンシブ対応を行いました."

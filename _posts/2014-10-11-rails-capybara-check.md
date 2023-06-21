@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title: checkメソッドでチェックボックスを選択する
 date: 2014-10-11 08:45:44J

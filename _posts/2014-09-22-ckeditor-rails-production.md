@@ -1,4 +1,5 @@
 ---
+author: haracane
 layout: post
 title:  RailsのProduction環境でCKEditorを動かす
 date: 2014-09-22 10:08:34J
