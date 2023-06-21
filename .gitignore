@@ -6,7 +6,7 @@ tmp
 .jekyll-metadata
 .sass-cache
 _drafts
-# _site
+_site
 
 # ruby
 .ruby-version
