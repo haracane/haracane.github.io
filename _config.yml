@@ -2,6 +2,7 @@ title: haracaneのブログ
 description: >- # this means to ignore newlines until "baseurl:"
   プロダクト開発が好きなプログラマのブログです。
   RubyとTypeScriptによくお世話になっています。
+  IDはharacane(はらけん)と読んでください。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.enogineer.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: haracane
