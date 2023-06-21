@@ -41,9 +41,12 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処</h1>
-    <p class="post-meta">
+    <div class="post-description">
+      RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。
+    </div>
+  <p class="post-meta">
       <time class="dt-published" datetime="2015-12-03T08:05:44+09:00" itemprop="datePublished">2015-12-03
-      </time><div>
+      </time><div class="post-sns-buttons">
         <a
           href="https://twitter.com/share?ref_src=twsrc%5Etfw"
           class="twitter-share-button"

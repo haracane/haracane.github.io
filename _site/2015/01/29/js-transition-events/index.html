@@ -41,9 +41,12 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた</h1>
-    <p class="post-meta">
+    <div class="post-description">
+      ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。
+    </div>
+  <p class="post-meta">
       <time class="dt-published" datetime="2015-01-29T07:36:38+09:00" itemprop="datePublished">2015-01-29
-      </time><div>
+      </time><div class="post-sns-buttons">
         <a
           href="https://twitter.com/share?ref_src=twsrc%5Etfw"
           class="twitter-share-button"
