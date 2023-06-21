@@ -6,24 +6,11 @@ module Domains
     def self.build(post)
       tags = post["tags"]
       return if tags.length == 0
-      post["tag_lines"] = [
-        tags
-          .map { |tag| "[#{tag}](/tags/#{Domains::Tag.codes[tag]}/)" }
-          .join(" / ")
-      ]
+      post["tag_links"] = tags
+        .map { |tag| "[#{tag}](/tags/#{Domains::Tag.codes[tag]}/)" }
+        .join(" / ") + "\n"
 
-      ::File.write(
-        post["path"],
-        [
-          "---",
-          post["front_matter"],
-          "---",
-          *post["tag_lines"],
-          "",
-          *post["content_lines"],
-          ""
-        ].join("\n")
-      )
+      Domains::Post.store(post)
     end
 
     def self.build_all

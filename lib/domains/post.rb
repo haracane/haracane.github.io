@@ -20,26 +20,33 @@ module Domains
       tags = tags.split(/\s+/).map(&:strip) if tags.is_a?(String)
       post["tags"] = tags
 
-      content = post["content"]
-      content.split("\n")
-      tag_lines = []
-      content_lines = []
+      content_lines = post["content"].lines
 
-      content_lines = content.split("\n")
+      post["tag_links"] = content_lines.shift if content_lines[0] =~ %r{/tags/}
 
-      if content_lines[0] =~ %r{/tags/}
-        tag_lines << content_lines.shift
-        content_lines.shift if content_lines[0] == ""
-      end
+      content_lines.shift while content_lines[0] == "\n"
 
-      post["tag_lines"] = tag_lines
-      post["content_lines"] = content_lines
+      post["content"] = content_lines.join
 
       post
     end
 
     def self.path_to_tags
       @@post_to_tags ||= all.map { |post| [post["path"], post["tags"]] }.to_a
+    end
+
+    def self.store(post)
+      ::File.write(
+        post["path"],
+        [
+          "---\n",
+          post["front_matter"],
+          "---\n",
+          post["tag_links"],
+          "\n",
+          post["content"],
+        ].join,
+      )
     end
   end
 end

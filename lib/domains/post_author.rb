@@ -15,7 +15,7 @@ module Domains
           "author: #{author}",
           post["front_matter"],
           "---",
-          *post["content"],
+          *post["content"]
         ].join("\n")
       )
     end
