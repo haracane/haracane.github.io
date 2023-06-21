@@ -31,6 +31,7 @@ module Domains
     end
 
     def self.build_all
+      system("rm tags/*.md")
       Domains::Tag.all.each { |name| build(name) }
     end
   end
