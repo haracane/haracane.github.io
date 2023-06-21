@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bundle exec ruby lib/scripts/build-tags.rb
+bundle exec ruby lib/scripts/build.rb
 if [ $? != 0 ]; then exit 1; fi
 
 bundle exec jekyll build
