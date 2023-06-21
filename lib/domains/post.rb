@@ -15,7 +15,10 @@ module Domains
       post = Generals::FrontMatter.parse(path)
       post["path"] = path
       post["filebody"] = ::File.basename(path, ".md")
-      post["tags"] = (post["tags"] || "").split(/\s+/).map(&:strip)
+
+      tags = post["tags"] || []
+      tags = tags.split(/\s+/).map(&:strip) if tags.is_a?(String)
+      post["tags"] = tags
 
       content = post["content"]
       content.split("\n")
