@@ -7,6 +7,7 @@ tmp
 .sass-cache
 _drafts
 _site
+_trash
 
 # ruby
 .ruby-version
