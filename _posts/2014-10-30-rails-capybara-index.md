@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α
 date: 2014-10-30 19:52:42J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: Capybara RSpec Rails Ruby
 description: Rails4のレスポンスをRSpecでテストする際にCapybaraを使っているのですが、マッチャやメソッドの使い方を調べることが多いのでまとめてみました。
 categories: category-posts-index

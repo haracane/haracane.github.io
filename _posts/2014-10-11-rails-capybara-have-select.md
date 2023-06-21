@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_selectマッチャで指定したセレクトボックスの選択内容を確認する
 date: 2014-10-11 08:40:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_select Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: セレクトボックスの内容をhave_selectマッチャで確認します。

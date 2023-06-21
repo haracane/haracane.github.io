@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: has-many関連のuniqueness validationをするカスタムバリデータを作ってみた
 date: 2015-01-08 08:07:11J
-tags: Rails ActiveRecord
+tags:
+- Rails
+- ActiveRecord
 keywords: Rails ActiveRecord Uniqueness Validation
 description: ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。
 image: rails.png

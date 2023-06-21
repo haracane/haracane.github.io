@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: MySQLでクエリの実行時間を手っ取り早く計測する
 date: 2015-03-26 08:30:38J
-tags: tips MySQL
+tags:
+- tips
+- MySQL
 keywords: MySQL
 description: MySQLでインデックスがちゃんと効いているか確認する時などに実際にクエリを走らせることがあるのですが、だいたいこんな感じで手っ取り早く済ませてますというTipsです。
 image: mysql.png

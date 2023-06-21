@@ -1,9 +1,11 @@
 ---
 author: haracane
 layout: post
-title:  ActiveRecordモデルの設計例
+title: ActiveRecordモデルの設計例
 date: 2014-09-24 09:35:27J
-tags: Ruby Rails
+tags:
+- Ruby
+- Rails
 keywords: Ruby,Rails
 description: Railsのmigration例
 image: rails.png

@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_checked_fieldマッチャで指定したチェックボックス/ラジオボタンを確認する
 date: 2014-10-11 08:38:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_checked_field Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: 選択されているチェックボックスやラジオボタンがあることをhave_checked_fieldマッチャで確認します。

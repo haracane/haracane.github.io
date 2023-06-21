@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: nativeメソッドでネイティブオブジェクトを取得する
 date: 2014-10-11 08:52:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: native Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ネイティブオブジェクトを取得するnativeメソッドの使い方を説明します。

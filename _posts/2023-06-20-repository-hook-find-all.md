@@ -3,7 +3,10 @@ author: haracane
 layout: post
 date: 2023-06-20 10:00:00J
 title: Repositoryパターンの全件取得処理を型と関数で実装してみた
-tags: TypeScript フック Repositoryパターン
+tags:
+- TypeScript
+- フック
+- Repositoryパターン
 description: これまでオブジェクト指向でRepositoryパターンの実装をしてたんですが、今回はRepositoryパターンの全件取得処理を型と関数で実装してみました。
 ---
 [TypeScript](/tags/typescript/) / [フック](/tags/hook/) / [Repositoryパターン](/tags/repository-pattern/)

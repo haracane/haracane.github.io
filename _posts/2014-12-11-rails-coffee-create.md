@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: Rails4でhas-one関連先のレコードをCoffeeScriptから作成＆更新する
 date: 2014-12-11 07:07:43J
-tags: CoffeeScript JavaScript Rails Ruby
+tags:
+- CoffeeScript
+- JavaScript
+- Rails
+- Ruby
 keywords: CoffeeScript JavaScript Rails Ruby
 description: Railsで画面遷移なしでレコードを作成＆更新したいことがよくあるので、CoffeeScriptを使った実装パターンをまとめてみました。
 categories: rails-coffee

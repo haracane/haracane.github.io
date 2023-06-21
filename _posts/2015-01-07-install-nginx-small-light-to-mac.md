@@ -3,7 +3,8 @@ author: haracane
 layout: post
 title: ngx_small_lightをMacで使ってみた
 date: 2015-01-07 08:08:19J
-tags: Nginx
+tags:
+- Nginx
 keywords: Nginx
 description: 画像のリサイズ等を動的に行ってくれるngx_small_lightをMacのNginxに組み込んでみたのでそのメモです。
 ---

@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: Rubyでのメソッドの委譲方法をまとめてみた
 date: 2015-03-26 09:09:07J
-tags: tips Ruby
+tags:
+- tips
+- Ruby
 keywords: Ruby 委譲 Forwardable クラスメソッド
 description: Rubyでは委譲の方法がいくつかあるのでまとめてみました。インスタンスメソッドの委譲方法とクラスメソッドの委譲方法をまとめています。チームで開発している場合はあらかじめ方法を統一しておくと良いと思います。
 mark: Tips

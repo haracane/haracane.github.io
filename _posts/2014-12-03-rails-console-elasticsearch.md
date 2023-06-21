@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: Rails ConsoleでActiveRecordをElasticsearchに放り込んでみる
 date: 2014-12-03 07:08:56J
-tags: Elasticsearch ActiveRecord Rails Ruby
+tags:
+- Elasticsearch
+- ActiveRecord
+- Rails
+- Ruby
 keywords: Elasticsearch ActiveRecord Rails Ruby
 description: ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。
 image: rails.png

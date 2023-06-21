@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: click_onメソッドでボタンをクリックする
 date: 2014-10-11 08:41:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: click_on Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ボタンをクリックするclick_onメソッドを紹介します。

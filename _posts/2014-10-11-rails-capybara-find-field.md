@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: find_fieldメソッドでフィールド要素を取得する
 date: 2014-10-11 08:48:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find_field Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: フィールド要素のオブジェクトをfind_fieldメソッド取得します。

@@ -3,8 +3,12 @@ author: haracane
 layout: post
 title: has-many関連のuniqueness validationをテストするカスタムマッチャも作ってみた
 date: 2015-01-08 08:16:39J
-tags: RSpec ActiveRecord Rails Ruby
-keywords:  RSpec ActiveRecord Rails Ruby
+tags:
+- RSpec
+- ActiveRecord
+- Rails
+- Ruby
+keywords: RSpec ActiveRecord Rails Ruby
 description: 前回の記事でカスタムバリデータを作ってhas-many関連のuniqueness validationを行いましたが、続いてテスト用にvalidate_objects_uniqueness_ofカスタムマッチャを作りました。
 image: rspec.png
 ---

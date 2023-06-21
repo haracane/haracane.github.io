@@ -1,10 +1,14 @@
 ---
 author: haracane
 layout: post
-title:  "elasticsearch-rails0.1.4の検索機能をRSpecでテストする"
-description: "前回RailsからElasticsearchを使ってみましたが, 今回はRSpecでモデルのElasticsearch機能のテストを行います."
-date:   2014-08-22 20:12:24J
-tags: Elasticsearch Ruby Rails RSpec
+title: elasticsearch-rails0.1.4の検索機能をRSpecでテストする
+description: 前回RailsからElasticsearchを使ってみましたが, 今回はRSpecでモデルのElasticsearch機能のテストを行います.
+date: 2014-08-22 20:12:24J
+tags:
+- Elasticsearch
+- Ruby
+- Rails
+- RSpec
 ---
 [Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/) / [RSpec](/tags/rspec/)
 

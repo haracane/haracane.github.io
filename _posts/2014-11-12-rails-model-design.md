@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: Rails4.1.7のActiveRecordにCallbackクラス＆Validatorクラス＆Valueオブジェクトを組み込んでみる
 date: 2014-11-12 07:46:13J
-tags: ActiveRecord Rails Ruby
+tags:
+- ActiveRecord
+- Rails
+- Ruby
 keywords: Callback Validator Valueオブジェクト ActiveRecord Rails Ruby
 description: ActiveRecordに楽をさせてくれるCallback・Validator・Valueオブジェクトを、過去文献を参考に組み込んでみました。
 image: rails.png

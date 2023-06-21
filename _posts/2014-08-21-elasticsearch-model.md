@@ -1,10 +1,13 @@
 ---
 author: haracane
 layout: post
-title:  "elasticsearch-rails0.1.4を使ってRails4.1.5でN-gram検索する"
-description: "RailsからElasticsearchを使う場合に推奨となっているelasticsearch-rails gemを使ってN-gram検索機能を作ってみます."
-date:   2014-08-21 06:36:46J
-tags: Elasticsearch Ruby Rails
+title: elasticsearch-rails0.1.4を使ってRails4.1.5でN-gram検索する
+description: RailsからElasticsearchを使う場合に推奨となっているelasticsearch-rails gemを使ってN-gram検索機能を作ってみます.
+date: 2014-08-21 06:36:46J
+tags:
+- Elasticsearch
+- Ruby
+- Rails
 ---
 [Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 

@@ -1,9 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る
+title: jQueryのオートコンプリート機能を使ってサジェスト検索窓を作る
 date: 2014-09-11 22:03:03J
-tags: JavaScript jQuery CoffeeScript
+tags:
+- JavaScript
+- jQuery
+- CoffeeScript
 keywords: JavaScript,jQuery,CoffeeScript
 description: jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。
 ---

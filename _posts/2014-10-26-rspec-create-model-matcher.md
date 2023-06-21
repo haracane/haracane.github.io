@@ -1,9 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  RSpecカスタムマッチャでFactoryGirlでのモデル生成をテストする
+title: RSpecカスタムマッチャでFactoryGirlでのモデル生成をテストする
 date: 2014-10-26 07:59:50J
-tags: RSpec Ruby Rails
+tags:
+- RSpec
+- Ruby
+- Rails
 keywords: RSpec,FactoryGirl,ActiveRecord,Rails
 description: Rails4でFactoryGirlがちゃんとしたモデルを生成することを確認したかったのでcreate_modelカスタムマッチャを作りました。
 image: rspec.png

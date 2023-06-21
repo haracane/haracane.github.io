@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: Rails4でhas_manyな関連オブジェクトの上限数を設定＆テストする
 date: 2014-12-25 07:26:16J
-tags: ActiveRecord Rails Ruby
+tags:
+- ActiveRecord
+- Rails
+- Ruby
 keywords: ActiveRecord Rails Ruby
 description: ActiveRecordのhas_manyな関連オブジェクトに上限数を設定したかったのでやってみました。
 image: rails.png

@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: Basic認証が必要なページをテストする
 date: 2014-10-11 08:54:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: Basic認証 Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: CapybaraでBasic認証をパスする方法を紹介します。

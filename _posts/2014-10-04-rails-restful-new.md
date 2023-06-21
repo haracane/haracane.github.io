@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: newアクションで記事投稿フォームを作る
 date: 2014-10-03 07:03:28J
-tags: Rails Ruby
+tags:
+- Rails
+- Ruby
 keywords: RESTful new Rails Ruby
 categories: rails-restful
 description: これまでindexアクションとshowアクションでRESTfulな記事一覧＆表示機能を実装してきましたが、今回からは記事投稿機能を実装します。まずはnewアクションで投稿フォームの作成を行います。

@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: find＆nativeメソッドでmeta要素をテストする
 date: 2014-10-11 08:53:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find native Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: keywordsやdescriptionなどのmeta要素をテストする方法を紹介します。

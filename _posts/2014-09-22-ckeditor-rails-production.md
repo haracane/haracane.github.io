@@ -1,9 +1,11 @@
 ---
 author: haracane
 layout: post
-title:  RailsのProduction環境でCKEditorを動かす
+title: RailsのProduction環境でCKEditorを動かす
 date: 2014-09-22 10:08:34J
-tags: Ruby Rails
+tags:
+- Ruby
+- Rails
 keywords: Ruby,Rails
 description: RailsのProduction環境でCKEditorを動かす
 image: rails.png

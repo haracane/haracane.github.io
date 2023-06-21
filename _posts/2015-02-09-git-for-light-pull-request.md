@@ -3,7 +3,8 @@ author: haracane
 layout: post
 title: 息をするようにプルリクするための6つのGitの使い方
 date: 2015-02-05 07:16:51J
-tags: Git
+tags:
+- Git
 keywords: プルリクエスト Git
 description: プルリクエストを基本とした開発スタイルの場合、Gitコマンドの使い方が開発効率にかなり影響します。今回はプルリクエストをうまく使うためのGitの使い方を6個紹介します。
 image: git.png

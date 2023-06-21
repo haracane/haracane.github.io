@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: Rails4でFormオブジェクトを作る際に気をつける3つのポイント
 date: 2014-12-02 07:42:24J
-tags: ActiveRecord Rails Ruby
+tags:
+- ActiveRecord
+- Rails
+- Ruby
 keywords: Formオブジェクト Rails Ruby
 description: Railsで実際にFormオブジェクトを作ってみたらいくつか気をつけるポイントがあったので紹介します。
 image: rails.png

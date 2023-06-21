@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: findメソッドでオブジェクトを取得する
 date: 2014-10-11 08:46:45J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: オブジェクトを取得するfindメソッドの使い方を説明します。

@@ -1,11 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  "Rubyでデータオブジェクト用クラスを手抜き作成"
-description: "Rubyでとりあえずデータオブジェクト用のクラスが欲しい時によくこんなことしてます"
-date:   2014-08-30 01:31:58J
+title: Rubyでデータオブジェクト用クラスを手抜き作成
+description: Rubyでとりあえずデータオブジェクト用のクラスが欲しい時によくこんなことしてます
+date: 2014-08-30 01:31:58J
 keywords: Ruby,手抜き
-tags: Ruby
+tags:
+- Ruby
 ---
 [Ruby](/tags/ruby/)
 

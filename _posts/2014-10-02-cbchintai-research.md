@@ -1,9 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  キャッシュバック賃貸の新サービス「住まいの調査隊」でのRails＆Redis活用
+title: キャッシュバック賃貸の新サービス「住まいの調査隊」でのRails＆Redis活用
 date: 2014-10-02 07:11:10J
-tags: Redis Rails Ruby
+tags:
+- Redis
+- Rails
+- Ruby
 keywords: Redis Rails Ruby
 description: 10/1にキャッシュバック賃貸から、住まいに関するアンケート調査結果を発信する「住まいの調査隊」をリリースしました。「住まいの調査隊」ではRails+Redisで人気記事ランキングを行っているので、その事例を簡単にご紹介します。
 ---

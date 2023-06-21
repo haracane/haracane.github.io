@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: find_linkメソッドでリンク要素を取得する
 date: 2014-10-11 08:50:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find_link Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: リンク要素のオブジェクトをfind_linkメソッドで取得します。

@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: uncheckメソッドでチェックボックスを選択解除する
 date: 2014-10-11 08:46:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: uncheck Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: チェックボックスを選択解除するuncheckメソッドの使い方を説明します。

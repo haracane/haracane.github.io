@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: fill_inメソッドでフォームにテキストを入力する
 date: 2014-10-11 08:42:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: fill_in Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: フォームにテキストを入力するfill_inメソッドの使い方を説明します。

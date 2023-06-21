@@ -3,7 +3,9 @@ author: haracane
 layout: post
 date: 2020-09-01 10:00:00J
 title: エクサウィザーズにジョインしました
-tags: 報告 エクサウィザーズ
+tags:
+- 報告
+- エクサウィザーズ
 description: ソフトウェアエンジニアとしてエクサウィザーズにジョインしました。
 ---
 [報告](/tags/information/) / [エクサウィザーズ](/tags/exawizards/)

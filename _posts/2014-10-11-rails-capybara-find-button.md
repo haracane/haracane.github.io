@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: find_buttonメソッドでボタン要素を取得する
 date: 2014-10-11 08:47:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find_button Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ボタン要素のオブジェクトをfind_buttonメソッドで取得します。

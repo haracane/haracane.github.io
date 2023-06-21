@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: MySQLのBULK INSERTでデッドロックを回避する
 date: 2015-04-05 09:50:41J
-tags: MySQL Rails Ruby
+tags:
+- MySQL
+- Rails
+- Ruby
 keywords: MySQL Rails Ruby
 description: Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。
 image: mysql.png

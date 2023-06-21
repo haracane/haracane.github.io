@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_contentマッチャでコンテンツ内容を確認する
 date: 2014-10-11 08:33:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_content Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ページ内容をhave_contentマッチャで確認します。

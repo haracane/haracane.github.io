@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: checkメソッドでチェックボックスを選択する
 date: 2014-10-11 08:45:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: check Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: チェックボックスを選択するcheckメソッドの使い方を説明します。

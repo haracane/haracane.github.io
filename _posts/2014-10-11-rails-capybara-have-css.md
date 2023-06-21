@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_cssマッチャで指定したタグの内容を確認する
 date: 2014-10-11 08:35:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_css Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: タグを指定してページ内容を確認できるhave_cssマッチャの使い方を紹介します。

@@ -3,7 +3,12 @@ author: haracane
 layout: post
 date: 2022-12-01 10:00:00J
 title: PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話
-tags: GraphQL TypeScript テスト ハナスト エクサウィザーズ
+tags:
+- GraphQL
+- TypeScript
+- テスト
+- ハナスト
+- エクサウィザーズ
 description: エクサウィザーズのTechBlogに「PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話」というタイトルで記事を書きました。
 ---
 [GraphQL](/tags/graphql/) / [TypeScript](/tags/typescript/) / [テスト](/tags/test/) / [ハナスト](/tags/hanasuto/) / [エクサウィザーズ](/tags/exawizards/)

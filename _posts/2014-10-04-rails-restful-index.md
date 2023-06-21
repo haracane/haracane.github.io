@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: indexアクションで記事一覧機能を作る
 date: 2014-10-03 07:01:32J
-tags: Rails Ruby
+tags:
+- Rails
+- Ruby
 keywords: RESTful index Rails Ruby
 categories: rails-restful
 description: RailsにはRESTfulなURIを生成してくれる便利な機能があり、キャッシュバック賃貸でもよく使っています。今回はその機能を利用した記事一覧機能の作り方をご紹介します。

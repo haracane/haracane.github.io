@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: find_by_idメソッドでid要素を取得する
 date: 2014-10-11 08:49:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: find_by_id Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: idで指定した要素のオブジェクトをfind_by_idメソッドで取得します。

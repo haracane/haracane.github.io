@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: elasticsearch-railsで任意のリクエストを送れるperform_requestメソッドが便利
 date: 2014-10-31 07:59:39J
-tags: Elasticsearch Rails Ruby
+tags:
+- Elasticsearch
+- Rails
+- Ruby
 keywords: Elasticsearch Rails Ruby
 description: elasticsearch-railsのソースを軽く読んでいたら、任意のリクエストを送れるperform_requestという便利メソッドがあったので紹介します。
 image: rails.png

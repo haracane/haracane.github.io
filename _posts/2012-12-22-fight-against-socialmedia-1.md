@@ -1,10 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  "つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (前編)"
-description: "前回の記事でOKWaveさんのHBase事例のご紹介をしましたが、このイベントでは最後のセッションで僕もTwitter分析の事例を発表させていただいたので今日はそちらをご紹介します。"
-tags: Hadoop RabbitMQ
-date:   2012-12-22 21:00:00J
+title: つぶやきを追え ～『爆発するソーシャルメディア』との戦い～ (前編)
+description: 前回の記事でOKWaveさんのHBase事例のご紹介をしましたが、このイベントでは最後のセッションで僕もTwitter分析の事例を発表させていただいたので今日はそちらをご紹介します。
+tags:
+- Hadoop
+- RabbitMQ
+date: 2012-12-22 21:00:00J
 ---
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/)
 

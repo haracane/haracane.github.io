@@ -1,11 +1,14 @@
 ---
 author: haracane
 layout: post
-title:  "NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー"
+title: NTTコミュニケーションズの内製エンジニアは実はわりとアジャイラー
 description: "@hamaknがDevSumiで『OSSで作る！クラウドサービス開発戦記』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。"
-tags: Redmine Scrum アジャイル
+tags:
+- Redmine
+- Scrum
+- アジャイル
 keywords: Redmine,Scrum,アジャイル,Jenkins
-date:   2013-02-16 21:00:00J
+date: 2013-02-16 21:00:00J
 ---
 [Redmine](/tags/redmine/) / [Scrum](/tags/scrum/) / [アジャイル](/tags/agile/)
 

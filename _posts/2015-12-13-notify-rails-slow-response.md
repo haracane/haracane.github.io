@@ -3,8 +3,10 @@ author: haracane
 layout: post
 title: Railsのレスポンス遅延を通知する
 date: 2015-12-13 09:32:21J
-tags: Rails
-description: Railsを運用しているとレスポンスタイムの監視は欠かせません。New Relicなどを使って監視している方が多いかと思いますが、今回はActive SupportのInstrumentation機能を使って10秒以上のレスポンスを通知するシンプルな方法をご紹介します。
+tags:
+- Rails
+description: Railsを運用しているとレスポンスタイムの監視は欠かせません。New Relicなどを使って監視している方が多いかと思いますが、今回はActive
+  SupportのInstrumentation機能を使って10秒以上のレスポンスを通知するシンプルな方法をご紹介します。
 image: rails.png
 ---
 [Rails](/tags/rails/)

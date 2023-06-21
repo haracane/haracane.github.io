@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: RailsとElasticsearchとkaminariの組み合わせで気をつけること
 date: 2016-12-17 09:32:21J
-tags: Rails Elasticsearch
+tags:
+- Rails
+- Elasticsearch
 description: RailsでElasticsearchと言えばelasticsearch-rails gemの出番ですが、kaminariと組み合わせる時に気をつけた方が良いことをまとめてみました。小ネタです。
 image: rails.png
 ---

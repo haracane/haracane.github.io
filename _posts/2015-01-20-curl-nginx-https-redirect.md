@@ -3,7 +3,8 @@ author: haracane
 layout: post
 title: curlコマンドでNginxのX-Forwarded-ProtoでのHTTPSリダイレクトのテストをする
 date: 2015-01-20 07:40:40J
-tags: Nginx
+tags:
+- Nginx
 keywords: Nginx
 description: NginxでX-Forwarded-Protoの値を見てhttpsだったらhttpにリダイレクトする設定をしてcurlコマンドでテストしてみました。
 ---

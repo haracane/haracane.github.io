@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: Rails4.1.8でアクション毎の実行権限を設定してみる
 date: 2014-11-22 08:56:33J
-tags: Rails Ruby
+tags:
+- Rails
+- Ruby
 keywords: Pundit Policy Rails Ruby
 description: Railsのアクションでユーザ毎の権限に応じて実行結果を変えたかったので、Pundit gemを使って設定してみました。
 image: rails.png

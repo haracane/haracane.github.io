@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_buttonマッチャで指定したボタンを確認する
 date: 2014-10-11 08:36:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_button Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: 投稿フォームの確認などで必要になるhave_buttonマッチャでの指定したボタンの確認テストを行います。

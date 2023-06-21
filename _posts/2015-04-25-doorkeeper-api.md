@@ -3,7 +3,10 @@ author: haracane
 layout: post
 title: Doorkeeper2.1.4でコンソールからOAuth2.0認証API用のアクセストークンを発行してみた
 date: 2015-04-25 11:28:33J
-tags: Rails Ruby OAuth2.0
+tags:
+- Rails
+- Ruby
+- OAuth2.0
 description: OAuth2認証の定番Doorkeeper gemを使ってコンソールからアクセストークンを発行してみました。自前で認証画面を作る場合など参考になるかと思います。
 image: rails.png
 ---

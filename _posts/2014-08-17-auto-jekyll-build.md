@@ -1,10 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  "JekyllでGitリポジトリのmasterブランチが更新されたら自動ビルドする"
-description: "masterが更新されたときに自動的にリポジトリ更新 & jekyll buildをする設定です."
-date:   2014-08-17 14:55:06J
-tags: Jekyll Git
+title: JekyllでGitリポジトリのmasterブランチが更新されたら自動ビルドする
+description: masterが更新されたときに自動的にリポジトリ更新 & jekyll buildをする設定です.
+date: 2014-08-17 14:55:06J
+tags:
+- Jekyll
+- Git
 ---
 [Jekyll](/tags/jekyll/) / [Git](/tags/git/)
 

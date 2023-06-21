@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: chooseメソッドでラジオボタンから要素を選択する
 date: 2014-10-11 08:44:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: choose Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: ラジオボタンを選択するchooseメソッドを紹介します。

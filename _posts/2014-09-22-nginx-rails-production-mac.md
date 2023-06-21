@@ -1,9 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  Nginx+RailsをProduction環境で動かす
+title: Nginx+RailsをProduction環境で動かす
 date: 2014-09-22 10:14:59J
-tags: Nginx Ruby Rails
+tags:
+- Nginx
+- Ruby
+- Rails
 keywords: Nginx,Ruby,Rails
 description: Nginx+RailsをProduction環境で動かす。
 image: rails.png

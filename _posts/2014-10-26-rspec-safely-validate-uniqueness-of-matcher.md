@@ -1,9 +1,12 @@
 ---
 author: haracane
 layout: post
-title:  Rails4のuniqueness validationテストでInvalidForeignKeyエラーにならないカスタムマッチャを作る
+title: Rails4のuniqueness validationテストでInvalidForeignKeyエラーにならないカスタムマッチャを作る
 date: 2014-10-26 10:09:50J
-tags: RSpec Rails Ruby
+tags:
+- RSpec
+- Rails
+- Ruby
 keywords: RSpec,validate_uniqueness_of,ActiveRecord,Rails
 description: Rails4で外部キー制約を持つモデルでvalidate_uniqueness_ofマッチャを使うとInvalidForeignKeyエラーが起きてしまい、ちゃんとテストできないのでsafely_validate_uniqueness_ofカスタムマッチャを作りました。
 image: rspec.png

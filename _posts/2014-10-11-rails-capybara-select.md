@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: selectメソッドでセレクトボックスから要素を選択する
 date: 2014-10-11 08:43:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: select Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: セレクトボックスから要素を選択するselectメソッドを紹介します。

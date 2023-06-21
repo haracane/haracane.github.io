@@ -3,8 +3,12 @@ author: haracane
 layout: post
 title: RSpecでDatabaseCleanerを使っているのにAUTOCOMMITされたデータが残る場合の対処
 date: 2015-12-03 08:05:44J
-tags: RSpec Rails Ruby
-description: RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。
+tags:
+- RSpec
+- Rails
+- Ruby
+description: RSpecでテストをする際にDatabaseCleanerを使うとテストケース毎にデータを削除してくれて非常に便利なのですが、transaction
+  strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。
 image: rails.png
 ---
 [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

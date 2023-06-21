@@ -1,10 +1,11 @@
 ---
 author: haracane
 layout: post
-title:  "Vagrantで固定IPのVMを作ってみたら超簡単だった"
+title: Vagrantで固定IPのVMを作ってみたら超簡単だった
 date: 2013-07-25 07:04:04J
-tags: Vagrant
-keywords: "Vagrant,固定IP,ブリッジ接続"
+tags:
+- Vagrant
+keywords: Vagrant,固定IP,ブリッジ接続
 description: VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。
 ---
 [Vagrant](/tags/vagrant/)

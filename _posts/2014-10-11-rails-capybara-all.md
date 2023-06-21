@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: allメソッドで要素リストを取得する
 date: 2014-10-11 08:51:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: all Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: 指定したCSSセレクタにマッチする全てのオブジェクトをallメソッドで取得します。

@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_titleマッチャでタイトル内容を確認する
 date: 2014-10-11 08:32:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_title Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。

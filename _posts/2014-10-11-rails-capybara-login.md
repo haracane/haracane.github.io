@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: ログインが必要なページをテストする
 date: 2014-10-11 08:55:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: ログイン Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: Capybaraのテストでログイン処理を行う方法を紹介します。

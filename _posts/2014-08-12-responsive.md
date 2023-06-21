@@ -1,10 +1,14 @@
 ---
 author: haracane
 layout: post
-title:  "Jekyll2.2.0でレスポンシブにしてスマホ対応してみた"
-description: "Jekyllの初期設定だと小さい画面でも画像が大きいままで, スマホで読みにくかったのでレスポンシブ対応を行いました."
-date:   2014-08-12 20:35:17J
-tags: Jekyll HTML5 CSS スマホ
+title: Jekyll2.2.0でレスポンシブにしてスマホ対応してみた
+description: Jekyllの初期設定だと小さい画面でも画像が大きいままで, スマホで読みにくかったのでレスポンシブ対応を行いました.
+date: 2014-08-12 20:35:17J
+tags:
+- Jekyll
+- HTML5
+- CSS
+- スマホ
 ---
 [Jekyll](/tags/jekyll/) / [HTML5](/tags/html5/) / [CSS](/tags/css/) / [スマホ](/tags/smartphone/)
 

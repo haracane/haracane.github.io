@@ -3,7 +3,9 @@ author: haracane
 layout: post
 title: ページ遷移時JavaScriptイベント3種類の動作確認コードを作ってみた
 date: 2015-01-29 07:36:38J
-tags: JavaScript CoffeeScript
+tags:
+- JavaScript
+- CoffeeScript
 keywords: JavaScript onLoad onPageShow onPopState pushState relpaceState Rails turbolinks
 description: ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。
 image: js.png

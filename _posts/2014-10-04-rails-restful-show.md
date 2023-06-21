@@ -1,9 +1,11 @@
 ---
 author: haracane
 layout: post
-title:  showアクションで記事表示機能を作る
+title: showアクションで記事表示機能を作る
 date: 2014-10-03 07:02:32J
-tags: Rails Ruby
+tags:
+- Rails
+- Ruby
 keywords: RESTful show Rails Ruby
 categories: rails-restful
 description: 前回はindexアクションでRESTfulな記事一覧機能を実装しましたが、今回はshowアクションで各記事の表示を行います。

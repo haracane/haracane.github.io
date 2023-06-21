@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_fieldマッチャで指定した入力フィールドを確認する
 date: 2014-10-11 08:37:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_field Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: フォームの入力フィールドをhave_fieldマッチャで確認テストを行います。

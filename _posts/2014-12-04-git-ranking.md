@@ -3,8 +3,9 @@ author: haracane
 layout: post
 title: よく使うGitコマンドのエイリアス＆シェル関数トップ10+α
 date: 2014-12-04 07:23:33J
-tags: Git
-keywords: Git 
+tags:
+- Git
+keywords: Git
 description: Gitコマンドはターミナルで最もよく使うコマンドなのでエイリアスやシェル関数にして実行しているのですが、実際に何をよく使っているか調べてみました。
 image: git.png
 ---

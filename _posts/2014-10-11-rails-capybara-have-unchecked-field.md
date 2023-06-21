@@ -3,7 +3,11 @@ author: haracane
 layout: post
 title: have_unchecked_fieldマッチャで指定したチェックボックス/ラジオボタンを確認する
 date: 2014-10-11 08:39:44J
-tags: Capybara RSpec Rails Ruby
+tags:
+- Capybara
+- RSpec
+- Rails
+- Ruby
 keywords: have_unchecked_field Capybara 入門 RSpec Rails Ruby
 categories: rails-capybara
 description: 選択されていないチェックボックスやラジオボタンがあることをhave_unchecked_fieldマッチャで確認します。
