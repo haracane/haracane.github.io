@@ -1,9 +1,10 @@
+require_relative "../generals/file"
 require_relative "../generals/front_matter"
 
 module Domains
   module Post
     def self.all_paths
-      @@all_paths ||= Generals::Files.list_paths("_posts")
+      @@all_paths ||= Generals::File.list_paths("_posts")
     end
 
     def self.all
@@ -13,7 +14,7 @@ module Domains
     def self.parse(path)
       post = Generals::FrontMatter.parse(path)
       post["path"] = path
-      post["filebody"] = File.basename(path, ".md")
+      post["filebody"] = ::File.basename(path, ".md")
       post["tags"] = (post["tags"] || "").split(/\s+/).map(&:strip)
 
       content = post["content"]
