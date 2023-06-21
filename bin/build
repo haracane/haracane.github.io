@@ -1,6 +1,12 @@
 #!/bin/bash
 
-bundle exec ruby lib/scripts/build.rb
+bundle exec ruby lib/scripts/build-post-authors.rb
+if [ $? != 0 ]; then exit 1; fi
+
+bundle exec ruby lib/scripts/build-tag-links.rb
+if [ $? != 0 ]; then exit 1; fi
+
+bundle exec ruby lib/scripts/build-tag-pages.rb
 if [ $? != 0 ]; then exit 1; fi
 
 bundle exec jekyll build
