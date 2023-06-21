@@ -22,8 +22,11 @@ module Generals
       end
 
       front_matter = front_matter_lines.join
-      parsed = Generals::YAML.load(front_matter)
+      meta = Generals::YAML.load(front_matter)
+      front_matter_keys = meta.keys.map(&:to_s)
+      parsed = meta
       parsed["front_matter"] = front_matter
+      parsed["front_matter_keys"] = front_matter_keys
       parsed["content"] = lines.join
       parsed
     end

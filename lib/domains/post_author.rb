@@ -8,16 +8,10 @@ module Domains
       return if author.nil?
       return if post["author"]
 
-      ::File.write(
-        post["path"],
-        [
-          "---",
-          "author: #{author}",
-          post["front_matter"],
-          "---",
-          *post["content"]
-        ].join("\n")
-      )
+      post["front_matter_keys"].unshift "author"
+      post["author"] = author
+
+      Domains::Post.store(post)
     end
 
     def self.build_all

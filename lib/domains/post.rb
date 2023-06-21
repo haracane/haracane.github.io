@@ -36,11 +36,13 @@ module Domains
     end
 
     def self.store(post)
+      front_matter =
+        post["front_matter_keys"].map { |key| [key, post[key]] }.to_h
+
       ::File.write(
         post["path"],
         [
-          "---\n",
-          post["front_matter"],
+          ::YAML.dump(front_matter),
           "---\n",
           post["tag_links"],
           "\n",
