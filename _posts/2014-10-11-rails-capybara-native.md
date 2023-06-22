@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: native Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: ネイティブオブジェクトを取得するnativeメソッドの使い方を説明します。
 image: rspec.png
 ---

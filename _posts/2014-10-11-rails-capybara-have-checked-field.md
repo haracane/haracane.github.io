@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_checked_field Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: 選択されているチェックボックスやラジオボタンがあることをhave_checked_fieldマッチャで確認します。
 image: rspec.png
 ---

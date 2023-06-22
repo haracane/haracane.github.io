@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: uncheck Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: チェックボックスを選択解除するuncheckメソッドの使い方を説明します。
 image: rspec.png
 ---

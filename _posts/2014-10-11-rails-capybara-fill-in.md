@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: fill_in Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: フォームにテキストを入力するfill_inメソッドの使い方を説明します。
 image: rspec.png
 ---

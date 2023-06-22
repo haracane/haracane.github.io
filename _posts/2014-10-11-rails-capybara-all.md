@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: all Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: 指定したCSSセレクタにマッチする全てのオブジェクトをallメソッドで取得します。
 image: rspec.png
 ---

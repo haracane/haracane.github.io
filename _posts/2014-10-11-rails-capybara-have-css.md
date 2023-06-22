@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_css Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: タグを指定してページ内容を確認できるhave_cssマッチャの使い方を紹介します。
 image: rspec.png
 ---

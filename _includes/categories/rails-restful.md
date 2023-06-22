@@ -1,0 +1,7 @@
+- [createアクションで記事を作成する(2014/10/03)]({% post_url 2014-10-04-rails-restful-create %})
+- [editアクションで記事編集フォームを作る(2014/10/03)]({% post_url 2014-10-04-rails-restful-edit %})
+- [indexアクションで記事一覧機能を作る(2014/10/03)]({% post_url 2014-10-04-rails-restful-index %})
+- [newアクションで記事投稿フォームを作る(2014/10/03)]({% post_url 2014-10-04-rails-restful-new %})
+- [showアクションで記事表示機能を作る(2014/10/03)]({% post_url 2014-10-04-rails-restful-show %})
+- [updateアクションで記事を更新する(2014/10/03)]({% post_url 2014-10-04-rails-restful-update %})
+- [destroyアクションで記事を削除する(2014/10/03)]({% post_url 2014-10-07-rails-restful-destroy %})

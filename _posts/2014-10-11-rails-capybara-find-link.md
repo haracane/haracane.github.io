@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: find_link Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: リンク要素のオブジェクトをfind_linkメソッドで取得します。
 image: rspec.png
 ---

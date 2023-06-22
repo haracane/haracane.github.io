@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: find native Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: keywordsやdescriptionなどのmeta要素をテストする方法を紹介します。
 image: rspec.png
 ---

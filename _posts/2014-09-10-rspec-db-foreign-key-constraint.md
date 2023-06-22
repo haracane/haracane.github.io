@@ -10,7 +10,8 @@ tags:
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時に外部キー制約テストも簡単に書きたかったのでカスタムマッチャを作りました。
 image: rspec.png
-categories: model-spec-custom-matchers
+categories:
+- model-spec-custom-matchers
 ---
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 

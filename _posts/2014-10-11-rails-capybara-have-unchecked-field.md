@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_unchecked_field Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: 選択されていないチェックボックスやラジオボタンがあることをhave_unchecked_fieldマッチャで確認します。
 image: rspec.png
 ---

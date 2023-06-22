@@ -10,7 +10,8 @@ tags:
 keywords: RSpec,FactoryGirl,ActiveRecord,Rails
 description: Rails4でFactoryGirlがちゃんとしたモデルを生成することを確認したかったのでcreate_modelカスタムマッチャを作りました。
 image: rspec.png
-categories: model-spec-custom-matchers
+categories:
+- model-spec-custom-matchers
 ---
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 

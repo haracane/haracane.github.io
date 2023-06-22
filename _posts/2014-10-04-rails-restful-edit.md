@@ -7,7 +7,8 @@ tags:
 - Rails
 - Ruby
 keywords: RESTful edit Rails Ruby
-categories: rails-restful
+categories:
+- rails-restful
 description: 記事の投稿・閲覧ができるようになったので、次はeditアクションでRESTfulな記事編集フォーム表示を行います。
 image: rails.png
 ---

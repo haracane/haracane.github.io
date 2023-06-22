@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: choose Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: ラジオボタンを選択するchooseメソッドを紹介します。
 image: rspec.png
 ---

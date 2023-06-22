@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: ログイン Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: Capybaraのテストでログイン処理を行う方法を紹介します。
 image: rspec.png
 ---

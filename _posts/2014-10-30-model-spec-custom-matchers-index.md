@@ -10,8 +10,10 @@ tags:
 keywords: RSpec,FactoryGirl,ActiveRecord,Rails
 description: Rails4でRSpecカスタムマッチャを追加してモデルのテストを行います。ここで紹介するカスタムマッチャではNOT NULL制約、UNIQUE制約、外部キー制約といったDB制約のテストや、FactoryGirlで正しくモデルを作れることなどをテストします。
 image: rspec.png
-categories: category-posts-index
+categories:
+- index
 sub_category: model-spec-custom-matchers
 ---
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+{% include categories/model-spec-custom-matchers.md %}

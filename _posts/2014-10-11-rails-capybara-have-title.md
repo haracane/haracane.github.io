@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_title Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
 image: rspec.png
 ---

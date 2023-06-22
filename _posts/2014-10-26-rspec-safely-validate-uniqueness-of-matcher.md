@@ -10,7 +10,8 @@ tags:
 keywords: RSpec,validate_uniqueness_of,ActiveRecord,Rails
 description: Rails4で外部キー制約を持つモデルでvalidate_uniqueness_ofマッチャを使うとInvalidForeignKeyエラーが起きてしまい、ちゃんとテストできないのでsafely_validate_uniqueness_ofカスタムマッチャを作りました。
 image: rspec.png
-categories: model-spec-custom-matchers
+categories:
+- model-spec-custom-matchers
 ---
 [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 

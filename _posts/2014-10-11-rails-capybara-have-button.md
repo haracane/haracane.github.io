@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_button Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: 投稿フォームの確認などで必要になるhave_buttonマッチャでの指定したボタンの確認テストを行います。
 image: rspec.png
 ---

@@ -1,0 +1,3 @@
+- [Rails4のActiveRecord向けRSpecカスタムマッチャ5選(2014/10/30)]({% post_url 2014-10-30-model-spec-custom-matchers-index %})
+- [Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α(2014/10/30)]({% post_url 2014-10-30-rails-capybara-index %})
+- [Rails4でRESTfulアプリケーションの7アクション＋αを作る(2014/10/30)]({% post_url 2014-10-30-rails-restful-index %})

@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: click_on Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: ボタンをクリックするclick_onメソッドを紹介します。
 image: rspec.png
 ---

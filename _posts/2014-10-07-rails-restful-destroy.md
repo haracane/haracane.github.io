@@ -7,7 +7,8 @@ tags:
 - Rails
 - Ruby
 keywords: RESTful destroy Rails Ruby
-categories: rails-restful
+categories:
+- rails-restful
 description: 前回までにRailsで記事削除・作成・更新を行ってきましたが、今回はdestroyアクションでRESTfulに記事データを削除します。
 image: rails.png
 ---

@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: find_by_id Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: idで指定した要素のオブジェクトをfind_by_idメソッドで取得します。
 image: rspec.png
 ---

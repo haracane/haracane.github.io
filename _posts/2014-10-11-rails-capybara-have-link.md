@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_link Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: ページ内のリンクをhave_linkマッチャで確認します。
 image: rspec.png
 ---

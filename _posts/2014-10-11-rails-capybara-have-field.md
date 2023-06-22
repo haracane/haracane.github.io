@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_field Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: フォームの入力フィールドをhave_fieldマッチャで確認テストを行います。
 image: rspec.png
 ---

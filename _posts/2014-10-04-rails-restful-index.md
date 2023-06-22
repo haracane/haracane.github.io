@@ -7,7 +7,8 @@ tags:
 - Rails
 - Ruby
 keywords: RESTful index Rails Ruby
-categories: rails-restful
+categories:
+- rails-restful
 description: RailsにはRESTfulなURIを生成してくれる便利な機能があり、キャッシュバック賃貸でもよく使っています。今回はその機能を利用した記事一覧機能の作り方をご紹介します。
 image: rails.png
 ---

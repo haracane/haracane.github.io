@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: check Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: チェックボックスを選択するcheckメソッドの使い方を説明します。
 image: rspec.png
 ---

@@ -10,7 +10,8 @@ tags:
 - Ruby
 keywords: Capybara RSpec Rails Ruby
 description: Rails4のレスポンスをRSpecでテストする際にCapybaraを使っているのですが、マッチャやメソッドの使い方を調べることが多いのでまとめてみました。
-categories: category-posts-index
+categories:
+- index
 sub_category: rails-capybara
 image: rspec.png
 ---
@@ -85,3 +86,11 @@ it { expect(all('li')).to have(5).items }
 {% endhighlight %}
 
 それぞれメソッドやマッチャの使い方については以下の記事をご覧ください。
+
+---
+layout: default
+title: Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α
+---
+# Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α
+
+{% include categories/rails-capybara.md %}

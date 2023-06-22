@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: find_button Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: ボタン要素のオブジェクトをfind_buttonメソッドで取得します。
 image: rspec.png
 ---

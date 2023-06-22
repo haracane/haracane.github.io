@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: have_select Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: セレクトボックスの内容をhave_selectマッチャで確認します。
 image: rspec.png
 ---

@@ -9,7 +9,8 @@ tags:
 - Rails
 - Ruby
 keywords: select Capybara 入門 RSpec Rails Ruby
-categories: rails-capybara
+categories:
+- rails-capybara
 description: セレクトボックスから要素を選択するselectメソッドを紹介します。
 image: rspec.png
 ---

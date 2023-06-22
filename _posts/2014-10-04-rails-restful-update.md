@@ -7,7 +7,8 @@ tags:
 - Rails
 - Ruby
 keywords: RESTful update Rails Ruby
-categories: rails-restful
+categories:
+- rails-restful
 description: 前回は投稿済みの記事の編集フォームを表示できるようにしました。今回は編集フォームからデータを受け取ってupdateアクションで記事データを更新します。
 image: rails.png
 ---
