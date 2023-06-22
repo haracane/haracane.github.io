@@ -125,3 +125,8 @@ end
 Capybaraの導入とタイトル内容確認テストを行いました。
 
 次回は[have_contentマッチャでのコンテンツ内容の確認]({% post_url 2014-10-11-rails-capybara-have-content %})をします。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

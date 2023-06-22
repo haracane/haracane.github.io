@@ -62,6 +62,7 @@ end
 
 以上、[NOT NULL制約カスタムマッチャ](/2014/09/08/rspec-db-not-null-constraint/), [UNIQUE制約カスタムマッチャ](/2014/09/09/rspec-db-unique-constraint/)と一緒に使えるDB制約カスタムマッチャでした。
 
+<!-- category_siblings -->
 ### 関連記事
-* [RSpecカスタムマッチャでデータベースのNOT NULL制約を簡単にテストする](/2014/09/08/rspec-db-not-null-constraint/)
-* [RSpecカスタムマッチャでデータベースのUNIQUE制約を簡単にテストする](/2014/09/09/rspec-db-unique-constraint/)
+
+{% include categories/model-spec-custom-matchers.md %}

@@ -84,3 +84,8 @@ blog_post_paramsというメソッドはRails4の[Strong Parameters](https://git
 ここまでで記事の投稿・閲覧が行えるようになりました。
 
 次回は[editアクションでの記事編集フォーム表示]({% post_url 2014-10-04-rails-restful-edit %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

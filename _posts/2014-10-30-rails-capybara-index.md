@@ -96,3 +96,8 @@ title: Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+
 # Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α
 
 {% include categories/rails-capybara.md %}
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/index.md %}

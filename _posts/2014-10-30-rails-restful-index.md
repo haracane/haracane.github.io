@@ -18,3 +18,8 @@ image: rails.png
 
 <!-- content -->
 {% include categories/rails-restful.md %}
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/index.md %}

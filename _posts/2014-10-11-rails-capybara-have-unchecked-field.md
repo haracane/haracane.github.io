@@ -34,3 +34,8 @@ it { should have_unchecked_field 'publish', with: '公開しない' }
 この場合は「公開しない」のチェックボックスまたはラジオボタンが選択されていないを確認しています。
 
 次回は[have_selectマッチャを使った指定したセレクトボックスの選択内容の確認]({% post_url 2014-10-11-rails-capybara-have-select %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

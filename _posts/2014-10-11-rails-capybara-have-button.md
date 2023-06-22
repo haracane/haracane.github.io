@@ -34,3 +34,8 @@ it { should have_button '投稿する' }
 ボタンの確認は特に難しいこともないのでこれでおしまいです。
 
 次回は[have_fieldマッチャを使った指定した入力フィールドの確認]({% post_url 2014-10-11-rails-capybara-have-field %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

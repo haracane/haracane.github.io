@@ -41,3 +41,8 @@ it { should have_link 'Rails＋RSpecでCapybara入門', href: '/categories/rails
 のように要素を指定してマッチャを使うことができます。
 
 次回は[find_buttonメソッドを使ったボタン要素の取得]({% post_url 2014-10-11-rails-capybara-find-button %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

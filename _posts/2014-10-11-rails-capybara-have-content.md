@@ -117,3 +117,8 @@ it { should have_content 'Rails4でCapybara入門' }
 となりちゃんと両方ともテストに成功しました。
 
 次回は[have_linkマッチャを使ったリンクの確認]({% post_url 2014-10-11-rails-capybara-have-link %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

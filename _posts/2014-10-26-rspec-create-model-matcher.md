@@ -72,3 +72,8 @@ end
 {% endhighlight %}
 
 となります。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/model-spec-custom-matchers.md %}

@@ -34,3 +34,8 @@ choose '公開する'
 のようにメソッドを使います。
 
 次回は[checkメソッドを使ったチェックボックスの選択]({% post_url 2014-10-11-rails-capybara-check %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

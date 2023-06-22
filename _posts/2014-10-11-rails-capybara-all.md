@@ -43,3 +43,8 @@ it { should have(3).items }
 のようにマッチするCSSセレクタの数を確認したりできます。
 
 次回は[nativeメソッドを使ったネイティブオブジェクトの取得]({% post_url 2014-10-11-rails-capybara-native %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

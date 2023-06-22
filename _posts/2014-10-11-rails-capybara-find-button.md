@@ -34,3 +34,8 @@ find_button('投稿する')
 マッチャと組み合わせる時は`native`メソッドを組み合わせることが多いのですが、`native`メソッドについては別の回に紹介します。
 
 次回は[find_fieldメソッドを使ったフィールド要素の取得]({% post_url 2014-10-11-rails-capybara-find-field %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

@@ -87,3 +87,8 @@ ul
 と書くことができます。
 
 次は[showアクションでの記事表示]({% post_url 2014-10-04-rails-restful-show %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

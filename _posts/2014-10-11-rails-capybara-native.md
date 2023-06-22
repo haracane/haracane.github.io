@@ -38,3 +38,8 @@ it { expect(find_button('投稿する').native["class"]).to eq 'btn' }
 `native`メソッドを使うと何でもできてしまうのですが、あまり使いすぎるとテストが読みにくくなるので必要な時だけ使うようにしましょう。
 
 次回は[Capybaraでmeta要素をテストする方法]({ post_url 2014-10-11-rails-capybara-meta-content })を紹介します。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

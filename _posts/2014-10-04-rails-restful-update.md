@@ -83,3 +83,8 @@ private
 updateアクションでも[createアクション]({% post_url 2014-10-04-rails-restful-create %})と同様にビューは用意しておらず、更新に成功したら記事一覧に、失敗したら再度記事編集フォームを表示するようにしています。
 
 次回は[destroyアクションで記事を削除]({% post_url 2014-10-07-rails-restful-destroy %})します。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

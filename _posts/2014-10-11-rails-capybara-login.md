@@ -45,3 +45,8 @@ it { should have_content 'capybaraさんがログイン中'}
 {% endhighlight %}
 
 とすればcapybaraユーザがパスワードに「rails」を入力してログインした場合のトップページの内容をテストすることができます。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

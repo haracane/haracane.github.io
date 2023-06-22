@@ -32,3 +32,8 @@ check 'publish'
 のようにメソッドを使います。
 
 次回はcheckメソッドの反対の[uncheckメソッドを使ったチェックボックスの選択解除]({% post_url 2014-10-11-rails-capybara-uncheck %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

@@ -89,3 +89,8 @@ p = @post.content
 ここまでで記事閲覧機能は完成しました。
 
 次は[newアクションでの記事入力フォーム表示]({% post_url 2014-10-04-rails-restful-new %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

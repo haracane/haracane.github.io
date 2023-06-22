@@ -32,3 +32,8 @@ select 'category', 'Capybara'
 のようにメソッドを使います。
 
 次回は[chooseメソッドを使ったラジオボタンの選択]({% post_url 2014-10-11-rails-capybara-choose %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

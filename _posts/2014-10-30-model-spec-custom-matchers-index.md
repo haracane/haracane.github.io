@@ -19,3 +19,8 @@ sub_category: model-spec-custom-matchers
 
 <!-- content -->
 {% include categories/model-spec-custom-matchers.md %}
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/index.md %}

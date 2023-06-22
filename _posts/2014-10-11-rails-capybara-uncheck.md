@@ -34,3 +34,8 @@ uncheck 'publish'
 ここまででCapybaraでのフォーム入力はおしまいです。
 
 次回からは[findメソッドを使った少し進んだCapybaraの使い方]({% post_url 2014-10-11-rails-capybara-find %})などを紹介します。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

@@ -40,3 +40,8 @@ find('#main')
 としても同じなのですが、より意図が明確な`find_by_id`を使うようにしましょう。
 
 次回は[find_linkメソッドを使ったリンク要素の取得]({% post_url 2014-10-11-rails-capybara-find-link %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

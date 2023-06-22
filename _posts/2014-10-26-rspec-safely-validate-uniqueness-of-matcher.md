@@ -76,3 +76,8 @@ end
 となります。
 
 ほんとは[shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)にPR投げた方が良いんですけどね。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/model-spec-custom-matchers.md %}

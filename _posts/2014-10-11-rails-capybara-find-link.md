@@ -36,3 +36,8 @@ find_link('トップ')
 find系のメソッドについてはこちらでおしまいです。
 
 次回は[allメソッドを使った要素リストの取得]({% post_url 2014-10-11-rails-capybara-all %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

@@ -46,3 +46,8 @@ it { should have_title '秘密のページ' }
 とテストを書けばBasic認証が設定された秘密のページの内容をテストすることができます。
 
 次回は[ログインが必要なページのテスト]({% post_url 2014-10-11-rails-capybara-login %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

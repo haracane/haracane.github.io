@@ -75,3 +75,8 @@ newアクションのビューでは記事投稿フォームを表示します�
 {% endhighlight %}
 
 次は今回作成した記事投稿フォームから送信したデータを受け取って記事を作成する[createアクションの実装]({% post_url 2014-10-04-rails-restful-create %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

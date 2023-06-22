@@ -83,3 +83,8 @@ editアクションのビューでは取得済みの記事データを表示し�
 Railsの場合は@postオブジェクトのtitleの値を自動的にフォームに反映してくれるのでvalueを明示的に指定する必要はありません。
 
 次は記事編集フォームから送信した記事データを[updateアクションで更新]({% post_url 2014-10-04-rails-restful-update %})します。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

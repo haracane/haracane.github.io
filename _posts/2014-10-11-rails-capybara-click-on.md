@@ -36,3 +36,8 @@ click_on '新規投稿'
 実際はフォームに入力してからボタンをクリックしてデータを送信することがほとんどですので、次回以降ではフォーム入力のやり方を紹介します。
 
 次回は[fill_inメソッドを使ったフォームの入力]({% post_url 2014-10-11-rails-capybara-fill-in %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

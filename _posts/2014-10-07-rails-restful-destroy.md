@@ -77,3 +77,8 @@ destroyアクションでも[createアクション]({% post_url 2014-10-04-rails
 今回でRails4でのRESTfulな記事管理機能の実装はおしまいです。
 
 ひとつひとつはそれほど難しいことではないので、よく理解してRESTfulなシステムを作っていきましょう。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-restful.md %}

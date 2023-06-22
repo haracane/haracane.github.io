@@ -36,3 +36,8 @@ it { should have_checked_field 'publish', with '公開する' }
 チェックボックス/ラジオボタンの確認は特に難しいこともないのでこれでおしまいです。
 
 次回はhave_checked_fieldの反対の[have_unchecked_fieldマッチャを使った指定したチェックボックス/ラジオボタンの確認]({% post_url 2014-10-11-rails-capybara-have-unchecked-field %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

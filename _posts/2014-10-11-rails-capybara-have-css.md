@@ -34,3 +34,8 @@ it { should have_css 'h1', text: '江の島エンジニアBlog' }
 タグの指定にはCSSセレクタを指定できるので
 
 次回は[have_buttonマッチャを使った指定したボタンの確認]({% post_url 2014-10-11-rails-capybara-have-button %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

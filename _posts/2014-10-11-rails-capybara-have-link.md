@@ -47,3 +47,8 @@ it { should_not have_link 'プロフィール' }
 のようにテストを書きます。
 
 次回は[have_cssマッチャを使った指定したタグの内容の確認]({% post_url 2014-10-11-rails-capybara-have-css %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

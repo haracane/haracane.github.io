@@ -46,3 +46,8 @@ it { should have_title '投稿完了' }
 のようにテストケースを書きます。
 
 次回は[selectメソッドを使ったセレクトボックスの選択]({% post_url 2014-10-11-rails-capybara-select %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

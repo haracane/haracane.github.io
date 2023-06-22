@@ -42,3 +42,8 @@ it { should have_select 'category', selected: [] }
 次回からはCapybaraでのフォーム入力を行います。
 
 まずは[click_onメソッドでのフォーム送信]({% post_url 2014-10-11-rails-capybara-click-on %})から始めます。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

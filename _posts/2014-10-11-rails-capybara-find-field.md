@@ -41,3 +41,8 @@ its(:text) { should 'find_fieldメソッドでフィールド要素を取得す�
 のように入力テキストの内容を確認したりできます。
 
 次回は[find_by_idメソッドを使ったid要素の取得]({% post_url 2014-10-11-rails-capybara-find-by-id %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}

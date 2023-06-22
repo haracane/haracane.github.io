@@ -48,3 +48,8 @@ it { should match /Capybara入門/ }
 のように内容を確認すればOKです。
 
 次回は[Basic認証を設定しているページのテスト]({% post_url 2014-10-11-rails-capybara-basic-auth %})を行います。
+
+<!-- category_siblings -->
+### 関連記事
+
+{% include categories/rails-capybara.md %}
