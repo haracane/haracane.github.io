@@ -16,6 +16,9 @@ categories:
 <!-- tag_links -->
 [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- category_links -->
+連載: [Rails4のActiveRecord向けRSpecカスタムマッチャ5選]({% post_url 2014-10-30-model-spec-custom-matchers-index %})
+
 <!-- content -->
 外部キー制約のあるモデルに対して[shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 の`validate_uniqueness_of`カスタムマッチャを使うと

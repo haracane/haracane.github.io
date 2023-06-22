@@ -17,6 +17,9 @@ image: rspec.png
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- category_links -->
+連載: [Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α]({% post_url 2014-10-30-rails-capybara-index %})
+
 <!-- content -->
 この連載ではRails4でCapybaraを使ったテストのやり方を順番に紹介します。
 

@@ -16,6 +16,9 @@ categories:
 <!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- category_links -->
+連載: [Rails4のActiveRecord向けRSpecカスタムマッチャ5選]({% post_url 2014-10-30-model-spec-custom-matchers-index %})
+
 <!-- content -->
 [前々回のNOT NULL制約カスタムマッチャの記事](/2014/09/08/rspec-db-not-null-constraint/)と[前回のUNIQUE制約カスタムマッチャの記事](/2014/09/09/rspec-db-unique-constraint/)でDBの制約テストを簡単にしてきましたが、DB制約のRSpecカスタムマッチャも作りました。
 

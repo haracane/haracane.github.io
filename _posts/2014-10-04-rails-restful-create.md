@@ -15,6 +15,9 @@ image: rails.png
 <!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- category_links -->
+連載: [Rails4でRESTfulアプリケーションの7アクション＋αを作る]({% post_url 2014-10-30-rails-restful-index %})
+
 <!-- content -->
 ## 記事作成機能のルーティング設定
 

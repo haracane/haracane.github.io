@@ -16,6 +16,9 @@ categories:
 <!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- category_links -->
+連載: [Rails4のActiveRecord向けRSpecカスタムマッチャ5選]({% post_url 2014-10-30-model-spec-custom-matchers-index %})
+
 <!-- content -->
 このカスタムマッチャを使うと
 
