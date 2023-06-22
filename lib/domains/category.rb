@@ -6,7 +6,6 @@ NAMES = {
   "index" => "連載記事",
   "model-spec-custom-matchers" => "Rails4のActiveRecord向けRSpecカスタムマッチャ5選",
   "rails-capybara" => "Rails4＋RSpec＋Capybaraでよく使うマッチャ＆メソッド22個+α",
-  "rails-coffee" => "",
   "rails-restful" => "Rails4でRESTfulアプリケーションの7アクション＋αを作る",
 }
 

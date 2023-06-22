@@ -24,7 +24,7 @@ module Domains
       key = "content"
       lines = []
       while line = content_lines.shift
-        if line =~ /^<!-- ((content)|(tag_links)) -->$/
+        if line =~ /^<!-- ((tag_links)|(category_links)|(content)) -->$/
           next_key = $1
           post[key] = lines.join
           lines = []
@@ -62,10 +62,12 @@ module Domains
 
       sections = [::YAML.dump(front_matter), "---\n"]
 
-      if post["tag_links"]
-        sections << "<!-- tag_links -->\n"
-        sections << post["tag_links"]
-        sections << "\n\n"
+      %w[tag_links category_links].each do |key|
+        if post[key]
+          sections << "<!-- #{key} -->\n"
+          sections << post[key]
+          sections << "\n\n"
+        end
       end
 
       sections << "<!-- content -->\n"
