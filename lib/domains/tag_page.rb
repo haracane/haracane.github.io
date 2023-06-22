@@ -12,9 +12,7 @@ module Domains
       post_items =
         post_paths.reverse.map do |post_path|
           post = Domains::Post.parse(post_path)
-          title = post["title"]
-          date = Time.parse(post["date"]).strftime("%Y/%m/%d")
-          "- [#{title}(#{date})]({% post_url #{post["filebody"]} %})"
+          "- #{Domains::Post.to_link_with_date(post)}"
         end
 
       File.write(tag_path, <<~EOS)

@@ -54,5 +54,11 @@ module Domains
         ].join,
       )
     end
+
+    def self.to_link_with_date(post)
+      title = post["title"]
+      date = Time.parse(post["date"]).strftime("%Y/%m/%d")
+      "[#{title}(#{date})]({% post_url #{post["filebody"]} %})"
+    end
   end
 end
