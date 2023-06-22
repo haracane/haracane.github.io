@@ -8,7 +8,7 @@ module Domains
       return if tags.length == 0
       post["tag_links"] = tags
         .map { |tag| "[#{tag}](/tags/#{Domains::Tag.codes[tag]}/)" }
-        .join(" / ") + "\n"
+        .join(" / ")
 
       Domains::Post.store(post)
     end
