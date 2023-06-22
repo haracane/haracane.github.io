@@ -10,8 +10,10 @@ keywords: Rails ActiveRecord Uniqueness Validation
 description: ActiveRecordのUniquenessValidatorはネストしたパラメタ内の重複オブジェクトの一意性を検出してくれないので、カスタムバリデータを作って対応しました。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [ActiveRecord](/tags/activerecord/)
 
+<!-- content -->
 ## UniquenessValidatorの問題
 
 ActiveRecordのUniquenessValidatorはDBに保存済みのレコードと重複した場合はvalidationしてくれますが、

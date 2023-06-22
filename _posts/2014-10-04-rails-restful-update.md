@@ -12,8 +12,10 @@ categories:
 description: 前回は投稿済みの記事の編集フォームを表示できるようにしました。今回は編集フォームからデータを受け取ってupdateアクションで記事データを更新します。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事更新機能のルーティング設定
 
 まずはroutes.rbでupdateアクションのルーティング設定を行います。

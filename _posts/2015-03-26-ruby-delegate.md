@@ -11,8 +11,10 @@ description: Rubyでは委譲の方法がいくつかあるのでまとめてみ
 mark: Tips
 image: rails.png
 ---
+<!-- tag_links -->
 [tips](/tags/tips/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## インスタンスメソッドを委譲する
 
 まずはインスタンスメソッドを委譲する方法をいくつか紹介します。

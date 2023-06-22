@@ -8,8 +8,10 @@ keywords: Ruby,手抜き
 tags:
 - Ruby
 ---
+<!-- tag_links -->
 [Ruby](/tags/ruby/)
 
+<!-- content -->
 コードはこんな感じです。
 
 {% highlight ruby %}

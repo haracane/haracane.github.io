@@ -12,8 +12,10 @@ categories:
 description: 前回はindexアクションでRESTfulな記事一覧機能を実装しましたが、今回はshowアクションで各記事の表示を行います。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事表示機能のルーティング設定
 
 まずはroutes.rbでルーティング設定を行います。

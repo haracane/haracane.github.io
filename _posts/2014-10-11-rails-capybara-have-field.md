@@ -14,8 +14,10 @@ categories:
 description: フォームの入力フィールドをhave_fieldマッチャで確認テストを行います。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `have_field`マッチャでname属性が"title"の入力フィールドがあることを確認するには

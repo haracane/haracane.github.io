@@ -14,8 +14,10 @@ categories:
 description: CapybaraでBasic認証をパスする方法を紹介します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 Basic認証をパスするには`driver`というメソッドを使って

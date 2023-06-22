@@ -12,8 +12,10 @@ categories:
 description: 前回までにRailsで記事削除・作成・更新を行ってきましたが、今回はdestroyアクションでRESTfulに記事データを削除します。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事削除機能のルーティング設定
 
 まずはroutes.rbでdestroyアクションのルーティング設定を行います。

@@ -9,8 +9,10 @@ tags:
 - Cassandra
 date: 2012-12-23 21:00:00J
 ---
+<!-- tag_links -->
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/) / [Cassandra](/tags/cassandra/)
 
+<!-- content -->
 [前回](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-1)に引き続き『Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)の発表内容をご紹介します。
 
 前回の内容は

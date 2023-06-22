@@ -10,8 +10,10 @@ keywords: Ruby,Rails
 description: Railsのmigration例
 image: rails.png
 ---
+<!-- tag_links -->
 [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 モデル作成コマンドは
 
     $ rails g model blog/user code:string name:string profile:text school:references birthday:datetime deleted_at:timestamp

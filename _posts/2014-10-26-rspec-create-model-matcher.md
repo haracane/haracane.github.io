@@ -13,8 +13,10 @@ image: rspec.png
 categories:
 - model-spec-custom-matchers
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 このカスタムマッチャを使うと
 
 {% highlight ruby %}

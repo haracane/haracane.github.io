@@ -13,6 +13,8 @@ categories:
 sub_category: rails-restful
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 {% include categories/rails-restful.md %}

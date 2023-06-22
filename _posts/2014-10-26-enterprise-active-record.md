@@ -11,8 +11,10 @@ keywords: ActiveRecord Rails4 モデル 開発現場 商用 エンタープラ�
 description: Railsではモデルのひな形を自動生成してくれますが、そのままでは開発現場では使えません。この記事ではRails4のActiveRecordをエンタープライズ用途に使えるようにするために実行している6のステップを紹介します。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 1. 階層を分けてモデルを作る
 
 まずは`rails g`コマンドでモデルを作ります。たいていの場合はお互いに関連のある複数のモデルを作ることになりますが、それらモデルは同じ階層の下に置くようにします。

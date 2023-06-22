@@ -11,8 +11,10 @@ description: RSpecでテストをする際にDatabaseCleanerを使うとテス�
   strategyで実行している場合にAUTOCOMMITされたデータが削除されず、その結果テストが失敗してしまう場合があります。今回はその対処方法をまとめてみました。
 image: rails.png
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 この記事は[Ruby on Rails Advent Calendar 2015](http://qiita.com/advent-calendar/2015/rails)の3日目です。
 
 ## DatabaseCleanerでテスト実行毎にデータを削除する

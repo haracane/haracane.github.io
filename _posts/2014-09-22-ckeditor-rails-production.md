@@ -10,8 +10,10 @@ keywords: Ruby,Rails
 description: RailsのProduction環境でCKEditorを動かす
 image: rails.png
 ---
+<!-- tag_links -->
 [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 Production環境でCKEditorを動かしたら編集画面が表示されず。。
 
 JavaScript Consoleを確認したら http://localhost/assets/ckeditor/lang/ja.js の取得に失敗していたので言語設定を追加。

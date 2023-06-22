@@ -10,8 +10,10 @@ keywords: JavaScript onLoad onPageShow onPopState pushState relpaceState Rails t
 description: ページ遷移した時に発生するJavaScriptイベントがload, pageShow, popStateといくつかあってブラウザによって挙動が違ったりするので動作確認用のコードを作りました。Railsのturbolinks機能を使う時など、結構確認することがありそうなので公開しておきます。
 image: js.png
 ---
+<!-- tag_links -->
 [JavaScript](/tags/javascript/) / [CoffeeScript](/tags/coffeescript/)
 
+<!-- content -->
 例えばページロード時にSafari(7.1)だとpopStateイベントが発生して、Chrome(40.0.2214.91)やFirefox(35.0.1)だと発生しなかったりします。
 
 {% raw %}

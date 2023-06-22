@@ -9,8 +9,10 @@ tags:
 meta_keywords: Hadoop,RabbitMQ
 date: 2012-12-31 21:00:00J
 ---
+<!-- tag_links -->
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/)
 
+<!-- content -->
 [前編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-1)、[中編](http://hatacomp.hateblo.jp/entry/fight-against-socialmedia-2)に続いて『Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析』(2012/12/10 Hadoopエンタープライズソリューションセミナー)レポートの最終回です。
 
 前編ではBuzzFinderサービス＆日本語解析技術について、

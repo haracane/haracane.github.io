@@ -14,8 +14,10 @@ categories:
 description: Capybaraのテストでログイン処理を行う方法を紹介します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 Capybaraでテストする場合、`fill_in`や`click_on`を使ってログイン処理を行います。

@@ -11,8 +11,10 @@ description: グループチケットサービスをFanForwardからリリース
   FanForwardにjoinしてました。12/2(日)に大阪の万博記念公園で開催されるウエスタンジャパンボウル2018をグループ観戦される方は使ってみてください。
 image: rails.png
 ---
+<!-- tag_links -->
 [FanForward](/tags/fanforward/) / [Rails](/tags/rails/) / [Heroku](/tags/heroku/)
 
+<!-- content -->
 FanForwardにjoinしてからの第一弾サービスとしてグループチケットサービスをリリースしました。
 
 [ウエスタンジャパンボウル2018のグループチケット](https://kcafl.group-ticket.jp/wjb/)

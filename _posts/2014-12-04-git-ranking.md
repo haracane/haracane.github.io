@@ -9,8 +9,10 @@ keywords: Git
 description: Gitコマンドはターミナルで最もよく使うコマンドなのでエイリアスやシェル関数にして実行しているのですが、実際に何をよく使っているか調べてみました。
 image: git.png
 ---
+<!-- tag_links -->
 [Git](/tags/git/)
 
+<!-- content -->
 この記事は[Git Advent Calendar 2014](http://qiita.com/advent-calendar/2014/git)の4日目です。
 
 3日目は[@sue738](http://qiita.com/sue738)さんの「[Githubのブラウザのみでブランチ切ってプルリクするまで](http://qiita.com/sue738/items/7b979c554a03441901c6)」でした。おつかれさまでした。

@@ -12,8 +12,10 @@ categories:
 description: RailsにはRESTfulなURIを生成してくれる便利な機能があり、キャッシュバック賃貸でもよく使っています。今回はその機能を利用した記事一覧機能の作り方をご紹介します。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 RailsにはRESTfulなURIを生成してくれる便利な機能があり、[キャッシュバック賃貸](http://cbchintai.com/)でもよく使っています。
 
 今回はその機能を利用した記事一覧機能の作り方をご紹介します。

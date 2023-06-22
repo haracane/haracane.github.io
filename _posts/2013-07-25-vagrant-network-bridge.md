@@ -8,8 +8,10 @@ tags:
 keywords: Vagrant,固定IP,ブリッジ接続
 description: VagrantのVMに他のマシンから接続したかったのでブリッジ接続で固定IPにしてみました。
 ---
+<!-- tag_links -->
 [Vagrant](/tags/vagrant/)
 
+<!-- content -->
 {{ post.description }}
 
 本当に超簡単。

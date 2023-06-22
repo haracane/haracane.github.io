@@ -8,8 +8,10 @@ tags:
 - Jekyll
 - Git
 ---
+<!-- tag_links -->
 [Jekyll](/tags/jekyll/) / [Git](/tags/git/)
 
+<!-- content -->
 Git hookは使わずにシンプルにシェルスクリプトで行っています.
 
 まず

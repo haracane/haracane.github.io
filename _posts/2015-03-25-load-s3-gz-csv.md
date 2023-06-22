@@ -10,8 +10,10 @@ tags:
 keywords: AWS S3 Ruby
 description: Rubyでaws-sdkを使ってS3に置いたGzip圧縮したCSVファイル読み込む手順をご紹介します。
 ---
+<!-- tag_links -->
 [AWS](/tags/aws/) / [S3](/tags/s3/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## S3のキーを設定する
 
 S3にアクセスするためにまずキーの設定を行います。

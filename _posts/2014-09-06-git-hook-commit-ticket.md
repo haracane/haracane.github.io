@@ -9,8 +9,10 @@ keywords: Git
 description: いちいちコミットメッセージにチケット番号を追加するのは面倒なので、自動的にチケット番号を追加してくれるgit commitのhookを作りました。
 image: git.png
 ---
+<!-- tag_links -->
 [Git](/tags/git/)
 
+<!-- content -->
 こんな感じでブランチ名末尾の数字をチケット番号として付与します。
 
     (function-123)$ git add sample.txt

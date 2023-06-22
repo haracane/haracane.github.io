@@ -12,8 +12,10 @@ keywords: Elasticsearch ActiveRecord Rails Ruby
 description: ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。
 image: rails.png
 ---
+<!-- tag_links -->
 [Elasticsearch](/tags/elasticsearch/) / [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 この記事は[Elasticsearch Advent Calendar 2014](http://qiita.com/advent-calendar/2014/elasticsearch)の3日目です。
 
 2日目は[@ariarijp](http://qiita.com/ariarijp)さんの「[入門記事：ElasticSearch1.4.0とKibana4.0.0の環境構築](http://qiita.com/ariarijp/items/d0fc7a4161f56f4cda32)」でした。おつかれさまでした。

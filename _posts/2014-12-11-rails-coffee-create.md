@@ -12,8 +12,10 @@ keywords: CoffeeScript JavaScript Rails Ruby
 description: Railsで画面遷移なしでレコードを作成＆更新したいことがよくあるので、CoffeeScriptを使った実装パターンをまとめてみました。
 image: coffee.png
 ---
+<!-- tag_links -->
 [CoffeeScript](/tags/coffeescript/) / [JavaScript](/tags/javascript/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 サンプルコードでは`Blog::Site`オブジェクトが持つ`Blog::SiteConfig`オブジェクトを作成・更新しています。
 
 コントローラ側ではJSON APIとして`create`アクションと`update`アクションを実装します。

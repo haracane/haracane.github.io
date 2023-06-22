@@ -10,8 +10,10 @@ tags:
 keywords: JavaScript,jQuery,CoffeeScript
 description: jQueryのオートコンプリート機能がいい感じだったので今回はそのご紹介をします。
 ---
+<!-- tag_links -->
 [JavaScript](/tags/javascript/) / [jQuery](/tags/jquery/) / [CoffeeScript](/tags/coffeescript/)
 
+<!-- content -->
 例えば/data/suggest/words.jsonがサジェスト候補を返すAPIだったとすると、CoffeeScriptで以下のように書けばOKです。
 
 {% highlight coffee %}

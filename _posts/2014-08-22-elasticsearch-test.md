@@ -10,8 +10,10 @@ tags:
 - Rails
 - RSpec
 ---
+<!-- tag_links -->
 [Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/) / [RSpec](/tags/rspec/)
 
+<!-- content -->
 ## セッティングをテストする
 
 まずは正しくセッティングされていることをテストします.

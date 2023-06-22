@@ -13,8 +13,10 @@ image: rspec.png
 categories:
 - model-spec-custom-matchers
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 前回、[NOT NULL制約カスタムマッチャの記事](/2014/09/08/rspec-db-not-null-constraint/)を書きましたが、UNIQUE制約のテストもやっぱり面倒なのでUNIQUE制約のRSpecカスタムマッチャも作りました。
 
 たとえばPersonモデルのnameフィールドのUNIQUE制約をテストする場合は

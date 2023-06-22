@@ -12,8 +12,10 @@ categories:
 description: 前回はnewアクションでRESTfulな記事投稿フォーム表示機能を実装しました。今回はその投稿フォームから受け取ったデータで記事を作成するcreateアクションでの実装を行います。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事作成機能のルーティング設定
 
 まずはroutes.rbでcreateアクションのルーティング設定を行います。

@@ -13,8 +13,10 @@ image: rspec.png
 categories:
 - model-spec-custom-matchers
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 Railsを使っているとDBのフィールドにNOT NULL制約をつけることがよくありますが、テストしようとするとデータを保存してエラーが起きることを確認したりして相当面倒です。
 
 なのでRSpecカスタムマッチャを作りました。

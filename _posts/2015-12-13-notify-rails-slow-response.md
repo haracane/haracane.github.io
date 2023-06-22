@@ -9,8 +9,10 @@ description: Railsを運用しているとレスポンスタイムの監視は�
   SupportのInstrumentation機能を使って10秒以上のレスポンスを通知するシンプルな方法をご紹介します。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/)
 
+<!-- content -->
 この記事は[Ruby on Rails Advent Calendar 2015](http://qiita.com/advent-calendar/2015/rails)の13日目です。
 
 ## Active Support Instrumentationとは

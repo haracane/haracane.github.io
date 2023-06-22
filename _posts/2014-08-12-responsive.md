@@ -7,8 +7,10 @@ date: 2014-08-12 20:35:17J
 tags:
 - Jekyll
 ---
+<!-- tag_links -->
 [Jekyll](/tags/jekyll/)
 
+<!-- content -->
 変更したのはCSSだけで
 
 **css/main.css**

@@ -14,8 +14,10 @@ categories:
 description: ネイティブオブジェクトを取得するnativeメソッドの使い方を説明します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `find`メソッドで取得したオブジェクトで`native`メソッドを実行するとNokogiri::XML::Elementオブジェクトを取得できます。

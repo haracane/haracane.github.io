@@ -12,8 +12,10 @@ categories:
 description: これまでindexアクションとshowアクションでRESTfulな記事一覧＆表示機能を実装してきましたが、今回からは記事投稿機能を実装します。まずはnewアクションで投稿フォームの作成を行います。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事投稿フォーム表示機能のルーティング設定
 
 まずはroutes.rbでルーティング設定を行います。

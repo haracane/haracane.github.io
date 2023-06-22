@@ -14,8 +14,10 @@ categories:
 description: 選択されているチェックボックスやラジオボタンがあることをhave_checked_fieldマッチャで確認します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `have_checked_field`マッチャでname属性が"publish"のチェックボックス/ラジオボタンがあることを確認するには

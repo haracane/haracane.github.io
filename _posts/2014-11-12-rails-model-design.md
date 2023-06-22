@@ -11,8 +11,10 @@ keywords: Callback Validator Valueオブジェクト ActiveRecord Rails Ruby
 description: ActiveRecordに楽をさせてくれるCallback・Validator・Valueオブジェクトを、過去文献を参考に組み込んでみました。
 image: rails.png
 ---
+<!-- tag_links -->
 [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ActiveRecordモデルのコードはこんな感じです。
 
 {% highlight ruby %}

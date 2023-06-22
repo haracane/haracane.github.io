@@ -10,8 +10,10 @@ keywords: ActiveRecord includes where Rails Ruby
 description: ActiveRecordでincludesとwhereを合わせて使ったらDEPRECATION WARNINGが出たので記事に残しておきます。最終的にはちゃんとArelを使って対応しました。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 {% highlight ruby %}
 Post.includes(:comments).where("comments.content like '%いいね%'")
 {% endhighlight %}

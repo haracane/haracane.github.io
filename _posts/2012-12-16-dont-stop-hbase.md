@@ -8,8 +8,10 @@ tags:
 - Hadoop
 date: 2013-02-16 21:00:00J
 ---
+<!-- tag_links -->
 [HBase](/tags/hbase/) / [Hadoop](/tags/hadoop/)
 
+<!-- content -->
 いまだにHBaseには怖くて手が出せてないんですが、12/10の[Hadoopソリューションセミナー](http://oss.nttdata.co.jp/hadoop/event/201212/)＠東京カンファレンスセンター品川でのOKWaveさんの事例紹介が素晴らしかったのでご紹介します。
 
 この発表を聴いていたら「何とかなるんじゃないか？」という気がしてきました。

@@ -10,8 +10,10 @@ tags:
 keywords: Redmine,Scrum,アジャイル,Jenkins
 date: 2013-02-16 21:00:00J
 ---
+<!-- tag_links -->
 [Redmine](/tags/redmine/) / [Scrum](/tags/scrum/) / [アジャイル](/tags/agile/)
 
+<!-- content -->
 [@hamakn](https://twitter.com/hamakn)がDevSumiで『[OSSで作る！クラウドサービス開発戦記](https://speakerdeck.com/hamakn/ossdezuo-ru-kuraudosabisukai-fa-zhan-ji)』というNTTコミュニケーションズのアジャイル開発事例をしてくれたので、私も同僚としてアジャイル開発現場の紹介をしてみたくなりました。
 
 同じ会社の中でもチームが違うと全然何やってるかわからなかったりするので。

@@ -14,6 +14,8 @@ categories:
 - index
 sub_category: model-spec-custom-matchers
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 {% include categories/model-spec-custom-matchers.md %}

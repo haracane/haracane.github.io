@@ -15,8 +15,10 @@ categories:
 sub_category: rails-capybara
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 例えば①ログインする、②表示内容を確認する、③フォーム入力する、という流れをCapybaraでテストするとこんな感じになります。
 
 {% highlight ruby %}

@@ -11,8 +11,10 @@ description: MySQLでインデックスがちゃんと効いているか確認�
 image: mysql.png
 mark: Tips
 ---
+<!-- tag_links -->
 [tips](/tags/tips/) / [MySQL](/tags/mysql/)
 
+<!-- content -->
 ## クエリを組み立てる
 
     $ SQL='SELECT * FROM records;'

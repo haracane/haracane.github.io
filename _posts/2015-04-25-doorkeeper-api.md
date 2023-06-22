@@ -10,8 +10,10 @@ tags:
 description: OAuth2認証の定番Doorkeeper gemを使ってコンソールからアクセストークンを発行してみました。自前で認証画面を作る場合など参考になるかと思います。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/) / [OAuth2.0](/tags/oauth2/)
 
+<!-- content -->
 Doorkeeperを使うとデフォルトの認証画面を使うのが定番のようですが、自前で認証画面を用意したりRakeタスクでアクセストークンを発行したいことがあったりします。
 
 ということで、Railsコンソールからアクセストークンの発行までやってみました。

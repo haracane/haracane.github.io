@@ -13,8 +13,10 @@ image: rspec.png
 categories:
 - model-spec-custom-matchers
 ---
+<!-- tag_links -->
 [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 外部キー制約のあるモデルに対して[shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 の`validate_uniqueness_of`カスタムマッチャを使うと
 

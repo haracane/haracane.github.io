@@ -14,8 +14,10 @@ categories:
 description: ボタン要素のオブジェクトをfind_buttonメソッドで取得します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `find_button`メソッドではボタンの表示テキストを指定して

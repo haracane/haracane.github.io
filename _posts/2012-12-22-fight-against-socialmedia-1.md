@@ -8,8 +8,10 @@ tags:
 - RabbitMQ
 date: 2012-12-22 21:00:00J
 ---
+<!-- tag_links -->
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/)
 
+<!-- content -->
 [前回の記事](http://hatacomp.hateblo.jp/entry/dont-stop-hbase)でOKWaveさんのHBase事例のご紹介をしましたが、[このイベント](http://oss.nttdata.co.jp/hadoop/event/201212/)では最後のセッションで僕もTwitter分析の事例を発表させていただいたので今日はそちらをご紹介します。
 
 発表タイトルは「Hadoop&RabbitMQを利用したTwitter全量リアルタイム解析」。

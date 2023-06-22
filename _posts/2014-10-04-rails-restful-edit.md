@@ -12,8 +12,10 @@ categories:
 description: 記事の投稿・閲覧ができるようになったので、次はeditアクションでRESTfulな記事編集フォーム表示を行います。
 image: rails.png
 ---
+<!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 ## 記事編集フォーム表示機能のルーティング設定
 
 まずはroutes.rbでeditアクションのルーティング設定を行います。

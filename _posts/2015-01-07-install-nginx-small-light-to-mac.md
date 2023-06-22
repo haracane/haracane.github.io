@@ -8,8 +8,10 @@ tags:
 keywords: Nginx
 description: 画像のリサイズ等を動的に行ってくれるngx_small_lightをMacのNginxに組み込んでみたのでそのメモです。
 ---
+<!-- tag_links -->
 [Nginx](/tags/nginx/)
 
+<!-- content -->
 ## ngx_small_lightでやりたいこと
 
 [ngx_small_light](https://github.com/cubicdaiya/ngx_small_light)を使うと<http://localhost:8000/images/100x100/sample.png>というURLからsample.pngを100x100にリサイズした画像を取得できるようになったりします。

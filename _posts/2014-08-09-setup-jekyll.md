@@ -8,8 +8,10 @@ tags:
 - Jekyll
 - Nginx
 ---
+<!-- tag_links -->
 [Jekyll](/tags/jekyll/) / [Nginx](/tags/nginx/)
 
+<!-- content -->
 なお, リポジトリ管理にはGithubを使っていますが, ホスティングにはGithub Pagesは使わずにNginxを使いました.
 
 ## Jekyll2.2.0インストール

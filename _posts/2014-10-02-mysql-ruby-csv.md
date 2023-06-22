@@ -9,8 +9,10 @@ tags:
 keywords: MySQL Ruby
 description: MySQLのテーブルをCSV経由でRubyで読み込もうとしたら一筋縄ではいかなかったのでメモしておきます。
 ---
+<!-- tag_links -->
 [MySQL](/tags/mysql/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 まず、素直に
 
     SELECT * FROM articles INTO OUTFILE '/tmp/articles.csv'

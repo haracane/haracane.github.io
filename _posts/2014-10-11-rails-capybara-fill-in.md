@@ -14,8 +14,10 @@ categories:
 description: フォームにテキストを入力するfill_inメソッドの使い方を説明します。
 image: rspec.png
 ---
+<!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
 
+<!-- content -->
 「{{ site.data["category_params"]["rails-capybara"]["title"]}}」第{{page.order_in_category}}回の今回は{{ page.description }}
 
 `fill_in`メソッドでname属性が"title"の入力フィールド/テキストエリアにテキストを入力するには

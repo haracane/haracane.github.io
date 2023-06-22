@@ -9,8 +9,10 @@ tags:
 - Ruby
 - Rails
 ---
+<!-- tag_links -->
 [Elasticsearch](/tags/elasticsearch/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)
 
+<!-- content -->
 この記事ではレシピ検索をする場合を例に検索機能を追加します.
 
 ## 検索機能を追加するモデルを作る

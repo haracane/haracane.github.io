@@ -8,8 +8,10 @@ tags:
 - FanForward
 description: リードエンジニアとしてFanForwardにジョインしました。
 ---
+<!-- tag_links -->
 [報告](/tags/information/) / [FanForward](/tags/fanforward/)
 
+<!-- content -->
 リードエンジニアとしてFanForwardにジョインしました。
 
 スポーツを盛り上げるプロダクト開発をする予定です。
