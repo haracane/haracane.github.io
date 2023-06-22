@@ -13,17 +13,26 @@ module Domains
       categories = post["categories"]
       return if categories.length == 0
       post["category_links"] = nil
+      post["category_siblings"] = nil
       links = []
+      siblings = []
       categories.each do |category|
+        siblings << "{% include categories/#{category}.md %}"
+
         name = Domains::Category.names[category]
         next if name.nil?
         post_slug = POSTS[category]
         next if post_slug.nil?
 
-        links << "[#{Domains::Category.names[category]}]({% post_url #{post_slug} %})"
+        link = "[#{name}]({% post_url #{post_slug} %})"
+        links << link
       end
 
       post["category_links"] = "連載: " + links.join(" / ") if links.length > 0
+
+      post["category_siblings"] = "### 関連記事\n\n" +
+        siblings.join("\n") if siblings.length > 0
+
       Domains::Post.store(post)
     end
 

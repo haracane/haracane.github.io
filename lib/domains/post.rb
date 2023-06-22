@@ -24,9 +24,9 @@ module Domains
       key = "content"
       lines = []
       while line = content_lines.shift
-        if line =~ /^<!-- ((tag_links)|(category_links)|(content)) -->$/
+        if line =~ /^<!-- ([a-z_]+) -->$/
           next_key = $1
-          post[key] = lines.join
+          post[key] = lines.join.strip
           lines = []
           key = next_key
         else
@@ -34,9 +34,7 @@ module Domains
         end
       end
 
-      post[key] = lines.join
-
-      ["tag_links"].each { |key| post[key] = post[key].strip if post[key] }
+      post[key] = lines.join.strip
 
       post
     end
@@ -60,20 +58,16 @@ module Domains
       front_matter =
         post["front_matter_keys"].map { |key| [key, post[key]] }.to_h
 
-      sections = [::YAML.dump(front_matter), "---\n"]
+      sections = []
 
-      %w[tag_links category_links].each do |key|
-        if post[key]
-          sections << "<!-- #{key} -->\n"
-          sections << post[key]
-          sections << "\n\n"
-        end
+      %w[tag_links category_links content category_siblings].each do |key|
+        sections << "<!-- #{key} -->\n#{post[key]}" if post[key]
       end
 
-      sections << "<!-- content -->\n"
-      sections << post["content"]
-
-      ::File.write(post["path"], sections.join)
+      ::File.write(
+        post["path"],
+        [::YAML.dump(front_matter), "---\n", sections.join("\n\n"), "\n"].join
+      )
     end
 
     def self.to_link_with_date(post)
