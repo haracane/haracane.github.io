@@ -16,6 +16,7 @@ module Domains
       post["path"] = path
       post["filebody"] = ::File.basename(path, ".md")
 
+      post["categories"] = parse_list(post["categories"])
       post["tags"] = parse_list(post["tags"])
 
       content_lines = post["content"].lines
@@ -33,6 +34,11 @@ module Domains
       list = list.split(/\s+/).map(&:strip) if list.is_a?(String)
       list = [] if list.nil?
       list
+    end
+
+    def self.path_to_categories
+      @@path_to_categories ||=
+        all.map { |post| [post["path"], post["categories"]] }.to_a
     end
 
     def self.path_to_tags

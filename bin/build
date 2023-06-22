@@ -9,5 +9,8 @@ if [ $? != 0 ]; then exit 1; fi
 bundle exec ruby lib/scripts/build-tag-pages.rb
 if [ $? != 0 ]; then exit 1; fi
 
+bundle exec ruby lib/scripts/build-category-pages.rb
+if [ $? != 0 ]; then exit 1; fi
+
 bundle exec jekyll build
 if [ $? != 0 ]; then exit 1; fi
