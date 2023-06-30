@@ -3,7 +3,7 @@ author: haracane
 layout: post
 title: Ruby2.1.2+Jekyll2.2.0+Nginx+独自ドメインでブログを作ってみた
 description: '前から興味があったJekyllでブログを作ってみました. '
-date: 2014-08-09 11:00:00J
+date: 2014-08-09 11:00:00+0900
 tags:
 - Jekyll
 - Nginx

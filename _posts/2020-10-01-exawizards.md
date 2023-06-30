@@ -1,7 +1,7 @@
 ---
 author: haracane
 layout: post
-date: 2020-09-01 10:00:00J
+date: 2020-09-01 10:00:00+0900
 title: エクサウィザーズにジョインしました
 tags:
 - 報告

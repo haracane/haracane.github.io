@@ -6,7 +6,7 @@ description: 前回の記事でOKWaveさんのHBase事例のご紹介をしま�
 tags:
 - Hadoop
 - RabbitMQ
-date: 2012-12-22 21:00:00J
+date: 2012-12-22 21:00:00+0900
 ---
 <!-- tag_links -->
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/)

@@ -1,7 +1,7 @@
 ---
 author: haracane
 layout: post
-date: 2022-12-01 10:00:00J
+date: 2022-12-01 10:00:00+0900
 title: PreloadResolverという仕組みを作ってGraphQLのN+1問題に対応した話
 tags:
 - GraphQL

@@ -6,6 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   IDはharacane(はらけん)と読んでください。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://haracane.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+timezone: Asia/Tokyo
 google_analytics: G-Z370GDWX2B
 twitter_username: haracane
 # github_username:  haracane
