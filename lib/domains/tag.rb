@@ -11,9 +11,10 @@ CODES = {
   "フック" => "hook",
   "報告" => "information",
   "OAuth2.0" => "oauth2",
+  "プロクラ" => "pro-cloud",
   "Repositoryパターン" => "repository-pattern",
   "スマホ" => "smartphone",
-  "テスト" => "test"
+  "テスト" => "test",
 }
 
 module Domains
