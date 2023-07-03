@@ -6,7 +6,7 @@ description: いまだにHBaseには怖くて手が出せてないんですが�
 tags:
 - HBase
 - Hadoop
-date: 2013-02-16 21:00:00+0900
+date: '2013-02-16 21:00:00+0900'
 ---
 <!-- tag_links -->
 [HBase](/tags/hbase/) / [Hadoop](/tags/hadoop/)

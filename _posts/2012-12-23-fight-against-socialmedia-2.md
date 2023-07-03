@@ -7,7 +7,7 @@ tags:
 - Hadoop
 - RabbitMQ
 - Cassandra
-date: 2012-12-23 21:00:00+0900
+date: '2012-12-23 21:00:00+0900'
 ---
 <!-- tag_links -->
 [Hadoop](/tags/hadoop/) / [RabbitMQ](/tags/rabbitmq/) / [Cassandra](/tags/cassandra/)

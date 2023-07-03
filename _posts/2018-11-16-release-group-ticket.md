@@ -2,7 +2,7 @@
 author: haracane
 layout: post
 title: アメフト観戦のグループチケットサービスをFanForwardでリリースしました
-date: 2018-11-19 10:00:00+0900
+date: '2018-11-19 10:00:00+0900'
 tags:
 - FanForward
 - Rails

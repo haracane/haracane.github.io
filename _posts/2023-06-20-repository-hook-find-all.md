@@ -1,7 +1,7 @@
 ---
 author: haracane
 layout: post
-date: 2023-06-20 10:00:00+0900
+date: '2023-06-20 10:00:00+0900'
 title: Repositoryパターンの全件取得処理を型と関数で実装してみた
 tags:
 - TypeScript

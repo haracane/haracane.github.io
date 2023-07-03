@@ -13,6 +13,10 @@ module Domains
 
     def self.parse(path)
       post = Generals::FrontMatter.parse(path)
+      date = post["date"]
+      post["date"] = date.strftime("%Y-%m-%d %H:%M:%S%z") if date.instance_of?(
+        Time,
+      )
       post["path"] = path
       post["filebody"] = ::File.basename(path, ".md")
 
@@ -66,7 +70,7 @@ module Domains
 
       ::File.write(
         post["path"],
-        [::YAML.dump(front_matter), "---\n", sections.join("\n\n"), "\n"].join
+        [::YAML.dump(front_matter), "---\n", sections.join("\n\n"), "\n"].join,
       )
     end
 
