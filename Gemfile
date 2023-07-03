@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3.2"
+gem "jekyll-auto-image"
 gem "minima", "~> 2.5"
 gem "front_matter_parser", "~> 1.0"
 gem "psych", ">= 4.0.0"
@@ -10,9 +11,9 @@ group :jekyll_plugins do
 end
 
 group :development do
-  gem 'syntax_tree'
-  gem 'syntax_tree-haml'
-  gem 'syntax_tree-rbs'
+  gem "syntax_tree"
+  gem "syntax_tree-haml"
+  gem "syntax_tree-rbs"
 end
 # platforms :mingw, :x64_mingw, :mswin, :jruby do
 #   gem "tzinfo", ">= 1", "< 3"
