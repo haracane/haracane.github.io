@@ -4,11 +4,12 @@ require_relative "./tag"
 module Domains
   module TagLink
     def self.build(post)
-      tags = post["tags"]
+      tags = post.tags
       return if tags.length == 0
-      post["tag_links"] = tags
-        .map { |tag| "[#{tag}](/tags/#{Domains::Tag.codes[tag]}/)" }
-        .join(" / ")
+      post.tag_links =
+        tags
+          .map { |tag| "[#{tag}](/tags/#{Domains::Tag.codes[tag]}/)" }
+          .join(" / ")
 
       Domains::Post.store(post)
     end

@@ -6,10 +6,10 @@ module Domains
     def self.build(post)
       author = Domains::Config.all["author"]
       return if author.nil?
-      return if post["author"]
+      return if post.author
 
-      post["front_matter_keys"].unshift "author"
-      post["author"] = author
+      post.front_matter_keys.unshift "author"
+      post.author = author
 
       Domains::Post.store(post)
     end

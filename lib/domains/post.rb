@@ -1,8 +1,42 @@
 require_relative "../generals/file"
 require_relative "../generals/front_matter"
 
+ACCESSORS = %w[
+  author
+  categories
+  category_links
+  category_siblings
+  content
+  date
+  description
+  filebody
+  front_matter_keys
+  image
+  keywords
+  layout
+  meta_keywords
+  path
+  tag_links
+  tags
+  title
+].freeze
+
 module Domains
-  module Post
+  class Post
+    attr_accessor *ACCESSORS
+
+    def initialize(params)
+      ACCESSORS.each { |key| instance_variable_set("@#{key}", params[key]) }
+    end
+
+    def [](key)
+      instance_variable_get("@#{key}")
+    end
+
+    def []=(key, value)
+      instance_variable_set("@#{key}", value)
+    end
+
     def self.all_paths
       @@all_paths ||= Generals::File.list_paths("_posts")
     end
@@ -12,18 +46,18 @@ module Domains
     end
 
     def self.parse(path)
-      post = Generals::FrontMatter.parse(path)
-      date = post["date"]
-      post["date"] = date.strftime("%Y-%m-%d %H:%M:%S%z") if date.instance_of?(
+      post = Post.new(Generals::FrontMatter.parse(path))
+      date = post.date
+      post.date = date.strftime("%Y-%m-%d %H:%M:%S%z") if date.instance_of?(
         Time,
       )
-      post["path"] = path
-      post["filebody"] = ::File.basename(path, ".md")
+      post.path = path
+      post.filebody = ::File.basename(path, ".md")
 
-      post["categories"] = parse_list(post["categories"])
-      post["tags"] = parse_list(post["tags"])
+      post.categories = parse_list(post.categories)
+      post.tags = parse_list(post.tags)
 
-      content_lines = post["content"].lines
+      content_lines = post.content.lines
 
       key = "content"
       lines = []
@@ -51,16 +85,15 @@ module Domains
 
     def self.path_to_categories
       @@path_to_categories ||=
-        all.map { |post| [post["path"], post["categories"]] }.to_a
+        all.map { |post| [post.path, post.categories] }.to_a
     end
 
     def self.path_to_tags
-      @@post_to_tags ||= all.map { |post| [post["path"], post["tags"]] }.to_a
+      @@post_to_tags ||= all.map { |post| [post.path, post.tags] }.to_a
     end
 
     def self.store(post)
-      front_matter =
-        post["front_matter_keys"].map { |key| [key, post[key]] }.to_h
+      front_matter = post.front_matter_keys.map { |key| [key, post[key]] }.to_h
 
       sections = []
 
@@ -69,15 +102,14 @@ module Domains
       end
 
       ::File.write(
-        post["path"],
+        post.path,
         [::YAML.dump(front_matter), "---\n", sections.join("\n\n"), "\n"].join,
       )
     end
 
     def self.to_link_with_date(post)
-      title = post["title"]
-      date = Time.parse(post["date"]).strftime("%Y/%m/%d")
-      "[#{title}(#{date})]({% post_url #{post["filebody"]} %})"
+      date = Time.parse(post.date).strftime("%Y/%m/%d")
+      "[#{post.title}(#{date})]({% post_url #{post.filebody} %})"
     end
   end
 end

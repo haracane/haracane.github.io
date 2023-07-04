@@ -10,10 +10,10 @@ POSTS = {
 module Domains
   module CategoryLink
     def self.build(post)
-      categories = post["categories"]
+      categories = post.categories
       return if categories.length == 0
-      post["category_links"] = nil
-      post["category_siblings"] = nil
+      post.category_links = nil
+      post.category_siblings = nil
       links = []
       siblings = []
       categories.each do |category|
@@ -28,10 +28,10 @@ module Domains
         links << link
       end
 
-      post["category_links"] = "連載: " + links.join(" / ") if links.length > 0
+      post.category_links = "連載: " + links.join(" / ") if links.length > 0
 
-      post["category_siblings"] = "### 関連記事\n\n" +
-        siblings.join("\n") if siblings.length > 0
+      post.category_siblings =
+        "### 関連記事\n\n" + siblings.join("\n") if siblings.length > 0
 
       Domains::Post.store(post)
     end
