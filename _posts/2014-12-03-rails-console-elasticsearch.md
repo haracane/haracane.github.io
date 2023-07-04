@@ -10,7 +10,7 @@ tags:
 - Ruby
 keywords: Elasticsearch ActiveRecord Rails Ruby
 description: ActiveRecordのデータをElasticsearchに放り込むのはとても簡単なので、Rails Consoleから実践してみます。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Elasticsearch](/tags/elasticsearch/) / [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

@@ -10,8 +10,8 @@ keywords: RESTful Rails Ruby
 description: RailsにはRESTfulなURIを生成してくれる便利な機能があり、いつもお世話になっております。今回は連載形式でRESTfulなコントローラの作り方をご紹介します。
 categories:
 - index
-sub_category: rails-restful
-image: rails.png
+sub_category:
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

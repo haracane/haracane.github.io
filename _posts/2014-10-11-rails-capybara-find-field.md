@@ -12,7 +12,7 @@ keywords: find_field Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: フィールド要素のオブジェクトをfind_fieldメソッド取得します。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

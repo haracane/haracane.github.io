@@ -12,7 +12,7 @@ keywords: have_field Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: フォームの入力フィールドをhave_fieldマッチャで確認テストを行います。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

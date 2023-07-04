@@ -10,7 +10,7 @@ tags:
 - Ruby
 keywords: RSpec ActiveRecord Rails Ruby
 description: 前回の記事でカスタムバリデータを作ってhas-many関連のuniqueness validationを行いましたが、続いてテスト用にvalidate_objects_uniqueness_ofカスタムマッチャを作りました。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [RSpec](/tags/rspec/) / [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

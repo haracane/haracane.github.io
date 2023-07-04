@@ -12,7 +12,7 @@ keywords: Basic認証 Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: CapybaraでBasic認証をパスする方法を紹介します。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

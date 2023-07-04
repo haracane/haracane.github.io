@@ -10,7 +10,7 @@ keywords: RESTful new Rails Ruby
 categories:
 - rails-restful
 description: これまでindexアクションとshowアクションでRESTfulな記事一覧＆表示機能を実装してきましたが、今回からは記事投稿機能を実装します。まずはnewアクションで投稿フォームの作成を行います。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

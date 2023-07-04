@@ -9,8 +9,8 @@ tags:
 keywords: MySQL
 description: テーブルを置き換える場合などにはテーブル名だけでなく、インデックスや外部キー制約も名前変更する必要があります。MySQL5.7系だとRENAME
   INDEXができるのですが、5.6系だと残念ながら削除＆追加するしかないので、その方法をまとめておきます。
-mark: Tips
-image: mysql.png
+mark:
+image: "/assets/images/posts/mysql.png"
 ---
 <!-- tag_links -->
 [tips](/tags/tips/) / [MySQL](/tags/mysql/)

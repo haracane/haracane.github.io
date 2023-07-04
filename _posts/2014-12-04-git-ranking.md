@@ -7,7 +7,7 @@ tags:
 - Git
 keywords: Git
 description: Gitコマンドはターミナルで最もよく使うコマンドなのでエイリアスやシェル関数にして実行しているのですが、実際に何をよく使っているか調べてみました。
-image: git.png
+image: "/assets/images/posts/git.png"
 ---
 <!-- tag_links -->
 [Git](/tags/git/)

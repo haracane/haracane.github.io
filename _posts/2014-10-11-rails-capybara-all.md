@@ -12,7 +12,7 @@ keywords: all Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: 指定したCSSセレクタにマッチする全てのオブジェクトをallメソッドで取得します。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

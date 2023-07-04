@@ -8,7 +8,7 @@ tags:
 - Rails
 keywords: Ruby,Rails
 description: Railsのmigration例
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Ruby](/tags/ruby/) / [Rails](/tags/rails/)

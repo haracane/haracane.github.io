@@ -7,7 +7,7 @@ tags:
 - Git
 keywords: Git
 description: いちいちコミットメッセージにチケット番号を追加するのは面倒なので、自動的にチケット番号を追加してくれるgit commitのhookを作りました。
-image: git.png
+image: "/assets/images/posts/git.png"
 ---
 <!-- tag_links -->
 [Git](/tags/git/)

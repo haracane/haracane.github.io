@@ -9,7 +9,7 @@ tags:
 - Ruby
 keywords: ActiveRecord Rails Ruby
 description: ActiveRecordのhas_manyな関連オブジェクトに上限数を設定したかったのでやってみました。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

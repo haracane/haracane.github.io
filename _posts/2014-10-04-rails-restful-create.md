@@ -10,7 +10,7 @@ keywords: RESTful create Rails Ruby
 categories:
 - rails-restful
 description: 前回はnewアクションでRESTfulな記事投稿フォーム表示機能を実装しました。今回はその投稿フォームから受け取ったデータで記事を作成するcreateアクションでの実装を行います。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

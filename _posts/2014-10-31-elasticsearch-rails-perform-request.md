@@ -9,7 +9,7 @@ tags:
 - Ruby
 keywords: Elasticsearch Rails Ruby
 description: elasticsearch-railsのソースを軽く読んでいたら、任意のリクエストを送れるperform_requestという便利メソッドがあったので紹介します。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Elasticsearch](/tags/elasticsearch/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

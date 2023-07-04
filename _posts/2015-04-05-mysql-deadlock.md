@@ -9,7 +9,7 @@ tags:
 - Ruby
 keywords: MySQL Rails Ruby
 description: Railsでactiverecord-importを使ってバルクインサートをする時にDeadlockエラーが出たので対処しました。バルクインサートをする時にはINSERT順を気をつけないといけませんねという話です。
-image: mysql.png
+image: "/assets/images/posts/mysql.png"
 ---
 <!-- tag_links -->
 [MySQL](/tags/mysql/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

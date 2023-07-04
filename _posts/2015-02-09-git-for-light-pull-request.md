@@ -7,7 +7,7 @@ tags:
 - Git
 keywords: プルリクエスト Git
 description: プルリクエストを基本とした開発スタイルの場合、Gitコマンドの使い方が開発効率にかなり影響します。今回はプルリクエストをうまく使うためのGitの使い方を6個紹介します。
-image: git.png
+image: "/assets/images/posts/git.png"
 ---
 <!-- tag_links -->
 [Git](/tags/git/)

@@ -12,8 +12,8 @@ keywords: Capybara RSpec Rails Ruby
 description: Rails4のレスポンスをRSpecでテストする際にCapybaraを使っているのですが、マッチャやメソッドの使い方を調べることが多いのでまとめてみました。
 categories:
 - index
-sub_category: rails-capybara
-image: rspec.png
+sub_category:
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

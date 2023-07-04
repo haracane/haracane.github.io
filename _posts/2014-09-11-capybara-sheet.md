@@ -10,7 +10,7 @@ tags:
 - Rails
 keywords: Capybara,RSpec,Ruby,Rails
 description: Capybaraを使う時に検索して調べることが多いのでマッチャ等を利用例にまとめました。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)

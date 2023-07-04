@@ -9,7 +9,7 @@ tags:
 - Ruby
 keywords: Formオブジェクト Rails Ruby
 description: Railsで実際にFormオブジェクトを作ってみたらいくつか気をつけるポイントがあったので紹介します。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [ActiveRecord](/tags/activerecord/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

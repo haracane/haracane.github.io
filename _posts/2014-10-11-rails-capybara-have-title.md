@@ -12,7 +12,7 @@ keywords: have_title Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: Capybaraの導入とhave_titleマッチャでのタイトル内容テストを行います。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

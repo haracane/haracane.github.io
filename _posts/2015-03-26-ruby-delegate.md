@@ -8,8 +8,8 @@ tags:
 - Ruby
 keywords: Ruby 委譲 Forwardable クラスメソッド
 description: Rubyでは委譲の方法がいくつかあるのでまとめてみました。インスタンスメソッドの委譲方法とクラスメソッドの委譲方法をまとめています。チームで開発している場合はあらかじめ方法を統一しておくと良いと思います。
-mark: Tips
-image: rails.png
+mark:
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [tips](/tags/tips/) / [Ruby](/tags/ruby/)

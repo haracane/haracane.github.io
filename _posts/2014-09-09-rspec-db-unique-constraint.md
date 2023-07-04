@@ -9,7 +9,7 @@ tags:
 - Rails
 keywords: RSpec,Ruby,Rails,MySQL,PostgreSQL
 description: Railsでモデルを作る時にUNIQUE制約テストも簡単に書きたかったのでカスタムマッチャを作りました
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 categories:
 - model-spec-custom-matchers
 ---

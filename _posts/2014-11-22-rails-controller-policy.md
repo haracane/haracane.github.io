@@ -8,7 +8,7 @@ tags:
 - Ruby
 keywords: Pundit Policy Rails Ruby
 description: Railsのアクションでユーザ毎の権限に応じて実行結果を変えたかったので、Pundit gemを使って設定してみました。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

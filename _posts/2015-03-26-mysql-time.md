@@ -8,8 +8,8 @@ tags:
 - MySQL
 keywords: MySQL
 description: MySQLでインデックスがちゃんと効いているか確認する時などに実際にクエリを走らせることがあるのですが、だいたいこんな感じで手っ取り早く済ませてますというTipsです。
-image: mysql.png
-mark: Tips
+image: "/assets/images/posts/mysql.png"
+mark:
 ---
 <!-- tag_links -->
 [tips](/tags/tips/) / [MySQL](/tags/mysql/)

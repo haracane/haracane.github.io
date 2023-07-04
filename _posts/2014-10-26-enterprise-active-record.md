@@ -9,7 +9,7 @@ tags:
 - Ruby
 keywords: ActiveRecord Rails4 モデル 開発現場 商用 エンタープライズ
 description: Railsではモデルのひな形を自動生成してくれますが、そのままでは開発現場では使えません。この記事ではRails4のActiveRecordをエンタープライズ用途に使えるようにするために実行している6のステップを紹介します。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Rails](/tags/rails/) / [RSpec](/tags/rspec/) / [Ruby](/tags/ruby/)

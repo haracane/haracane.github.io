@@ -10,7 +10,7 @@ tags:
 - TypeScript
 title: エクサウィザーズに最終出社してきました
 description: 6/30に2年10ヶ月お世話になったエクサウィザーズを退職しました。色々と得るものがあったので振り返ってみます。
-image: /assets/images/posts/exawizards.jpg
+image: "/assets/images/posts/exawizards.jpg"
 ---
 <!-- tag_links -->
 [報告](/tags/information/) / [エクサウィザーズ](/tags/exawizards/) / [ハナスト](/tags/hanasuto/) / [GraphQL](/tags/graphql/) / [TypeScript](/tags/typescript/)

@@ -10,7 +10,7 @@ tags:
 - Ruby
 keywords: CoffeeScript JavaScript Rails Ruby
 description: Railsで画面遷移なしでレコードを作成＆更新したいことがよくあるので、CoffeeScriptを使った実装パターンをまとめてみました。
-image: coffee.png
+image: "/assets/images/posts/coffee.png"
 ---
 <!-- tag_links -->
 [CoffeeScript](/tags/coffeescript/) / [JavaScript](/tags/javascript/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)

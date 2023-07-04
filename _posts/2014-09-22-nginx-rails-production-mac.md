@@ -9,7 +9,7 @@ tags:
 - Rails
 keywords: Nginx,Ruby,Rails
 description: Nginx+RailsをProduction環境で動かす。
-image: rails.png
+image: "/assets/images/posts/rails.png"
 ---
 <!-- tag_links -->
 [Nginx](/tags/nginx/) / [Ruby](/tags/ruby/) / [Rails](/tags/rails/)

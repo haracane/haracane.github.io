@@ -12,7 +12,7 @@ keywords: find Capybara 入門 RSpec Rails Ruby
 categories:
 - rails-capybara
 description: オブジェクトを取得するfindメソッドの使い方を説明します。
-image: rspec.png
+image: "/assets/images/posts/rspec.png"
 ---
 <!-- tag_links -->
 [Capybara](/tags/capybara/) / [RSpec](/tags/rspec/) / [Rails](/tags/rails/) / [Ruby](/tags/ruby/)
