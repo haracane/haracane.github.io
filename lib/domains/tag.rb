@@ -15,6 +15,7 @@ CODES = {
   "Repositoryパターン" => "repository-pattern",
   "スマホ" => "smartphone",
   "テスト" => "test",
+  "型" => "type",
 }
 
 module Domains
