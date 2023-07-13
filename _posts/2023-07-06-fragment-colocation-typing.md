@@ -8,7 +8,7 @@ tags:
 - TypeScript
 - 型
 description: Fragment ColocationでFragmentデータを使う際に、Fragmentのデータを型変換をする必要があったので対応しました。なお、React
-  + Apollo Client + graphql-codegenの場合の話です。
+  + Apollo Client + graphql-codegen(v3)の場合の話です。
 image: /assets/images/posts/2023-07-06-fragment-colocation-typing-ogp.png
 ---
 <!-- tag_links -->
@@ -46,7 +46,7 @@ export const UserPage: FC = () => {
   return (
     <>
       <div>{user.name}の本</div>
-      <BookList books={user.books.map(BookListGraph.useBookFragment)} />
+      <BookList bookFragments={user.books} />
     </>
   )
 }
@@ -66,27 +66,20 @@ const BOOK_FIELDS_FRAGMENT = gql`
   }
 `
 
-export type BookForBookList = {
-  id: string
-  name: string
-  author: {
-    name: string
-  }
-}
+const MaskedBookFragment = FragmentType<typeof BOOK_FIELDS_FRAGMENT>
 
 const useBookFragment = (
-  book: FragmentType<typeof BOOK_FIELDS_FRAGMENT>,
-): BookForBookList => useFragment(BOOK_FIELDS_FRAGMENT, book),
+  bookFragment: MaskedBookFragment,
+): BookFieldsForBookListFragment => useFragment(BOOK_FIELDS_FRAGMENT, book),
 
-export const BookListGraph = {
-  useBookFragment
-} as const
 
-export const BookList: FC<{ books: BookForBookList[] }> = ({ books }) => {
+export const BookList: FC<{ bookFragments: MaskedBookFragment[] }> = ({ bookFragments }) => {
+  const books = bookFragments.map(useBookFragment)
+
   return (
     <ul>
-      {books.map((book, i) => (
-        <li key={`book-${i}`}>
+      {books.map((book) => (
+        <li key={book.id}>
           {book.name}({book.author.name})
         </li>
       ))}
@@ -135,13 +128,13 @@ GraphQL Code Generatorには<a href="https://the-guild.dev/graphql/codegen/plugi
 
 ```typescript
 const useBookFragment = (
-  book: FragmentType<typeof BOOK_FIELDS_FRAGMENT>,
-): BookForBookList => useFragment(BOOK_FIELDS_FRAGMENT, book),
+  bookFragment: MaskedBookFragment,
+): BookFieldsForBookListFragment => useFragment(BOOK_FIELDS_FRAGMENT, book)
 ```
 
-ここでは`useFragment`を使って`BookFieldsForBookListFragment`に型変換しています。
-
 `useFragment`はgraphql-codegenが自動生成する関数で、Fragmentの型変換をしてくれます。
+
+型変換することで`Book`の`id`や`name`などが取得できるようになります。
 
 ### Apollo ClientのuseFragment
 
@@ -158,6 +151,12 @@ Fragment MaskingをするとFragment Colocationで定義したFragmentを他の�
 そのような場合は<a href="https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#how-to-disable-fragment-masking" target="_blank">Fragment Maskingを無効化することもできます。</a>
 
 このあたりはどういう方針でFragment Colocationをするかによって決めるのが良さそうです。
+
+### 結局Fragment Maskingは導入すべき？
+
+実際に導入してみての感想としては、他のコンポーネントへの影響を心配せずにFragmentのfieldを変更できるというはメリットは大きいと感じています。
+
+ですので、Fragment ColocationをするのであればFragment Maskingは有効にすることをオススメします。
 
 <!--
 ## useFragmentについて
@@ -185,7 +184,6 @@ Fragment MaskingをするとFragment Colocationで定義したFragmentを他の�
 
 この記事ではApollo Client Cacheの流れについてはこれくらいの説明にとどめますが、詳しく知りたい方は<a href="https://www.apollographql.com/docs/react/caching/overview/" target="_blank">Apollo Client Cacheの公式ドキュメント</a>をご覧ください。
 
--->
 
 ## おまけ: Utility Typeを使った型定義
 
@@ -225,6 +223,8 @@ export type BookFieldsForBookListFragment = {
 なお、GraphQL QueryやFragmentにUnionが含まれていたりすると<a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#excludeuniontype-excludedmembers" target="_blank">Exclude</a>や<a href="https://www.typescriptlang.org/docs/handbook/utility-types.html#extracttype-union" target="_blank">Extract</a>など、他のUtility Typeが役に立つこともあります。
 
 そういった場合に備えて、Utility Typeは一通り<a href="https://www.typescriptlang.org/docs/handbook/utility-types.html" target="_blank">公式ドキュメント</a>を見ておくと良いかと思います。
+
+-->
 
 ## まとめ
 
